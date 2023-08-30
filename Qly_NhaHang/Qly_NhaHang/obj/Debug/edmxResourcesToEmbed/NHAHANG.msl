@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLNHThaiModelStoreContainer" CdmEntityContainer="QLNHThaiEntities">
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="id_Bill" ColumnName="id_Bill" />
+          <ScalarProperty Name="DateCheckIn" ColumnName="DateCheckIn" />
+          <ScalarProperty Name="DateCheckOut" ColumnName="DateCheckOut" />
+          <ScalarProperty Name="id_Table" ColumnName="id_Table" />
+          <ScalarProperty Name="discount_Bill" ColumnName="discount_Bill" />
+          <ScalarProperty Name="status_Bill" ColumnName="status_Bill" />
+          <ScalarProperty Name="id_NV" ColumnName="id_NV" />
+          <ScalarProperty Name="totalPrice_Bill" ColumnName="totalPrice_Bill" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill_Info">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Bill_Info">
+        <MappingFragment StoreEntitySet="Bill_Info">
+          <ScalarProperty Name="id_BillInfo" ColumnName="id_BillInfo" />
+          <ScalarProperty Name="id_Bill" ColumnName="id_Bill" />
+          <ScalarProperty Name="id_Food" ColumnName="id_Food" />
+          <ScalarProperty Name="count_Food" ColumnName="count_Food" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryFoods">
+      <EntityTypeMapping TypeName="QLNHThaiModel.CategoryFood">
+        <MappingFragment StoreEntitySet="CategoryFood">
+          <ScalarProperty Name="id_Category" ColumnName="id_Category" />
+          <ScalarProperty Name="name_Category" ColumnName="name_Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discounts">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Discount">
+        <MappingFragment StoreEntitySet="Discount">
+          <ScalarProperty Name="id_Discount" ColumnName="id_Discount" />
+          <ScalarProperty Name="name_Discount" ColumnName="name_Discount" />
+          <ScalarProperty Name="percent_Discount" ColumnName="percent_Discount" />
+          <ScalarProperty Name="type_Discount" ColumnName="type_Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imports">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Import">
+        <MappingFragment StoreEntitySet="Import">
+          <ScalarProperty Name="id_Import" ColumnName="id_Import" />
+          <ScalarProperty Name="date_Import" ColumnName="date_Import" />
+          <ScalarProperty Name="id_NV" ColumnName="id_NV" />
+          <ScalarProperty Name="type_Import" ColumnName="type_Import" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportInfoes">
+      <EntityTypeMapping TypeName="QLNHThaiModel.ImportInfo">
+        <MappingFragment StoreEntitySet="ImportInfo">
+          <ScalarProperty Name="id_ImportInfo" ColumnName="id_ImportInfo" />
+          <ScalarProperty Name="id_Import" ColumnName="id_Import" />
+          <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
+          <ScalarProperty Name="count_Ingredient" ColumnName="count_Ingredient" />
+          <ScalarProperty Name="type_Import" ColumnName="type_Import" />
+          <ScalarProperty Name="expỉry_Import" ColumnName="expỉry_Import" />
+          <ScalarProperty Name="date_Expiry" ColumnName="date_Expiry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredients">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Ingredient">
+        <MappingFragment StoreEntitySet="Ingredient">
+          <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
+          <ScalarProperty Name="name_Ingredient" ColumnName="name_Ingredient" />
+          <ScalarProperty Name="unit_Ingredient" ColumnName="unit_Ingredient" />
+          <ScalarProperty Name="count_Ingredient" ColumnName="count_Ingredient" />
+          <ScalarProperty Name="comment_Ingredient" ColumnName="comment_Ingredient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="QLNHThaiModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="id_NV" ColumnName="id_NV" />
+          <ScalarProperty Name="name_NV" ColumnName="name_NV" />
+          <ScalarProperty Name="sex_NV" ColumnName="sex_NV" />
+          <ScalarProperty Name="address_NV" ColumnName="address_NV" />
+          <ScalarProperty Name="CCCD_NV" ColumnName="CCCD_NV" />
+          <ScalarProperty Name="phone_NV" ColumnName="phone_NV" />
+          <ScalarProperty Name="pass_NV" ColumnName="pass_NV" />
+          <ScalarProperty Name="image_NV" ColumnName="image_NV" />
+          <ScalarProperty Name="type_NV" ColumnName="type_NV" />
+          <ScalarProperty Name="condition_NV" ColumnName="condition_NV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recipes">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Recipe">
+        <MappingFragment StoreEntitySet="Recipe">
+          <ScalarProperty Name="id_Recipe" ColumnName="id_Recipe" />
+          <ScalarProperty Name="id_Food" ColumnName="id_Food" />
+          <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
+          <ScalarProperty Name="count_Ingredient" ColumnName="count_Ingredient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservations">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Reservation">
+        <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="id_Reservation" ColumnName="id_Reservation" />
+          <ScalarProperty Name="name_Guest" ColumnName="name_Guest" />
+          <ScalarProperty Name="date_Reservation" ColumnName="date_Reservation" />
+          <ScalarProperty Name="phone_Guest" ColumnName="phone_Guest" />
+          <ScalarProperty Name="id_Table" ColumnName="id_Table" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tablees">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Tablee">
+        <MappingFragment StoreEntitySet="Tablee">
+          <ScalarProperty Name="id_Table" ColumnName="id_Table" />
+          <ScalarProperty Name="name_Table" ColumnName="name_Table" />
+          <ScalarProperty Name="status_Table" ColumnName="status_Table" />
+          <ScalarProperty Name="seats_Table" ColumnName="seats_Table" />
+          <ScalarProperty Name="condition_Table" ColumnName="condition_Table" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foods">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="condition_Food" ColumnName="condition_Food" />
+          <ScalarProperty Name="image_Food" ColumnName="image_Food" />
+          <ScalarProperty Name="price_Food" ColumnName="price_Food" />
+          <ScalarProperty Name="id_Category" ColumnName="id_Category" />
+          <ScalarProperty Name="name_Food" ColumnName="name_Food" />
+          <ScalarProperty Name="id_Food" ColumnName="id_Food" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

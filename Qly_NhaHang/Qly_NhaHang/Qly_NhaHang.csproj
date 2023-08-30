@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F22E2AF-62CC-4B08-ADA5-9909D6F629CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Qly_NhaHang</RootNamespace>
+    <AssemblyName>Qly_NhaHang</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
+      <HintPath>..\..\..\..\download\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bill.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill_Info.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\daoLogin.cs" />
+    <Compile Include="frmAddFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddFood.Designer.cs">
+      <DependentUpon>frmAddFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBookingTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBookingTable.Designer.cs">
+      <DependentUpon>frmBookingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryFood.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Discount.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Food.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategoryFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategoryFood.Designer.cs">
+      <DependentUpon>frmCategoryFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscount.Designer.cs">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFood.Designer.cs">
+      <DependentUpon>frmFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReservation.Designer.cs">
+      <DependentUpon>frmReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTable.Designer.cs">
+      <DependentUpon>frmTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportInfo.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredient.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmListTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListTable.Designer.cs">
+      <DependentUpon>frmListTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FoodViewModel.cs" />
+    <Compile Include="NHAHANG.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NHAHANG.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHAHANG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHAHANG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NHAHANG.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmPickFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPickFood.Designer.cs">
+      <DependentUpon>frmPickFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProfileNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfileNV.Designer.cs">
+      <DependentUpon>frmProfileNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmQuanly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanly.Designer.cs">
+      <DependentUpon>frmQuanly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recipe.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tablee.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThanhToan.Designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\EmptyTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\EmptyTable.Designer.cs">
+      <DependentUpon>EmptyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\uctCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\uctCategory.Designer.cs">
+      <DependentUpon>uctCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\uctFood.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\uctFood.Designer.cs">
+      <DependentUpon>uctFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\BusyTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\BusyTable.Designer.cs">
+      <DependentUpon>BusyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SetTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\SetTable.Designer.cs">
+      <DependentUpon>SetTable.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAddFood.resx">
+      <DependentUpon>frmAddFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBookingTable.resx">
+      <DependentUpon>frmBookingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategoryFood.resx">
+      <DependentUpon>frmCategoryFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscount.resx">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFood.resx">
+      <DependentUpon>frmFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListTable.resx">
+      <DependentUpon>frmListTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPickFood.resx">
+      <DependentUpon>frmPickFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfileNV.resx">
+      <DependentUpon>frmProfileNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReservation.resx">
+      <DependentUpon>frmReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTable.resx">
+      <DependentUpon>frmTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmQuanly.resx">
+      <DependentUpon>frmQuanly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThanhToan.resx">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\EmptyTable.resx">
+      <DependentUpon>EmptyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\uctCategory.resx">
+      <DependentUpon>uctCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\uctFood.resx">
+      <DependentUpon>uctFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\BusyTable.resx">
+      <DependentUpon>BusyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\SetTable.resx">
+      <DependentUpon>SetTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="NHAHANG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NHAHANG.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NHAHANG.edmx.diagram">
+      <DependentUpon>NHAHANG.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinner-table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terrace-restaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9951056_thanksgiving_mix_turkey_chicken_dinner_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60168_catalog_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1287507_user_account_avatar_human_people_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4288575_bank_coin_deposit_money_piggy_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3702387_card_cashback_credit_discount_money_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food0.png" />
+    <None Include="Resources\NV00.png" />
+    <None Include="Resources\icons8-percent-24.png" />
+    <None Include="Resources\icons8-option-64.png" />
+    <None Include="Resources\7267724_ext_csv_file_document_format_icon.png" />
+    <None Include="Resources\icons8-identification-32.png" />
+    <None Include="Resources\89064_book_recipe_icon.png" />
+    <None Include="Resources\8725849_file_upload_icon.png" />
+    <None Include="Resources\5173025_clock_date_internet_refresh_reload_icon.png" />
+    <None Include="Resources\9004715_cross_delete_remove_cancel_icon.png" />
+    <None Include="Resources\icons8-position-30.png" />
+    <None Include="Resources\icons8-birthday-30.png" />
+    <None Include="Resources\icons8-password-24 %281%29.png" />
+    <None Include="Resources\icons8-password-24.png" />
+    <None Include="Resources\icons8-address-24.png" />
+    <None Include="Resources\icons8-phone-30.png" />
+    <None Include="Resources\icons8-sex-30.png" />
+    <None Include="Resources\icons8-name-50.png" />
+    <None Include="Resources\icons8-sex-50.png" />
+    <None Include="Resources\icons8-qr-code-24.png" />
+    <None Include="Resources\icons8-left-50.png" />
+    <None Include="Resources\icons8-back-50.png" />
+    <None Include="Resources\icons8-log-out-30.png" />
+    <None Include="Resources\icons8-manage-30.png" />
+    <None Include="Resources\icons8-account-30.png" />
+    <None Include="Resources\icons8-sell-30.png" />
+    <None Include="Resources\icons8-taskbar-50.png" />
+    <None Include="Resources\icons8-about-30.png" />
+    <None Include="Resources\icons8-help-30.png" />
+    <None Include="Resources\icons8-setting-26.png" />
+    <None Include="Resources\icons8-setting-16.png" />
+    <None Include="Resources\icons8-home-30.png" />
+    <None Include="Resources\icons8-home-50.png" />
+    <None Include="Resources\zalopay.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\3592651_cloud_cloudy_export_network_server_icon.png" />
+    <None Include="Resources\3643769_building_home_house_main_menu_icon.png" />
+    <None Include="Resources\3209363_booking_calendar_date_day_month_icon.png" />
+    <Content Include="NHAHANG.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NHAHANG.Context.cs</LastGenOutput>
+      <DependentUpon>NHAHANG.edmx</DependentUpon>
+    </Content>
+    <Content Include="NHAHANG.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NHAHANG.edmx</DependentUpon>
+      <LastGenOutput>NHAHANG.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\2303114_explore_lense_magnifier_search_searching_icon.png" />
+    <None Include="Resources\299068_add_sign_icon.png" />
+    <None Include="Resources\100035_restore_system_icon.png" />
+    <None Include="Resources\1891023_cancel_cercle_close_delete_dismiss_icon.png" />
+    <None Include="Resources\4373076_adobe_file_logo_logos_pdf_icon.png" />
+    <None Include="Resources\4781852_burger_line_list_menu_nav_icon.png" />
+    <None Include="Resources\3709729_charge_extra_money_online_service_icon.png" />
+    <Content Include="Resources\5120875_butter_creamy_dairy_food_ingredient_icon.png" />
+    <None Include="Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
