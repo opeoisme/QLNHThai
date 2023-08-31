@@ -189,6 +189,12 @@
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\daoLogin.cs" />
+    <Compile Include="frmAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCategory.Designer.cs">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,9 @@
     <Compile Include="UserControl\SetTable.Designer.cs">
       <DependentUpon>SetTable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAddCategory.resx">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddFood.resx">
       <DependentUpon>frmAddFood.cs</DependentUpon>
     </EmbeddedResource>

@@ -209,7 +209,6 @@ namespace Qly_NhaHang
                     {
                         UpdateFoodImage(foodToUpdate);
                     }
-
                     dbContext.SaveChanges();
                     LoadFoodData();
                 }
@@ -369,23 +368,6 @@ namespace Qly_NhaHang
                 MessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
-
-
-        //private Stream GetImageStream(int rowHandle)
-        //{
-        //    if (gridView1.GetRowCellValue(rowHandle, "image_Food") is byte[] imageBytes)
-        //    {
-        //        // Tạo một bản sao của mảng bytes hình ảnh
-        //        byte[] imageCopy = new byte[imageBytes.Length];
-        //        Array.Copy(imageBytes, imageCopy, imageBytes.Length);
-
-        //        return new MemoryStream(imageCopy);
-        //    }
-        //    return null;
-        //}
-
         #endregion
 
     }

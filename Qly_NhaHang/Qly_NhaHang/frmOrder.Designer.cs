@@ -32,19 +32,25 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flpnFoodMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flpnCategory = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnComfirm = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnBack = new System.Windows.Forms.PictureBox();
+            this.gctBill = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.nameFood = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contityFood = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gctBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -69,6 +75,17 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Gọi món";
             // 
+            // btnBack
+            // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::Qly_NhaHang.Properties.Resources.icons8_left_50;
+            this.btnBack.Location = new System.Drawing.Point(3, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(68, 47);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 3;
+            this.btnBack.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.flpnFoodMenu);
@@ -91,8 +108,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.gctBill);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.btnComfirm);
+            this.panel3.Controls.Add(this.btnPay);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(1480, 0);
             this.panel3.Name = "panel3";
@@ -119,6 +137,96 @@
             this.labelControl8.TabIndex = 22;
             this.labelControl8.Text = "Hóa đơn tạm";
             // 
+            // btnPay
+            // 
+            this.btnPay.AllowAnimations = true;
+            this.btnPay.AllowMouseEffects = true;
+            this.btnPay.AllowToggling = false;
+            this.btnPay.AnimationSpeed = 200;
+            this.btnPay.AutoGenerateColors = false;
+            this.btnPay.AutoRoundBorders = false;
+            this.btnPay.AutoSizeLeftIcon = true;
+            this.btnPay.AutoSizeRightIcon = true;
+            this.btnPay.BackColor = System.Drawing.Color.Transparent;
+            this.btnPay.BackColor1 = System.Drawing.Color.Teal;
+            this.btnPay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPay.BackgroundImage")));
+            this.btnPay.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.ButtonText = "Xác nhận";
+            this.btnPay.ButtonTextMarginLeft = 0;
+            this.btnPay.ColorContrastOnClick = 45;
+            this.btnPay.ColorContrastOnHover = 45;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnPay.CustomizableEdges = borderEdges1;
+            this.btnPay.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPay.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnPay.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnPay.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnPay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnPay.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnPay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.White;
+            this.btnPay.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPay.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnPay.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnPay.IconMarginLeft = 11;
+            this.btnPay.IconPadding = 10;
+            this.btnPay.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPay.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnPay.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnPay.IconSize = 25;
+            this.btnPay.IdleBorderColor = System.Drawing.Color.Teal;
+            this.btnPay.IdleBorderRadius = 5;
+            this.btnPay.IdleBorderThickness = 1;
+            this.btnPay.IdleFillColor = System.Drawing.Color.Teal;
+            this.btnPay.IdleIconLeftImage = null;
+            this.btnPay.IdleIconRightImage = null;
+            this.btnPay.IndicateFocus = false;
+            this.btnPay.Location = new System.Drawing.Point(0, 915);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnPay.OnDisabledState.BorderRadius = 5;
+            this.btnPay.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.OnDisabledState.BorderThickness = 1;
+            this.btnPay.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnPay.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnPay.OnDisabledState.IconLeftImage = null;
+            this.btnPay.OnDisabledState.IconRightImage = null;
+            this.btnPay.onHoverState.BorderColor = System.Drawing.Color.White;
+            this.btnPay.onHoverState.BorderRadius = 5;
+            this.btnPay.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.onHoverState.BorderThickness = 1;
+            this.btnPay.onHoverState.FillColor = System.Drawing.Color.White;
+            this.btnPay.onHoverState.ForeColor = System.Drawing.Color.Teal;
+            this.btnPay.onHoverState.IconLeftImage = null;
+            this.btnPay.onHoverState.IconRightImage = null;
+            this.btnPay.OnIdleState.BorderColor = System.Drawing.Color.Teal;
+            this.btnPay.OnIdleState.BorderRadius = 5;
+            this.btnPay.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.OnIdleState.BorderThickness = 1;
+            this.btnPay.OnIdleState.FillColor = System.Drawing.Color.Teal;
+            this.btnPay.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnPay.OnIdleState.IconLeftImage = null;
+            this.btnPay.OnIdleState.IconRightImage = null;
+            this.btnPay.OnPressedState.BorderColor = System.Drawing.Color.Teal;
+            this.btnPay.OnPressedState.BorderRadius = 5;
+            this.btnPay.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.OnPressedState.BorderThickness = 1;
+            this.btnPay.OnPressedState.FillColor = System.Drawing.Color.Teal;
+            this.btnPay.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnPay.OnPressedState.IconLeftImage = null;
+            this.btnPay.OnPressedState.IconRightImage = null;
+            this.btnPay.Size = new System.Drawing.Size(464, 72);
+            this.btnPay.TabIndex = 32;
+            this.btnPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPay.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPay.TextMarginLeft = 0;
+            this.btnPay.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnPay.UseDefaultRadiusAndThickness = true;
+            // 
             // flpnCategory
             // 
             this.flpnCategory.BackColor = System.Drawing.Color.White;
@@ -128,106 +236,42 @@
             this.flpnCategory.Size = new System.Drawing.Size(314, 987);
             this.flpnCategory.TabIndex = 0;
             // 
-            // btnComfirm
+            // gctBill
             // 
-            this.btnComfirm.AllowAnimations = true;
-            this.btnComfirm.AllowMouseEffects = true;
-            this.btnComfirm.AllowToggling = false;
-            this.btnComfirm.AnimationSpeed = 200;
-            this.btnComfirm.AutoGenerateColors = false;
-            this.btnComfirm.AutoRoundBorders = false;
-            this.btnComfirm.AutoSizeLeftIcon = true;
-            this.btnComfirm.AutoSizeRightIcon = true;
-            this.btnComfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnComfirm.BackColor1 = System.Drawing.Color.Teal;
-            this.btnComfirm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnComfirm.BackgroundImage")));
-            this.btnComfirm.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnComfirm.ButtonText = "Xác nhận";
-            this.btnComfirm.ButtonTextMarginLeft = 0;
-            this.btnComfirm.ColorContrastOnClick = 45;
-            this.btnComfirm.ColorContrastOnHover = 45;
-            this.btnComfirm.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnComfirm.CustomizableEdges = borderEdges1;
-            this.btnComfirm.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnComfirm.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnComfirm.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnComfirm.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnComfirm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnComfirm.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnComfirm.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComfirm.ForeColor = System.Drawing.Color.White;
-            this.btnComfirm.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComfirm.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnComfirm.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnComfirm.IconMarginLeft = 11;
-            this.btnComfirm.IconPadding = 10;
-            this.btnComfirm.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnComfirm.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnComfirm.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnComfirm.IconSize = 25;
-            this.btnComfirm.IdleBorderColor = System.Drawing.Color.Teal;
-            this.btnComfirm.IdleBorderRadius = 5;
-            this.btnComfirm.IdleBorderThickness = 1;
-            this.btnComfirm.IdleFillColor = System.Drawing.Color.Teal;
-            this.btnComfirm.IdleIconLeftImage = null;
-            this.btnComfirm.IdleIconRightImage = null;
-            this.btnComfirm.IndicateFocus = false;
-            this.btnComfirm.Location = new System.Drawing.Point(0, 915);
-            this.btnComfirm.Name = "btnComfirm";
-            this.btnComfirm.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnComfirm.OnDisabledState.BorderRadius = 5;
-            this.btnComfirm.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnComfirm.OnDisabledState.BorderThickness = 1;
-            this.btnComfirm.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnComfirm.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnComfirm.OnDisabledState.IconLeftImage = null;
-            this.btnComfirm.OnDisabledState.IconRightImage = null;
-            this.btnComfirm.onHoverState.BorderColor = System.Drawing.Color.White;
-            this.btnComfirm.onHoverState.BorderRadius = 5;
-            this.btnComfirm.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnComfirm.onHoverState.BorderThickness = 1;
-            this.btnComfirm.onHoverState.FillColor = System.Drawing.Color.White;
-            this.btnComfirm.onHoverState.ForeColor = System.Drawing.Color.Teal;
-            this.btnComfirm.onHoverState.IconLeftImage = null;
-            this.btnComfirm.onHoverState.IconRightImage = null;
-            this.btnComfirm.OnIdleState.BorderColor = System.Drawing.Color.Teal;
-            this.btnComfirm.OnIdleState.BorderRadius = 5;
-            this.btnComfirm.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnComfirm.OnIdleState.BorderThickness = 1;
-            this.btnComfirm.OnIdleState.FillColor = System.Drawing.Color.Teal;
-            this.btnComfirm.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnComfirm.OnIdleState.IconLeftImage = null;
-            this.btnComfirm.OnIdleState.IconRightImage = null;
-            this.btnComfirm.OnPressedState.BorderColor = System.Drawing.Color.Teal;
-            this.btnComfirm.OnPressedState.BorderRadius = 5;
-            this.btnComfirm.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnComfirm.OnPressedState.BorderThickness = 1;
-            this.btnComfirm.OnPressedState.FillColor = System.Drawing.Color.Teal;
-            this.btnComfirm.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnComfirm.OnPressedState.IconLeftImage = null;
-            this.btnComfirm.OnPressedState.IconRightImage = null;
-            this.btnComfirm.Size = new System.Drawing.Size(464, 72);
-            this.btnComfirm.TabIndex = 32;
-            this.btnComfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnComfirm.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnComfirm.TextMarginLeft = 0;
-            this.btnComfirm.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnComfirm.UseDefaultRadiusAndThickness = true;
+            this.gctBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gctBill.Location = new System.Drawing.Point(0, 57);
+            this.gctBill.MainView = this.gridView1;
+            this.gctBill.Name = "gctBill";
+            this.gctBill.Size = new System.Drawing.Size(464, 858);
+            this.gctBill.TabIndex = 33;
+            this.gctBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // btnBack
+            // gridView1
             // 
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = global::Qly_NhaHang.Properties.Resources.icons8_left_50;
-            this.btnBack.Location = new System.Drawing.Point(3, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(68, 47);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 3;
-            this.btnBack.TabStop = false;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.nameFood,
+            this.contityFood});
+            this.gridView1.GridControl = this.gctBill;
+            this.gridView1.Name = "gridView1";
+            // 
+            // nameFood
+            // 
+            this.nameFood.Caption = "Tên món ăn";
+            this.nameFood.MinWidth = 30;
+            this.nameFood.Name = "nameFood";
+            this.nameFood.Visible = true;
+            this.nameFood.VisibleIndex = 0;
+            this.nameFood.Width = 229;
+            // 
+            // contityFood
+            // 
+            this.contityFood.Caption = "Số lượng";
+            this.contityFood.MinWidth = 30;
+            this.contityFood.Name = "contityFood";
+            this.contityFood.Visible = true;
+            this.contityFood.VisibleIndex = 1;
+            this.contityFood.Width = 199;
             // 
             // frmOrder
             // 
@@ -241,11 +285,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gctBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,12 +301,16 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnComfirm;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPay;
         private System.Windows.Forms.FlowLayoutPanel flpnCategory;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.FlowLayoutPanel flpnFoodMenu;
+        private DevExpress.XtraGrid.GridControl gctBill;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn nameFood;
+        private DevExpress.XtraGrid.Columns.GridColumn contityFood;
     }
 }

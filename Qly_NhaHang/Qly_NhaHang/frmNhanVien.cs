@@ -1,10 +1,16 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Data.Utils;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using Qly_NhaHang.Models;
+using Qly_NhaHang.UserControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,26 +20,319 @@ namespace Qly_NhaHang
 {
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        private bool isImageChanged = false;
+
         public frmNhanVien()
         {
             InitializeComponent();
-            {
-                GridView gridView = gctNV.MainView as GridView;
-                gridView.OptionsBehavior.ReadOnly = true;
-            }
+            InitializeGridViewOptions();
         }
 
-        QLNHThaiEntities db = new QLNHThaiEntities();
+        private QLNHThaiEntities dbContext = new QLNHThaiEntities(); // Initialize the context here
+
+        // Load data from the database and bind it to the grid
         public void LoadFormNV()
         {
-            List<NhanVien> nhanViens = new List<NhanVien>();
-            nhanViens = db.NhanViens.ToList();
+            List<NhanVien> nhanViens = dbContext.NhanViens.ToList();
             gctNV.DataSource = nhanViens;
         }
 
-        private void btnLoadTable_Click(object sender, EventArgs e)
+        private void InitializeGridViewOptions()
+        {
+            GridView gridView = gctNV.MainView as GridView;
+            gridView.OptionsBehavior.ReadOnly = true;
+            gridView.FocusedRowChanged += gvNV_FocusedRowChanged;
+        }
+
+        private void imgNV_Click(object sender, EventArgs e)
+        {
+            SelectAndSaveImage();
+            isImageChanged = true;
+        }
+
+        private void SelectAndSaveImage()
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;";
+            DialogResult choose = open.ShowDialog();
+
+            if (choose == DialogResult.OK)
+            {
+                string imagePath = open.FileName;
+
+                using (Bitmap imageBitmap = new Bitmap(Image.FromFile(imagePath)))
+                {
+                    imgNV.Image = new Bitmap(imageBitmap);
+
+                    byte[] imageBytes = ConvertImageToByteArray(imageBitmap);
+                    if (imageBytes != null)
+                    {
+                        UpdateNhanVIenImageInDatabase(imageBytes);
+                    }
+                }
+            }
+        }
+
+        private byte[] ConvertImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                try
+                {
+                    image.Save(ms, ImageFormat.Jpeg);
+                    return ms.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+        }
+
+        private void UpdateNhanVIenImageInDatabase(byte[] imageBytes)
+        {
+            string selectedNVId = txbIdNV.Text; // Lấy giá trị id_NV kiểu string từ TextBox
+
+            NhanVien nhanvienToUpdate = dbContext.NhanViens.FirstOrDefault(nhanvien => nhanvien.id_NV == selectedNVId);
+
+            if (nhanvienToUpdate != null)
+            {
+                nhanvienToUpdate.image_NV = imageBytes;
+                // Không cần thay đổi EntityState vì nó đã tự động được cập nhật trong context
+                dbContext.SaveChanges();
+            }
+        }
+
+        private void gvNV_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle >= 0)
+            {
+                UpdateNhanVienControls(e.FocusedRowHandle);
+            }
+        }
+
+        private void UpdateNhanVienControls(int focusedRowHandle)
+        {
+            NhanVien selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVien;
+            if (selectedNhanvien != null)
+            {
+                txbIdNV.Text = selectedNhanvien.id_NV;
+                txbNameNV.Text = selectedNhanvien.name_NV;
+                cbbSexNV.SelectedItem = selectedNhanvien.sex_NV;
+                txbAddressNV.Text = selectedNhanvien.address_NV;
+                txbCCCDNV.Text = selectedNhanvien.CCCD_NV;
+                txbPhoneNV.Text = selectedNhanvien.phone_NV;
+                cbbConditionNV.SelectedItem = selectedNhanvien.condition_NV;
+                cbbTypeNV.SelectedItem = selectedNhanvien.type_NV;
+
+                if (selectedNhanvien.image_NV != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(selectedNhanvien.image_NV))
+                    {
+                        imgNV.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    imgNV.Image = Properties.Resources.Food0;
+                }
+            }
+        }
+
+        private void frmNhanVien_Load(object sender, EventArgs e)
         {
             LoadFormNV();
+        }
+
+        private void btnLoadNV_Click(object sender, EventArgs e)
+        {
+            LoadFormNV();
+        }
+
+        private void btnUpdateNV_Click(object sender, EventArgs e)
+        {
+            string nhanvienId = txbIdNV.Text;
+
+            if (!string.IsNullOrEmpty(nhanvienId))
+            {
+                NhanVien nhanvienToUpdate = dbContext.NhanViens.FirstOrDefault(nv => nv.id_NV == nhanvienId);
+
+                if (nhanvienToUpdate != null)
+                {
+                    UpdateNhanvienProperties(nhanvienToUpdate);
+
+                    if (isImageChanged && imgNV.Image != null)
+                    {
+                        UpdateNhanvienImage(nhanvienToUpdate);
+                    }
+
+                    dbContext.SaveChanges();
+                    LoadFormNV();
+
+                    // Hiển thị thông báo thành công
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            // Reset isImageChanged sau khi đã sử dụng
+            isImageChanged = false;
+        }
+
+
+        private void UpdateNhanvienProperties(NhanVien nhanvien)
+        {
+            nhanvien.name_NV = txbNameNV.Text;
+            nhanvien.sex_NV = cbbSexNV.SelectedItem?.ToString();
+            nhanvien.phone_NV = txbPhoneNV.Text;
+            nhanvien.address_NV = txbAddressNV.Text;
+            nhanvien.CCCD_NV = txbCCCDNV.Text;
+            nhanvien.type_NV = cbbTypeNV.SelectedItem?.ToString();
+            nhanvien.condition_NV = cbbConditionNV.SelectedItem?.ToString();
+        }
+
+        private void UpdateNhanvienImage(NhanVien nhanvienToUpdate)
+        {
+            byte[] imageBytes = ConvertImageToByteArray(imgNV.Image); // Fix: imageNV to imgNV
+            if (imageBytes != null)
+            {
+                nhanvienToUpdate.image_NV = imageBytes;
+                dbContext.SaveChanges();
+            }
+        }
+
+        private void btnDeleteNV_Click(object sender, EventArgs e)
+        {
+            int focusedRowHandle = gvNV.FocusedRowHandle;
+            if (focusedRowHandle >= 0)
+            {
+                NhanVien selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVien;
+                if (selectedNhanvien != null)
+                {
+                    string nhanvienId = selectedNhanvien.id_NV; // Sử dụng kiểu string
+
+                    NhanVien nhanvienToDelete = dbContext.NhanViens.FirstOrDefault(nv => nv.id_NV == nhanvienId);
+
+                    if (nhanvienToDelete != null)
+                    {
+                        nhanvienToDelete.condition_NV = "Nghỉ việc";
+                        dbContext.SaveChanges();
+
+                        // Load lại danh sách sau khi cập nhật
+                        LoadFormNV();
+
+                        // Mờ trường dữ liệu tương ứng trên GridView
+                        gvNV.SetRowCellValue(focusedRowHandle, gvNV.Columns["condition_NV"], "Nghỉ việc");
+                        MessageBox.Show("Nhân viên không còn làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+        private void gvNV_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            if (e.RowHandle >= 0)
+            {
+                NhanVien nhanvien = view.GetRow(e.RowHandle) as NhanVien;
+                if (nhanvien != null && nhanvien.condition_NV == "Nghỉ việc")
+                {
+                    e.Appearance.ForeColor = Color.Gray; // Áp dụng màu chữ xám
+                }
+            }
+        }
+
+        private void btnReloadNV_Click(object sender, EventArgs e)
+        {
+            int[] selectedRows = gvNV.GetSelectedRows();
+            int updatedCount = 0; // Số lượng nhân viên đã được cập nhật
+
+            foreach (int rowHandle in selectedRows)
+            {
+                NhanVien selectedNhanvien = gvNV.GetRow(rowHandle) as NhanVien;
+                if (selectedNhanvien != null && selectedNhanvien.condition_NV != "Làm việc")
+                {
+                    string nhanvienId = selectedNhanvien.id_NV; // Sử dụng kiểu string
+
+                    NhanVien nhanvienToUpdate = dbContext.NhanViens.FirstOrDefault(nv => nv.id_NV == nhanvienId);
+
+                    if (nhanvienToUpdate != null)
+                    {
+                        nhanvienToUpdate.condition_NV = "Làm việc";
+                        dbContext.SaveChanges();
+                        updatedCount++; // Tăng số lượng nhân viên đã cập nhật
+                    }
+                }
+            }
+            LoadFormNV();
+            if (updatedCount > 0)
+            {
+                MessageBox.Show($"{updatedCount} nhân viên đã được trở lại làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Nhân viên này vẫn đang làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCSVNV_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                using (var workbook = new ClosedXML.Excel.XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add("FoodData");
+
+                    // Đặt chiều rộng cột cho tất cả các cột là 15
+                    for (int col = 0; col < gvNV.Columns.Count; col++)
+                    {
+                        worksheet.Column(col + 1).Width = 15;
+                    }
+
+                    // Tiêu đề cột
+                    for (int i = 0; i < gvNV.Columns.Count; i++)
+                    {
+                        worksheet.Cell(1, i + 1).Value = gvNV.Columns[i].Caption;
+                    }
+
+                    for (int row = 0; row < gvNV.RowCount; row++)
+                    {
+                        // Đặt chiều cao hàng là 60
+                        worksheet.Row(row + 2).Height = 60;
+
+                        for (int col = 0; col < gvNV.Columns.Count; col++)
+                        {
+                            if (gvNV.Columns[col].FieldName == "image_NV") // Xử lý cột hình ảnh
+                            {
+                                byte[] imageBytes = gvNV.GetRowCellValue(row, gvNV.Columns[col]) as byte[];
+                                if (imageBytes != null)
+                                {
+                                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                                    {
+                                        var image = worksheet.AddPicture(ms).MoveTo(worksheet.Cell(row + 2, col + 1));
+                                        image.Width = 80;
+                                        image.Height = 80;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                object cellValue = gvNV.GetRowCellValue(row, gvNV.Columns[col]);
+                                worksheet.Cell(row + 2, col + 1).Value = cellValue != null ? cellValue.ToString() : string.Empty;
+                            }
+                        }
+                    }
+
+                    workbook.SaveAs(filePath);
+                }
+
+                MessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

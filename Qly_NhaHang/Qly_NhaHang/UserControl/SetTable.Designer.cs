@@ -42,7 +42,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.MediumVioletRed;
             this.panel1.Controls.Add(this.btnPick);
             this.panel1.Controls.Add(this.lblStatusTable);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -113,7 +113,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(16, 99);
@@ -125,7 +125,7 @@
             // lblseatsTable
             // 
             this.lblseatsTable.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblseatsTable.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.lblseatsTable.Appearance.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.lblseatsTable.Appearance.Options.UseFont = true;
             this.lblseatsTable.Appearance.Options.UseForeColor = true;
             this.lblseatsTable.Location = new System.Drawing.Point(78, 99);
@@ -137,7 +137,7 @@
             // lblnameTable
             // 
             this.lblnameTable.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnameTable.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.lblnameTable.Appearance.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.lblnameTable.Appearance.Options.UseFont = true;
             this.lblnameTable.Appearance.Options.UseForeColor = true;
             this.lblnameTable.Location = new System.Drawing.Point(16, 32);

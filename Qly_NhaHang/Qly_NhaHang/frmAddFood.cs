@@ -93,7 +93,6 @@ namespace Qly_NhaHang
                 MessageBox.Show("Vui lòng cho biết sản phẩm có được bán liền hay không.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             // Tạo một đối tượng Food mới
             Food newFood = new Food
             {
@@ -123,6 +122,9 @@ namespace Qly_NhaHang
             }
         }
 
-
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
