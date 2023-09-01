@@ -12,6 +12,8 @@
     <Property Name="status_Bill" Type="int" Nullable="false" />
     <Property Name="id_NV" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="totalPrice_Bill" Type="float" />
+    <Property Name="money_Guest" Type="float" />
+    <Property Name="money_Change" Type="float" />
   </EntityType>
   <EntityType Name="Bill_Info">
     <Key>

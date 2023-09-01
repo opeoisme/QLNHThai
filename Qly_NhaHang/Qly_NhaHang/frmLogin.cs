@@ -16,6 +16,7 @@ namespace Qly_NhaHang
     public partial class frmLogin : Form
     {
         private QLNHThaiEntities dbContext;
+        public static string LoggedInIdNV { get; private set; }
         public frmLogin()
         {
           InitializeComponent();
@@ -27,15 +28,23 @@ namespace Qly_NhaHang
             this.Close();
         }
 
+        private void LoadFormData()
+        {
+            // Thực hiện tải lại dữ liệu từ cơ sở dữ liệu và cập nhật danh sách tài khoản NhanVien
+            dbContext = new QLNHThaiEntities();
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string idNV = txbMaNV.Text;
             string password = txbPassword.Text;
             var nhanvien = dbContext.NhanViens.FirstOrDefault(u => u.id_NV == idNV && u.pass_NV == password);
-            if (nhanvien != null)
+
+            if (nhanvien != null && nhanvien.condition_NV == "Làm việc")
             {
                 // Đăng nhập thành công
+                LoggedInIdNV = idNV;
                 MessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadFormData();
                 nhanvien.name_NV = nhanvien.name_NV.ToString();
                 nhanvien.type_NV = nhanvien.type_NV.ToString();
                 frmHome f = new frmHome(nhanvien);
@@ -43,11 +52,18 @@ namespace Qly_NhaHang
                 f.ShowDialog();
                 this.Show();
             }
+            else if (nhanvien != null && nhanvien.condition_NV != "Làm việc")
+            {
+                // Người dùng đã nghỉ việc
+                MessageBox.Show("Tài khoản này đã nghỉ việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                // Đăng nhập thất bại
+                MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnLogin_Enter(object sender, KeyEventArgs e)
         {

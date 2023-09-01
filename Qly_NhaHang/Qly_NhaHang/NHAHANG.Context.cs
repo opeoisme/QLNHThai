@@ -25,7 +25,6 @@ namespace Qly_NhaHang
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Bill_Info> Bill_Info { get; set; }
         public virtual DbSet<CategoryFood> CategoryFoods { get; set; }
         public virtual DbSet<Discount> Discounts { get; set; }
@@ -37,5 +36,6 @@ namespace Qly_NhaHang
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Tablee> Tablees { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
+        public virtual DbSet<Bill> Bills { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace Qly_NhaHang
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
         private bool isImageChanged = false;
+        string loggedInIdNV = frmLogin.LoggedInIdNV;
 
         public frmNhanVien()
         {
@@ -208,7 +209,18 @@ namespace Qly_NhaHang
                 NhanVien selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVien;
                 if (selectedNhanvien != null)
                 {
-                    string nhanvienId = selectedNhanvien.id_NV; // Sử dụng kiểu string
+                    string nhanvienId = selectedNhanvien.id_NV;
+
+                    // Loại bỏ khoảng trắng thừa trước khi so sánh
+                    string trimmedNhanvienId = nhanvienId.Trim();
+                    string trimmedLoggedInIdNV = loggedInIdNV.Trim();
+
+                    // Kiểm tra nếu id_NV trùng với id_NV đã đăng nhập thành công
+                    if (string.Equals(trimmedNhanvienId, trimmedLoggedInIdNV, StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Không thể xóa nhân viên này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
                     NhanVien nhanvienToDelete = dbContext.NhanViens.FirstOrDefault(nv => nv.id_NV == nhanvienId);
 
@@ -227,6 +239,7 @@ namespace Qly_NhaHang
                 }
             }
         }
+
 
         private void gvNV_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
@@ -327,11 +340,20 @@ namespace Qly_NhaHang
                             }
                         }
                     }
-
                     workbook.SaveAs(filePath);
                 }
 
                 MessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnAddNV_Click(object sender, EventArgs e)
+        {
+            frmAddNhanVien addNVForm = new frmAddNhanVien();
+            DialogResult result = addNVForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                LoadFormNV();
             }
         }
     }

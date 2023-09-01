@@ -28,6 +28,8 @@ namespace Qly_NhaHang
         public int status_Bill { get; set; }
         public string id_NV { get; set; }
         public Nullable<double> totalPrice_Bill { get; set; }
+        public Nullable<double> money_Guest { get; set; }
+        public Nullable<double> money_Change { get; set; }
     
         public virtual Discount Discount { get; set; }
         public virtual NhanVien NhanVien { get; set; }

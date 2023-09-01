@@ -14,8 +14,6 @@ namespace Qly_NhaHang
     
     public partial class Food
     {
-        internal object Category;
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Food()
         {

@@ -428,3 +428,4 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\System.Numerics.Vectors.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.exe.config
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddCategory.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddNhanVien.resources

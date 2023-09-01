@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QLNHThaiModelStoreContainer" CdmEntityContainer="QLNHThaiEntities">
-    <EntitySetMapping Name="Bills">
-      <EntityTypeMapping TypeName="QLNHThaiModel.Bill">
-        <MappingFragment StoreEntitySet="Bill">
-          <ScalarProperty Name="id_Bill" ColumnName="id_Bill" />
-          <ScalarProperty Name="DateCheckIn" ColumnName="DateCheckIn" />
-          <ScalarProperty Name="DateCheckOut" ColumnName="DateCheckOut" />
-          <ScalarProperty Name="id_Table" ColumnName="id_Table" />
-          <ScalarProperty Name="discount_Bill" ColumnName="discount_Bill" />
-          <ScalarProperty Name="status_Bill" ColumnName="status_Bill" />
-          <ScalarProperty Name="id_NV" ColumnName="id_NV" />
-          <ScalarProperty Name="totalPrice_Bill" ColumnName="totalPrice_Bill" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Bill_Info">
       <EntityTypeMapping TypeName="QLNHThaiModel.Bill_Info">
         <MappingFragment StoreEntitySet="Bill_Info">
@@ -134,6 +120,22 @@
           <ScalarProperty Name="id_Category" ColumnName="id_Category" />
           <ScalarProperty Name="name_Food" ColumnName="name_Food" />
           <ScalarProperty Name="id_Food" ColumnName="id_Food" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="money_Change" ColumnName="money_Change" />
+          <ScalarProperty Name="money_Guest" ColumnName="money_Guest" />
+          <ScalarProperty Name="totalPrice_Bill" ColumnName="totalPrice_Bill" />
+          <ScalarProperty Name="id_NV" ColumnName="id_NV" />
+          <ScalarProperty Name="status_Bill" ColumnName="status_Bill" />
+          <ScalarProperty Name="discount_Bill" ColumnName="discount_Bill" />
+          <ScalarProperty Name="id_Table" ColumnName="id_Table" />
+          <ScalarProperty Name="DateCheckOut" ColumnName="DateCheckOut" />
+          <ScalarProperty Name="DateCheckIn" ColumnName="DateCheckIn" />
+          <ScalarProperty Name="id_Bill" ColumnName="id_Bill" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
