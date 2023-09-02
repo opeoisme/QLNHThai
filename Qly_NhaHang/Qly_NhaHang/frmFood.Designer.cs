@@ -146,6 +146,7 @@
             this.btnPDFFood.Name = "btnPDFFood";
             this.btnPDFFood.Size = new System.Drawing.Size(72, 29);
             this.btnPDFFood.Text = "PDF";
+            this.btnPDFFood.Click += new System.EventHandler(this.btnPDFFood_Click);
             // 
             // btnCSVFood
             // 

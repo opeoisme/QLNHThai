@@ -429,3 +429,12 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\System.Runtime.CompilerServices
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.exe.config
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddCategory.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddNhanVien.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmChangePass.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\itextsharp.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\itextsharp.xml
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\PdfSharp.Charting.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\PdfSharp.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\PdfSharp.xml
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\PdfSharp.Charting.xml
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\de\PdfSharp.resources.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\de\PdfSharp.Charting.resources.dll

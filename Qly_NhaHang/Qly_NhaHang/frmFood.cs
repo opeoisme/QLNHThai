@@ -12,9 +12,16 @@ using System.Linq;
 using System.Windows.Forms;
 using OfficeOpenXml.Drawing;
 using OfficeOpenXml.Style;
-
-
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Image = System.Drawing.Image;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
+using PdfDocument = PdfSharp.Pdf.PdfDocument;
+using PdfPage = PdfSharp.Pdf.PdfPage;
+using System.Drawing.Imaging;
+using System.Collections.Generic;
 
 namespace Qly_NhaHang
 {
@@ -211,6 +218,7 @@ namespace Qly_NhaHang
                     }
                     dbContext.SaveChanges();
                     LoadFoodData();
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             // Reset isImageChanged sau khi đã sử dụng
@@ -369,6 +377,104 @@ namespace Qly_NhaHang
             }
         }
         #endregion
+
+        private void btnPDFFood_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files|*.pdf";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                PdfDocument pdf = new PdfDocument();
+                pdf.Info.Title = "Danh sách món ăn";
+
+                XFont font = new XFont("Arial", 7);
+                int rowHeight = 60; // Điều chỉnh chiều cao của mỗi hàng
+                double y = 20; // Vị trí bắt đầu của hàng đầu tiên
+
+                // Đặt kích thước trang PDF
+                PdfPage page = pdf.AddPage();
+                page.Width = XUnit.FromInch(8.5); // Kích thước trang Letter (8.5 x 11 inch)
+                page.Height = XUnit.FromInch(11);
+
+                XGraphics gfx = XGraphics.FromPdfPage(page);
+
+                for (int row = 0; row < gridView1.RowCount; row++)
+                {
+                    double x = 20;
+
+                    if (row == 0)
+                    {
+                        // Vẽ tiêu đề cột cho trang đầu tiên
+                        foreach (DevExpress.XtraGrid.Columns.GridColumn column in gridView1.Columns)
+                        {
+                            gfx.DrawString(column.Caption, font, XBrushes.Black, x, y);
+                            x += 100;
+                        }
+                        y += 20; // Điều chỉnh khoảng cách giữa tiêu đề cột và dữ liệu
+                        x = 20;
+                    }
+
+                    for (int col = 0; col < gridView1.Columns.Count; col++)
+                    {
+                        object cellValue = gridView1.GetRowCellValue(row, gridView1.Columns[col]);
+                        if (gridView1.Columns[col].FieldName == "image_Food")
+                        {
+                            byte[] imageBytes = cellValue as byte[];
+                            if (imageBytes != null)
+                            {
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
+
+                                    // Điều chỉnh kích thước của hình ảnh để tối ưu hóa trên trang
+                                    double imageWidth = 50;
+                                    double imageHeight = 30;
+                                    XImage xImage = XImage.FromStream(ms);
+                                    gfx.DrawImage(xImage, x, y, imageWidth, imageHeight);
+                                }
+                            }
+                            else
+                            {
+                                gfx.DrawString("", font, XBrushes.Black, x, y);
+                            }
+                        }
+                        else
+                        {
+                            gfx.DrawString(cellValue != null ? cellValue.ToString() : string.Empty, font, XBrushes.Black, x, y);
+                        }
+
+                        x += 100;
+                    }
+
+                    y += rowHeight;
+
+                    // Kiểm tra nếu không đủ không gian cho hàng tiếp theo, tạo trang mới
+                    if (y + rowHeight > page.Height - 20 && row < gridView1.RowCount - 1)
+                    {
+                        page = pdf.AddPage();
+                        page.Width = XUnit.FromInch(8.5);
+                        page.Height = XUnit.FromInch(11);
+                        gfx = XGraphics.FromPdfPage(page);
+                        y = 20;
+                    }
+                }
+
+                pdf.Save(filePath);
+
+                MessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
+
+
+
+
+
 
     }
 }

@@ -99,6 +99,53 @@ namespace Qly_NhaHang
 
                 // Cập nhật lưới hiển thị
                 gvCategory.RefreshData();
+
+                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCSVCategory_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                using (var workbook = new ClosedXML.Excel.XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add("CategoryData");
+
+                    // Đặt chiều rộng cột cho tất cả các cột là 15
+                    for (int col = 0; col < gvCategory.Columns.Count; col++)
+                    {
+                        worksheet.Column(col + 1).Width = 15;
+                    }
+
+                    // Tiêu đề cột
+                    for (int i = 0; i < gvCategory.Columns.Count; i++)
+                    {
+                        worksheet.Cell(1, i + 1).Value = gvCategory.Columns[i].Caption;
+                    }
+
+                    for (int row = 0; row < gvCategory.RowCount; row++)
+                    {
+                        // Đặt chiều cao hàng là 60
+                        worksheet.Row(row + 2).Height = 60;
+
+                        for (int col = 0; col < gvCategory.Columns.Count; col++)
+                        {
+                           
+                        object cellValue = gvCategory.GetRowCellValue(row, gvCategory.Columns[col]);
+                        worksheet.Cell(row + 2, col + 1).Value = cellValue != null ? cellValue.ToString() : string.Empty;
+                            
+                        }
+                    }
+                    workbook.SaveAs(filePath);
+                }
+
+                MessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
