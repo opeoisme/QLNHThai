@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Qly_NhaHang.DAO;
 using Qly_NhaHang.UserControl;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,27 @@ namespace Qly_NhaHang
 {
     public partial class frmOrder : DevExpress.XtraEditors.XtraForm
     {
+        private int _idBan;
+        private int _idBill;
+        BAN _ban;
+        Bill_DAO _bill;
+
         public frmOrder()
         {
             InitializeComponent();
             LoadFoodFLPN();
             LoadCategoryFLPN();
+            
+        }
+        public void SetIdBill(int idBill)
+        {
+            _idBill = idBill;
+        }
+
+
+        public void SetIdBan(int idBan)
+        {
+            _idBan = idBan;
         }
 
         private void LoadCategoryFLPN()
@@ -46,8 +63,6 @@ namespace Qly_NhaHang
             Button clickedButton = (Button)sender;
             int categoryId = (int)clickedButton.Tag;
             DisplayFoodsByCategory(categoryId);
-            // Thực hiện hành động tương ứng với categoryId, ví dụ:
-            // Hiển thị danh sách sản phẩm thuộc Category này
         }
 
         private void DisplayFoodsByCategory(int categoryId)
@@ -81,5 +96,13 @@ namespace Qly_NhaHang
             }
         }
 
+        private void frmOrder_Load(object sender, EventArgs e)
+        {
+            _ban = new BAN();
+            // Cập nhật lblID.Text bằng giá trị _idBan
+            lblID.Text = _idBan.ToString();
+            _bill = new Bill_DAO();
+
+        }
     }
 }

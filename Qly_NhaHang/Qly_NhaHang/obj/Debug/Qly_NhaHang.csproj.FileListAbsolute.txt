@@ -438,3 +438,4 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\PdfSharp.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\PdfSharp.Charting.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\de\PdfSharp.resources.dll
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddTable.resources

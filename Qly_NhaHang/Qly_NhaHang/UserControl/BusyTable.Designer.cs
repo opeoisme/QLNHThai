@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusyTable));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -36,8 +37,11 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblseatsTable = new DevExpress.XtraEditors.LabelControl();
             this.lblnameTable = new DevExpress.XtraEditors.LabelControl();
+            this.ctmntBusyTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.ctmntBusyTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +64,7 @@
             this.btnPick.AllowZooming = true;
             this.btnPick.AllowZoomingOnFocus = false;
             this.btnPick.BackColor = System.Drawing.Color.Transparent;
+            this.btnPick.ContextMenuStrip = this.ctmntBusyTable;
             this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
@@ -146,6 +151,21 @@
             this.lblnameTable.TabIndex = 8;
             this.lblnameTable.Text = "Tên bàn";
             // 
+            // ctmntBusyTable
+            // 
+            this.ctmntBusyTable.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.ctmntBusyTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBill});
+            this.ctmntBusyTable.Name = "ctmntBusyTable";
+            this.ctmntBusyTable.Size = new System.Drawing.Size(155, 36);
+            // 
+            // btnBill
+            // 
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(154, 32);
+            this.btnBill.Text = "Hóa đơn";
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            // 
             // BusyTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -154,10 +174,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "BusyTable";
             this.Size = new System.Drawing.Size(309, 212);
+            this.Load += new System.EventHandler(this.BusyTable_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.ctmntBusyTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -171,5 +193,7 @@
         private DevExpress.XtraEditors.LabelControl lblseatsTable;
         private DevExpress.XtraEditors.LabelControl lblnameTable;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.ContextMenuStrip ctmntBusyTable;
+        private System.Windows.Forms.ToolStripMenuItem btnBill;
     }
 }

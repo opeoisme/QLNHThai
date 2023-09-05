@@ -197,7 +197,8 @@
     <Compile Include="Bill_Info.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\daoLogin.cs" />
+    <Compile Include="DAO\BAN.cs" />
+    <Compile Include="DAO\Bill_DAO.cs" />
     <Compile Include="frmAddCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +216,12 @@
     </Compile>
     <Compile Include="frmAddNhanVien.Designer.cs">
       <DependentUpon>frmAddNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTable.Designer.cs">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBookingTable.cs">
       <SubType>Form</SubType>
@@ -398,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddNhanVien.resx">
       <DependentUpon>frmAddNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTable.resx">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBookingTable.resx">
       <DependentUpon>frmBookingTable.cs</DependentUpon>

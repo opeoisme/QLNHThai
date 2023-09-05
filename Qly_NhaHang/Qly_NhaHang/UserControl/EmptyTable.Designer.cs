@@ -111,20 +111,20 @@
             this.btnInsertBIll,
             this.btnReservationTable});
             this.ctmntOption.Name = "ctmntOption";
-            this.ctmntOption.Size = new System.Drawing.Size(241, 101);
+            this.ctmntOption.Size = new System.Drawing.Size(186, 68);
             this.ctmntOption.Text = "Option";
             // 
             // btnInsertBIll
             // 
             this.btnInsertBIll.Name = "btnInsertBIll";
-            this.btnInsertBIll.Size = new System.Drawing.Size(240, 32);
+            this.btnInsertBIll.Size = new System.Drawing.Size(185, 32);
             this.btnInsertBIll.Text = "Tạo hóa đơn";
             this.btnInsertBIll.Click += new System.EventHandler(this.btnInsertBIll_Click);
             // 
             // btnReservationTable
             // 
             this.btnReservationTable.Name = "btnReservationTable";
-            this.btnReservationTable.Size = new System.Drawing.Size(240, 32);
+            this.btnReservationTable.Size = new System.Drawing.Size(185, 32);
             this.btnReservationTable.Text = "Đặt bàn";
             // 
             // panel2
@@ -185,6 +185,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "EmptyTable";
             this.Size = new System.Drawing.Size(309, 212);
+            this.Load += new System.EventHandler(this.EmptyTable_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ctmntOption.ResumeLayout(false);

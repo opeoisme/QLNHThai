@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTable));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddTable = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteTable = new System.Windows.Forms.ToolStripButton();
             this.btnReloadTable = new System.Windows.Forms.ToolStripButton();
             this.btnUpdateTable = new System.Windows.Forms.ToolStripButton();
             this.btnLoadTable = new System.Windows.Forms.ToolStripButton();
+            this.btnPDFTable = new System.Windows.Forms.ToolStripButton();
+            this.btnCSVTable = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbConditionTable = new System.Windows.Forms.ComboBox();
             this.cbbStatusTable = new System.Windows.Forms.ComboBox();
@@ -56,7 +58,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gctTable = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvTable = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.idTable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameTable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.seatsTable = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,7 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmrSeatsTable)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTable)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -78,7 +80,9 @@
             this.btnDeleteTable,
             this.btnReloadTable,
             this.btnUpdateTable,
-            this.btnLoadTable});
+            this.btnLoadTable,
+            this.btnPDFTable,
+            this.btnCSVTable});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1942, 34);
@@ -93,6 +97,7 @@
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(88, 29);
             this.btnAddTable.Text = "Thêm";
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // btnDeleteTable
             // 
@@ -101,6 +106,7 @@
             this.btnDeleteTable.Name = "btnDeleteTable";
             this.btnDeleteTable.Size = new System.Drawing.Size(71, 29);
             this.btnDeleteTable.Text = "Xóa";
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // btnReloadTable
             // 
@@ -109,6 +115,7 @@
             this.btnReloadTable.Name = "btnReloadTable";
             this.btnReloadTable.Size = new System.Drawing.Size(119, 29);
             this.btnReloadTable.Text = "Khôi phục";
+            this.btnReloadTable.Click += new System.EventHandler(this.btnReloadTable_Click);
             // 
             // btnUpdateTable
             // 
@@ -117,6 +124,7 @@
             this.btnUpdateTable.Name = "btnUpdateTable";
             this.btnUpdateTable.Size = new System.Drawing.Size(70, 29);
             this.btnUpdateTable.Text = "Sửa";
+            this.btnUpdateTable.Click += new System.EventHandler(this.btnUpdateTable_Click);
             // 
             // btnLoadTable
             // 
@@ -125,6 +133,25 @@
             this.btnLoadTable.Name = "btnLoadTable";
             this.btnLoadTable.Size = new System.Drawing.Size(76, 29);
             this.btnLoadTable.Text = "Xem";
+            this.btnLoadTable.Click += new System.EventHandler(this.btnLoadTable_Click);
+            // 
+            // btnPDFTable
+            // 
+            this.btnPDFTable.Image = global::Qly_NhaHang.Properties.Resources._4373076_adobe_file_logo_logos_pdf_icon;
+            this.btnPDFTable.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPDFTable.Name = "btnPDFTable";
+            this.btnPDFTable.Size = new System.Drawing.Size(72, 29);
+            this.btnPDFTable.Text = "PDF";
+            this.btnPDFTable.Click += new System.EventHandler(this.btnPDFTable_Click);
+            // 
+            // btnCSVTable
+            // 
+            this.btnCSVTable.Image = global::Qly_NhaHang.Properties.Resources._7267724_ext_csv_file_document_format_icon;
+            this.btnCSVTable.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCSVTable.Name = "btnCSVTable";
+            this.btnCSVTable.Size = new System.Drawing.Size(72, 29);
+            this.btnCSVTable.Text = "CSV";
+            this.btnCSVTable.Click += new System.EventHandler(this.btnCSVTable_Click);
             // 
             // panel1
             // 
@@ -237,26 +264,26 @@
             this.txbNameTable.Modified = false;
             this.txbNameTable.Multiline = false;
             this.txbNameTable.Name = "txbNameTable";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameTable.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameTable.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameTable.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameTable.OnIdleState = stateProperties4;
+            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties17.FillColor = System.Drawing.Color.Empty;
+            stateProperties17.ForeColor = System.Drawing.Color.Empty;
+            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameTable.OnActiveState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameTable.OnDisabledState = stateProperties18;
+            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties19.FillColor = System.Drawing.Color.Empty;
+            stateProperties19.ForeColor = System.Drawing.Color.Empty;
+            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameTable.OnHoverState = stateProperties19;
+            stateProperties20.BorderColor = System.Drawing.Color.Silver;
+            stateProperties20.FillColor = System.Drawing.Color.White;
+            stateProperties20.ForeColor = System.Drawing.Color.Empty;
+            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameTable.OnIdleState = stateProperties20;
             this.txbNameTable.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameTable.PasswordChar = '\0';
             this.txbNameTable.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -311,26 +338,26 @@
             this.txbIdTable.Modified = false;
             this.txbIdTable.Multiline = false;
             this.txbIdTable.Name = "txbIdTable";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdTable.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIdTable.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdTable.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdTable.OnIdleState = stateProperties8;
+            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties21.FillColor = System.Drawing.Color.Empty;
+            stateProperties21.ForeColor = System.Drawing.Color.Empty;
+            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdTable.OnActiveState = stateProperties21;
+            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIdTable.OnDisabledState = stateProperties22;
+            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties23.FillColor = System.Drawing.Color.Empty;
+            stateProperties23.ForeColor = System.Drawing.Color.Empty;
+            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdTable.OnHoverState = stateProperties23;
+            stateProperties24.BorderColor = System.Drawing.Color.Silver;
+            stateProperties24.FillColor = System.Drawing.Color.White;
+            stateProperties24.ForeColor = System.Drawing.Color.Empty;
+            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdTable.OnIdleState = stateProperties24;
             this.txbIdTable.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdTable.PasswordChar = '\0';
             this.txbIdTable.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -385,23 +412,25 @@
             // 
             this.gctTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctTable.Location = new System.Drawing.Point(0, 0);
-            this.gctTable.MainView = this.gridView1;
+            this.gctTable.MainView = this.gvTable;
             this.gctTable.Name = "gctTable";
             this.gctTable.Size = new System.Drawing.Size(1942, 763);
             this.gctTable.TabIndex = 0;
             this.gctTable.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvTable});
             // 
-            // gridView1
+            // gvTable
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvTable.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.idTable,
             this.nameTable,
             this.seatsTable,
             this.statusTable,
             this.conditionTable});
-            this.gridView1.GridControl = this.gctTable;
-            this.gridView1.Name = "gridView1";
+            this.gvTable.GridControl = this.gctTable;
+            this.gvTable.Name = "gvTable";
+            this.gvTable.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvTable_CustomDrawCell);
+            this.gvTable.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvTable_FocusedRowChanged);
             // 
             // idTable
             // 
@@ -464,6 +493,7 @@
             this.Name = "frmTable";
             this.Text = "Danh sách bàn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmTable_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -471,7 +501,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmrSeatsTable)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,11 +528,13 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl gctTable;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTable;
         private DevExpress.XtraGrid.Columns.GridColumn idTable;
         private DevExpress.XtraGrid.Columns.GridColumn nameTable;
         private DevExpress.XtraGrid.Columns.GridColumn seatsTable;
         private DevExpress.XtraGrid.Columns.GridColumn statusTable;
         private DevExpress.XtraGrid.Columns.GridColumn conditionTable;
+        private System.Windows.Forms.ToolStripButton btnPDFTable;
+        private System.Windows.Forms.ToolStripButton btnCSVTable;
     }
 }

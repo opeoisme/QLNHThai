@@ -28,41 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfileNV));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChangePass = new System.Windows.Forms.Panel();
+            this.panelCenter = new System.Windows.Forms.Panel();
+            this.btnChangePass = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txbPosition = new System.Windows.Forms.TextBox();
             this.txbCCCD = new System.Windows.Forms.TextBox();
-            this.checkBoxShowHide = new System.Windows.Forms.CheckBox();
             this.txbSexNV = new System.Windows.Forms.TextBox();
             this.bunifuPictureBox11 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox10 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuPictureBox9 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuPictureBox8 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuPictureBox7 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox6 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox5 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox3 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox4 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txbComfirmPass = new System.Windows.Forms.TextBox();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txbNewPass = new System.Windows.Forms.TextBox();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbSDT = new System.Windows.Forms.TextBox();
             this.txbFullName = new System.Windows.Forms.TextBox();
             this.txbMaNV = new System.Windows.Forms.TextBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txbAddress = new System.Windows.Forms.TextBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -70,16 +61,12 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ptbNV = new System.Windows.Forms.PictureBox();
-            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel2.SuspendLayout();
-            this.btnChangePass.SuspendLayout();
+            this.panelCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).BeginInit();
@@ -125,7 +112,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnChangePass);
+            this.panel2.Controls.Add(this.panelCenter);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 55);
@@ -133,55 +120,135 @@
             this.panel2.Size = new System.Drawing.Size(1944, 1004);
             this.panel2.TabIndex = 2;
             // 
+            // panelCenter
+            // 
+            this.panelCenter.Controls.Add(this.btnChangePass);
+            this.panelCenter.Controls.Add(this.txbPosition);
+            this.panelCenter.Controls.Add(this.txbCCCD);
+            this.panelCenter.Controls.Add(this.txbSexNV);
+            this.panelCenter.Controls.Add(this.bunifuPictureBox11);
+            this.panelCenter.Controls.Add(this.bunifuPictureBox10);
+            this.panelCenter.Controls.Add(this.bunifuPictureBox6);
+            this.panelCenter.Controls.Add(this.bunifuPictureBox5);
+            this.panelCenter.Controls.Add(this.bunifuPictureBox3);
+            this.panelCenter.Controls.Add(this.bunifuPictureBox4);
+            this.panelCenter.Controls.Add(this.bunifuPictureBox2);
+            this.panelCenter.Controls.Add(this.btnSave);
+            this.panelCenter.Controls.Add(this.txbSDT);
+            this.panelCenter.Controls.Add(this.txbFullName);
+            this.panelCenter.Controls.Add(this.txbMaNV);
+            this.panelCenter.Controls.Add(this.labelControl8);
+            this.panelCenter.Controls.Add(this.txbAddress);
+            this.panelCenter.Controls.Add(this.labelControl6);
+            this.panelCenter.Controls.Add(this.labelControl4);
+            this.panelCenter.Controls.Add(this.labelControl5);
+            this.panelCenter.Controls.Add(this.labelControl2);
+            this.panelCenter.Controls.Add(this.labelControl1);
+            this.panelCenter.Controls.Add(this.labelControl7);
+            this.panelCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCenter.Location = new System.Drawing.Point(369, 0);
+            this.panelCenter.Name = "panelCenter";
+            this.panelCenter.Size = new System.Drawing.Size(1575, 1004);
+            this.panelCenter.TabIndex = 3;
+            // 
             // btnChangePass
             // 
-            this.btnChangePass.Controls.Add(this.bunifuButton1);
-            this.btnChangePass.Controls.Add(this.txbPosition);
-            this.btnChangePass.Controls.Add(this.txbCCCD);
-            this.btnChangePass.Controls.Add(this.checkBoxShowHide);
-            this.btnChangePass.Controls.Add(this.txbSexNV);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox11);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox10);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox9);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox8);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox7);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox6);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox5);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox3);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox4);
-            this.btnChangePass.Controls.Add(this.bunifuPictureBox2);
-            this.btnChangePass.Controls.Add(this.btnSave);
-            this.btnChangePass.Controls.Add(this.txbComfirmPass);
-            this.btnChangePass.Controls.Add(this.labelControl10);
-            this.btnChangePass.Controls.Add(this.txbNewPass);
-            this.btnChangePass.Controls.Add(this.labelControl9);
-            this.btnChangePass.Controls.Add(this.txbPassword);
-            this.btnChangePass.Controls.Add(this.txbSDT);
-            this.btnChangePass.Controls.Add(this.txbFullName);
-            this.btnChangePass.Controls.Add(this.txbMaNV);
-            this.btnChangePass.Controls.Add(this.labelControl8);
-            this.btnChangePass.Controls.Add(this.txbAddress);
-            this.btnChangePass.Controls.Add(this.labelControl6);
-            this.btnChangePass.Controls.Add(this.labelControl3);
-            this.btnChangePass.Controls.Add(this.labelControl4);
-            this.btnChangePass.Controls.Add(this.labelControl5);
-            this.btnChangePass.Controls.Add(this.labelControl2);
-            this.btnChangePass.Controls.Add(this.labelControl1);
-            this.btnChangePass.Controls.Add(this.labelControl7);
-            this.btnChangePass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnChangePass.Location = new System.Drawing.Point(369, 0);
+            this.btnChangePass.AllowAnimations = true;
+            this.btnChangePass.AllowMouseEffects = true;
+            this.btnChangePass.AllowToggling = false;
+            this.btnChangePass.AnimationSpeed = 200;
+            this.btnChangePass.AutoGenerateColors = false;
+            this.btnChangePass.AutoRoundBorders = false;
+            this.btnChangePass.AutoSizeLeftIcon = true;
+            this.btnChangePass.AutoSizeRightIcon = true;
+            this.btnChangePass.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangePass.BackColor1 = System.Drawing.Color.Teal;
+            this.btnChangePass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChangePass.BackgroundImage")));
+            this.btnChangePass.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.ButtonText = "Đổi mật khẩu";
+            this.btnChangePass.ButtonTextMarginLeft = 0;
+            this.btnChangePass.ColorContrastOnClick = 45;
+            this.btnChangePass.ColorContrastOnHover = 45;
+            this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnChangePass.CustomizableEdges = borderEdges1;
+            this.btnChangePass.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnChangePass.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnChangePass.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnChangePass.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnChangePass.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnChangePass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangePass.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnChangePass.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnChangePass.IconMarginLeft = 11;
+            this.btnChangePass.IconPadding = 10;
+            this.btnChangePass.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangePass.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnChangePass.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnChangePass.IconSize = 25;
+            this.btnChangePass.IdleBorderColor = System.Drawing.Color.Teal;
+            this.btnChangePass.IdleBorderRadius = 15;
+            this.btnChangePass.IdleBorderThickness = 1;
+            this.btnChangePass.IdleFillColor = System.Drawing.Color.Teal;
+            this.btnChangePass.IdleIconLeftImage = null;
+            this.btnChangePass.IdleIconRightImage = null;
+            this.btnChangePass.IndicateFocus = false;
+            this.btnChangePass.Location = new System.Drawing.Point(960, 845);
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(1575, 1004);
-            this.btnChangePass.TabIndex = 3;
+            this.btnChangePass.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnChangePass.OnDisabledState.BorderRadius = 15;
+            this.btnChangePass.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.OnDisabledState.BorderThickness = 1;
+            this.btnChangePass.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnChangePass.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnChangePass.OnDisabledState.IconLeftImage = null;
+            this.btnChangePass.OnDisabledState.IconRightImage = null;
+            this.btnChangePass.onHoverState.BorderColor = System.Drawing.Color.White;
+            this.btnChangePass.onHoverState.BorderRadius = 15;
+            this.btnChangePass.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.onHoverState.BorderThickness = 1;
+            this.btnChangePass.onHoverState.FillColor = System.Drawing.Color.White;
+            this.btnChangePass.onHoverState.ForeColor = System.Drawing.Color.Teal;
+            this.btnChangePass.onHoverState.IconLeftImage = null;
+            this.btnChangePass.onHoverState.IconRightImage = null;
+            this.btnChangePass.OnIdleState.BorderColor = System.Drawing.Color.Teal;
+            this.btnChangePass.OnIdleState.BorderRadius = 15;
+            this.btnChangePass.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.OnIdleState.BorderThickness = 1;
+            this.btnChangePass.OnIdleState.FillColor = System.Drawing.Color.Teal;
+            this.btnChangePass.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.OnIdleState.IconLeftImage = null;
+            this.btnChangePass.OnIdleState.IconRightImage = null;
+            this.btnChangePass.OnPressedState.BorderColor = System.Drawing.Color.Teal;
+            this.btnChangePass.OnPressedState.BorderRadius = 15;
+            this.btnChangePass.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.OnPressedState.BorderThickness = 1;
+            this.btnChangePass.OnPressedState.FillColor = System.Drawing.Color.Teal;
+            this.btnChangePass.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.OnPressedState.IconLeftImage = null;
+            this.btnChangePass.OnPressedState.IconRightImage = null;
+            this.btnChangePass.Size = new System.Drawing.Size(173, 67);
+            this.btnChangePass.TabIndex = 49;
+            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnChangePass.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnChangePass.TextMarginLeft = 0;
+            this.btnChangePass.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnChangePass.UseDefaultRadiusAndThickness = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // txbPosition
             // 
             this.txbPosition.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.txbPosition.Location = new System.Drawing.Point(1097, 598);
+            this.txbPosition.Location = new System.Drawing.Point(342, 620);
             this.txbPosition.Multiline = true;
             this.txbPosition.Name = "txbPosition";
             this.txbPosition.ReadOnly = true;
-            this.txbPosition.Size = new System.Drawing.Size(289, 34);
+            this.txbPosition.Size = new System.Drawing.Size(289, 40);
             this.txbPosition.TabIndex = 48;
             // 
             // txbCCCD
@@ -191,20 +258,8 @@
             this.txbCCCD.Multiline = true;
             this.txbCCCD.Name = "txbCCCD";
             this.txbCCCD.ReadOnly = true;
-            this.txbCCCD.Size = new System.Drawing.Size(226, 34);
+            this.txbCCCD.Size = new System.Drawing.Size(226, 40);
             this.txbCCCD.TabIndex = 47;
-            // 
-            // checkBoxShowHide
-            // 
-            this.checkBoxShowHide.AutoSize = true;
-            this.checkBoxShowHide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxShowHide.Location = new System.Drawing.Point(766, 593);
-            this.checkBoxShowHide.Name = "checkBoxShowHide";
-            this.checkBoxShowHide.Size = new System.Drawing.Size(22, 21);
-            this.checkBoxShowHide.TabIndex = 46;
-            this.checkBoxShowHide.UseVisualStyleBackColor = true;
-            this.checkBoxShowHide.CheckedChanged += new System.EventHandler(this.checkBoxShowHide_CheckedChanged);
-            this.checkBoxShowHide.MouseHover += new System.EventHandler(this.checkBoxShowHide_MouseHover);
             // 
             // txbSexNV
             // 
@@ -240,61 +295,13 @@
             this.bunifuPictureBox10.BorderRadius = 17;
             this.bunifuPictureBox10.Image = global::Qly_NhaHang.Properties.Resources.icons8_position_30;
             this.bunifuPictureBox10.IsCircle = true;
-            this.bunifuPictureBox10.Location = new System.Drawing.Point(960, 631);
+            this.bunifuPictureBox10.Location = new System.Drawing.Point(127, 653);
             this.bunifuPictureBox10.Name = "bunifuPictureBox10";
             this.bunifuPictureBox10.Size = new System.Drawing.Size(34, 34);
             this.bunifuPictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox10.TabIndex = 43;
             this.bunifuPictureBox10.TabStop = false;
             this.bunifuPictureBox10.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // bunifuPictureBox9
-            // 
-            this.bunifuPictureBox9.AllowFocused = false;
-            this.bunifuPictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox9.AutoSizeHeight = true;
-            this.bunifuPictureBox9.BorderRadius = 15;
-            this.bunifuPictureBox9.Image = global::Qly_NhaHang.Properties.Resources.icons8_password_24__1_;
-            this.bunifuPictureBox9.IsCircle = true;
-            this.bunifuPictureBox9.Location = new System.Drawing.Point(129, 827);
-            this.bunifuPictureBox9.Name = "bunifuPictureBox9";
-            this.bunifuPictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.bunifuPictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox9.TabIndex = 42;
-            this.bunifuPictureBox9.TabStop = false;
-            this.bunifuPictureBox9.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // bunifuPictureBox8
-            // 
-            this.bunifuPictureBox8.AllowFocused = false;
-            this.bunifuPictureBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox8.AutoSizeHeight = true;
-            this.bunifuPictureBox8.BorderRadius = 15;
-            this.bunifuPictureBox8.Image = global::Qly_NhaHang.Properties.Resources.icons8_password_24__1_;
-            this.bunifuPictureBox8.IsCircle = true;
-            this.bunifuPictureBox8.Location = new System.Drawing.Point(129, 723);
-            this.bunifuPictureBox8.Name = "bunifuPictureBox8";
-            this.bunifuPictureBox8.Size = new System.Drawing.Size(30, 30);
-            this.bunifuPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox8.TabIndex = 41;
-            this.bunifuPictureBox8.TabStop = false;
-            this.bunifuPictureBox8.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // bunifuPictureBox7
-            // 
-            this.bunifuPictureBox7.AllowFocused = false;
-            this.bunifuPictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox7.AutoSizeHeight = true;
-            this.bunifuPictureBox7.BorderRadius = 15;
-            this.bunifuPictureBox7.Image = global::Qly_NhaHang.Properties.Resources.icons8_password_24;
-            this.bunifuPictureBox7.IsCircle = true;
-            this.bunifuPictureBox7.Location = new System.Drawing.Point(129, 617);
-            this.bunifuPictureBox7.Name = "bunifuPictureBox7";
-            this.bunifuPictureBox7.Size = new System.Drawing.Size(30, 30);
-            this.bunifuPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox7.TabIndex = 40;
-            this.bunifuPictureBox7.TabStop = false;
-            this.bunifuPictureBox7.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // bunifuPictureBox6
             // 
@@ -466,52 +473,6 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txbComfirmPass
-            // 
-            this.txbComfirmPass.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.txbComfirmPass.Location = new System.Drawing.Point(342, 789);
-            this.txbComfirmPass.Name = "txbComfirmPass";
-            this.txbComfirmPass.Size = new System.Drawing.Size(418, 35);
-            this.txbComfirmPass.TabIndex = 30;
-            this.txbComfirmPass.UseSystemPasswordChar = true;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(171, 797);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(78, 29);
-            this.labelControl10.TabIndex = 29;
-            this.labelControl10.Text = "Nhập lại ";
-            // 
-            // txbNewPass
-            // 
-            this.txbNewPass.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.txbNewPass.Location = new System.Drawing.Point(342, 693);
-            this.txbNewPass.Name = "txbNewPass";
-            this.txbNewPass.Size = new System.Drawing.Size(418, 35);
-            this.txbNewPass.TabIndex = 28;
-            this.txbNewPass.UseSystemPasswordChar = true;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(171, 697);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(125, 29);
-            this.labelControl9.TabIndex = 27;
-            this.labelControl9.Text = "Mật khẩu mới";
-            // 
-            // txbPassword
-            // 
-            this.txbPassword.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.txbPassword.Location = new System.Drawing.Point(342, 586);
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(418, 35);
-            this.txbPassword.TabIndex = 26;
-            // 
             // txbSDT
             // 
             this.txbSDT.Font = new System.Drawing.Font("Sitka Display", 11F);
@@ -545,7 +506,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(1004, 598);
+            this.labelControl8.Location = new System.Drawing.Point(171, 620);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(75, 29);
             this.labelControl8.TabIndex = 21;
@@ -569,16 +530,6 @@
             this.labelControl6.Size = new System.Drawing.Size(136, 29);
             this.labelControl6.TabIndex = 18;
             this.labelControl6.Text = "CCCD/CMND";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(171, 587);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(86, 29);
-            this.labelControl3.TabIndex = 11;
-            this.labelControl3.Text = "Mật khẩu";
             // 
             // labelControl4
             // 
@@ -651,95 +602,6 @@
             this.ptbNV.TabStop = false;
             this.ptbNV.Click += new System.EventHandler(this.ptbNV_Click);
             // 
-            // bunifuButton1
-            // 
-            this.bunifuButton1.AllowAnimations = true;
-            this.bunifuButton1.AllowMouseEffects = true;
-            this.bunifuButton1.AllowToggling = false;
-            this.bunifuButton1.AnimationSpeed = 200;
-            this.bunifuButton1.AutoGenerateColors = false;
-            this.bunifuButton1.AutoRoundBorders = false;
-            this.bunifuButton1.AutoSizeLeftIcon = true;
-            this.bunifuButton1.AutoSizeRightIcon = true;
-            this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton1.BackColor1 = System.Drawing.Color.Teal;
-            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
-            this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.ButtonText = "Đổi mật khẩu";
-            this.bunifuButton1.ButtonTextMarginLeft = 0;
-            this.bunifuButton1.ColorContrastOnClick = 45;
-            this.bunifuButton1.ColorContrastOnHover = 45;
-            this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges1;
-            this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton1.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton1.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.bunifuButton1.IconMarginLeft = 11;
-            this.bunifuButton1.IconPadding = 10;
-            this.bunifuButton1.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuButton1.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.bunifuButton1.IconSize = 25;
-            this.bunifuButton1.IdleBorderColor = System.Drawing.Color.Teal;
-            this.bunifuButton1.IdleBorderRadius = 15;
-            this.bunifuButton1.IdleBorderThickness = 1;
-            this.bunifuButton1.IdleFillColor = System.Drawing.Color.Teal;
-            this.bunifuButton1.IdleIconLeftImage = null;
-            this.bunifuButton1.IdleIconRightImage = null;
-            this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(960, 845);
-            this.bunifuButton1.Name = "bunifuButton1";
-            this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton1.OnDisabledState.BorderRadius = 15;
-            this.bunifuButton1.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.OnDisabledState.BorderThickness = 1;
-            this.bunifuButton1.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton1.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton1.OnDisabledState.IconLeftImage = null;
-            this.bunifuButton1.OnDisabledState.IconRightImage = null;
-            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.White;
-            this.bunifuButton1.onHoverState.BorderRadius = 15;
-            this.bunifuButton1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.onHoverState.BorderThickness = 1;
-            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.White;
-            this.bunifuButton1.onHoverState.ForeColor = System.Drawing.Color.Teal;
-            this.bunifuButton1.onHoverState.IconLeftImage = null;
-            this.bunifuButton1.onHoverState.IconRightImage = null;
-            this.bunifuButton1.OnIdleState.BorderColor = System.Drawing.Color.Teal;
-            this.bunifuButton1.OnIdleState.BorderRadius = 15;
-            this.bunifuButton1.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.OnIdleState.BorderThickness = 1;
-            this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.Teal;
-            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton1.OnIdleState.IconLeftImage = null;
-            this.bunifuButton1.OnIdleState.IconRightImage = null;
-            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.Teal;
-            this.bunifuButton1.OnPressedState.BorderRadius = 15;
-            this.bunifuButton1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.OnPressedState.BorderThickness = 1;
-            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.Teal;
-            this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton1.OnPressedState.IconLeftImage = null;
-            this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(173, 67);
-            this.bunifuButton1.TabIndex = 49;
-            this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuButton1.TextMarginLeft = 0;
-            this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuButton1.UseDefaultRadiusAndThickness = true;
-            // 
             // frmProfileNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -755,13 +617,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.btnChangePass.ResumeLayout(false);
-            this.btnChangePass.PerformLayout();
+            this.panelCenter.ResumeLayout(false);
+            this.panelCenter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).EndInit();
@@ -780,8 +639,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel btnChangePass;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.Panel panelCenter;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -791,29 +649,20 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.TextBox txbAddress;
         private System.Windows.Forms.TextBox txbMaNV;
-        private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.TextBox txbSDT;
         private System.Windows.Forms.TextBox txbFullName;
-        private System.Windows.Forms.TextBox txbComfirmPass;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private System.Windows.Forms.TextBox txbNewPass;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox4;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox2;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox3;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox6;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox5;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox9;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox8;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox7;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox11;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox10;
         private System.Windows.Forms.TextBox txbSexNV;
-        private System.Windows.Forms.CheckBox checkBoxShowHide;
         private System.Windows.Forms.TextBox txbCCCD;
         private System.Windows.Forms.TextBox txbPosition;
         private System.Windows.Forms.PictureBox ptbNV;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnChangePass;
     }
 }

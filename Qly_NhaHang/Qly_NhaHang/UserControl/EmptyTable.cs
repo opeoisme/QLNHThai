@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Qly_NhaHang.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,24 +15,73 @@ namespace Qly_NhaHang.UserControl
 {
     public partial class EmptyTable : DevExpress.XtraEditors.XtraUserControl
     {
+        private int _idBan;
+        string loggedInIdNV = frmLogin.LoggedInIdNV;
         public EmptyTable()
         {
             InitializeComponent();
         }
+
+        
+        BAN _ban = new BAN();
+       
+
         public void SetTableData(Tablee table)
         {
             // Cập nhật giao diện với dữ liệu từ bàn (table)
             lblnameTable.Text = table.name_Table;
             lblseatsTable.Text = table.seats_Table.ToString();
-            // Cập nhật các thông tin khác tương ứng
+            _idBan = table.id_Table;
         }
 
         private void btnInsertBIll_Click(object sender, EventArgs e)
         {
+            // Lấy id_NV đang đăng nhập (giả sử bạn đã lưu thông tin này khi người dùng đăng nhập)
+            string id_NV = loggedInIdNV;
+
+            // Lấy thời gian hiện tại
+            DateTime currentTime = DateTime.Now;
+
+            // Lấy id_Table đang chọn
+            int id_Table = _idBan;
+
+            using (var context = new QLNHThaiEntities())
+            {
+                // Tạo một đối tượng Bill mới
+                Bill newBill = new Bill
+                {
+                    DateCheckIn = currentTime,
+                    id_Table = id_Table,
+                    id_NV = id_NV,
+                    status_Bill = 1, // Đang có khách (tùy theo thiết kế cơ sở dữ liệu của bạn)
+                                     // Nếu bạn có khả năng tính giảm giá (discount) thì gán giá trị cho discount_Bill ở đây
+                };
+
+                // Thêm Bill mới vào cơ sở dữ liệu
+                context.Bills.Add(newBill);
+                context.SaveChanges();
+            }
+
             frmOrder f = new frmOrder();
+            // Gán giá trị cho _idBan trước khi mở form frmOrder
+            f.SetIdBan(_idBan);
+            using (var context = new QLNHThaiEntities())
+            {
+                var tableToUpdate = context.Tablees.FirstOrDefault(t => t.id_Table == _idBan);
+                if (tableToUpdate != null)
+                {
+                    tableToUpdate.status_Table = "Đang có khách"; // Thay đổi trạng thái của bàn
+                    context.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+                }
+            }
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void EmptyTable_Load(object sender, EventArgs e)
+        {
+            _ban = new BAN();
         }
     }
 }

@@ -166,6 +166,7 @@
             this.btnPDFNV.Name = "btnPDFNV";
             this.btnPDFNV.Size = new System.Drawing.Size(72, 29);
             this.btnPDFNV.Text = "PDF";
+            this.btnPDFNV.Click += new System.EventHandler(this.btnPDFNV_Click);
             // 
             // btnCSVNV
             // 
