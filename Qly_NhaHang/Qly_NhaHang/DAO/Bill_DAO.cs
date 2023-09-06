@@ -25,5 +25,10 @@ namespace Qly_NhaHang.DAO
         {
             return db.Bills.FirstOrDefault(x => x.id_Bill == idBill && x.id_Table == idBan);
         }
+
+        public int getIdBillByIDBan(int idBan)
+        {
+            return db.Bills.Where(b => b.id_Table == idBan && b.status_Bill == 0).FirstOrDefault().id_Bill;
+        }
     }
 }

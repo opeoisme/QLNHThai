@@ -211,6 +211,9 @@
   <data name="_1743801_analysis_analytics_chart_graph_report_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1743801_analysis_analytics_chart_graph_report_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_185102_receipt_shopping_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\185102_receipt_shopping_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_1891023_cancel_cercle_close_delete_dismiss_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1891023_cancel_cercle_close_delete_dismiss_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -231,6 +234,9 @@
   </data>
   <data name="_3709729_charge_extra_money_online_service_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3709729_charge_extra_money_online_service_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_416404_bill_receipt_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\416404_bill_receipt_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_4288575_bank_coin_deposit_money_piggy_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4288575_bank_coin_deposit_money_piggy_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

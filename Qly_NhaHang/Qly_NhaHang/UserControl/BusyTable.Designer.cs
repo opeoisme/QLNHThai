@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusyTable));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.ctmntBusyTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.lblStatusTable = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblseatsTable = new DevExpress.XtraEditors.LabelControl();
             this.lblnameTable = new DevExpress.XtraEditors.LabelControl();
-            this.ctmntBusyTable = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.ctmntBusyTable.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,41 +55,21 @@
             this.panel1.Size = new System.Drawing.Size(309, 59);
             this.panel1.TabIndex = 0;
             // 
-            // btnPick
+            // ctmntBusyTable
             // 
-            this.btnPick.ActiveImage = null;
-            this.btnPick.AllowAnimations = true;
-            this.btnPick.AllowBuffering = false;
-            this.btnPick.AllowToggling = false;
-            this.btnPick.AllowZooming = true;
-            this.btnPick.AllowZoomingOnFocus = false;
-            this.btnPick.BackColor = System.Drawing.Color.Transparent;
-            this.btnPick.ContextMenuStrip = this.ctmntBusyTable;
-            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
-            this.btnPick.FadeWhenInactive = false;
-            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources.icons8_option_64;
-            this.btnPick.ImageActive = null;
-            this.btnPick.ImageLocation = null;
-            this.btnPick.ImageMargin = 10;
-            this.btnPick.ImageSize = new System.Drawing.Size(45, 49);
-            this.btnPick.ImageZoomSize = new System.Drawing.Size(55, 59);
-            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
-            this.btnPick.Location = new System.Drawing.Point(254, 0);
-            this.btnPick.Name = "btnPick";
-            this.btnPick.Rotation = 0;
-            this.btnPick.ShowActiveImage = true;
-            this.btnPick.ShowCursorChanges = true;
-            this.btnPick.ShowImageBorders = true;
-            this.btnPick.ShowSizeMarkers = false;
-            this.btnPick.Size = new System.Drawing.Size(55, 59);
-            this.btnPick.TabIndex = 0;
-            this.btnPick.ToolTipText = "";
-            this.btnPick.WaitOnLoad = false;
-            this.btnPick.Zoom = 10;
-            this.btnPick.ZoomSpeed = 10;
+            this.ctmntBusyTable.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.ctmntBusyTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBill});
+            this.ctmntBusyTable.Name = "ctmntBusyTable";
+            this.ctmntBusyTable.Size = new System.Drawing.Size(163, 36);
+            // 
+            // btnBill
+            // 
+            this.btnBill.Image = global::Qly_NhaHang.Properties.Resources._185102_receipt_shopping_icon;
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(162, 32);
+            this.btnBill.Text = "Hóa đơn";
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // lblStatusTable
             // 
@@ -151,20 +131,41 @@
             this.lblnameTable.TabIndex = 8;
             this.lblnameTable.Text = "Tên bàn";
             // 
-            // ctmntBusyTable
+            // btnPick
             // 
-            this.ctmntBusyTable.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.ctmntBusyTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBill});
-            this.ctmntBusyTable.Name = "ctmntBusyTable";
-            this.ctmntBusyTable.Size = new System.Drawing.Size(155, 36);
-            // 
-            // btnBill
-            // 
-            this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(154, 32);
-            this.btnBill.Text = "Hóa đơn";
-            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            this.btnPick.ActiveImage = null;
+            this.btnPick.AllowAnimations = true;
+            this.btnPick.AllowBuffering = false;
+            this.btnPick.AllowToggling = false;
+            this.btnPick.AllowZooming = true;
+            this.btnPick.AllowZoomingOnFocus = false;
+            this.btnPick.BackColor = System.Drawing.Color.Transparent;
+            this.btnPick.ContextMenuStrip = this.ctmntBusyTable;
+            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
+            this.btnPick.FadeWhenInactive = false;
+            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources.icons8_option_64;
+            this.btnPick.ImageActive = null;
+            this.btnPick.ImageLocation = null;
+            this.btnPick.ImageMargin = 10;
+            this.btnPick.ImageSize = new System.Drawing.Size(45, 49);
+            this.btnPick.ImageZoomSize = new System.Drawing.Size(55, 59);
+            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
+            this.btnPick.Location = new System.Drawing.Point(254, 0);
+            this.btnPick.Name = "btnPick";
+            this.btnPick.Rotation = 0;
+            this.btnPick.ShowActiveImage = true;
+            this.btnPick.ShowCursorChanges = true;
+            this.btnPick.ShowImageBorders = true;
+            this.btnPick.ShowSizeMarkers = false;
+            this.btnPick.Size = new System.Drawing.Size(55, 59);
+            this.btnPick.TabIndex = 0;
+            this.btnPick.ToolTipText = "";
+            this.btnPick.WaitOnLoad = false;
+            this.btnPick.Zoom = 10;
+            this.btnPick.ZoomSpeed = 10;
             // 
             // BusyTable
             // 
@@ -177,9 +178,9 @@
             this.Load += new System.EventHandler(this.BusyTable_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.ctmntBusyTable.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.ctmntBusyTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -191,6 +191,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiscount.Designer.cs">
+      <DependentUpon>AddDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bill.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
@@ -307,6 +313,7 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BillInfoViewModel.cs" />
     <Compile Include="Models\FoodViewModel.cs" />
     <Compile Include="NHAHANG.Context.cs">
       <AutoGen>True</AutoGen>
@@ -397,6 +404,9 @@
     <Compile Include="UserControl\SetTable.Designer.cs">
       <DependentUpon>SetTable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDiscount.resx">
+      <DependentUpon>AddDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddCategory.resx">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -616,6 +626,8 @@
     <None Include="Resources\4373076_adobe_file_logo_logos_pdf_icon.png" />
     <None Include="Resources\4781852_burger_line_list_menu_nav_icon.png" />
     <None Include="Resources\3709729_charge_extra_money_online_service_icon.png" />
+    <None Include="Resources\416404_bill_receipt_icon.png" />
+    <None Include="Resources\185102_receipt_shopping_icon.png" />
     <Content Include="Resources\5120875_butter_creamy_dairy_food_ingredient_icon.png" />
     <None Include="Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png" />
   </ItemGroup>

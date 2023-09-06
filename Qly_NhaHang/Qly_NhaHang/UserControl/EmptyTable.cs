@@ -17,15 +17,20 @@ namespace Qly_NhaHang.UserControl
     {
         private int _idBan;
         string loggedInIdNV = frmLogin.LoggedInIdNV;
+        BAN _ban = new BAN();
+        private BusyTable _billTable;
+
+
         public EmptyTable()
         {
             InitializeComponent();
+            _billTable = new BusyTable();
         }
 
-        
-        BAN _ban = new BAN();
-       
-
+        private void EmptyTable_Load(object sender, EventArgs e)
+        {
+            _ban = new BAN();
+        }
         public void SetTableData(Tablee table)
         {
             // Cập nhật giao diện với dữ liệu từ bàn (table)
@@ -53,13 +58,16 @@ namespace Qly_NhaHang.UserControl
                     DateCheckIn = currentTime,
                     id_Table = id_Table,
                     id_NV = id_NV,
-                    status_Bill = 1, // Đang có khách (tùy theo thiết kế cơ sở dữ liệu của bạn)
-                                     // Nếu bạn có khả năng tính giảm giá (discount) thì gán giá trị cho discount_Bill ở đây
+                    status_Bill = 0, // Đang có khách (tùy theo thiết kế cơ sở dữ liệu của bạn)                                  
                 };
 
                 // Thêm Bill mới vào cơ sở dữ liệu
                 context.Bills.Add(newBill);
                 context.SaveChanges();
+
+                int idBill = newBill.id_Bill;
+                _billTable.SetBillData(newBill);// Truyền thông tin Bill sang BusyTable
+
             }
 
             frmOrder f = new frmOrder();
@@ -77,11 +85,10 @@ namespace Qly_NhaHang.UserControl
             this.Hide();
             f.ShowDialog();
             this.Show();
+            (this.ParentForm as frmListTable)?.loadAll();
         }
 
-        private void EmptyTable_Load(object sender, EventArgs e)
-        {
-            _ban = new BAN();
-        }
+       
+
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblIDBILL = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.PictureBox();
@@ -38,7 +39,7 @@
             this.flpnFoodMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gctBill = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvBill = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameFood = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contityFood = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -50,13 +51,14 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctBill)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.lblIDBILL);
             this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnBack);
@@ -65,6 +67,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1944, 72);
             this.panel2.TabIndex = 2;
+            // 
+            // lblIDBILL
+            // 
+            this.lblIDBILL.AutoSize = true;
+            this.lblIDBILL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDBILL.ForeColor = System.Drawing.Color.White;
+            this.lblIDBILL.Location = new System.Drawing.Point(933, 20);
+            this.lblIDBILL.Name = "lblIDBILL";
+            this.lblIDBILL.Size = new System.Drawing.Size(78, 32);
+            this.lblIDBILL.TabIndex = 6;
+            this.lblIDBILL.Text = "label2";
             // 
             // lblID
             // 
@@ -98,6 +111,7 @@
             this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBack.TabIndex = 3;
             this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panel1
             // 
@@ -134,24 +148,25 @@
             // 
             this.gctBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctBill.Location = new System.Drawing.Point(0, 57);
-            this.gctBill.MainView = this.gridView1;
+            this.gctBill.MainView = this.gvBill;
             this.gctBill.Name = "gctBill";
             this.gctBill.Size = new System.Drawing.Size(464, 858);
             this.gctBill.TabIndex = 33;
             this.gctBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvBill});
             // 
-            // gridView1
+            // gvBill
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvBill.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.nameFood,
             this.contityFood});
-            this.gridView1.GridControl = this.gctBill;
-            this.gridView1.Name = "gridView1";
+            this.gvBill.GridControl = this.gctBill;
+            this.gvBill.Name = "gvBill";
             // 
             // nameFood
             // 
             this.nameFood.Caption = "Tên món ăn";
+            this.nameFood.FieldName = "name_Food";
             this.nameFood.MinWidth = 30;
             this.nameFood.Name = "nameFood";
             this.nameFood.Visible = true;
@@ -161,6 +176,7 @@
             // contityFood
             // 
             this.contityFood.Caption = "Số lượng";
+            this.contityFood.FieldName = "count_Food";
             this.contityFood.MinWidth = 30;
             this.contityFood.Name = "contityFood";
             this.contityFood.Visible = true;
@@ -303,7 +319,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctBill)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBill)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -322,10 +338,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.FlowLayoutPanel flpnFoodMenu;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblIDBILL;
         private DevExpress.XtraGrid.GridControl gctBill;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvBill;
         private DevExpress.XtraGrid.Columns.GridColumn nameFood;
         private DevExpress.XtraGrid.Columns.GridColumn contityFood;
-        private System.Windows.Forms.Label lblID;
     }
 }

@@ -14,43 +14,54 @@ namespace Qly_NhaHang.UserControl
 {
     public partial class BusyTable : DevExpress.XtraEditors.XtraUserControl
     {
-        private int _idbill;
+        private int _idBill;
+        private int _idTable;
+
+        public int IdTable { get => _idTable; set => _idTable = value; }
+
         public BusyTable()
         {
             InitializeComponent();
         }
-
-        Bill_DAO _bill = new Bill_DAO();
-        public void SetTableData(Tablee table)
+      
+        private void BusyTable_Load(object sender, EventArgs e)
         {
-            // Cập nhật giao diện với dữ liệu từ bàn (table)
-            lblnameTable.Text = table.name_Table;
-            lblseatsTable.Text = table.seats_Table.ToString();
-            // Cập nhật các thông tin khác tương ứng
-           
 
         }
 
         public void SetBillData(Bill bill)
         {
-            _idbill = bill.id_Bill;
+            _idBill = bill.id_Bill;
         }
+
+
+        public void SetTableData(Tablee table)
+        {
+            lblnameTable.Text = table.name_Table; // Cập nhật giao diện với dữ liệu từ bàn (table)
+            lblseatsTable.Text = table.seats_Table.ToString();// Cập nhật các thông tin khác tương ứng
+            IdTable = table.id_Table;
+            _idBill = new Bill_DAO().getIdBillByIDBan(IdTable);
+        }
+
+
+
 
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            int id_bill = _idbill;
+            // Tạo một thể hiện mới của frmOrder
             frmOrder f = new frmOrder();
-            f.SetIdBill(id_bill); // Truyền giá trị _idbill cho frmOrder
+
+            // Gán giá trị _idBill cho frmOrder
+            f.SetIdBill(_idBill);
+            f.SetIdBan(_idTable);
             this.Hide();
+            // Hiển thị frmOrder
             f.ShowDialog();
             this.Show();
         }
 
 
-        private void BusyTable_Load(object sender, EventArgs e)
-        {
-            _bill = new Bill_DAO();
-        }
+
     }
 }

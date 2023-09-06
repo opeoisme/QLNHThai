@@ -1,10 +1,12 @@
 ﻿using DevExpress.XtraEditors;
 using Qly_NhaHang.DAO;
+using Qly_NhaHang.Models;
 using Qly_NhaHang.UserControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +21,7 @@ namespace Qly_NhaHang
         private int _idBill;
         BAN _ban;
         Bill_DAO _bill;
-
+        private QLNHThaiEntities dbContext;
         public frmOrder()
         {
             InitializeComponent();
@@ -27,10 +29,23 @@ namespace Qly_NhaHang
             LoadCategoryFLPN();
             
         }
+        private void frmOrder_Load(object sender, EventArgs e)
+        {
+            _ban = new BAN();
+            // Cập nhật lblID.Text bằng giá trị _idBan
+            lblID.Text = _idBan.ToString();
+            _bill = new Bill_DAO();
+            lblIDBILL.Text = _idBill.ToString();
+
+            // Load dữ liệu BillInfo
+            LoadBillInfo();
+
+        }
         public void SetIdBill(int idBill)
         {
             _idBill = idBill;
         }
+
 
 
         public void SetIdBan(int idBan)
@@ -96,13 +111,26 @@ namespace Qly_NhaHang
             }
         }
 
-        private void frmOrder_Load(object sender, EventArgs e)
+        private void LoadBillInfo()
         {
-            _ban = new BAN();
-            // Cập nhật lblID.Text bằng giá trị _idBan
-            lblID.Text = _idBan.ToString();
-            _bill = new Bill_DAO();
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                var billInfoData = dbContext.Bill_Info.Where(bi => bi.id_Bill == _idBill)
+                    .Select(f => new BillInfoViewModel
+                    {
+                        id_Bill = f.id_Bill,
+                        id_BillInfo = f.id_BillInfo,
+                        count_Food = f.count_Food,
+                        id_Food = f.id_Food,
+                    })
+                    .ToList();
+                gctBill.DataSource = billInfoData;
+            }
+        }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

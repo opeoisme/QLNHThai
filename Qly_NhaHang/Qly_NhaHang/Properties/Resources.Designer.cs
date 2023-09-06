@@ -93,6 +93,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _185102_receipt_shopping_icon {
+            get {
+                object obj = ResourceManager.GetObject("_185102_receipt_shopping_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1891023_cancel_cercle_close_delete_dismiss_icon {
             get {
                 object obj = ResourceManager.GetObject("_1891023_cancel_cercle_close_delete_dismiss_icon", resourceCulture);
@@ -156,6 +166,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap _3709729_charge_extra_money_online_service_icon {
             get {
                 object obj = ResourceManager.GetObject("_3709729_charge_extra_money_online_service_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _416404_bill_receipt_icon {
+            get {
+                object obj = ResourceManager.GetObject("_416404_bill_receipt_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
