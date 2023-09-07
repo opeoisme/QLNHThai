@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DocumentFormat.OpenXml.Bibliography;
 using Qly_NhaHang.DAO;
 using Qly_NhaHang.Models;
 using Qly_NhaHang.UserControl;
@@ -17,6 +18,8 @@ namespace Qly_NhaHang
 {
     public partial class frmOrder : DevExpress.XtraEditors.XtraForm
     {
+       
+
         private int _idBan;
         private int _idBill;
         BAN _ban;
@@ -25,35 +28,30 @@ namespace Qly_NhaHang
         public frmOrder()
         {
             InitializeComponent();
-            LoadFoodFLPN();
-            LoadCategoryFLPN();
+            
             
         }
-        private void frmOrder_Load(object sender, EventArgs e)
+        public void frmOrder_Load(object sender, EventArgs e)
         {
             _ban = new BAN();
-            // Cập nhật lblID.Text bằng giá trị _idBan
-            lblID.Text = _idBan.ToString();
+            lblID.Text = _idBan.ToString(); // Cập nhật lblID.Text bằng giá trị _idBan
             _bill = new Bill_DAO();
             lblIDBILL.Text = _idBill.ToString();
-
-            // Load dữ liệu BillInfo
-            LoadBillInfo();
-
+            LoadFoodFLPN();
+            LoadCategoryFLPN();
+            LoadBillInfo();  // Load dữ liệu BillInfo
         }
         public void SetIdBill(int idBill)
         {
             _idBill = idBill;
         }
 
-
-
         public void SetIdBan(int idBan)
         {
             _idBan = idBan;
         }
 
-        private void LoadCategoryFLPN()
+        public void LoadCategoryFLPN()
         {
             using (var context = new QLNHThaiEntities()) // Thay "YourDbContext" bằng context của bạn
             {
@@ -91,12 +89,13 @@ namespace Qly_NhaHang
                 foreach (var food in foodsInCategory)
                 {
                     // Tạo và thêm User Control hiển thị thông tin món ăn (Food) vào flpnFood
-                    uctFood foodControl = new uctFood(food.name_Food, food.price_Food);
+                    uctFood foodControl = new uctFood(food.name_Food, food.price_Food, _idBill, GetFoodCount(food.id_Food));
+                    
                     flpnFoodMenu.Controls.Add(foodControl);
                 }
             }
         }
-        private void LoadFoodFLPN()
+        public void LoadFoodFLPN()
         {
             using (var context = new QLNHThaiEntities())
             {
@@ -105,13 +104,13 @@ namespace Qly_NhaHang
                 foreach (var monAn in FoodList)
                 {
                     // Tạo instance của user control và thêm vào FlowLayoutPanel
-                    var Foodct = new uctFood(monAn.name_Food, monAn.price_Food);
+                    var Foodct = new uctFood(monAn.name_Food, monAn.price_Food, _idBill,  GetFoodCount(monAn.id_Food));
                     flpnFoodMenu.Controls.Add(Foodct);
                 }
             }
         }
 
-        private void LoadBillInfo()
+        public void LoadBillInfo()
         {
             using (var dbContext = new QLNHThaiEntities())
             {
@@ -128,9 +127,41 @@ namespace Qly_NhaHang
             }
         }
 
+
+        public int GetFoodCount(int foodId)
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                var billInfoData = dbContext.Bill_Info
+                    .Where(bi => bi.id_Bill == _idBill && bi.id_Food == foodId)
+                    .Select(f => f.count_Food)
+                    .FirstOrDefault();
+
+                return billInfoData;
+            }
+        }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        public void LoadFoodFLPNTest()
+        {
+            flpnFoodMenu.Controls.Clear(); // Xóa hết các user control cũ trước khi tải dữ liệu mới
+
+            using (var context = new QLNHThaiEntities())
+            {
+                var FoodList = context.Foods.Where(food => food.condition_Food == "Được sử dụng").ToList();
+
+                foreach (var monAn in FoodList)
+                {
+                    // Tạo instance của user control và thêm vào FlowLayoutPanel
+                    var Foodct = new uctFood(monAn.name_Food, monAn.price_Food, _idBill, GetFoodCount(monAn.id_Food));
+                    flpnFoodMenu.Controls.Add(Foodct);
+                }
+            }
         }
     }
 }

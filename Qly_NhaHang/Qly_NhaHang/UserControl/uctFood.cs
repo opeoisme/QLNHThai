@@ -16,10 +16,18 @@ namespace Qly_NhaHang.UserControl
 {
     public partial class uctFood : DevExpress.XtraEditors.XtraUserControl 
     {
-        
-        public uctFood(string nameFood, double priceFood)
+        private int idBill;
+        private string nameFood;
+        private double priceFood;
+        private int foodCount;
+
+        public uctFood(string nameFood, double priceFood, int _idBill, int foodCount)
         {
             InitializeComponent();
+            this.nameFood = nameFood;
+            this.priceFood = priceFood;
+            this.idBill = _idBill;
+            this.foodCount = foodCount;
             lblFoodName.Text = nameFood ;
             lblPrice.Text = priceFood.ToString("c");
 
@@ -38,7 +46,15 @@ namespace Qly_NhaHang.UserControl
                     // Load ảnh mặc định từ tài nguyên
                     imageFood.Image = Properties.Resources.Food0;
                 }
-                }
-        } 
+            }
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            frmPickFood pickFoodForm = new frmPickFood(nameFood, priceFood, idBill, foodCount);
+            pickFoodForm.ShowDialog();
+        }
+
+        
     }
 }

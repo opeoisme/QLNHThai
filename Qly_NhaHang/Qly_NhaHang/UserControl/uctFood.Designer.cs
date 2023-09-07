@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblFoodName = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.imageFood = new System.Windows.Forms.PictureBox();
+            this.ctmntFood = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnAddFood = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.imageFood)).BeginInit();
+            this.ctmntFood.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFoodName
@@ -56,6 +60,7 @@
             // 
             // imageFood
             // 
+            this.imageFood.ContextMenuStrip = this.ctmntFood;
             this.imageFood.Image = global::Qly_NhaHang.Properties.Resources.Food0;
             this.imageFood.Location = new System.Drawing.Point(30, 3);
             this.imageFood.Name = "imageFood";
@@ -63,6 +68,21 @@
             this.imageFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageFood.TabIndex = 21;
             this.imageFood.TabStop = false;
+            // 
+            // ctmntFood
+            // 
+            this.ctmntFood.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.ctmntFood.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddFood});
+            this.ctmntFood.Name = "ctmntFood";
+            this.ctmntFood.Size = new System.Drawing.Size(171, 36);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(170, 32);
+            this.btnAddFood.Text = "Thêm món";
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // uctFood
             // 
@@ -74,6 +94,7 @@
             this.Name = "uctFood";
             this.Size = new System.Drawing.Size(302, 218);
             ((System.ComponentModel.ISupportInitialize)(this.imageFood)).EndInit();
+            this.ctmntFood.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,5 +104,7 @@
         private System.Windows.Forms.Label lblFoodName;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.PictureBox imageFood;
+        private System.Windows.Forms.ContextMenuStrip ctmntFood;
+        private System.Windows.Forms.ToolStripMenuItem btnAddFood;
     }
 }
