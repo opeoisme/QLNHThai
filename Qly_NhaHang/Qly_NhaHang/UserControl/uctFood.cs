@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DocumentFormat.OpenXml.Vml;
 using Qly_NhaHang.Models;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,8 @@ namespace Qly_NhaHang.UserControl
             this.idBill = _idBill;
             this.foodCount = foodCount;
             lblFoodName.Text = nameFood ;
-            lblPrice.Text = priceFood.ToString("c");
+          //  lblPrice.Text = priceFood.ToString("c");
+            lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceFood);
 
             using (var dbContext = new QLNHThaiEntities()) // Thay thế YourDbContext bằng tên DbContext của bạn
             {
@@ -55,6 +57,16 @@ namespace Qly_NhaHang.UserControl
             pickFoodForm.ShowDialog();
         }
 
-        
+        private void imageFood_Click(object sender, EventArgs e)
+        {
+            frmPickFood pickFoodForm = new frmPickFood(nameFood, priceFood, idBill, foodCount);
+            pickFoodForm.ShowDialog();
+        }
+
+        private void uctFood_Click(object sender, EventArgs e)
+        {
+            frmPickFood pickFoodForm = new frmPickFood(nameFood, priceFood, idBill, foodCount);
+            pickFoodForm.ShowDialog();
+        }
     }
 }

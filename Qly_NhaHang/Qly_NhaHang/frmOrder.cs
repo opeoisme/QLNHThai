@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using DocumentFormat.OpenXml.Bibliography;
 using Qly_NhaHang.DAO;
 using Qly_NhaHang.Models;
@@ -18,8 +19,6 @@ namespace Qly_NhaHang
 {
     public partial class frmOrder : DevExpress.XtraEditors.XtraForm
     {
-       
-
         private int _idBan;
         private int _idBill;
         BAN _ban;
@@ -28,8 +27,8 @@ namespace Qly_NhaHang
         public frmOrder()
         {
             InitializeComponent();
-            
-            
+            InitializeGridViewOptions();
+
         }
         public void frmOrder_Load(object sender, EventArgs e)
         {
@@ -41,6 +40,8 @@ namespace Qly_NhaHang
             LoadCategoryFLPN();
             LoadBillInfo();  // Load dữ liệu BillInfo
         }
+
+        #region method
         public void SetIdBill(int idBill)
         {
             _idBill = idBill;
@@ -49,6 +50,12 @@ namespace Qly_NhaHang
         public void SetIdBan(int idBan)
         {
             _idBan = idBan;
+        }
+
+        private void InitializeGridViewOptions()
+        {
+            GridView gridView = gctBill.MainView as GridView;
+            gridView.OptionsBehavior.ReadOnly = true;
         }
 
         public void LoadCategoryFLPN()
@@ -71,12 +78,7 @@ namespace Qly_NhaHang
                 }
             }
         }
-        private void CategoryButton_Click(object sender, EventArgs e)
-        {
-            Button clickedButton = (Button)sender;
-            int categoryId = (int)clickedButton.Tag;
-            DisplayFoodsByCategory(categoryId);
-        }
+
 
         private void DisplayFoodsByCategory(int categoryId)
         {
@@ -90,7 +92,7 @@ namespace Qly_NhaHang
                 {
                     // Tạo và thêm User Control hiển thị thông tin món ăn (Food) vào flpnFood
                     uctFood foodControl = new uctFood(food.name_Food, food.price_Food, _idBill, GetFoodCount(food.id_Food));
-                    
+
                     flpnFoodMenu.Controls.Add(foodControl);
                 }
             }
@@ -104,7 +106,7 @@ namespace Qly_NhaHang
                 foreach (var monAn in FoodList)
                 {
                     // Tạo instance của user control và thêm vào FlowLayoutPanel
-                    var Foodct = new uctFood(monAn.name_Food, monAn.price_Food, _idBill,  GetFoodCount(monAn.id_Food));
+                    var Foodct = new uctFood(monAn.name_Food, monAn.price_Food, _idBill, GetFoodCount(monAn.id_Food));
                     flpnFoodMenu.Controls.Add(Foodct);
                 }
             }
@@ -124,9 +126,13 @@ namespace Qly_NhaHang
                     })
                     .ToList();
                 gctBill.DataSource = billInfoData;
+
+                double total = CalculateTotalPrice();
+
+
+              lblTotalPrice.Text = String.Format("{0:0,0 vnđ}", total);
             }
         }
-
 
         public int GetFoodCount(int foodId)
         {
@@ -140,12 +146,6 @@ namespace Qly_NhaHang
                 return billInfoData;
             }
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
 
         public void LoadFoodFLPNTest()
         {
@@ -162,6 +162,47 @@ namespace Qly_NhaHang
                     flpnFoodMenu.Controls.Add(Foodct);
                 }
             }
+        }
+
+        public double CalculateTotalPrice()
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                var billInfoData = dbContext.Bill_Info
+                    .Where(bi => bi.id_Bill == _idBill)
+                    .Join(dbContext.Foods, bi => bi.id_Food, food => food.id_Food, (bi, food) => new { bi.count_Food, food.price_Food })
+                    .ToList();
+
+                double total = billInfoData.Sum(item => item.count_Food * item.price_Food);
+                return total;
+            }
+        }
+
+
+        #endregion
+
+        #region events
+        private void CategoryButton_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            int categoryId = (int)clickedButton.Tag;
+            DisplayFoodsByCategory(categoryId);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            double total = CalculateTotalPrice();
+            frmThanhToan thanhToanForm = new frmThanhToan(_idBill, total);
+            this.Hide();
+            thanhToanForm.ShowDialog();
+            this.Show();
         }
     }
 }

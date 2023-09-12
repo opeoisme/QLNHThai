@@ -1,5 +1,5 @@
 ﻿using DevExpress.Utils.Win.Hook;
-
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +43,7 @@ namespace Qly_NhaHang
             {
                 // Đăng nhập thành công
                 LoggedInIdNV = idNV;
-                MessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadFormData();
                 nhanvien.name_NV = nhanvien.name_NV.ToString();
                 nhanvien.type_NV = nhanvien.type_NV.ToString();
@@ -55,12 +55,12 @@ namespace Qly_NhaHang
             else if (nhanvien != null && nhanvien.condition_NV != "Làm việc")
             {
                 // Người dùng đã nghỉ việc
-                MessageBox.Show("Tài khoản này đã nghỉ việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Tài khoản này đã nghỉ việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 // Đăng nhập thất bại
-                MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -80,7 +80,7 @@ namespace Qly_NhaHang
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dl = MessageBox.Show("Bạn có muốn thoát không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dl = XtraMessageBox.Show("Bạn có muốn thoát không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dl != DialogResult.Yes)
             {
                 e.Cancel = true;

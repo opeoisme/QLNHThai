@@ -28,15 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetTable));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.ctmnSetTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnInsertBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnProfileTable = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCancle = new System.Windows.Forms.ToolStripMenuItem();
             this.lblStatusTable = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblseatsTable = new DevExpress.XtraEditors.LabelControl();
             this.lblnameTable = new DevExpress.XtraEditors.LabelControl();
             this.panel1.SuspendLayout();
+            this.ctmnSetTable.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +66,7 @@
             this.btnPick.AllowZooming = true;
             this.btnPick.AllowZoomingOnFocus = false;
             this.btnPick.BackColor = System.Drawing.Color.Transparent;
+            this.btnPick.ContextMenuStrip = this.ctmnSetTable;
             this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
@@ -85,6 +92,40 @@
             this.btnPick.WaitOnLoad = false;
             this.btnPick.Zoom = 10;
             this.btnPick.ZoomSpeed = 10;
+            // 
+            // ctmnSetTable
+            // 
+            this.ctmnSetTable.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.ctmnSetTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnInsertBill,
+            this.btnProfileTable,
+            this.btnCancle});
+            this.ctmnSetTable.Name = "ctmnSetTable";
+            this.ctmnSetTable.Size = new System.Drawing.Size(249, 133);
+            // 
+            // btnInsertBill
+            // 
+            this.btnInsertBill.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
+            this.btnInsertBill.Name = "btnInsertBill";
+            this.btnInsertBill.Size = new System.Drawing.Size(248, 32);
+            this.btnInsertBill.Text = "Nhận bàn";
+            this.btnInsertBill.Click += new System.EventHandler(this.btnInsertBill_Click);
+            // 
+            // btnProfileTable
+            // 
+            this.btnProfileTable.Image = global::Qly_NhaHang.Properties.Resources._1591871_booking_hotel_social_icon;
+            this.btnProfileTable.Name = "btnProfileTable";
+            this.btnProfileTable.Size = new System.Drawing.Size(248, 32);
+            this.btnProfileTable.Text = "Thông tin đặt bàn";
+            this.btnProfileTable.Click += new System.EventHandler(this.btnProfileTable_Click);
+            // 
+            // btnCancle
+            // 
+            this.btnCancle.Image = global::Qly_NhaHang.Properties.Resources.cancle;
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(248, 32);
+            this.btnCancle.Text = "Hủy bàn";
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
             // lblStatusTable
             // 
@@ -156,6 +197,7 @@
             this.Size = new System.Drawing.Size(309, 212);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.ctmnSetTable.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -171,5 +213,9 @@
         private DevExpress.XtraEditors.LabelControl lblseatsTable;
         private DevExpress.XtraEditors.LabelControl lblnameTable;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.ContextMenuStrip ctmnSetTable;
+        private System.Windows.Forms.ToolStripMenuItem btnInsertBill;
+        private System.Windows.Forms.ToolStripMenuItem btnProfileTable;
+        private System.Windows.Forms.ToolStripMenuItem btnCancle;
     }
 }

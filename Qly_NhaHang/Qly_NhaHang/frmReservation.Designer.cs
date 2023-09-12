@@ -34,7 +34,7 @@
             this.btnCSVReservation = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gctReservation = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvReservation = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.idReservation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameGuest = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateReservation = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,7 +43,7 @@
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctReservation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvReservation)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -97,23 +97,33 @@
             // 
             this.gctReservation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctReservation.Location = new System.Drawing.Point(0, 0);
-            this.gctReservation.MainView = this.gridView1;
+            this.gctReservation.MainView = this.gvReservation;
             this.gctReservation.Name = "gctReservation";
             this.gctReservation.Size = new System.Drawing.Size(1942, 648);
             this.gctReservation.TabIndex = 1;
             this.gctReservation.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvReservation});
             // 
-            // gridView1
+            // gvReservation
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvReservation.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black;
+            this.gvReservation.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvReservation.Appearance.GroupRow.BackColor = System.Drawing.Color.Black;
+            this.gvReservation.Appearance.GroupRow.BackColor2 = System.Drawing.Color.Black;
+            this.gvReservation.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gvReservation.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Black;
+            this.gvReservation.Appearance.HeaderPanel.BackColor2 = System.Drawing.Color.Black;
+            this.gvReservation.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvReservation.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvReservation.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gvReservation.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.idReservation,
             this.nameGuest,
             this.dateReservation,
             this.phoneGuest,
             this.idTable});
-            this.gridView1.GridControl = this.gctReservation;
-            this.gridView1.Name = "gridView1";
+            this.gvReservation.GridControl = this.gctReservation;
+            this.gvReservation.Name = "gvReservation";
             // 
             // idReservation
             // 
@@ -174,11 +184,13 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmReservation";
             this.Text = "Danh sách phiếu đặt bàn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmReservation_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctReservation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvReservation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,7 +204,7 @@
         private System.Windows.Forms.ToolStripButton btnCSVReservation;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.GridControl gctReservation;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvReservation;
         private DevExpress.XtraGrid.Columns.GridColumn idReservation;
         private DevExpress.XtraGrid.Columns.GridColumn nameGuest;
         private DevExpress.XtraGrid.Columns.GridColumn dateReservation;

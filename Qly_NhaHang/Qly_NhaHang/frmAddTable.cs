@@ -24,7 +24,7 @@ namespace Qly_NhaHang
         {
             if (string.IsNullOrEmpty(txbNameTable.Text) || nmrSeatsTable.Value <= 1 )
             {
-                MessageBox.Show("Vui lòng nhập thông tin hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Vui lòng nhập thông tin hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Tablee newTable = new Tablee
@@ -42,7 +42,7 @@ namespace Qly_NhaHang
                 dbContext.Tablees.Add(newTable);
                 dbContext.SaveChanges();
 
-                MessageBox.Show("Thêm mới bàn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Thêm mới bàn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 if (Application.OpenForms["frmTable"] is frmTable tableForm)
                 {
@@ -51,7 +51,7 @@ namespace Qly_NhaHang
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thêm danh sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Lỗi khi thêm danh sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

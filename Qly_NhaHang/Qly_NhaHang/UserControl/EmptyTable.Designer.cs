@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmptyTable));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStatusTable = new DevExpress.XtraEditors.LabelControl();
+            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
             this.ctmntOption = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnInsertBIll = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReservationTable = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblseatsTable = new DevExpress.XtraEditors.LabelControl();
             this.lblnameTable = new DevExpress.XtraEditors.LabelControl();
-            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.btnInsertBIll = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.ctmntOption.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,6 +68,42 @@
             this.lblStatusTable.TabIndex = 8;
             this.lblStatusTable.Text = "Bàn trống";
             // 
+            // btnPick
+            // 
+            this.btnPick.ActiveImage = null;
+            this.btnPick.AllowAnimations = true;
+            this.btnPick.AllowBuffering = false;
+            this.btnPick.AllowToggling = false;
+            this.btnPick.AllowZooming = true;
+            this.btnPick.AllowZoomingOnFocus = false;
+            this.btnPick.BackColor = System.Drawing.Color.Transparent;
+            this.btnPick.ContextMenuStrip = this.ctmntOption;
+            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
+            this.btnPick.FadeWhenInactive = false;
+            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources.icons8_option_64;
+            this.btnPick.ImageActive = null;
+            this.btnPick.ImageLocation = null;
+            this.btnPick.ImageMargin = 10;
+            this.btnPick.ImageSize = new System.Drawing.Size(45, 47);
+            this.btnPick.ImageZoomSize = new System.Drawing.Size(55, 57);
+            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
+            this.btnPick.Location = new System.Drawing.Point(254, 0);
+            this.btnPick.Name = "btnPick";
+            this.btnPick.Rotation = 0;
+            this.btnPick.ShowActiveImage = true;
+            this.btnPick.ShowCursorChanges = true;
+            this.btnPick.ShowImageBorders = true;
+            this.btnPick.ShowSizeMarkers = false;
+            this.btnPick.Size = new System.Drawing.Size(55, 57);
+            this.btnPick.TabIndex = 1;
+            this.btnPick.ToolTipText = "";
+            this.btnPick.WaitOnLoad = false;
+            this.btnPick.Zoom = 10;
+            this.btnPick.ZoomSpeed = 10;
+            // 
             // ctmntOption
             // 
             this.ctmntOption.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -75,15 +111,24 @@
             this.btnInsertBIll,
             this.btnReservationTable});
             this.ctmntOption.Name = "ctmntOption";
-            this.ctmntOption.Size = new System.Drawing.Size(194, 68);
+            this.ctmntOption.Size = new System.Drawing.Size(249, 101);
             this.ctmntOption.Text = "Option";
+            // 
+            // btnInsertBIll
+            // 
+            this.btnInsertBIll.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
+            this.btnInsertBIll.Name = "btnInsertBIll";
+            this.btnInsertBIll.Size = new System.Drawing.Size(248, 32);
+            this.btnInsertBIll.Text = "Tạo hóa đơn";
+            this.btnInsertBIll.Click += new System.EventHandler(this.btnInsertBIll_Click);
             // 
             // btnReservationTable
             // 
             this.btnReservationTable.Image = global::Qly_NhaHang.Properties.Resources.dinner_table;
             this.btnReservationTable.Name = "btnReservationTable";
-            this.btnReservationTable.Size = new System.Drawing.Size(193, 32);
+            this.btnReservationTable.Size = new System.Drawing.Size(248, 32);
             this.btnReservationTable.Text = "Đặt bàn";
+            this.btnReservationTable.Click += new System.EventHandler(this.btnReservationTable_Click);
             // 
             // panel2
             // 
@@ -131,50 +176,6 @@
             this.lblnameTable.Size = new System.Drawing.Size(116, 47);
             this.lblnameTable.TabIndex = 10;
             this.lblnameTable.Text = "Tên bàn";
-            // 
-            // btnPick
-            // 
-            this.btnPick.ActiveImage = null;
-            this.btnPick.AllowAnimations = true;
-            this.btnPick.AllowBuffering = false;
-            this.btnPick.AllowToggling = false;
-            this.btnPick.AllowZooming = true;
-            this.btnPick.AllowZoomingOnFocus = false;
-            this.btnPick.BackColor = System.Drawing.Color.Transparent;
-            this.btnPick.ContextMenuStrip = this.ctmntOption;
-            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
-            this.btnPick.FadeWhenInactive = false;
-            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources.icons8_option_64;
-            this.btnPick.ImageActive = null;
-            this.btnPick.ImageLocation = null;
-            this.btnPick.ImageMargin = 10;
-            this.btnPick.ImageSize = new System.Drawing.Size(45, 47);
-            this.btnPick.ImageZoomSize = new System.Drawing.Size(55, 57);
-            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
-            this.btnPick.Location = new System.Drawing.Point(254, 0);
-            this.btnPick.Name = "btnPick";
-            this.btnPick.Rotation = 0;
-            this.btnPick.ShowActiveImage = true;
-            this.btnPick.ShowCursorChanges = true;
-            this.btnPick.ShowImageBorders = true;
-            this.btnPick.ShowSizeMarkers = false;
-            this.btnPick.Size = new System.Drawing.Size(55, 57);
-            this.btnPick.TabIndex = 1;
-            this.btnPick.ToolTipText = "";
-            this.btnPick.WaitOnLoad = false;
-            this.btnPick.Zoom = 10;
-            this.btnPick.ZoomSpeed = 10;
-            // 
-            // btnInsertBIll
-            // 
-            this.btnInsertBIll.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
-            this.btnInsertBIll.Name = "btnInsertBIll";
-            this.btnInsertBIll.Size = new System.Drawing.Size(193, 32);
-            this.btnInsertBIll.Text = "Tạo hóa đơn";
-            this.btnInsertBIll.Click += new System.EventHandler(this.btnInsertBIll_Click);
             // 
             // EmptyTable
             // 

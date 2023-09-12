@@ -8,7 +8,6 @@
     <Property Name="DateCheckIn" Type="date" Nullable="false" />
     <Property Name="DateCheckOut" Type="date" />
     <Property Name="id_Table" Type="int" Nullable="false" />
-    <Property Name="discount_Bill" Type="int" />
     <Property Name="status_Bill" Type="int" Nullable="false" />
     <Property Name="id_NV" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="totalPrice_Bill" Type="float" />
@@ -39,6 +38,7 @@
     <Property Name="name_Discount" Type="nvarchar(max)" Nullable="false" />
     <Property Name="percent_Discount" Type="int" Nullable="false" />
     <Property Name="type_Discount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="condition_Discount" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Food">
     <Key>
@@ -126,18 +126,6 @@
     <Property Name="seats_Table" Type="int" />
     <Property Name="condition_Table" Type="nvarchar(max)" />
   </EntityType>
-  <Association Name="FK__Bill__discount_B__59063A47">
-    <End Role="Discount" Type="Self.Discount" Multiplicity="0..1" />
-    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Discount">
-        <PropertyRef Name="id_Discount" />
-      </Principal>
-      <Dependent Role="Bill">
-        <PropertyRef Name="discount_Bill" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Bill__id_NV__5812160E">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
@@ -283,10 +271,6 @@
     <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tablee" EntityType="Self.Tablee" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Bill__discount_B__59063A47" Association="Self.FK__Bill__discount_B__59063A47">
-      <End Role="Discount" EntitySet="Discount" />
-      <End Role="Bill" EntitySet="Bill" />
-    </AssociationSet>
     <AssociationSet Name="FK__Bill__id_NV__5812160E" Association="Self.FK__Bill__id_NV__5812160E">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="Bill" EntitySet="Bill" />

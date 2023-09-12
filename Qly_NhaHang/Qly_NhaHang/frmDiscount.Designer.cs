@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDiscount));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddDiscount = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteDiscount = new System.Windows.Forms.ToolStripButton();
@@ -46,6 +46,8 @@
             this.btnPDFDiscount = new System.Windows.Forms.ToolStripButton();
             this.btnCSVDiscount = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbConditionDiscount = new System.Windows.Forms.ComboBox();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cbbTypeDiscount = new System.Windows.Forms.ComboBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.nmrPercentDiscount = new System.Windows.Forms.NumericUpDown();
@@ -62,6 +64,7 @@
             this.nameDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.percentDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.typeDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.conditionDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrPercentDiscount)).BeginInit();
@@ -96,6 +99,7 @@
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(84, 29);
             this.btnAddDiscount.Text = "Thêm";
+            this.btnAddDiscount.Click += new System.EventHandler(this.btnAddDiscount_Click);
             // 
             // btnDeleteDiscount
             // 
@@ -104,6 +108,7 @@
             this.btnDeleteDiscount.Name = "btnDeleteDiscount";
             this.btnDeleteDiscount.Size = new System.Drawing.Size(71, 29);
             this.btnDeleteDiscount.Text = "Xóa";
+            this.btnDeleteDiscount.Click += new System.EventHandler(this.btnDeleteDiscount_Click);
             // 
             // btnReloadDiscount
             // 
@@ -112,6 +117,7 @@
             this.btnReloadDiscount.Name = "btnReloadDiscount";
             this.btnReloadDiscount.Size = new System.Drawing.Size(119, 29);
             this.btnReloadDiscount.Text = "Khôi phục";
+            this.btnReloadDiscount.Click += new System.EventHandler(this.btnReloadDiscount_Click);
             // 
             // btnUpdateDiscount
             // 
@@ -120,6 +126,7 @@
             this.btnUpdateDiscount.Name = "btnUpdateDiscount";
             this.btnUpdateDiscount.Size = new System.Drawing.Size(70, 29);
             this.btnUpdateDiscount.Text = "Sửa";
+            this.btnUpdateDiscount.Click += new System.EventHandler(this.btnUpdateDiscount_Click);
             // 
             // btnLoadDiscount
             // 
@@ -137,6 +144,7 @@
             this.btnPDFDiscount.Name = "btnPDFDiscount";
             this.btnPDFDiscount.Size = new System.Drawing.Size(72, 29);
             this.btnPDFDiscount.Text = "PDF";
+            this.btnPDFDiscount.Click += new System.EventHandler(this.btnPDFDiscount_Click);
             // 
             // btnCSVDiscount
             // 
@@ -145,9 +153,12 @@
             this.btnCSVDiscount.Name = "btnCSVDiscount";
             this.btnCSVDiscount.Size = new System.Drawing.Size(72, 29);
             this.btnCSVDiscount.Text = "CSV";
+            this.btnCSVDiscount.Click += new System.EventHandler(this.btnCSVDiscount_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbbConditionDiscount);
+            this.panel1.Controls.Add(this.labelControl5);
             this.panel1.Controls.Add(this.cbbTypeDiscount);
             this.panel1.Controls.Add(this.labelControl4);
             this.panel1.Controls.Add(this.nmrPercentDiscount);
@@ -163,22 +174,43 @@
             this.panel1.Size = new System.Drawing.Size(1944, 151);
             this.panel1.TabIndex = 3;
             // 
+            // cbbConditionDiscount
+            // 
+            this.cbbConditionDiscount.FormattingEnabled = true;
+            this.cbbConditionDiscount.Items.AddRange(new object[] {
+            "Được áp dụng",
+            "Hết chương trình"});
+            this.cbbConditionDiscount.Location = new System.Drawing.Point(890, 104);
+            this.cbbConditionDiscount.Name = "cbbConditionDiscount";
+            this.cbbConditionDiscount.Size = new System.Drawing.Size(346, 27);
+            this.cbbConditionDiscount.TabIndex = 42;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(757, 100);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(86, 26);
+            this.labelControl5.TabIndex = 41;
+            this.labelControl5.Text = "Tình trạng";
+            // 
             // cbbTypeDiscount
             // 
             this.cbbTypeDiscount.FormattingEnabled = true;
             this.cbbTypeDiscount.Items.AddRange(new object[] {
             "Phụ thu",
             "Giảm giá"});
-            this.cbbTypeDiscount.Location = new System.Drawing.Point(890, 106);
+            this.cbbTypeDiscount.Location = new System.Drawing.Point(376, 99);
             this.cbbTypeDiscount.Name = "cbbTypeDiscount";
-            this.cbbTypeDiscount.Size = new System.Drawing.Size(346, 27);
+            this.cbbTypeDiscount.Size = new System.Drawing.Size(203, 27);
             this.cbbTypeDiscount.TabIndex = 40;
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(757, 102);
+            this.labelControl4.Location = new System.Drawing.Point(314, 100);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(36, 26);
             this.labelControl4.TabIndex = 39;
@@ -193,7 +225,7 @@
             0,
             0});
             this.nmrPercentDiscount.Name = "nmrPercentDiscount";
-            this.nmrPercentDiscount.Size = new System.Drawing.Size(387, 27);
+            this.nmrPercentDiscount.Size = new System.Drawing.Size(92, 27);
             this.nmrPercentDiscount.TabIndex = 38;
             this.nmrPercentDiscount.Value = new decimal(new int[] {
             5,
@@ -209,7 +241,7 @@
             this.bunifuPictureBox4.BorderRadius = 12;
             this.bunifuPictureBox4.Image = global::Qly_NhaHang.Properties.Resources.icons8_percent_24;
             this.bunifuPictureBox4.IsCircle = true;
-            this.bunifuPictureBox4.Location = new System.Drawing.Point(555, 102);
+            this.bunifuPictureBox4.Location = new System.Drawing.Point(250, 102);
             this.bunifuPictureBox4.Name = "bunifuPictureBox4";
             this.bunifuPictureBox4.Size = new System.Drawing.Size(24, 24);
             this.bunifuPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -260,26 +292,26 @@
             this.txbNameDiscount.Modified = false;
             this.txbNameDiscount.Multiline = false;
             this.txbNameDiscount.Name = "txbNameDiscount";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameDiscount.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameDiscount.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameDiscount.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameDiscount.OnIdleState = stateProperties4;
+            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameDiscount.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameDiscount.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameDiscount.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameDiscount.OnIdleState = stateProperties12;
             this.txbNameDiscount.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameDiscount.PasswordChar = '\0';
             this.txbNameDiscount.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -334,26 +366,26 @@
             this.txbIdDiscount.Modified = false;
             this.txbIdDiscount.Multiline = false;
             this.txbIdDiscount.Name = "txbIdDiscount";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdDiscount.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIdDiscount.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdDiscount.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdDiscount.OnIdleState = stateProperties8;
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdDiscount.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIdDiscount.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdDiscount.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdDiscount.OnIdleState = stateProperties16;
             this.txbIdDiscount.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdDiscount.PasswordChar = '\0';
             this.txbIdDiscount.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -421,9 +453,12 @@
             this.idDiscount,
             this.nameDiscount,
             this.percentDiscount,
-            this.typeDiscount});
+            this.typeDiscount,
+            this.conditionDiscount});
             this.gvDiscount.GridControl = this.gctDiscount;
             this.gvDiscount.Name = "gvDiscount";
+            this.gvDiscount.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvDiscount_CustomDrawCell);
+            this.gvDiscount.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvDiscount_FocusedRowChanged);
             // 
             // idDiscount
             // 
@@ -465,6 +500,16 @@
             this.typeDiscount.VisibleIndex = 3;
             this.typeDiscount.Width = 112;
             // 
+            // conditionDiscount
+            // 
+            this.conditionDiscount.Caption = "Tình trạng";
+            this.conditionDiscount.FieldName = "condition_Discount";
+            this.conditionDiscount.MinWidth = 30;
+            this.conditionDiscount.Name = "conditionDiscount";
+            this.conditionDiscount.Visible = true;
+            this.conditionDiscount.VisibleIndex = 4;
+            this.conditionDiscount.Width = 112;
+            // 
             // frmDiscount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -476,6 +521,7 @@
             this.Name = "frmDiscount";
             this.Text = "Danh sách phụ thu & khuyến mãi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmDiscount_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -517,5 +563,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn nameDiscount;
         private DevExpress.XtraGrid.Columns.GridColumn percentDiscount;
         private DevExpress.XtraGrid.Columns.GridColumn typeDiscount;
+        private DevExpress.XtraGrid.Columns.GridColumn conditionDiscount;
+        private System.Windows.Forms.ComboBox cbbConditionDiscount;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }

@@ -65,7 +65,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
+            this.lblID.ForeColor = System.Drawing.Color.Teal;
             this.lblID.Location = new System.Drawing.Point(410, 9);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(122, 28);

@@ -19,16 +19,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Discounts">
-      <EntityTypeMapping TypeName="QLNHThaiModel.Discount">
-        <MappingFragment StoreEntitySet="Discount">
-          <ScalarProperty Name="id_Discount" ColumnName="id_Discount" />
-          <ScalarProperty Name="name_Discount" ColumnName="name_Discount" />
-          <ScalarProperty Name="percent_Discount" ColumnName="percent_Discount" />
-          <ScalarProperty Name="type_Discount" ColumnName="type_Discount" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Imports">
       <EntityTypeMapping TypeName="QLNHThaiModel.Import">
         <MappingFragment StoreEntitySet="Import">
@@ -111,6 +101,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Discounts">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Discount">
+        <MappingFragment StoreEntitySet="Discount">
+          <ScalarProperty Name="condition_Discount" ColumnName="condition_Discount" />
+          <ScalarProperty Name="type_Discount" ColumnName="type_Discount" />
+          <ScalarProperty Name="percent_Discount" ColumnName="percent_Discount" />
+          <ScalarProperty Name="name_Discount" ColumnName="name_Discount" />
+          <ScalarProperty Name="id_Discount" ColumnName="id_Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Foods">
       <EntityTypeMapping TypeName="QLNHThaiModel.Food">
         <MappingFragment StoreEntitySet="Food">
@@ -131,7 +132,6 @@
           <ScalarProperty Name="totalPrice_Bill" ColumnName="totalPrice_Bill" />
           <ScalarProperty Name="id_NV" ColumnName="id_NV" />
           <ScalarProperty Name="status_Bill" ColumnName="status_Bill" />
-          <ScalarProperty Name="discount_Bill" ColumnName="discount_Bill" />
           <ScalarProperty Name="id_Table" ColumnName="id_Table" />
           <ScalarProperty Name="DateCheckOut" ColumnName="DateCheckOut" />
           <ScalarProperty Name="DateCheckIn" ColumnName="DateCheckIn" />

@@ -27,11 +27,7 @@ namespace Qly_NhaHang.UserControl
             InitializeComponent();
             _billTable = new BusyTable();
         }
-
-        private void EmptyTable_Load(object sender, EventArgs e)
-        {
-            _ban = new BAN();
-        }
+        #region method
         public void SetTableData(Tablee table)
         {
             // Cập nhật giao diện với dữ liệu từ bàn (table)
@@ -39,21 +35,22 @@ namespace Qly_NhaHang.UserControl
             lblseatsTable.Text = table.seats_Table.ToString();
             _idBan = table.id_Table;
         }
+        #endregion
+
+        #region events
+
+        private void EmptyTable_Load(object sender, EventArgs e)
+        {
+            _ban = new BAN();
+        }
 
         private void btnInsertBIll_Click(object sender, EventArgs e)
         {
-            // Lấy id_NV đang đăng nhập (giả sử bạn đã lưu thông tin này khi người dùng đăng nhập)
-            string id_NV = loggedInIdNV;
-
-            // Lấy thời gian hiện tại
-            DateTime currentTime = DateTime.Now;
-
-            // Lấy id_Table đang chọn
-            int id_Table = _idBan;
-
+            string id_NV = loggedInIdNV;   // Lấy id_NV đang đăng nhập
+            DateTime currentTime = DateTime.Now;  // Lấy thời gian hiện tại
+            int id_Table = _idBan;    // Lấy id_Table đang chọn
             using (var context = new QLNHThaiEntities())
-            {
-                
+            { 
                 Bill newBill = new Bill // Tạo một đối tượng Bill mới
                 {
                     DateCheckIn = currentTime,
@@ -61,14 +58,10 @@ namespace Qly_NhaHang.UserControl
                     id_NV = id_NV,
                     status_Bill = 0, // Đang có khách (tùy theo thiết kế cơ sở dữ liệu của bạn)                                  
                 };
-
-                
                 context.Bills.Add(newBill); // Thêm Bill mới vào cơ sở dữ liệu
                 context.SaveChanges();
-
                 int idBill = newBill.id_Bill;
                 _billTable.SetBillData(newBill);// Truyền thông tin Bill sang BusyTable
-
                 frmOrder f = new frmOrder();
                 f.SetIdBill(idBill);
                 f.SetIdBan(_idBan); // Gán giá trị cho _idBan trước khi mở form frmOrder
@@ -83,11 +76,17 @@ namespace Qly_NhaHang.UserControl
                 this.Show();
                 (this.ParentForm as frmListTable)?.loadAll();
             }
-
-            
         }
 
-       
-
+        private void btnReservationTable_Click(object sender, EventArgs e)
+        {
+            frmBookingTable f = new frmBookingTable();
+            f.SetIdBan(_idBan);
+            f.SetSeatsTable(lblseatsTable.Text);
+            // Hiển thị frmOrder
+            f.ShowDialog();
+           
+        }
+        #endregion
     }
 }

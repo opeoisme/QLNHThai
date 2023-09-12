@@ -27,7 +27,6 @@ namespace Qly_NhaHang
     
         public virtual DbSet<Bill_Info> Bill_Info { get; set; }
         public virtual DbSet<CategoryFood> CategoryFoods { get; set; }
-        public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<ImportInfo> ImportInfoes { get; set; }
         public virtual DbSet<Ingredient> Ingredients { get; set; }
@@ -35,6 +34,7 @@ namespace Qly_NhaHang
         public virtual DbSet<Recipe> Recipes { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Tablee> Tablees { get; set; }
+        public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }
     }

@@ -25,7 +25,7 @@ namespace Qly_NhaHang
         {
             if (string.IsNullOrEmpty(txbNameCategory.Text))
             {
-                MessageBox.Show("Vui lòng nhập thông tin hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Vui lòng nhập thông tin hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             CategoryFood newCategory = new CategoryFood
@@ -40,7 +40,7 @@ namespace Qly_NhaHang
                 dbContext.CategoryFoods.Add(newCategory);
                 dbContext.SaveChanges();
 
-                MessageBox.Show("Thêm mới danh sách thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Thêm mới danh sách thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 if (Application.OpenForms["frmCategoryFood"] is frmCategoryFood categoryForm)
                 {

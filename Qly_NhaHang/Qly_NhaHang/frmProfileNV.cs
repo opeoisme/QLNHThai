@@ -123,7 +123,7 @@ namespace Qly_NhaHang
                     db.Entry(nv).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
 
-                    MessageBox.Show("Dữ liệu đã được lưu thành công!");
+                    XtraMessageBox.Show("Dữ liệu đã được lưu thành công!");
 
                     // Đặt lại biến isImageChanged về false sau khi lưu
                     isImageChanged = false;
@@ -133,14 +133,10 @@ namespace Qly_NhaHang
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy nhân viên có mã tương ứng trong CSDL.");
+                    XtraMessageBox.Show("Không tìm thấy nhân viên có mã tương ứng trong CSDL.");
                 }
             }
         }
-
-
-
-
 
         private void ptbNV_Click(object sender, EventArgs e)
         {
@@ -172,6 +168,7 @@ namespace Qly_NhaHang
                         // Cập nhật dữ liệu và lưu vào CSDL
                         db.Entry(nv).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
+                        XtraMessageBox.Show("Cập nhật thành công","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

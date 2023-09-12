@@ -24,14 +24,12 @@ namespace Qly_NhaHang
         public System.DateTime DateCheckIn { get; set; }
         public Nullable<System.DateTime> DateCheckOut { get; set; }
         public int id_Table { get; set; }
-        public Nullable<int> discount_Bill { get; set; }
         public int status_Bill { get; set; }
         public string id_NV { get; set; }
         public Nullable<double> totalPrice_Bill { get; set; }
         public Nullable<double> money_Guest { get; set; }
         public Nullable<double> money_Change { get; set; }
     
-        public virtual Discount Discount { get; set; }
         public virtual NhanVien NhanVien { get; set; }
         public virtual Tablee Tablee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -31,17 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblIDBILL = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.PictureBox();
+            this.lblIDBILL = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flpnFoodMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.gctBill = new DevExpress.XtraGrid.GridControl();
             this.gvBill = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameFood = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contityFood = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblTotalPrice = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -50,15 +55,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
-            this.panel2.Controls.Add(this.lblIDBILL);
             this.panel2.Controls.Add(this.lblID);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnBack);
@@ -67,17 +74,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1944, 72);
             this.panel2.TabIndex = 2;
-            // 
-            // lblIDBILL
-            // 
-            this.lblIDBILL.AutoSize = true;
-            this.lblIDBILL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDBILL.ForeColor = System.Drawing.Color.White;
-            this.lblIDBILL.Location = new System.Drawing.Point(933, 20);
-            this.lblIDBILL.Name = "lblIDBILL";
-            this.lblIDBILL.Size = new System.Drawing.Size(78, 32);
-            this.lblIDBILL.TabIndex = 6;
-            this.lblIDBILL.Text = "label2";
             // 
             // lblID
             // 
@@ -113,6 +109,17 @@
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // lblIDBILL
+            // 
+            this.lblIDBILL.AutoSize = true;
+            this.lblIDBILL.Font = new System.Drawing.Font("UTM Bienvenue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDBILL.ForeColor = System.Drawing.Color.Black;
+            this.lblIDBILL.Location = new System.Drawing.Point(157, 10);
+            this.lblIDBILL.Name = "lblIDBILL";
+            this.lblIDBILL.Size = new System.Drawing.Size(97, 41);
+            this.lblIDBILL.TabIndex = 6;
+            this.lblIDBILL.Text = "label2";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.flpnFoodMenu);
@@ -135,7 +142,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.gctBill);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.btnPay);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
@@ -144,13 +151,32 @@
             this.panel3.Size = new System.Drawing.Size(464, 987);
             this.panel3.TabIndex = 1;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 57);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(464, 858);
+            this.panel5.TabIndex = 34;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.gctBill);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(464, 800);
+            this.panel7.TabIndex = 35;
+            // 
             // gctBill
             // 
             this.gctBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gctBill.Location = new System.Drawing.Point(0, 57);
+            this.gctBill.Location = new System.Drawing.Point(0, 0);
             this.gctBill.MainView = this.gvBill;
             this.gctBill.Name = "gctBill";
-            this.gctBill.Size = new System.Drawing.Size(464, 858);
+            this.gctBill.Size = new System.Drawing.Size(464, 800);
             this.gctBill.TabIndex = 33;
             this.gctBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBill});
@@ -183,9 +209,44 @@
             this.contityFood.VisibleIndex = 1;
             this.contityFood.Width = 199;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lblTotalPrice);
+            this.panel6.Controls.Add(this.labelControl1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 800);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(464, 58);
+            this.panel6.TabIndex = 34;
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblTotalPrice.Appearance.Options.UseFont = true;
+            this.lblTotalPrice.Appearance.Options.UseForeColor = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(164, 12);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(97, 35);
+            this.lblTotalPrice.TabIndex = 24;
+            this.lblTotalPrice.Text = ".000VNĐ";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(6, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(148, 35);
+            this.labelControl1.TabIndex = 23;
+            this.labelControl1.Text = "Tổng hóa đơn";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.lblIDBILL);
             this.panel4.Controls.Add(this.labelControl8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -197,11 +258,11 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(166, 4);
+            this.labelControl8.Location = new System.Drawing.Point(6, 10);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(166, 41);
+            this.labelControl8.Size = new System.Drawing.Size(145, 41);
             this.labelControl8.TabIndex = 22;
-            this.labelControl8.Text = "Hóa đơn tạm";
+            this.labelControl8.Text = "Hóa đơn số";
             // 
             // btnPay
             // 
@@ -292,6 +353,7 @@
             this.btnPay.TextMarginLeft = 0;
             this.btnPay.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPay.UseDefaultRadiusAndThickness = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // flpnCategory
             // 
@@ -318,8 +380,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -344,5 +410,10 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvBill;
         private DevExpress.XtraGrid.Columns.GridColumn nameFood;
         private DevExpress.XtraGrid.Columns.GridColumn contityFood;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private DevExpress.XtraEditors.LabelControl lblTotalPrice;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

@@ -65,7 +65,7 @@ namespace Qly_NhaHang
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
             }
@@ -75,14 +75,14 @@ namespace Qly_NhaHang
         {
             if (string.IsNullOrWhiteSpace(txbIDNhanVien.Text) || string.IsNullOrWhiteSpace(txbFullName.Text) || cbbSex.SelectedItem == null || imageNhanVien.Image == null || cbbCondition.SelectedItem == null || string.IsNullOrWhiteSpace(txbPhone.Text) || string.IsNullOrWhiteSpace(txbAddressNV.Text) || string.IsNullOrWhiteSpace(txbCCCD.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Kiểm tra xem id_NV đã tồn tại trong CSDL chưa
             if (dbContext.NhanViens.Any(nv => nv.id_NV == txbIDNhanVien.Text))
             {
-                MessageBox.Show("Đổi lại mã nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Đổi lại mã nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -107,7 +107,7 @@ namespace Qly_NhaHang
                 dbContext.NhanViens.Add(newNhanvien);
                 dbContext.SaveChanges();
 
-                MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 if (Application.OpenForms["frmNhanVien"] is frmNhanVien nhanvienForm)
                 {
@@ -116,7 +116,7 @@ namespace Qly_NhaHang
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thêm nhân viên mới: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Lỗi khi thêm nhân viên mới: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

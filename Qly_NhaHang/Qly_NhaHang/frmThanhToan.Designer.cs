@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToan));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -47,7 +46,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblIDBILL = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -65,11 +64,11 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gctBill = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gclFoodName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gclQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gctPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gctMoney = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvBill = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.FoodName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Quantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Money = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbtCash = new DevExpress.XtraEditors.CheckButton();
@@ -78,8 +77,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.gctDiscount = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gclTypeDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvDiscount = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.nameDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gclPercentDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnDiscount = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -87,7 +86,7 @@
             this.cbbDiscount = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gctSurcharge = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvSurcharge = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gclTypeSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gclpercentSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -95,8 +94,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cbbSurcharge = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -105,7 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctBill)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -113,22 +111,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctDiscount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctSurcharge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSurcharge)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSurcharge.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.labelControl2);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Controls.Add(this.lblIDBILL);
             this.panel1.Controls.Add(this.labelControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -136,20 +135,20 @@
             this.panel1.Size = new System.Drawing.Size(1944, 67);
             this.panel1.TabIndex = 0;
             // 
-            // labelControl2
+            // lblIDBILL
             // 
-            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Teal;
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("UTM Americana EB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl2.Appearance.Options.UseBackColor = true;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl2.Location = new System.Drawing.Point(379, 12);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(32, 31);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "#n";
+            this.lblIDBILL.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.lblIDBILL.Appearance.Font = new System.Drawing.Font("UTM Americana EB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDBILL.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblIDBILL.Appearance.Options.UseBackColor = true;
+            this.lblIDBILL.Appearance.Options.UseFont = true;
+            this.lblIDBILL.Appearance.Options.UseForeColor = true;
+            this.lblIDBILL.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblIDBILL.Location = new System.Drawing.Point(448, 12);
+            this.lblIDBILL.Name = "lblIDBILL";
+            this.lblIDBILL.Size = new System.Drawing.Size(32, 31);
+            this.lblIDBILL.TabIndex = 1;
+            this.lblIDBILL.Text = "#n";
             // 
             // labelControl1
             // 
@@ -160,7 +159,7 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Location = new System.Drawing.Point(81, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(370, 31);
             this.labelControl1.TabIndex = 0;
@@ -478,7 +477,7 @@
             this.txbMoneyChange.PasswordChar = '\0';
             this.txbMoneyChange.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txbMoneyChange.PlaceholderText = "Tiền thừa...";
-            this.txbMoneyChange.ReadOnly = false;
+            this.txbMoneyChange.ReadOnly = true;
             this.txbMoneyChange.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbMoneyChange.SelectedText = "";
             this.txbMoneyChange.SelectionLength = 0;
@@ -629,7 +628,7 @@
             this.txbTotalBill.PasswordChar = '\0';
             this.txbTotalBill.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txbTotalBill.PlaceholderText = "Tổng hóa đơn...";
-            this.txbTotalBill.ReadOnly = false;
+            this.txbTotalBill.ReadOnly = true;
             this.txbTotalBill.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbTotalBill.SelectedText = "";
             this.txbTotalBill.SelectionLength = 0;
@@ -679,9 +678,9 @@
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.gctBill);
-            this.groupControl3.Location = new System.Drawing.Point(3, 397);
+            this.groupControl3.Location = new System.Drawing.Point(3, 417);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1026, 620);
+            this.groupControl3.Size = new System.Drawing.Size(1014, 600);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "Hóa đơn";
             // 
@@ -689,58 +688,62 @@
             // 
             this.gctBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctBill.Location = new System.Drawing.Point(2, 34);
-            this.gctBill.MainView = this.gridView1;
+            this.gctBill.MainView = this.gvBill;
             this.gctBill.Name = "gctBill";
-            this.gctBill.Size = new System.Drawing.Size(1022, 584);
+            this.gctBill.Size = new System.Drawing.Size(1010, 564);
             this.gctBill.TabIndex = 0;
             this.gctBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvBill});
             // 
-            // gridView1
+            // gvBill
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gclFoodName,
-            this.gclQuantity,
-            this.gctPrice,
-            this.gctMoney});
-            this.gridView1.GridControl = this.gctBill;
-            this.gridView1.Name = "gridView1";
+            this.gvBill.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.FoodName,
+            this.Quantity,
+            this.Price,
+            this.Money});
+            this.gvBill.GridControl = this.gctBill;
+            this.gvBill.Name = "gvBill";
             // 
-            // gclFoodName
+            // FoodName
             // 
-            this.gclFoodName.Caption = "Tên món";
-            this.gclFoodName.MinWidth = 30;
-            this.gclFoodName.Name = "gclFoodName";
-            this.gclFoodName.Visible = true;
-            this.gclFoodName.VisibleIndex = 0;
-            this.gclFoodName.Width = 112;
+            this.FoodName.Caption = "Tên món";
+            this.FoodName.FieldName = "name_Food";
+            this.FoodName.MinWidth = 30;
+            this.FoodName.Name = "FoodName";
+            this.FoodName.Visible = true;
+            this.FoodName.VisibleIndex = 0;
+            this.FoodName.Width = 112;
             // 
-            // gclQuantity
+            // Quantity
             // 
-            this.gclQuantity.Caption = "Số lượng";
-            this.gclQuantity.MinWidth = 30;
-            this.gclQuantity.Name = "gclQuantity";
-            this.gclQuantity.Visible = true;
-            this.gclQuantity.VisibleIndex = 1;
-            this.gclQuantity.Width = 112;
+            this.Quantity.Caption = "Số lượng";
+            this.Quantity.FieldName = "count_Food";
+            this.Quantity.MinWidth = 30;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Visible = true;
+            this.Quantity.VisibleIndex = 1;
+            this.Quantity.Width = 112;
             // 
-            // gctPrice
+            // Price
             // 
-            this.gctPrice.Caption = "Đơn giá";
-            this.gctPrice.MinWidth = 30;
-            this.gctPrice.Name = "gctPrice";
-            this.gctPrice.Visible = true;
-            this.gctPrice.VisibleIndex = 2;
-            this.gctPrice.Width = 112;
+            this.Price.Caption = "Đơn giá";
+            this.Price.FieldName = "price_Food";
+            this.Price.MinWidth = 30;
+            this.Price.Name = "Price";
+            this.Price.Visible = true;
+            this.Price.VisibleIndex = 2;
+            this.Price.Width = 112;
             // 
-            // gctMoney
+            // Money
             // 
-            this.gctMoney.Caption = "Thành tiền";
-            this.gctMoney.MinWidth = 30;
-            this.gctMoney.Name = "gctMoney";
-            this.gctMoney.Visible = true;
-            this.gctMoney.VisibleIndex = 3;
-            this.gctMoney.Width = 112;
+            this.Money.Caption = "Thành tiền";
+            this.Money.FieldName = "money";
+            this.Money.MinWidth = 30;
+            this.Money.Name = "Money";
+            this.Money.Visible = true;
+            this.Money.VisibleIndex = 3;
+            this.Money.Width = 112;
             // 
             // groupControl2
             // 
@@ -749,7 +752,7 @@
             this.groupControl2.Controls.Add(this.flowLayoutPanel1);
             this.groupControl2.Location = new System.Drawing.Point(3, 285);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1056, 115);
+            this.groupControl2.Size = new System.Drawing.Size(1056, 126);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Phương thức thanh toán";
             // 
@@ -761,7 +764,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 34);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1052, 79);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1052, 90);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // cbtCash
@@ -825,33 +828,35 @@
             // 
             this.gctDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctDiscount.Location = new System.Drawing.Point(2, 108);
-            this.gctDiscount.MainView = this.gridView2;
+            this.gctDiscount.MainView = this.gvDiscount;
             this.gctDiscount.Name = "gctDiscount";
             this.gctDiscount.Size = new System.Drawing.Size(893, 409);
             this.gctDiscount.TabIndex = 7;
             this.gctDiscount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gvDiscount});
             // 
-            // gridView2
+            // gvDiscount
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gclTypeDiscount,
+            this.gvDiscount.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.nameDiscount,
             this.gclPercentDiscount});
-            this.gridView2.GridControl = this.gctDiscount;
-            this.gridView2.Name = "gridView2";
+            this.gvDiscount.GridControl = this.gctDiscount;
+            this.gvDiscount.Name = "gvDiscount";
             // 
-            // gclTypeDiscount
+            // nameDiscount
             // 
-            this.gclTypeDiscount.Caption = "Loại giảm giá";
-            this.gclTypeDiscount.MinWidth = 30;
-            this.gclTypeDiscount.Name = "gclTypeDiscount";
-            this.gclTypeDiscount.Visible = true;
-            this.gclTypeDiscount.VisibleIndex = 0;
-            this.gclTypeDiscount.Width = 112;
+            this.nameDiscount.Caption = "Loại giảm giá";
+            this.nameDiscount.FieldName = "name_Discount";
+            this.nameDiscount.MinWidth = 30;
+            this.nameDiscount.Name = "nameDiscount";
+            this.nameDiscount.Visible = true;
+            this.nameDiscount.VisibleIndex = 0;
+            this.nameDiscount.Width = 112;
             // 
             // gclPercentDiscount
             // 
             this.gclPercentDiscount.Caption = "Phần trăm";
+            this.gclPercentDiscount.FieldName = "percent_Discount";
             this.gclPercentDiscount.MinWidth = 30;
             this.gclPercentDiscount.Name = "gclPercentDiscount";
             this.gclPercentDiscount.Visible = true;
@@ -993,24 +998,27 @@
             // 
             this.gctSurcharge.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctSurcharge.Location = new System.Drawing.Point(2, 97);
-            this.gctSurcharge.MainView = this.gridView3;
+            this.gctSurcharge.MainView = this.gvSurcharge;
             this.gctSurcharge.Name = "gctSurcharge";
             this.gctSurcharge.Size = new System.Drawing.Size(893, 381);
             this.gctSurcharge.TabIndex = 6;
             this.gctSurcharge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
+            this.gvSurcharge});
             // 
-            // gridView3
+            // gvSurcharge
             // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvSurcharge.Appearance.HeaderPanel.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvSurcharge.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvSurcharge.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gclTypeSurcharge,
             this.gclpercentSurcharge});
-            this.gridView3.GridControl = this.gctSurcharge;
-            this.gridView3.Name = "gridView3";
+            this.gvSurcharge.GridControl = this.gctSurcharge;
+            this.gvSurcharge.Name = "gvSurcharge";
             // 
             // gclTypeSurcharge
             // 
             this.gclTypeSurcharge.Caption = "Loại phụ thu";
+            this.gclTypeSurcharge.FieldName = "name_Discount";
             this.gclTypeSurcharge.MinWidth = 30;
             this.gclTypeSurcharge.Name = "gclTypeSurcharge";
             this.gclTypeSurcharge.Visible = true;
@@ -1020,6 +1028,7 @@
             // gclpercentSurcharge
             // 
             this.gclpercentSurcharge.Caption = "Phần trăm";
+            this.gclpercentSurcharge.FieldName = "percent_Discount";
             this.gclpercentSurcharge.MinWidth = 30;
             this.gclpercentSurcharge.Name = "gclpercentSurcharge";
             this.gclpercentSurcharge.Visible = true;
@@ -1125,6 +1134,7 @@
             this.btnSurcharge.TextMarginLeft = 0;
             this.btnSurcharge.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSurcharge.UseDefaultRadiusAndThickness = true;
+            this.btnSurcharge.Click += new System.EventHandler(this.btnSurcharge_Click);
             // 
             // labelControl3
             // 
@@ -1151,9 +1161,17 @@
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = -1;
             // 
-            // sqlDataSource1
+            // btnBack
             // 
-            this.sqlDataSource1.Name = "sqlDataSource1";
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::Qly_NhaHang.Properties.Resources.icons8_left_50;
+            this.btnBack.Location = new System.Drawing.Point(3, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(68, 47);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 4;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmThanhToan
             // 
@@ -1167,6 +1185,7 @@
             this.Name = "frmThanhToan";
             this.Text = "Thanh toán";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmThanhToan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1177,7 +1196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctBill)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1185,18 +1204,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctDiscount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctSurcharge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSurcharge)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSurcharge.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1205,7 +1224,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblIDBILL;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -1214,25 +1233,23 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gctBill;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gclFoodName;
-        private DevExpress.XtraGrid.Columns.GridColumn gclQuantity;
-        private DevExpress.XtraGrid.Columns.GridColumn gctPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn gctMoney;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvBill;
+        private DevExpress.XtraGrid.Columns.GridColumn FoodName;
+        private DevExpress.XtraGrid.Columns.GridColumn Quantity;
+        private DevExpress.XtraGrid.Columns.GridColumn Price;
+        private DevExpress.XtraGrid.Columns.GridColumn Money;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraGrid.GridControl gctDiscount;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn gclTypeDiscount;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDiscount;
+        private DevExpress.XtraGrid.Columns.GridColumn nameDiscount;
         private DevExpress.XtraGrid.Columns.GridColumn gclPercentDiscount;
         private System.Windows.Forms.Panel panel6;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDiscount;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.ComboBoxEdit cbbDiscount;
         private DevExpress.XtraGrid.GridControl gctSurcharge;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvSurcharge;
         private DevExpress.XtraGrid.Columns.GridColumn gclTypeSurcharge;
         private DevExpress.XtraGrid.Columns.GridColumn gclpercentSurcharge;
         private System.Windows.Forms.Panel panel5;
@@ -1254,5 +1271,6 @@
         private DevExpress.XtraEditors.CheckButton cbtCash;
         private DevExpress.XtraEditors.CheckButton cbtMomo;
         private DevExpress.XtraEditors.CheckButton cbtZaloPay;
+        private System.Windows.Forms.PictureBox btnBack;
     }
 }

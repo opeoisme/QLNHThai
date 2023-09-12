@@ -87,7 +87,7 @@ namespace Qly_NhaHang
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
             }
@@ -174,7 +174,7 @@ namespace Qly_NhaHang
                     LoadFormNV();
 
                     // Hiển thị thông báo thành công
-                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             // Reset isImageChanged sau khi đã sử dụng
@@ -220,7 +220,7 @@ namespace Qly_NhaHang
                     // Kiểm tra nếu id_NV trùng với id_NV đã đăng nhập thành công
                     if (string.Equals(trimmedNhanvienId, trimmedLoggedInIdNV, StringComparison.OrdinalIgnoreCase))
                     {
-                        MessageBox.Show("Không thể xóa nhân viên này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        XtraMessageBox.Show("Không thể xóa nhân viên này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
@@ -236,7 +236,7 @@ namespace Qly_NhaHang
 
                         // Mờ trường dữ liệu tương ứng trên GridView
                         gvNV.SetRowCellValue(focusedRowHandle, gvNV.Columns["condition_NV"], "Nghỉ việc");
-                        MessageBox.Show("Nhân viên không còn làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        XtraMessageBox.Show("Nhân viên không còn làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -282,11 +282,11 @@ namespace Qly_NhaHang
             LoadFormNV();
             if (updatedCount > 0)
             {
-                MessageBox.Show($"{updatedCount} nhân viên đã được trở lại làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show($"{updatedCount} nhân viên đã được trở lại làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Nhân viên này vẫn đang làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Nhân viên này vẫn đang làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -345,7 +345,7 @@ namespace Qly_NhaHang
                     workbook.SaveAs(filePath);
                 }
 
-                MessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -446,7 +446,7 @@ namespace Qly_NhaHang
 
                 pdf.Save(filePath);
 
-                MessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

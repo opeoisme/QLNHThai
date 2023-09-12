@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DocumentFormat.OpenXml.Vml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,8 @@ namespace Qly_NhaHang
             InitializeComponent();
         
             lblNameFood.Text = nameFood;
-            lblPrice.Text = priceFood.ToString("c");
+          
+            lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceFood);
             lblPriceValue = priceFood;
             lblID.Text = idBill.ToString();
             this.foodCount = foodCount;
@@ -42,7 +44,8 @@ namespace Qly_NhaHang
         private void UpdateTotalPrice()
         {
             double totalPrice = quantity * lblPriceValue;
-            lblTotalPrice.Text = totalPrice.ToString("c");
+         
+            lblTotalPrice.Text = lblTotalPrice.Text = String.Format("{0:0,0 vnđ}", totalPrice);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -62,7 +65,7 @@ namespace Qly_NhaHang
                     // Tạo mới một BillInfo nếu không tồn tại
                     if (foodCount == 0 && quantity == 0)
                     {
-                        MessageBox.Show("Vui lòng nhập số lượng món.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        XtraMessageBox.Show("Vui lòng nhập số lượng món.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -100,6 +103,7 @@ namespace Qly_NhaHang
                 if (Application.OpenForms["frmOrder"] is frmOrder orderForm)
                 {
                     orderForm.LoadBillInfo(); // Giả sử tên phương thức là LoadFoodData()
+                    double total = orderForm.CalculateTotalPrice();
                     orderForm.GetFoodCount(foodCount);
                     orderForm.LoadFoodFLPNTest();
                 }

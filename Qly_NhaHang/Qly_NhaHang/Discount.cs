@@ -14,18 +14,10 @@ namespace Qly_NhaHang
     
     public partial class Discount
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Discount()
-        {
-            this.Bills = new HashSet<Bill>();
-        }
-    
         public int id_Discount { get; set; }
         public string name_Discount { get; set; }
         public int percent_Discount { get; set; }
         public string type_Discount { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bills { get; set; }
+        public string condition_Discount { get; set; }
     }
 }

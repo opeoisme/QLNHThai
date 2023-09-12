@@ -36,5 +36,10 @@ namespace Qly_NhaHang
         {
             LoadFormReservation();
         }
+
+        private void frmReservation_Load(object sender, EventArgs e)
+        {
+            LoadFormReservation();
+        }
     }
 }

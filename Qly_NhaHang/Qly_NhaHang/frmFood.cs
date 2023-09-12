@@ -22,6 +22,7 @@ using PdfDocument = PdfSharp.Pdf.PdfDocument;
 using PdfPage = PdfSharp.Pdf.PdfPage;
 using System.Drawing.Imaging;
 using System.Collections.Generic;
+using DevExpress.XtraEditors;
 
 namespace Qly_NhaHang
 {
@@ -136,7 +137,7 @@ namespace Qly_NhaHang
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
             }
@@ -218,7 +219,7 @@ namespace Qly_NhaHang
                     }
                     dbContext.SaveChanges();
                     LoadFoodData();
-                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             // Reset isImageChanged sau khi đã sử dụng
@@ -262,7 +263,7 @@ namespace Qly_NhaHang
 
                             // Mờ trường dữ liệu tương ứng trên GridView
                             gridView1.SetRowCellValue(focusedRowHandle, gridView1.Columns["condition_Food"], "Ngừng bán");
-                            MessageBox.Show("Sản phẩm không còn được phục vụ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show("Sản phẩm không còn được phục vụ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -309,11 +310,11 @@ namespace Qly_NhaHang
             LoadFoodData();
             if (updatedCount > 0)
             {
-                MessageBox.Show($" {updatedCount} sản phẩm đã được đưa vào sử dụng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show($" {updatedCount} sản phẩm đã được đưa vào sử dụng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Sản phẩm đang được sử dụng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Sản phẩm đang được sử dụng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -373,7 +374,7 @@ namespace Qly_NhaHang
                     workbook.SaveAs(filePath);
                 }
 
-                MessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         #endregion
@@ -464,7 +465,7 @@ namespace Qly_NhaHang
 
                 pdf.Save(filePath);
 
-                MessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

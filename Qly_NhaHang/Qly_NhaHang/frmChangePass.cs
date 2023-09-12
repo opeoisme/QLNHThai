@@ -76,12 +76,12 @@ namespace Qly_NhaHang
                     db.SaveChanges();
 
                     // Thông báo cho người dùng và đóng form "frmChangePass".
-                    MessageBox.Show("Mật khẩu đã được cập nhật thành công.");
+                    XtraMessageBox.Show("Mật khẩu đã được cập nhật thành công.","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy nhân viên có mã tương ứng trong CSDL.");
+                    MessageBox.Show("Không tìm thấy nhân viên có mã tương ứng trong CSDL.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

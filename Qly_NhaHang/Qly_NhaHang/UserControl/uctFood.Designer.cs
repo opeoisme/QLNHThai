@@ -68,6 +68,7 @@
             this.imageFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageFood.TabIndex = 21;
             this.imageFood.TabStop = false;
+            this.imageFood.Click += new System.EventHandler(this.imageFood_Click);
             // 
             // ctmntFood
             // 
@@ -93,6 +94,7 @@
             this.Controls.Add(this.lblFoodName);
             this.Name = "uctFood";
             this.Size = new System.Drawing.Size(302, 218);
+            this.Click += new System.EventHandler(this.uctFood_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imageFood)).EndInit();
             this.ctmntFood.ResumeLayout(false);
             this.ResumeLayout(false);

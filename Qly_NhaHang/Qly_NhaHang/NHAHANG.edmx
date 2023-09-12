@@ -13,7 +13,6 @@
           <Property Name="DateCheckIn" Type="date" Nullable="false" />
           <Property Name="DateCheckOut" Type="date" />
           <Property Name="id_Table" Type="int" Nullable="false" />
-          <Property Name="discount_Bill" Type="int" />
           <Property Name="status_Bill" Type="int" Nullable="false" />
           <Property Name="id_NV" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="totalPrice_Bill" Type="float" />
@@ -44,6 +43,7 @@
           <Property Name="name_Discount" Type="nvarchar(max)" Nullable="false" />
           <Property Name="percent_Discount" Type="int" Nullable="false" />
           <Property Name="type_Discount" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="condition_Discount" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Food">
           <Key>
@@ -131,18 +131,6 @@
           <Property Name="seats_Table" Type="int" />
           <Property Name="condition_Table" Type="nvarchar(max)" />
         </EntityType>
-        <Association Name="FK__Bill__discount_B__59063A47">
-          <End Role="Discount" Type="Self.Discount" Multiplicity="0..1" />
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Discount">
-              <PropertyRef Name="id_Discount" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="discount_Bill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Bill__id_NV__5812160E">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
@@ -288,10 +276,6 @@
           <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tablee" EntityType="Self.Tablee" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Bill__discount_B__59063A47" Association="Self.FK__Bill__discount_B__59063A47">
-            <End Role="Discount" EntitySet="Discount" />
-            <End Role="Bill" EntitySet="Bill" />
-          </AssociationSet>
           <AssociationSet Name="FK__Bill__id_NV__5812160E" Association="Self.FK__Bill__id_NV__5812160E">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="Bill" EntitySet="Bill" />
@@ -359,16 +343,6 @@
           <Property Name="id_Category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Foods" Relationship="QLNHThaiModel.FK__Food__condition___5DCAEF64" FromRole="CategoryFood" ToRole="Food" />
-        </EntityType>
-        <EntityType Name="Discount">
-          <Key>
-            <PropertyRef Name="id_Discount" />
-          </Key>
-          <Property Name="id_Discount" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name_Discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="percent_Discount" Type="Int32" Nullable="false" />
-          <Property Name="type_Discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Bills" Relationship="QLNHThaiModel.FK__Bill__discount_B__59063A47" FromRole="Discount" ToRole="Bill" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -521,7 +495,6 @@
         <EntityContainer Name="QLNHThaiEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" />
           <EntitySet Name="CategoryFoods" EntityType="Self.CategoryFood" />
-          <EntitySet Name="Discounts" EntityType="Self.Discount" />
           <EntitySet Name="Imports" EntityType="Self.Import" />
           <EntitySet Name="ImportInfoes" EntityType="Self.ImportInfo" />
           <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
@@ -549,6 +522,7 @@
             <End Role="Tablee" EntitySet="Tablees" />
             <End Role="Reservation" EntitySet="Reservations" />
           </AssociationSet>
+          <EntitySet Name="Discounts" EntityType="QLNHThaiModel.Discount" />
           <EntitySet Name="Foods" EntityType="QLNHThaiModel.Food" />
           <AssociationSet Name="FK__Bill_Info__id_Fo__628FA481" Association="QLNHThaiModel.FK__Bill_Info__id_Fo__628FA481">
             <End Role="Food" EntitySet="Foods" />
@@ -563,10 +537,6 @@
             <End Role="Recipe" EntitySet="Recipes" />
           </AssociationSet>
           <EntitySet Name="Bills" EntityType="QLNHThaiModel.Bill" />
-          <AssociationSet Name="FK__Bill__discount_B__59063A47" Association="QLNHThaiModel.FK__Bill__discount_B__59063A47">
-            <End Role="Discount" EntitySet="Discounts" />
-            <End Role="Bill" EntitySet="Bills" />
-          </AssociationSet>
           <AssociationSet Name="FK__Bill__id_NV__5812160E" Association="QLNHThaiModel.FK__Bill__id_NV__5812160E">
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="Bill" EntitySet="Bills" />
@@ -580,6 +550,16 @@
             <End Role="Bill_Info" EntitySet="Bill_Info" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="id_Discount" />
+          </Key>
+          <Property Name="id_Discount" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_Discount" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="percent_Discount" Type="Int32" Nullable="false" />
+          <Property Name="type_Discount" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="condition_Discount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Food">
           <Key>
             <PropertyRef Name="id_Food" />
@@ -638,29 +618,15 @@
           <Property Name="DateCheckIn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DateCheckOut" Type="DateTime" Precision="0" />
           <Property Name="id_Table" Type="Int32" Nullable="false" />
-          <Property Name="discount_Bill" Type="Int32" />
           <Property Name="status_Bill" Type="Int32" Nullable="false" />
           <Property Name="id_NV" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="totalPrice_Bill" Type="Double" />
           <Property Name="money_Guest" Type="Double" />
           <Property Name="money_Change" Type="Double" />
-          <NavigationProperty Name="Discount" Relationship="QLNHThaiModel.FK__Bill__discount_B__59063A47" FromRole="Bill" ToRole="Discount" />
           <NavigationProperty Name="NhanVien" Relationship="QLNHThaiModel.FK__Bill__id_NV__5812160E" FromRole="Bill" ToRole="NhanVien" />
           <NavigationProperty Name="Tablee" Relationship="QLNHThaiModel.FK__Bill__id_Table__571DF1D5" FromRole="Bill" ToRole="Tablee" />
           <NavigationProperty Name="Bill_Info" Relationship="QLNHThaiModel.FK__Bill_Info__count__619B8048" FromRole="Bill" ToRole="Bill_Info" />
         </EntityType>
-        <Association Name="FK__Bill__discount_B__59063A47">
-          <End Type="QLNHThaiModel.Discount" Role="Discount" Multiplicity="0..1" />
-          <End Type="QLNHThaiModel.Bill" Role="Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Discount">
-              <PropertyRef Name="id_Discount" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="discount_Bill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Bill__id_NV__5812160E">
           <End Type="QLNHThaiModel.NhanVien" Role="NhanVien" Multiplicity="1" />
           <End Type="QLNHThaiModel.Bill" Role="Bill" Multiplicity="*" />
@@ -718,16 +684,6 @@
               <MappingFragment StoreEntitySet="CategoryFood">
                 <ScalarProperty Name="id_Category" ColumnName="id_Category" />
                 <ScalarProperty Name="name_Category" ColumnName="name_Category" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Discounts">
-            <EntityTypeMapping TypeName="QLNHThaiModel.Discount">
-              <MappingFragment StoreEntitySet="Discount">
-                <ScalarProperty Name="id_Discount" ColumnName="id_Discount" />
-                <ScalarProperty Name="name_Discount" ColumnName="name_Discount" />
-                <ScalarProperty Name="percent_Discount" ColumnName="percent_Discount" />
-                <ScalarProperty Name="type_Discount" ColumnName="type_Discount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -813,6 +769,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Discounts">
+            <EntityTypeMapping TypeName="QLNHThaiModel.Discount">
+              <MappingFragment StoreEntitySet="Discount">
+                <ScalarProperty Name="condition_Discount" ColumnName="condition_Discount" />
+                <ScalarProperty Name="type_Discount" ColumnName="type_Discount" />
+                <ScalarProperty Name="percent_Discount" ColumnName="percent_Discount" />
+                <ScalarProperty Name="name_Discount" ColumnName="name_Discount" />
+                <ScalarProperty Name="id_Discount" ColumnName="id_Discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Foods">
             <EntityTypeMapping TypeName="QLNHThaiModel.Food">
               <MappingFragment StoreEntitySet="Food">
@@ -833,7 +800,6 @@
                 <ScalarProperty Name="totalPrice_Bill" ColumnName="totalPrice_Bill" />
                 <ScalarProperty Name="id_NV" ColumnName="id_NV" />
                 <ScalarProperty Name="status_Bill" ColumnName="status_Bill" />
-                <ScalarProperty Name="discount_Bill" ColumnName="discount_Bill" />
                 <ScalarProperty Name="id_Table" ColumnName="id_Table" />
                 <ScalarProperty Name="DateCheckOut" ColumnName="DateCheckOut" />
                 <ScalarProperty Name="DateCheckIn" ColumnName="DateCheckIn" />

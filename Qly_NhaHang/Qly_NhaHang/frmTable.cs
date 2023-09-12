@@ -91,7 +91,7 @@ namespace Qly_NhaHang
                     dbContext.Entry(tableToUpdate).State = EntityState.Modified;
                     dbContext.SaveChanges();
                     LoadFormTable();
-                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -126,7 +126,7 @@ namespace Qly_NhaHang
 
                             // Mờ trường dữ liệu tương ứng trên GridView
                             gvTable.SetRowCellValue(focusedRowHandle, gvTable.Columns["condition_Table"], "Ngưng sử dụng");
-                            MessageBox.Show("Sản phẩm không còn được phục vụ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show("Sản phẩm không còn được phục vụ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -167,7 +167,7 @@ namespace Qly_NhaHang
                             dbContext.SaveChanges();
                             updatedCount++; // Tăng số lượng sản phẩm đã cập nhật
                             LoadFormTable();
-                            MessageBox.Show("Bàn đã được đưa vào sử dụng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show("Bàn đã được đưa vào sử dụng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -240,7 +240,7 @@ namespace Qly_NhaHang
                     workbook.SaveAs(filePath);
                 }
 
-                MessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -303,10 +303,8 @@ namespace Qly_NhaHang
                         y = 20;
                     }
                 }
-
                 pdf.Save(filePath);
-
-                MessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

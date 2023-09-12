@@ -15,22 +15,18 @@ namespace Qly_NhaHang
     public partial class frmListTable : DevExpress.XtraEditors.XtraForm
     {
         private QLNHThaiEntities dbContext;
-       // private int loggedInUserId;
-       // private int _id_Bill;
 
         public frmListTable()
         {
             InitializeComponent();
             dbContext = new QLNHThaiEntities();
-           // loggedInUserId = 1;
         }
 
+        #region event
         private void frmListTable_Load(object sender, EventArgs e)
         {
             loadAll();
         }
-        #region event
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -92,6 +88,9 @@ namespace Qly_NhaHang
             LoadTablesByStatusAndCondition("Được đặt", "Được sử dụng", typeof(SetTable));
         }
 
+        #endregion
+
+        #region method
         public void loadAll()
         {
             flpnTable.Controls.Clear();
@@ -100,10 +99,6 @@ namespace Qly_NhaHang
             LoadTablesByStatusAndCondition("Được đặt", "Được sử dụng", typeof(SetTable));
         }
 
-
-        #endregion
-
-        #region method
         private void LoadTablesByStatusAndCondition(string status, string condition, Type controlType)
         {
             var tables = dbContext.Tablees
@@ -117,7 +112,6 @@ namespace Qly_NhaHang
                 flpnTable.Controls.Add(tableControl);
             }
         }
-
 
         private void UpdateTableData(DevExpress.XtraEditors.XtraUserControl tableControl, Tablee table)
         {

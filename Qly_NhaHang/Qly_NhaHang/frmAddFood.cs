@@ -69,7 +69,7 @@ namespace Qly_NhaHang
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Lỗi khi chuyển đổi hình ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
             }
@@ -79,18 +79,18 @@ namespace Qly_NhaHang
         {
             if (string.IsNullOrWhiteSpace(txbNameFood.Text) || cbbCategory.SelectedItem == null || imageFood.Image == null)
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (nmrPriceFood.Value <= 0)
             {
-                MessageBox.Show("Vui lòng nhập giá hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Vui lòng nhập giá hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (cbbCondition.SelectedItem == null)
             {
-                MessageBox.Show("Vui lòng cho biết sản phẩm có được bán liền hay không.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Vui lòng cho biết sản phẩm có được bán liền hay không.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Tạo một đối tượng Food mới
@@ -109,7 +109,7 @@ namespace Qly_NhaHang
                 dbContext.Foods.Add(newFood);
                 dbContext.SaveChanges();
 
-                MessageBox.Show("Thêm món ăn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Thêm món ăn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 if (Application.OpenForms["frmFood"] is frmFood foodForm)
                 {
@@ -118,7 +118,7 @@ namespace Qly_NhaHang
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thêm món ăn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Lỗi khi thêm món ăn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

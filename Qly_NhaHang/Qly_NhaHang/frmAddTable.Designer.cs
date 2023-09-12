@@ -138,7 +138,7 @@
             this.txbNameTable.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameTable.PasswordChar = '\0';
             this.txbNameTable.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbNameTable.PlaceholderText = "Tên bàn...";
+            this.txbNameTable.PlaceholderText = "Tên ưu đãi...";
             this.txbNameTable.ReadOnly = false;
             this.txbNameTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbNameTable.SelectedText = "";
@@ -152,7 +152,7 @@
             this.txbNameTable.TextMarginBottom = 0;
             this.txbNameTable.TextMarginLeft = 3;
             this.txbNameTable.TextMarginTop = 0;
-            this.txbNameTable.TextPlaceholder = "Tên bàn...";
+            this.txbNameTable.TextPlaceholder = "Tên ưu đãi...";
             this.txbNameTable.UseSystemPasswordChar = false;
             this.txbNameTable.WordWrap = true;
             // 

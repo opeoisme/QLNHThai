@@ -83,6 +83,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1591871_booking_hotel_social_icon {
+            get {
+                object obj = ResourceManager.GetObject("_1591871_booking_hotel_social_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1743801_analysis_analytics_chart_graph_report_icon {
             get {
                 object obj = ResourceManager.GetObject("_1743801_analysis_analytics_chart_graph_report_icon", resourceCulture);
@@ -296,6 +306,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap _9951056_thanksgiving_mix_turkey_chicken_dinner_icon {
             get {
                 object obj = ResourceManager.GetObject("_9951056_thanksgiving_mix_turkey_chicken_dinner_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancle {
+            get {
+                object obj = ResourceManager.GetObject("cancle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -566,6 +586,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap terrace_restaurant {
             get {
                 object obj = ResourceManager.GetObject("terrace_restaurant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vẽ_tay_Hình_tròn_Logo__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Vẽ_tay_Hình_tròn_Logo__2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
