@@ -58,7 +58,7 @@ namespace Qly_NhaHang
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Lỗi khi tải thông tin đặt bàn: " + ex.Message);
+                XtraMessageBox.Show("Lỗi khi tải thông tin đặt bàn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -143,14 +143,10 @@ namespace Qly_NhaHang
                         {
                             tableToUpdate.status_Table = "Được đặt";
                         }
-
-                        // Thêm mới thông tin đặt bàn
                     }
-
                     context.SaveChanges();
                 }
-
-                XtraMessageBox.Show(IsUpdateMode ? "Cập nhật đặt bàn thành công!" : "Đặt bàn thành công!");
+                XtraMessageBox.Show(IsUpdateMode ? "Cập nhật đặt bàn thành công!" : "Đặt bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 if (Application.OpenForms["frmListTable"] is frmListTable listtableForm)
                 {

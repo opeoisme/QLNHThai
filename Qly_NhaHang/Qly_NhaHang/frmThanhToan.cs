@@ -24,8 +24,8 @@ namespace Qly_NhaHang
         private int _idBill;
         private double _total;
         private QLNHThaiEntities dbContext;
-       // THANHTOAN _thanhtoan;
-       // int _idDiscount;
+        private bool isDiscountSelected = false;
+
 
         public frmThanhToan(int idBill, double total)
         {
@@ -48,30 +48,17 @@ namespace Qly_NhaHang
         private void frmThanhToan_Load(object sender, EventArgs e)
         {
             lblIDBILL.Text = _idBill.ToString();
-            //_thanhtoan = new THANHTOAN();
-          //  txbTotalBill.Text = _total.ToString();
-            txbTotalBill.Text = String.Format("{0:0,0 }", _total);
+            txbTotalBill.Text = String.Format("{0:0,0  }", _total);
             LoadBillInfo();
             LoadDiscountData();
             LoadSurchangeData();
-           // gctSurcharge.DataSource = GetSurchargeData();
+            
+            gctSurcharge.DataSource = selectedSurchargeList;
+            gctDiscount.DataSource = selectedDiscountList;
+            CalculateAndDisplaySurcharge();
+            CalculateAndDisplayDiscount();
 
         }
-
-        //private List<Discount> GetSurchargeData()
-        //{
-        //    // Trả về danh sách dữ liệu phụ thu từ nguồn dữ liệu của bạn
-        //    var surchargeData = dbContext.Discounts
-        //        .Where(d => d.type_Discount == "Phụ thu")
-        //        .ToList();
-
-        //    return surchargeData;
-        //}
-
-        //void loadData(int id)
-        //{
-        //    gctSurcharge.DataSource = new List<Discount> { _thanhtoan.getItem(id) };
-        //}
 
         private void LoadSurchangeData()
         {
@@ -130,32 +117,304 @@ namespace Qly_NhaHang
         }
 
 
-        // Cần sửa lại
-        private List<Discount> selectedSurchargeList = new List<Discount>();
+        
+        private BindingList<Discount> selectedSurchargeList = new BindingList<Discount>();
+
         private void btnSurcharge_Click(object sender, EventArgs e)
         {
-            string selectedDiscountName = cbbSurcharge.SelectedItem.ToString();
+            string selectedSurchargeName = cbbSurcharge.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(selectedSurchargeName))
+            {
+                XtraMessageBox.Show("Vui lòng chọn một phụ thu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra xem đã có mục được chọn trước đó hay chưa
+            if (IsSurchargeAlreadySelected(selectedSurchargeName))
+            {
+                XtraMessageBox.Show("Không thể áp dụng 1 loại phụ thu 2 lần", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Tìm đối tượng Discount tương ứng với giá trị được chọn
-            var selectedDiscount = dbContext.Discounts
-                .Where(d => d.name_Discount == selectedDiscountName)
+            var selectedSurcharge = dbContext.Discounts
+                .Where(d => d.name_Discount == selectedSurchargeName)
                 .FirstOrDefault();
 
             // Kiểm tra xem đã tìm thấy giảm giá hay không
-            if (selectedDiscount != null)
+            if (selectedSurcharge != null)
             {
                 // Thêm đối tượng Discount đã chọn vào danh sách
-                selectedSurchargeList.Add(selectedDiscount);
+                selectedSurchargeList.Add(selectedSurcharge);
+            }
+            CalculateAndDisplaySurcharge();
+        }
 
-                // Đặt danh sách đã chọn làm DataSource cho gctSurcharge
-                gctSurcharge.DataSource = selectedSurchargeList;
+        private bool IsSurchargeAlreadySelected(string discountName)
+        {
+            return selectedSurchargeList.Any(discount => discount.name_Discount == discountName); 
+        }
+
+        private void btnDeleteSurcharge_Click(object sender, EventArgs e)
+        {
+            GridView gridView = gctSurcharge.MainView as GridView;  // Lấy GridView hiện tại
+            if (gridView.SelectedRowsCount > 0)  // Kiểm tra xem có hàng nào được chọn trong GridView không
+            {
+                int selectedRowHandle = gridView.GetSelectedRows()[0];  // Lấy chỉ mục hàng đầu tiên được chọn
+                Discount selectedSurcharge = gridView.GetRow(selectedRowHandle) as Discount;             // Lấy đối tượng Discount tương ứng với hàng được chọn
+                if (selectedSurcharge != null)   // Kiểm tra xem đối tượng đã được lấy hay chưa
+                {
+                    selectedSurchargeList.Remove(selectedSurcharge);  // Xóa đối tượng Discount khỏi danh sách
+                    gctSurcharge.RefreshDataSource();    // Cập nhật lại dữ liệu trong gctSurcharge
+                }
+                CalculateAndDisplaySurcharge();
+            }
+            else
+            {
+                XtraMessageBox.Show("Vui lòng chọn một phụ thu để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        private void CalculateAndDisplaySurcharge()
+        {
+            decimal totalSurchargePercent = 0;   // Tính tổng percent_Discount từ danh sách selectedSurchargeList
+            foreach (var discount in selectedSurchargeList)
+            {
+                totalSurchargePercent += discount.percent_Discount;
+            }
+           
+            decimal moneySurcharge = (totalSurchargePercent / 100) * (decimal)_total;   // Tính giá trị cho lblMoneySurcharge
+
+            moneySurcharge = Math.Round(moneySurcharge / 1000) * 1000; // Làm tròn đến hàng nghìn gần nhất
+
+            
+            lblMoneySurcharge.Text = String.Format("{0:0,0 }", moneySurcharge);  // Hiển thị giá trị trên lblMoneySurcharge
+        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private BindingList<Discount> selectedDiscountList = new BindingList<Discount>();
+        private Discount selectedDiscount; 
+        private bool hasChanged = false; 
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            string selectedDiscountName = cbbDiscount.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(selectedDiscountName))
+            {
+                XtraMessageBox.Show("Vui lòng chọn một phụ thu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var newSelectedDiscount = dbContext.Discounts
+                .Where(d => d.name_Discount == selectedDiscountName)
+                .FirstOrDefault();
+            if (newSelectedDiscount != null)
+            {
+                if (!hasChanged || newSelectedDiscount.name_Discount != selectedDiscount?.name_Discount)
+                {
+                    DialogResult result = XtraMessageBox.Show("Áp dụng chương trình khuyến mãi này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.No)
+                    {
+                        return;
+                    }
+                    hasChanged = true;
+                }
+                selectedDiscountList.Clear();
+                selectedDiscountList.Add(newSelectedDiscount);
+                selectedDiscount = newSelectedDiscount;
+                gctDiscount.DataSource = selectedDiscountList;
+            }
+            CalculateAndDisplayDiscount();
+        }
+
+        private void btnDeleteDis_Click(object sender, EventArgs e)
+        {
+            GridView gridView = gctDiscount.MainView as GridView;  // Lấy GridView hiện tại
+            if (gridView.SelectedRowsCount > 0)  // Kiểm tra xem có hàng nào được chọn trong GridView không
+            {
+                int selectedRowHandle = gridView.GetSelectedRows()[0];  // Lấy chỉ mục hàng đầu tiên được chọn
+                Discount selectedDiscount = gridView.GetRow(selectedRowHandle) as Discount;             // Lấy đối tượng Discount tương ứng với hàng được chọn
+                if (selectedDiscount != null)   // Kiểm tra xem đối tượng đã được lấy hay chưa
+                {
+                    selectedDiscountList.Remove(selectedDiscount);  // Xóa đối tượng Discount khỏi danh sách
+                    gctDiscount.RefreshDataSource();    // Cập nhật lại dữ liệu trong gctSurcharge
+                }
+                CalculateAndDisplayDiscount();
+            }
+            else
+            {
+                XtraMessageBox.Show("Chưa áp dụng chương trình khuyến mãi nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
+        }
+
+
+        private void CalculateAndDisplayDiscount()
+        {
+            decimal totalDiscountPercent = 0;   // Tính tổng percent_Discount từ danh sách selectedSurchargeList
+            foreach (var discount in selectedDiscountList)
+            {
+                totalDiscountPercent += discount.percent_Discount;
+            }
+
+            decimal moneyDiscount = (totalDiscountPercent / -100) * (decimal)_total;   // Tính giá trị cho lblMoneySurcharge
+
+            moneyDiscount = Math.Round(moneyDiscount / 1000) * 1000; // Làm tròn đến hàng nghìn gần nhất
+
+
+            lblMoneyDiscount.Text = String.Format("{0:0,0 }", moneyDiscount);  // Hiển thị giá trị trên lblMoneySurcharge
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            // Lấy giá trị hiện tại của txbTotalBill và chuyển nó thành số decimal
+            decimal currentTotal = decimal.Parse(txbTotalBill.Text.Replace(",", "").Replace(",", ""));
+
+            // Lấy giá trị của lblMoneySurcharge và chuyển nó thành số decimal
+            decimal moneySurcharge = decimal.Parse(lblMoneySurcharge.Text.Replace(",", "").Replace(",", ""));
+
+            // Lấy giá trị của lblMoneyDiscount và chuyển nó thành số decimal
+            decimal moneyDiscount = decimal.Parse(lblMoneyDiscount.Text.Replace(",", "").Replace(",", ""));
+
+            // Tính tổng giá trị mới cho txbTotalBill
+            decimal newTotal = currentTotal + moneySurcharge + moneyDiscount;
+
+            // Cập nhật giá trị mới vào txbTotalBill
+            txbTotalBill.Text = String.Format("{0:0,0 }", newTotal);
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            txbTotalBill.Text = String.Format("{0:0,0}", _total);
+        }
+
+        private void txbMoneyCash_TextChange(object sender, EventArgs e)
+        {
+            // Kiểm tra xem txbMoneyCash có giá trị hợp lệ không
+            if (decimal.TryParse(txbMoneyCash.Text.Replace(",", "").Replace(",", ""), out decimal moneyCash))
+            {
+                // Lấy giá trị hiện tại của txbTotalBill và chuyển nó thành số decimal
+                decimal currentTotal = decimal.Parse(txbTotalBill.Text.Replace(",", "").Replace(",", ""));
+
+                // Tính tiền thừa
+                decimal moneyChange = moneyCash - currentTotal;
+
+                // Kiểm tra xem tiền thừa có âm hay không
+                if (moneyChange < 0)
+                {
+                    txbMoneyChange.Text = "CHƯA ĐỦ TIỀN";
+                }
+                else
+                {
+                    // Hiển thị tiền thừa trên txbMoneyChange
+                    txbMoneyChange.Text = String.Format("{0:0,0 }", moneyChange);
+                }
+            }
+            else
+            {
+                // Đặt giá trị txbMoneyChange về 0 nếu số tiền không hợp lệ
+                txbMoneyChange.Text = "0";
+            }
+        }
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            UpdateBill();
+          UpdateTableStatus();
+            CloseFormsAndOpenListTable();
+        }
+
+        private void UpdateBill()
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                int idBill = int.Parse(lblIDBILL.Text);
+                var bill = dbContext.Bills.FirstOrDefault(b => b.id_Bill == idBill);
+
+                if (bill != null)
+                {
+
+                    if (string.IsNullOrWhiteSpace(txbMoneyCash.Text) || string.IsNullOrWhiteSpace(txbMoneyChange.Text))
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi xác nhận thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return; // Thoát khỏi hàm nếu thiếu thông tin
+                    }
+                    // Cập nhật các thông tin của Bill
+                    bill.DateCheckOut = DateTime.Now;
+                    bill.status_Bill = 1; // Đặt status_Bill thành 1
+                    decimal totalPrice;
+                    decimal moneyGuest;
+                    decimal moneyChange;
+
+                    if (decimal.TryParse(txbTotalBill.Text.Replace(",", "").Replace(",", ""), out totalPrice))
+                    {
+                        bill.totalPrice_Bill = (double?)totalPrice;
+                    }
+
+                    if (decimal.TryParse(txbMoneyCash.Text.Replace(",", "").Replace(",", ""), out moneyGuest))
+                    {
+                        bill.money_Guest = (double?)moneyGuest;
+                    }
+
+                    if (decimal.TryParse(txbMoneyChange.Text.Replace(",", "").Replace(",", ""), out moneyChange))
+                    {
+                        bill.money_Change = (double?)moneyChange;
+                    }
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    dbContext.SaveChanges();
+                }
+            }
+        }
+
+        private void UpdateTableStatus()
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                int idBill = int.Parse(lblIDBILL.Text);
+                var bill = dbContext.Bills.FirstOrDefault(b => b.id_Bill == idBill);
+
+                if (bill != null)
+                {
+                    // Lấy thông tin về bàn từ Bill
+                    var table = dbContext.Tablees.FirstOrDefault(t => t.id_Table == bill.id_Table);
+
+                    if (table != null)
+                    {
+                        // Cập nhật trạng thái của bàn thành "Đang trống"
+                        table.status_Table = "Đang trống";
+
+                        // Lưu thay đổi vào cơ sở dữ liệu
+                        dbContext.SaveChanges();
+                    }
+                }
+            }
+        }
+        private void CloseFormsAndOpenListTable()
+        {
+            // Đóng form hiện tại (frmThanhToan)
+            this.Close();
+
+            // Đóng frmOrder (nếu nó đã được mở)
+            Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
+            foreach (Form form in forms)
+            {
+                if (form.Name == "frmOrder")
+                {
+                    form.Close();
+                }
+            }
+            if (Application.OpenForms["frmListTable"] is frmListTable listtableForm)
+            {
+                listtableForm.loadAll();
+            }
+
+
+
         }
     }
 }

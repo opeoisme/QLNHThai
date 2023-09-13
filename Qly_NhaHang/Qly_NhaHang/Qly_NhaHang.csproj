@@ -666,6 +666,7 @@
     <None Include="Resources\416404_bill_receipt_icon.png" />
     <None Include="Resources\185102_receipt_shopping_icon.png" />
     <None Include="Resources\1591871_booking_hotel_social_icon.png" />
+    <None Include="Resources\37049_isync_reload_refresh_icon.png" />
     <Content Include="Resources\5120875_butter_creamy_dairy_food_ingredient_icon.png" />
     <None Include="Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png" />
   </ItemGroup>

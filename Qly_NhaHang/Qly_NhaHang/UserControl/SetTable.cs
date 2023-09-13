@@ -47,7 +47,7 @@ namespace Qly_NhaHang.UserControl
         }
         private void btnCancle_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn hủy Reservation và cập nhật lại trạng thái bàn?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = XtraMessageBox.Show("Bạn có chắc chắn muốn hủy Reservation và cập nhật lại trạng thái bàn?", "Xác nhận", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {

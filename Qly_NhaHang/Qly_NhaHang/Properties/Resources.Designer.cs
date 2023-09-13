@@ -173,6 +173,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _37049_isync_reload_refresh_icon {
+            get {
+                object obj = ResourceManager.GetObject("_37049_isync_reload_refresh_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3709729_charge_extra_money_online_service_icon {
             get {
                 object obj = ResourceManager.GetObject("_3709729_charge_extra_money_online_service_icon", resourceCulture);

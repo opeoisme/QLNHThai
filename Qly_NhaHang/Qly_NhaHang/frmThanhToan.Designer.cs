@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToan));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -43,14 +44,19 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.lblIDBILL = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.btnReload = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnApply = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnPrint = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -76,26 +82,37 @@
             this.cbtZaloPay = new DevExpress.XtraEditors.CheckButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.gctDiscount = new DevExpress.XtraGrid.GridControl();
             this.gvDiscount = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gclPercentDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnDeleteDis = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDiscount = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.cbbDiscount = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMoneyDiscount = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.gctSurcharge = new DevExpress.XtraGrid.GridControl();
             this.gvSurcharge = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gclTypeSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gclpercentSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnDeleteSurcharge = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSurcharge = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cbbSurcharge = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMoneySurcharge = new DevExpress.XtraEditors.LabelControl();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -110,17 +127,21 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbDiscount.Properties)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctSurcharge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSurcharge)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSurcharge.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -134,6 +155,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1944, 67);
             this.panel1.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::Qly_NhaHang.Properties.Resources.icons8_left_50;
+            this.btnBack.Location = new System.Drawing.Point(3, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(68, 47);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 4;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblIDBILL
             // 
@@ -190,6 +223,8 @@
             // 
             // groupControl4
             // 
+            this.groupControl4.Controls.Add(this.btnReload);
+            this.groupControl4.Controls.Add(this.btnApply);
             this.groupControl4.Controls.Add(this.btnPrint);
             this.groupControl4.Controls.Add(this.btnPay);
             this.groupControl4.Controls.Add(this.labelControl10);
@@ -207,6 +242,131 @@
             this.groupControl4.Size = new System.Drawing.Size(1062, 286);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "Xác nhận thanh toán";
+            // 
+            // btnReload
+            // 
+            this.btnReload.ActiveImage = null;
+            this.btnReload.AllowAnimations = true;
+            this.btnReload.AllowBuffering = false;
+            this.btnReload.AllowToggling = false;
+            this.btnReload.AllowZooming = true;
+            this.btnReload.AllowZoomingOnFocus = false;
+            this.btnReload.BackColor = System.Drawing.Color.Transparent;
+            this.btnReload.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReload.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ErrorImage")));
+            this.btnReload.FadeWhenInactive = false;
+            this.btnReload.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnReload.Image = global::Qly_NhaHang.Properties.Resources._37049_isync_reload_refresh_icon;
+            this.btnReload.ImageActive = null;
+            this.btnReload.ImageLocation = null;
+            this.btnReload.ImageMargin = 10;
+            this.btnReload.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnReload.ImageZoomSize = new System.Drawing.Size(50, 50);
+            this.btnReload.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnReload.InitialImage")));
+            this.btnReload.Location = new System.Drawing.Point(969, 34);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Rotation = 0;
+            this.btnReload.ShowActiveImage = true;
+            this.btnReload.ShowCursorChanges = true;
+            this.btnReload.ShowImageBorders = true;
+            this.btnReload.ShowSizeMarkers = false;
+            this.btnReload.Size = new System.Drawing.Size(50, 50);
+            this.btnReload.TabIndex = 37;
+            this.btnReload.ToolTipText = "";
+            this.btnReload.WaitOnLoad = false;
+            this.btnReload.Zoom = 10;
+            this.btnReload.ZoomSpeed = 10;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // btnApply
+            // 
+            this.btnApply.AllowAnimations = true;
+            this.btnApply.AllowMouseEffects = true;
+            this.btnApply.AllowToggling = false;
+            this.btnApply.AnimationSpeed = 200;
+            this.btnApply.AutoGenerateColors = false;
+            this.btnApply.AutoRoundBorders = false;
+            this.btnApply.AutoSizeLeftIcon = true;
+            this.btnApply.AutoSizeRightIcon = true;
+            this.btnApply.BackColor = System.Drawing.Color.Transparent;
+            this.btnApply.BackColor1 = System.Drawing.Color.Teal;
+            this.btnApply.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnApply.BackgroundImage")));
+            this.btnApply.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnApply.ButtonText = "Áp dụng";
+            this.btnApply.ButtonTextMarginLeft = 0;
+            this.btnApply.ColorContrastOnClick = 45;
+            this.btnApply.ColorContrastOnHover = 45;
+            this.btnApply.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnApply.CustomizableEdges = borderEdges1;
+            this.btnApply.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnApply.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnApply.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnApply.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnApply.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnApply.Font = new System.Drawing.Font("UTM BryantLG", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.ForeColor = System.Drawing.Color.White;
+            this.btnApply.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnApply.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnApply.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnApply.IconMarginLeft = 11;
+            this.btnApply.IconPadding = 10;
+            this.btnApply.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnApply.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnApply.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnApply.IconSize = 25;
+            this.btnApply.IdleBorderColor = System.Drawing.Color.Teal;
+            this.btnApply.IdleBorderRadius = 5;
+            this.btnApply.IdleBorderThickness = 5;
+            this.btnApply.IdleFillColor = System.Drawing.Color.Teal;
+            this.btnApply.IdleIconLeftImage = null;
+            this.btnApply.IdleIconRightImage = null;
+            this.btnApply.IndicateFocus = false;
+            this.btnApply.Location = new System.Drawing.Point(554, 231);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnApply.OnDisabledState.BorderRadius = 5;
+            this.btnApply.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnApply.OnDisabledState.BorderThickness = 5;
+            this.btnApply.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnApply.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnApply.OnDisabledState.IconLeftImage = null;
+            this.btnApply.OnDisabledState.IconRightImage = null;
+            this.btnApply.onHoverState.BorderColor = System.Drawing.Color.White;
+            this.btnApply.onHoverState.BorderRadius = 5;
+            this.btnApply.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnApply.onHoverState.BorderThickness = 5;
+            this.btnApply.onHoverState.FillColor = System.Drawing.Color.White;
+            this.btnApply.onHoverState.ForeColor = System.Drawing.Color.Teal;
+            this.btnApply.onHoverState.IconLeftImage = null;
+            this.btnApply.onHoverState.IconRightImage = null;
+            this.btnApply.OnIdleState.BorderColor = System.Drawing.Color.Teal;
+            this.btnApply.OnIdleState.BorderRadius = 5;
+            this.btnApply.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnApply.OnIdleState.BorderThickness = 5;
+            this.btnApply.OnIdleState.FillColor = System.Drawing.Color.Teal;
+            this.btnApply.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnApply.OnIdleState.IconLeftImage = null;
+            this.btnApply.OnIdleState.IconRightImage = null;
+            this.btnApply.OnPressedState.BorderColor = System.Drawing.Color.Teal;
+            this.btnApply.OnPressedState.BorderRadius = 5;
+            this.btnApply.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnApply.OnPressedState.BorderThickness = 5;
+            this.btnApply.OnPressedState.FillColor = System.Drawing.Color.Teal;
+            this.btnApply.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnApply.OnPressedState.IconLeftImage = null;
+            this.btnApply.OnPressedState.IconRightImage = null;
+            this.btnApply.Size = new System.Drawing.Size(141, 48);
+            this.btnApply.TabIndex = 36;
+            this.btnApply.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnApply.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnApply.TextMarginLeft = 0;
+            this.btnApply.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnApply.UseDefaultRadiusAndThickness = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // btnPrint
             // 
@@ -227,11 +387,11 @@
             this.btnPrint.ColorContrastOnClick = 45;
             this.btnPrint.ColorContrastOnHover = 45;
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnPrint.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnPrint.CustomizableEdges = borderEdges2;
             this.btnPrint.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPrint.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPrint.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -316,11 +476,11 @@
             this.btnPay.ColorContrastOnClick = 45;
             this.btnPay.ColorContrastOnHover = 45;
             this.btnPay.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnPay.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnPay.CustomizableEdges = borderEdges3;
             this.btnPay.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPay.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPay.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -385,13 +545,14 @@
             this.btnPay.TextMarginLeft = 0;
             this.btnPay.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPay.UseDefaultRadiusAndThickness = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl10.Appearance.Font = new System.Drawing.Font("UTM Avo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(978, 178);
+            this.labelControl10.Location = new System.Drawing.Point(954, 178);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(39, 25);
             this.labelControl10.TabIndex = 33;
@@ -402,7 +563,7 @@
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("UTM Avo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(978, 111);
+            this.labelControl9.Location = new System.Drawing.Point(954, 111);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(39, 25);
             this.labelControl9.TabIndex = 32;
@@ -413,7 +574,7 @@
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl8.Appearance.Font = new System.Drawing.Font("UTM Avo", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(978, 49);
+            this.labelControl8.Location = new System.Drawing.Point(954, 49);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(39, 25);
             this.labelControl8.TabIndex = 31;
@@ -447,7 +608,7 @@
             this.txbMoneyChange.IconRight = null;
             this.txbMoneyChange.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbMoneyChange.Lines = new string[0];
-            this.txbMoneyChange.Location = new System.Drawing.Point(170, 168);
+            this.txbMoneyChange.Location = new System.Drawing.Point(146, 168);
             this.txbMoneyChange.MaxLength = 32767;
             this.txbMoneyChange.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbMoneyChange.Modified = false;
@@ -522,7 +683,7 @@
             this.txbMoneyCash.IconRight = null;
             this.txbMoneyCash.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbMoneyCash.Lines = new string[0];
-            this.txbMoneyCash.Location = new System.Drawing.Point(170, 101);
+            this.txbMoneyCash.Location = new System.Drawing.Point(146, 101);
             this.txbMoneyCash.MaxLength = 32767;
             this.txbMoneyCash.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbMoneyCash.Modified = false;
@@ -568,6 +729,7 @@
             this.txbMoneyCash.TextPlaceholder = "Tiền khách...";
             this.txbMoneyCash.UseSystemPasswordChar = false;
             this.txbMoneyCash.WordWrap = true;
+            this.txbMoneyCash.TextChange += new System.EventHandler(this.txbMoneyCash_TextChange);
             // 
             // txbTotalBill
             // 
@@ -598,7 +760,7 @@
             this.txbTotalBill.IconRight = null;
             this.txbTotalBill.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbTotalBill.Lines = new string[0];
-            this.txbTotalBill.Location = new System.Drawing.Point(170, 46);
+            this.txbTotalBill.Location = new System.Drawing.Point(146, 46);
             this.txbTotalBill.MaxLength = 32767;
             this.txbTotalBill.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbTotalBill.Modified = false;
@@ -649,7 +811,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(39, 176);
+            this.labelControl7.Location = new System.Drawing.Point(15, 176);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(79, 26);
             this.labelControl7.TabIndex = 27;
@@ -659,7 +821,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(34, 112);
+            this.labelControl6.Location = new System.Drawing.Point(10, 112);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(126, 26);
             this.labelControl6.TabIndex = 26;
@@ -669,7 +831,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(34, 48);
+            this.labelControl5.Location = new System.Drawing.Point(10, 48);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(72, 26);
             this.labelControl5.TabIndex = 25;
@@ -815,22 +977,31 @@
             // 
             // groupControl5
             // 
-            this.groupControl5.Controls.Add(this.gctDiscount);
+            this.groupControl5.Controls.Add(this.panel11);
+            this.groupControl5.Controls.Add(this.panel10);
             this.groupControl5.Controls.Add(this.panel6);
-            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl5.Location = new System.Drawing.Point(0, 477);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(897, 519);
+            this.groupControl5.Size = new System.Drawing.Size(873, 519);
             this.groupControl5.TabIndex = 5;
             this.groupControl5.Text = "Giảm giá";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.gctDiscount);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(2, 131);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(869, 386);
+            this.panel11.TabIndex = 9;
             // 
             // gctDiscount
             // 
             this.gctDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gctDiscount.Location = new System.Drawing.Point(2, 108);
+            this.gctDiscount.Location = new System.Drawing.Point(0, 0);
             this.gctDiscount.MainView = this.gvDiscount;
             this.gctDiscount.Name = "gctDiscount";
-            this.gctDiscount.Size = new System.Drawing.Size(893, 409);
+            this.gctDiscount.Size = new System.Drawing.Size(869, 386);
             this.gctDiscount.TabIndex = 7;
             this.gctDiscount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDiscount});
@@ -863,16 +1034,107 @@
             this.gclPercentDiscount.VisibleIndex = 1;
             this.gclPercentDiscount.Width = 112;
             // 
-            // panel6
+            // panel10
             // 
-            this.panel6.Controls.Add(this.btnDiscount);
-            this.panel6.Controls.Add(this.labelControl11);
-            this.panel6.Controls.Add(this.cbbDiscount);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(2, 34);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(893, 74);
-            this.panel6.TabIndex = 6;
+            this.panel10.Controls.Add(this.btnDeleteDis);
+            this.panel10.Controls.Add(this.btnDiscount);
+            this.panel10.Controls.Add(this.cbbDiscount);
+            this.panel10.Controls.Add(this.labelControl11);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(2, 68);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(869, 63);
+            this.panel10.TabIndex = 8;
+            // 
+            // btnDeleteDis
+            // 
+            this.btnDeleteDis.AllowAnimations = true;
+            this.btnDeleteDis.AllowMouseEffects = true;
+            this.btnDeleteDis.AllowToggling = false;
+            this.btnDeleteDis.AnimationSpeed = 200;
+            this.btnDeleteDis.AutoGenerateColors = false;
+            this.btnDeleteDis.AutoRoundBorders = false;
+            this.btnDeleteDis.AutoSizeLeftIcon = true;
+            this.btnDeleteDis.AutoSizeRightIcon = true;
+            this.btnDeleteDis.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteDis.BackColor1 = System.Drawing.Color.Red;
+            this.btnDeleteDis.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteDis.BackgroundImage")));
+            this.btnDeleteDis.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteDis.ButtonText = "Xóa";
+            this.btnDeleteDis.ButtonTextMarginLeft = 0;
+            this.btnDeleteDis.ColorContrastOnClick = 45;
+            this.btnDeleteDis.ColorContrastOnHover = 45;
+            this.btnDeleteDis.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnDeleteDis.CustomizableEdges = borderEdges4;
+            this.btnDeleteDis.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDeleteDis.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeleteDis.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeleteDis.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeleteDis.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnDeleteDis.Font = new System.Drawing.Font("UTM BryantLG", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteDis.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDis.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteDis.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeleteDis.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnDeleteDis.IconMarginLeft = 11;
+            this.btnDeleteDis.IconPadding = 10;
+            this.btnDeleteDis.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteDis.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeleteDis.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnDeleteDis.IconSize = 25;
+            this.btnDeleteDis.IdleBorderColor = System.Drawing.Color.Red;
+            this.btnDeleteDis.IdleBorderRadius = 5;
+            this.btnDeleteDis.IdleBorderThickness = 5;
+            this.btnDeleteDis.IdleFillColor = System.Drawing.Color.Red;
+            this.btnDeleteDis.IdleIconLeftImage = null;
+            this.btnDeleteDis.IdleIconRightImage = null;
+            this.btnDeleteDis.IndicateFocus = false;
+            this.btnDeleteDis.Location = new System.Drawing.Point(638, 6);
+            this.btnDeleteDis.Name = "btnDeleteDis";
+            this.btnDeleteDis.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeleteDis.OnDisabledState.BorderRadius = 5;
+            this.btnDeleteDis.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteDis.OnDisabledState.BorderThickness = 5;
+            this.btnDeleteDis.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeleteDis.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeleteDis.OnDisabledState.IconLeftImage = null;
+            this.btnDeleteDis.OnDisabledState.IconRightImage = null;
+            this.btnDeleteDis.onHoverState.BorderColor = System.Drawing.Color.White;
+            this.btnDeleteDis.onHoverState.BorderRadius = 5;
+            this.btnDeleteDis.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteDis.onHoverState.BorderThickness = 5;
+            this.btnDeleteDis.onHoverState.FillColor = System.Drawing.Color.White;
+            this.btnDeleteDis.onHoverState.ForeColor = System.Drawing.Color.Red;
+            this.btnDeleteDis.onHoverState.IconLeftImage = null;
+            this.btnDeleteDis.onHoverState.IconRightImage = null;
+            this.btnDeleteDis.OnIdleState.BorderColor = System.Drawing.Color.Red;
+            this.btnDeleteDis.OnIdleState.BorderRadius = 5;
+            this.btnDeleteDis.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteDis.OnIdleState.BorderThickness = 5;
+            this.btnDeleteDis.OnIdleState.FillColor = System.Drawing.Color.Red;
+            this.btnDeleteDis.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDis.OnIdleState.IconLeftImage = null;
+            this.btnDeleteDis.OnIdleState.IconRightImage = null;
+            this.btnDeleteDis.OnPressedState.BorderColor = System.Drawing.Color.Red;
+            this.btnDeleteDis.OnPressedState.BorderRadius = 5;
+            this.btnDeleteDis.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteDis.OnPressedState.BorderThickness = 5;
+            this.btnDeleteDis.OnPressedState.FillColor = System.Drawing.Color.Red;
+            this.btnDeleteDis.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDis.OnPressedState.IconLeftImage = null;
+            this.btnDeleteDis.OnPressedState.IconRightImage = null;
+            this.btnDeleteDis.Size = new System.Drawing.Size(141, 48);
+            this.btnDeleteDis.TabIndex = 9;
+            this.btnDeleteDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeleteDis.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDeleteDis.TextMarginLeft = 0;
+            this.btnDeleteDis.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnDeleteDis.UseDefaultRadiusAndThickness = true;
+            this.btnDeleteDis.Click += new System.EventHandler(this.btnDeleteDis_Click);
             // 
             // btnDiscount
             // 
@@ -893,11 +1155,11 @@
             this.btnDiscount.ColorContrastOnClick = 45;
             this.btnDiscount.ColorContrastOnHover = 45;
             this.btnDiscount.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnDiscount.CustomizableEdges = borderEdges3;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnDiscount.CustomizableEdges = borderEdges5;
             this.btnDiscount.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDiscount.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDiscount.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -921,7 +1183,7 @@
             this.btnDiscount.IdleIconLeftImage = null;
             this.btnDiscount.IdleIconRightImage = null;
             this.btnDiscount.IndicateFocus = false;
-            this.btnDiscount.Location = new System.Drawing.Point(472, 9);
+            this.btnDiscount.Location = new System.Drawing.Point(472, 6);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDiscount.OnDisabledState.BorderRadius = 5;
@@ -962,45 +1224,101 @@
             this.btnDiscount.TextMarginLeft = 0;
             this.btnDiscount.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDiscount.UseDefaultRadiusAndThickness = true;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(10, 19);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(73, 26);
-            this.labelControl11.TabIndex = 6;
-            this.labelControl11.Text = "Giảm giá";
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 
             // cbbDiscount
             // 
             this.cbbDiscount.EditValue = "...Trống...";
-            this.cbbDiscount.Location = new System.Drawing.Point(104, 19);
+            this.cbbDiscount.Location = new System.Drawing.Point(104, 16);
             this.cbbDiscount.Name = "cbbDiscount";
             this.cbbDiscount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbbDiscount.Size = new System.Drawing.Size(344, 26);
             this.cbbDiscount.TabIndex = 5;
             // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(10, 16);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(73, 26);
+            this.labelControl11.TabIndex = 6;
+            this.labelControl11.Text = "Giảm giá";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.lblMoneyDiscount);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(2, 34);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(869, 34);
+            this.panel6.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(5, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 26);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Mức tiền được giảm: ";
+            // 
+            // lblMoneyDiscount
+            // 
+            this.lblMoneyDiscount.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lblMoneyDiscount.Appearance.Font = new System.Drawing.Font("UTM Americana EB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoneyDiscount.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMoneyDiscount.Appearance.Options.UseBackColor = true;
+            this.lblMoneyDiscount.Appearance.Options.UseFont = true;
+            this.lblMoneyDiscount.Appearance.Options.UseForeColor = true;
+            this.lblMoneyDiscount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblMoneyDiscount.Location = new System.Drawing.Point(213, 5);
+            this.lblMoneyDiscount.Name = "lblMoneyDiscount";
+            this.lblMoneyDiscount.Size = new System.Drawing.Size(12, 24);
+            this.lblMoneyDiscount.TabIndex = 7;
+            this.lblMoneyDiscount.Text = "0";
+            // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.gctSurcharge);
+            this.groupControl1.Controls.Add(this.panel7);
             this.groupControl1.Controls.Add(this.panel5);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(897, 480);
+            this.groupControl1.Size = new System.Drawing.Size(873, 480);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Phụ Thu";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(2, 68);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(869, 410);
+            this.panel7.TabIndex = 7;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.gctSurcharge);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(0, 68);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(869, 342);
+            this.panel9.TabIndex = 8;
             // 
             // gctSurcharge
             // 
             this.gctSurcharge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gctSurcharge.Location = new System.Drawing.Point(2, 97);
+            this.gctSurcharge.Location = new System.Drawing.Point(0, 0);
             this.gctSurcharge.MainView = this.gvSurcharge;
             this.gctSurcharge.Name = "gctSurcharge";
-            this.gctSurcharge.Size = new System.Drawing.Size(893, 381);
+            this.gctSurcharge.Size = new System.Drawing.Size(869, 342);
             this.gctSurcharge.TabIndex = 6;
             this.gctSurcharge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSurcharge});
@@ -1035,16 +1353,107 @@
             this.gclpercentSurcharge.VisibleIndex = 1;
             this.gclpercentSurcharge.Width = 112;
             // 
-            // panel5
+            // panel8
             // 
-            this.panel5.Controls.Add(this.btnSurcharge);
-            this.panel5.Controls.Add(this.labelControl3);
-            this.panel5.Controls.Add(this.cbbSurcharge);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(2, 34);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(893, 63);
-            this.panel5.TabIndex = 5;
+            this.panel8.Controls.Add(this.btnDeleteSurcharge);
+            this.panel8.Controls.Add(this.btnSurcharge);
+            this.panel8.Controls.Add(this.cbbSurcharge);
+            this.panel8.Controls.Add(this.labelControl3);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(869, 68);
+            this.panel8.TabIndex = 7;
+            // 
+            // btnDeleteSurcharge
+            // 
+            this.btnDeleteSurcharge.AllowAnimations = true;
+            this.btnDeleteSurcharge.AllowMouseEffects = true;
+            this.btnDeleteSurcharge.AllowToggling = false;
+            this.btnDeleteSurcharge.AnimationSpeed = 200;
+            this.btnDeleteSurcharge.AutoGenerateColors = false;
+            this.btnDeleteSurcharge.AutoRoundBorders = false;
+            this.btnDeleteSurcharge.AutoSizeLeftIcon = true;
+            this.btnDeleteSurcharge.AutoSizeRightIcon = true;
+            this.btnDeleteSurcharge.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteSurcharge.BackColor1 = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteSurcharge.BackgroundImage")));
+            this.btnDeleteSurcharge.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteSurcharge.ButtonText = "Xóa";
+            this.btnDeleteSurcharge.ButtonTextMarginLeft = 0;
+            this.btnDeleteSurcharge.ColorContrastOnClick = 45;
+            this.btnDeleteSurcharge.ColorContrastOnHover = 45;
+            this.btnDeleteSurcharge.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnDeleteSurcharge.CustomizableEdges = borderEdges6;
+            this.btnDeleteSurcharge.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDeleteSurcharge.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeleteSurcharge.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeleteSurcharge.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeleteSurcharge.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnDeleteSurcharge.Font = new System.Drawing.Font("UTM BryantLG", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSurcharge.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSurcharge.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteSurcharge.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeleteSurcharge.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnDeleteSurcharge.IconMarginLeft = 11;
+            this.btnDeleteSurcharge.IconPadding = 10;
+            this.btnDeleteSurcharge.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteSurcharge.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeleteSurcharge.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnDeleteSurcharge.IconSize = 25;
+            this.btnDeleteSurcharge.IdleBorderColor = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.IdleBorderRadius = 5;
+            this.btnDeleteSurcharge.IdleBorderThickness = 5;
+            this.btnDeleteSurcharge.IdleFillColor = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.IdleIconLeftImage = null;
+            this.btnDeleteSurcharge.IdleIconRightImage = null;
+            this.btnDeleteSurcharge.IndicateFocus = false;
+            this.btnDeleteSurcharge.Location = new System.Drawing.Point(638, 9);
+            this.btnDeleteSurcharge.Name = "btnDeleteSurcharge";
+            this.btnDeleteSurcharge.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeleteSurcharge.OnDisabledState.BorderRadius = 5;
+            this.btnDeleteSurcharge.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteSurcharge.OnDisabledState.BorderThickness = 5;
+            this.btnDeleteSurcharge.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeleteSurcharge.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeleteSurcharge.OnDisabledState.IconLeftImage = null;
+            this.btnDeleteSurcharge.OnDisabledState.IconRightImage = null;
+            this.btnDeleteSurcharge.onHoverState.BorderColor = System.Drawing.Color.White;
+            this.btnDeleteSurcharge.onHoverState.BorderRadius = 5;
+            this.btnDeleteSurcharge.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteSurcharge.onHoverState.BorderThickness = 5;
+            this.btnDeleteSurcharge.onHoverState.FillColor = System.Drawing.Color.White;
+            this.btnDeleteSurcharge.onHoverState.ForeColor = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.onHoverState.IconLeftImage = null;
+            this.btnDeleteSurcharge.onHoverState.IconRightImage = null;
+            this.btnDeleteSurcharge.OnIdleState.BorderColor = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.OnIdleState.BorderRadius = 5;
+            this.btnDeleteSurcharge.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteSurcharge.OnIdleState.BorderThickness = 5;
+            this.btnDeleteSurcharge.OnIdleState.FillColor = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSurcharge.OnIdleState.IconLeftImage = null;
+            this.btnDeleteSurcharge.OnIdleState.IconRightImage = null;
+            this.btnDeleteSurcharge.OnPressedState.BorderColor = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.OnPressedState.BorderRadius = 5;
+            this.btnDeleteSurcharge.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDeleteSurcharge.OnPressedState.BorderThickness = 5;
+            this.btnDeleteSurcharge.OnPressedState.FillColor = System.Drawing.Color.Red;
+            this.btnDeleteSurcharge.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSurcharge.OnPressedState.IconLeftImage = null;
+            this.btnDeleteSurcharge.OnPressedState.IconRightImage = null;
+            this.btnDeleteSurcharge.Size = new System.Drawing.Size(141, 48);
+            this.btnDeleteSurcharge.TabIndex = 8;
+            this.btnDeleteSurcharge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeleteSurcharge.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDeleteSurcharge.TextMarginLeft = 0;
+            this.btnDeleteSurcharge.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnDeleteSurcharge.UseDefaultRadiusAndThickness = true;
+            this.btnDeleteSurcharge.Click += new System.EventHandler(this.btnDeleteSurcharge_Click);
             // 
             // btnSurcharge
             // 
@@ -1065,11 +1474,11 @@
             this.btnSurcharge.ColorContrastOnClick = 45;
             this.btnSurcharge.ColorContrastOnHover = 45;
             this.btnSurcharge.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnSurcharge.CustomizableEdges = borderEdges4;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnSurcharge.CustomizableEdges = borderEdges7;
             this.btnSurcharge.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSurcharge.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSurcharge.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1093,7 +1502,7 @@
             this.btnSurcharge.IdleIconLeftImage = null;
             this.btnSurcharge.IdleIconRightImage = null;
             this.btnSurcharge.IndicateFocus = false;
-            this.btnSurcharge.Location = new System.Drawing.Point(472, 12);
+            this.btnSurcharge.Location = new System.Drawing.Point(475, 9);
             this.btnSurcharge.Name = "btnSurcharge";
             this.btnSurcharge.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSurcharge.OnDisabledState.BorderRadius = 5;
@@ -1136,42 +1545,67 @@
             this.btnSurcharge.UseDefaultRadiusAndThickness = true;
             this.btnSurcharge.Click += new System.EventHandler(this.btnSurcharge_Click);
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(10, 21);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(66, 26);
-            this.labelControl3.TabIndex = 6;
-            this.labelControl3.Text = "Phụ thu";
-            // 
             // cbbSurcharge
             // 
             this.cbbSurcharge.EditValue = "...Trống...";
-            this.cbbSurcharge.Location = new System.Drawing.Point(104, 23);
+            this.cbbSurcharge.Location = new System.Drawing.Point(107, 20);
             this.cbbSurcharge.Name = "cbbSurcharge";
             this.cbbSurcharge.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbbSurcharge.Size = new System.Drawing.Size(344, 26);
             this.cbbSurcharge.TabIndex = 5;
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(13, 18);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(66, 26);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "Phụ thu";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.lblMoneySurcharge);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(2, 34);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(869, 34);
+            this.panel5.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(8, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mức tiền phụ thu thêm: ";
+            // 
+            // lblMoneySurcharge
+            // 
+            this.lblMoneySurcharge.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lblMoneySurcharge.Appearance.Font = new System.Drawing.Font("UTM Americana EB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoneySurcharge.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMoneySurcharge.Appearance.Options.UseBackColor = true;
+            this.lblMoneySurcharge.Appearance.Options.UseFont = true;
+            this.lblMoneySurcharge.Appearance.Options.UseForeColor = true;
+            this.lblMoneySurcharge.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblMoneySurcharge.Location = new System.Drawing.Point(216, 8);
+            this.lblMoneySurcharge.Name = "lblMoneySurcharge";
+            this.lblMoneySurcharge.Size = new System.Drawing.Size(12, 24);
+            this.lblMoneySurcharge.TabIndex = 5;
+            this.lblMoneySurcharge.Text = "0";
+            // 
             // gridBand1
             // 
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = -1;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = global::Qly_NhaHang.Properties.Resources.icons8_left_50;
-            this.btnBack.Location = new System.Drawing.Point(3, 5);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(68, 47);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 4;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmThanhToan
             // 
@@ -1188,6 +1622,7 @@
             this.Load += new System.EventHandler(this.frmThanhToan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
@@ -1203,19 +1638,25 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbDiscount.Properties)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctSurcharge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSurcharge)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbSurcharge.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbSurcharge.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1272,5 +1713,18 @@
         private DevExpress.XtraEditors.CheckButton cbtMomo;
         private DevExpress.XtraEditors.CheckButton cbtZaloPay;
         private System.Windows.Forms.PictureBox btnBack;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDeleteSurcharge;
+        private DevExpress.XtraEditors.LabelControl lblMoneySurcharge;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel10;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDeleteDis;
+        private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.LabelControl lblMoneyDiscount;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnApply;
+        private Bunifu.UI.WinForms.BunifuImageButton btnReload;
     }
 }
