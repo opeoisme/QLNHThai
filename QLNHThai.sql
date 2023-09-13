@@ -50,7 +50,6 @@ create table Bill (
 	totalPrice_Bill float, 
 	foreign key (id_Table) references Tablee (id_Table), 
 	foreign key (id_NV) references NhanVien (id_NV), 
-	foreign key (discount_Bill) references Discount (id_Discount)
 )
 
 create table Bill_Info(
@@ -115,11 +114,9 @@ create table Recipe(
 	foreign key (id_Ingredient) references Ingredient (id_Ingredient)
 )
  
-select *from Food
+select *from Bill_Info
+select * from Bill
+select *from Discount
 
-
-
-
-
-
+delete from Bill where id_Bill = 24
 
