@@ -73,6 +73,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _11025579_transfer_arrow_direction_way_sign_icon {
+            get {
+                object obj = ResourceManager.GetObject("_11025579_transfer_arrow_direction_way_sign_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1287507_user_account_avatar_human_people_icon {
             get {
                 object obj = ResourceManager.GetObject("_1287507_user_account_avatar_human_people_icon", resourceCulture);
@@ -306,6 +316,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap _9004715_cross_delete_remove_cancel_icon {
             get {
                 object obj = ResourceManager.GetObject("_9004715_cross_delete_remove_cancel_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9054941_bx_transfer_icon {
+            get {
+                object obj = ResourceManager.GetObject("_9054941_bx_transfer_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

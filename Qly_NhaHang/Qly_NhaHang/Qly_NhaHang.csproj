@@ -205,6 +205,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmChangeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeTable.Designer.cs">
+      <DependentUpon>frmChangeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Reservation_DAO.cs" />
     <Compile Include="DAO\THANHTOAN.cs" />
     <Compile Include="frmAddDiscount.cs">
@@ -344,6 +350,7 @@
     <Compile Include="Models\BillInfoViewModel.cs" />
     <Compile Include="Models\BillViewPay.cs" />
     <Compile Include="Models\FoodViewModel.cs" />
+    <Compile Include="Models\CombinedModel.cs" />
     <Compile Include="NHAHANG.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -433,6 +440,9 @@
     <Compile Include="UserControl\SetTable.Designer.cs">
       <DependentUpon>SetTable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmChangeTable.resx">
+      <DependentUpon>frmChangeTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddDiscount.resx">
       <DependentUpon>frmAddDiscount.cs</DependentUpon>
     </EmbeddedResource>
@@ -606,6 +616,7 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\9054941_bx_transfer_icon.png" />
     <None Include="Resources\cancle.png" />
     <None Include="Resources\Vẽ tay Hình tròn Logo %282%29.png" />
     <None Include="Resources\Food0.png" />
@@ -667,6 +678,7 @@
     <None Include="Resources\185102_receipt_shopping_icon.png" />
     <None Include="Resources\1591871_booking_hotel_social_icon.png" />
     <None Include="Resources\37049_isync_reload_refresh_icon.png" />
+    <None Include="Resources\11025579_transfer_arrow_direction_way_sign_icon.png" />
     <Content Include="Resources\5120875_butter_creamy_dairy_food_ingredient_icon.png" />
     <None Include="Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png" />
   </ItemGroup>

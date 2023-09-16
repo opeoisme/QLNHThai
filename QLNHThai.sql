@@ -44,7 +44,6 @@ create table Bill (
 	DateCheckIn Date not null default getdate(), 
 	DateCheckOut Date, 
 	id_Table int not null,
-	discount_Bill int default 0, 
 	status_Bill int not null default 0,
 	id_NV char(10) not null,
 	totalPrice_Bill float, 
@@ -116,7 +115,8 @@ create table Recipe(
  
 select *from Bill_Info
 select * from Bill
-select *from Discount
+select *from Tablee
 
-delete from Bill where id_Bill = 24
+
+delete from Bill_Info where id_BillInfo =  163
 

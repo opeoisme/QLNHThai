@@ -32,13 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusyTable));
             this.panel1 = new System.Windows.Forms.Panel();
             this.ctmntBusyTable = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.lblStatusTable = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblseatsTable = new DevExpress.XtraEditors.LabelControl();
             this.lblnameTable = new DevExpress.XtraEditors.LabelControl();
             this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChangeTable = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.ctmntBusyTable.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,17 +60,10 @@
             // 
             this.ctmntBusyTable.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.ctmntBusyTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBill});
+            this.btnBill,
+            this.btnChangeTable});
             this.ctmntBusyTable.Name = "ctmntBusyTable";
-            this.ctmntBusyTable.Size = new System.Drawing.Size(163, 36);
-            // 
-            // btnBill
-            // 
-            this.btnBill.Image = global::Qly_NhaHang.Properties.Resources._185102_receipt_shopping_icon;
-            this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(162, 32);
-            this.btnBill.Text = "Hóa đơn";
-            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            this.ctmntBusyTable.Size = new System.Drawing.Size(249, 101);
             // 
             // lblStatusTable
             // 
@@ -167,6 +161,22 @@
             this.btnPick.Zoom = 10;
             this.btnPick.ZoomSpeed = 10;
             // 
+            // btnBill
+            // 
+            this.btnBill.Image = global::Qly_NhaHang.Properties.Resources._185102_receipt_shopping_icon;
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(248, 32);
+            this.btnBill.Text = "Hóa đơn";
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            // 
+            // btnChangeTable
+            // 
+            this.btnChangeTable.Image = global::Qly_NhaHang.Properties.Resources._11025579_transfer_arrow_direction_way_sign_icon;
+            this.btnChangeTable.Name = "btnChangeTable";
+            this.btnChangeTable.Size = new System.Drawing.Size(248, 32);
+            this.btnChangeTable.Text = "Chuyển bàn";
+            this.btnChangeTable.Click += new System.EventHandler(this.btnChangeTable_Click);
+            // 
             // BusyTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -196,5 +206,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.ContextMenuStrip ctmntBusyTable;
         private System.Windows.Forms.ToolStripMenuItem btnBill;
+        private System.Windows.Forms.ToolStripMenuItem btnChangeTable;
     }
 }

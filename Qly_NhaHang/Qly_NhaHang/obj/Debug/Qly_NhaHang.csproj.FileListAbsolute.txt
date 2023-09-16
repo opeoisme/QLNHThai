@@ -528,3 +528,4 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\ja\DevExpress.Diagram.v21.2.Cor
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\ru\DevExpress.Diagram.v21.2.Core.resources.dll
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmPrintBill.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.HoaDon.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmChangeTable.resources

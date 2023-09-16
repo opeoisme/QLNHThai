@@ -211,6 +211,9 @@
   <data name="_100035_restore_system_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\100035_restore_system_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_11025579_transfer_arrow_direction_way_sign_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11025579_transfer_arrow_direction_way_sign_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_1287507_user_account_avatar_human_people_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1287507_user_account_avatar_human_people_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -282,6 +285,9 @@
   </data>
   <data name="_9004715_cross_delete_remove_cancel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9004715_cross_delete_remove_cancel_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9054941_bx_transfer_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9054941_bx_transfer_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_9951056_thanksgiving_mix_turkey_chicken_dinner_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9951056_thanksgiving_mix_turkey_chicken_dinner_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

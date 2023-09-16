@@ -44,24 +44,31 @@ namespace Qly_NhaHang.UserControl
         }
 
 
-
-
-
         private void btnBill_Click(object sender, EventArgs e)
         {
-            // Tạo một thể hiện mới của frmOrder
             frmOrder f = new frmOrder();
+            // Gán giá trị _idBill cho frmOrder
+            f.SetIdBill(_idBill);
+            f.SetIdBan(_idTable);
+           this.ParentForm.Hide();
+            // Hiển thị frmOrder
+            f.ShowDialog();
+            this.ParentForm.Show();
+          
+        }
+
+        private void btnChangeTable_Click(object sender, EventArgs e)
+        {
+            // Tạo một thể hiện mới của frmOrder
+            frmChangeTable f = new frmChangeTable();
 
             // Gán giá trị _idBill cho frmOrder
             f.SetIdBill(_idBill);
             f.SetIdBan(_idTable);
-          //  this.ParentForm.Hide();
+            //  this.ParentForm.Hide();
             // Hiển thị frmOrder
             f.ShowDialog();
             //this.ParentForm.Show();
         }
-
-
-
     }
 }

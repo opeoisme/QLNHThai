@@ -196,9 +196,24 @@ namespace Qly_NhaHang
 
         #endregion
 
+        private void UpdateTotalPriceInBill(double total)
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                var billToUpdate = dbContext.Bills.FirstOrDefault(b => b.id_Bill == _idBill);
+
+                if (billToUpdate != null)
+                {
+                    billToUpdate.totalPrice_Bill = total;
+                    dbContext.SaveChanges();
+                }
+            }
+        }
+
         private void btnPay_Click(object sender, EventArgs e)
         {
             double total = CalculateTotalPrice();
+            UpdateTotalPriceInBill(total);
             frmThanhToan thanhToanForm = new frmThanhToan(_idBill, total);
             this.Hide();
             thanhToanForm.ShowDialog();

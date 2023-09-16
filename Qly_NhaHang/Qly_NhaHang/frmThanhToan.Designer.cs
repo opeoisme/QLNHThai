@@ -456,6 +456,7 @@
             this.btnPrint.TextMarginLeft = 0;
             this.btnPrint.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPrint.UseDefaultRadiusAndThickness = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnPay
             // 
