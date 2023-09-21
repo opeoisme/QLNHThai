@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTable));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddTable = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteTable = new System.Windows.Forms.ToolStripButton();
-            this.btnReloadTable = new System.Windows.Forms.ToolStripButton();
             this.btnUpdateTable = new System.Windows.Forms.ToolStripButton();
             this.btnLoadTable = new System.Windows.Forms.ToolStripButton();
             this.btnPDFTable = new System.Windows.Forms.ToolStripButton();
             this.btnCSVTable = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbConditionTable = new System.Windows.Forms.ComboBox();
-            this.cbbStatusTable = new System.Windows.Forms.ComboBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.nmrSeatsTable = new System.Windows.Forms.NumericUpDown();
@@ -64,6 +66,7 @@
             this.seatsTable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.statusTable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.conditionTable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txbStatusTable = new Bunifu.UI.WinForms.BunifuTextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrSeatsTable)).BeginInit();
@@ -78,7 +81,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddTable,
             this.btnDeleteTable,
-            this.btnReloadTable,
             this.btnUpdateTable,
             this.btnLoadTable,
             this.btnPDFTable,
@@ -107,15 +109,6 @@
             this.btnDeleteTable.Size = new System.Drawing.Size(71, 29);
             this.btnDeleteTable.Text = "Xóa";
             this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
-            // 
-            // btnReloadTable
-            // 
-            this.btnReloadTable.Image = global::Qly_NhaHang.Properties.Resources._5173025_clock_date_internet_refresh_reload_icon;
-            this.btnReloadTable.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnReloadTable.Name = "btnReloadTable";
-            this.btnReloadTable.Size = new System.Drawing.Size(119, 29);
-            this.btnReloadTable.Text = "Khôi phục";
-            this.btnReloadTable.Click += new System.EventHandler(this.btnReloadTable_Click);
             // 
             // btnUpdateTable
             // 
@@ -155,8 +148,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txbStatusTable);
             this.panel1.Controls.Add(this.cbbConditionTable);
-            this.panel1.Controls.Add(this.cbbStatusTable);
             this.panel1.Controls.Add(this.labelControl5);
             this.panel1.Controls.Add(this.labelControl4);
             this.panel1.Controls.Add(this.nmrSeatsTable);
@@ -182,18 +175,6 @@
             this.cbbConditionTable.Size = new System.Drawing.Size(339, 27);
             this.cbbConditionTable.TabIndex = 30;
             // 
-            // cbbStatusTable
-            // 
-            this.cbbStatusTable.FormattingEnabled = true;
-            this.cbbStatusTable.Items.AddRange(new object[] {
-            "Đang trống",
-            "Đang có khách",
-            "Được đặt"});
-            this.cbbStatusTable.Location = new System.Drawing.Point(164, 107);
-            this.cbbStatusTable.Name = "cbbStatusTable";
-            this.cbbStatusTable.Size = new System.Drawing.Size(353, 27);
-            this.cbbStatusTable.TabIndex = 29;
-            // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,7 +189,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(12, 108);
+            this.labelControl4.Location = new System.Drawing.Point(12, 111);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(85, 26);
             this.labelControl4.TabIndex = 27;
@@ -258,32 +239,32 @@
             this.txbNameTable.IconRight = null;
             this.txbNameTable.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbNameTable.Lines = new string[0];
-            this.txbNameTable.Location = new System.Drawing.Point(660, 12);
+            this.txbNameTable.Location = new System.Drawing.Point(660, 14);
             this.txbNameTable.MaxLength = 32767;
             this.txbNameTable.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbNameTable.Modified = false;
             this.txbNameTable.Multiline = false;
             this.txbNameTable.Name = "txbNameTable";
-            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameTable.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameTable.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameTable.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.Silver;
-            stateProperties20.FillColor = System.Drawing.Color.White;
-            stateProperties20.ForeColor = System.Drawing.Color.Empty;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameTable.OnIdleState = stateProperties20;
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameTable.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameTable.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameTable.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameTable.OnIdleState = stateProperties8;
             this.txbNameTable.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameTable.PasswordChar = '\0';
             this.txbNameTable.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -332,32 +313,32 @@
             this.txbIdTable.IconRight = null;
             this.txbIdTable.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbIdTable.Lines = new string[0];
-            this.txbIdTable.Location = new System.Drawing.Point(164, 12);
+            this.txbIdTable.Location = new System.Drawing.Point(114, 14);
             this.txbIdTable.MaxLength = 32767;
             this.txbIdTable.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbIdTable.Modified = false;
             this.txbIdTable.Multiline = false;
             this.txbIdTable.Name = "txbIdTable";
-            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdTable.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIdTable.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdTable.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.Silver;
-            stateProperties24.FillColor = System.Drawing.Color.White;
-            stateProperties24.ForeColor = System.Drawing.Color.Empty;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdTable.OnIdleState = stateProperties24;
+            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdTable.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIdTable.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdTable.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdTable.OnIdleState = stateProperties12;
             this.txbIdTable.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdTable.PasswordChar = '\0';
             this.txbIdTable.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -383,7 +364,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(567, 18);
+            this.labelControl1.Location = new System.Drawing.Point(586, 18);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(67, 26);
             this.labelControl1.TabIndex = 20;
@@ -393,7 +374,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(12, 18);
+            this.labelControl3.Location = new System.Drawing.Point(36, 18);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(61, 26);
             this.labelControl3.TabIndex = 19;
@@ -421,6 +402,12 @@
             // 
             // gvTable
             // 
+            this.gvTable.Appearance.HeaderPanel.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTable.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvTable.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvTable.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvTable.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gvTable.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTable.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.idTable,
             this.nameTable,
@@ -429,7 +416,6 @@
             this.conditionTable});
             this.gvTable.GridControl = this.gctTable;
             this.gvTable.Name = "gvTable";
-            this.gvTable.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvTable_CustomDrawCell);
             this.gvTable.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvTable_FocusedRowChanged);
             // 
             // idTable
@@ -482,6 +468,80 @@
             this.conditionTable.VisibleIndex = 4;
             this.conditionTable.Width = 112;
             // 
+            // txbStatusTable
+            // 
+            this.txbStatusTable.AcceptsReturn = false;
+            this.txbStatusTable.AcceptsTab = false;
+            this.txbStatusTable.AnimationSpeed = 200;
+            this.txbStatusTable.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbStatusTable.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbStatusTable.BackColor = System.Drawing.Color.Transparent;
+            this.txbStatusTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbStatusTable.BackgroundImage")));
+            this.txbStatusTable.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbStatusTable.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbStatusTable.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbStatusTable.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbStatusTable.BorderRadius = 10;
+            this.txbStatusTable.BorderThickness = 1;
+            this.txbStatusTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbStatusTable.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbStatusTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbStatusTable.DefaultText = "";
+            this.txbStatusTable.FillColor = System.Drawing.Color.White;
+            this.txbStatusTable.HideSelection = true;
+            this.txbStatusTable.IconLeft = null;
+            this.txbStatusTable.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbStatusTable.IconPadding = 10;
+            this.txbStatusTable.IconRight = null;
+            this.txbStatusTable.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbStatusTable.Lines = new string[0];
+            this.txbStatusTable.Location = new System.Drawing.Point(114, 108);
+            this.txbStatusTable.MaxLength = 32767;
+            this.txbStatusTable.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbStatusTable.Modified = false;
+            this.txbStatusTable.Multiline = false;
+            this.txbStatusTable.Name = "txbStatusTable";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbStatusTable.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbStatusTable.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbStatusTable.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbStatusTable.OnIdleState = stateProperties4;
+            this.txbStatusTable.Padding = new System.Windows.Forms.Padding(3);
+            this.txbStatusTable.PasswordChar = '\0';
+            this.txbStatusTable.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbStatusTable.PlaceholderText = "Trạng thái bàn...";
+            this.txbStatusTable.ReadOnly = true;
+            this.txbStatusTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbStatusTable.SelectedText = "";
+            this.txbStatusTable.SelectionLength = 0;
+            this.txbStatusTable.SelectionStart = 0;
+            this.txbStatusTable.ShortcutsEnabled = true;
+            this.txbStatusTable.Size = new System.Drawing.Size(353, 45);
+            this.txbStatusTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txbStatusTable.TabIndex = 31;
+            this.txbStatusTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbStatusTable.TextMarginBottom = 0;
+            this.txbStatusTable.TextMarginLeft = 3;
+            this.txbStatusTable.TextMarginTop = 0;
+            this.txbStatusTable.TextPlaceholder = "Trạng thái bàn...";
+            this.txbStatusTable.UseSystemPasswordChar = false;
+            this.txbStatusTable.WordWrap = true;
+            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -512,12 +572,10 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnAddTable;
         private System.Windows.Forms.ToolStripButton btnDeleteTable;
-        private System.Windows.Forms.ToolStripButton btnReloadTable;
         private System.Windows.Forms.ToolStripButton btnUpdateTable;
         private System.Windows.Forms.ToolStripButton btnLoadTable;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbbConditionTable;
-        private System.Windows.Forms.ComboBox cbbStatusTable;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.NumericUpDown nmrSeatsTable;
@@ -536,5 +594,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn conditionTable;
         private System.Windows.Forms.ToolStripButton btnPDFTable;
         private System.Windows.Forms.ToolStripButton btnCSVTable;
+        private Bunifu.UI.WinForms.BunifuTextBox txbStatusTable;
     }
 }

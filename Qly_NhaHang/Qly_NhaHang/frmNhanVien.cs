@@ -22,6 +22,7 @@ namespace Qly_NhaHang
 {
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        private QLNHThaiEntities dbContext;
         private bool isImageChanged = false;
         string loggedInIdNV = frmLogin.LoggedInIdNV;
 
@@ -29,15 +30,27 @@ namespace Qly_NhaHang
         {
             InitializeComponent();
             InitializeGridViewOptions();
+            dbContext = new QLNHThaiEntities();
         }
 
-        private QLNHThaiEntities dbContext = new QLNHThaiEntities(); // Initialize the context here
-
-        // Load data from the database and bind it to the grid
         public void LoadFormNV()
         {
-            List<NhanVien> nhanViens = dbContext.NhanViens.ToList();
-            gctNV.DataSource = nhanViens;
+            var nhanvienData = dbContext.NhanViens
+                             .Where(nv => nv.condition_NV == "Làm việc")
+                            .Select(nv => new NhanVienView
+                            {
+                                id_NV = nv.id_NV,
+                                name_NV = nv.name_NV,
+                                sex_NV = nv.sex_NV,
+                                address_NV = nv.address_NV,
+                                CCCD_NV = nv.CCCD_NV,
+                                phone_NV = nv.phone_NV,
+                                image_NV = nv.image_NV,
+                                type_NV = nv.type_NV,
+                                condition_NV = nv.condition_NV,
+                                pass_NV = nv.pass_NV,
+                            }).ToList();
+            gctNV.DataSource = nhanvienData;
         }
 
         private void InitializeGridViewOptions()
@@ -117,7 +130,7 @@ namespace Qly_NhaHang
 
         private void UpdateNhanVienControls(int focusedRowHandle)
         {
-            NhanVien selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVien;
+            NhanVienView selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVienView;
             if (selectedNhanvien != null)
             {
                 txbIdNV.Text = selectedNhanvien.id_NV;
@@ -208,7 +221,7 @@ namespace Qly_NhaHang
             int focusedRowHandle = gvNV.FocusedRowHandle;
             if (focusedRowHandle >= 0)
             {
-                NhanVien selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVien;
+                NhanVienView selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVienView;
                 if (selectedNhanvien != null)
                 {
                     string nhanvienId = selectedNhanvien.id_NV;
@@ -229,6 +242,10 @@ namespace Qly_NhaHang
                     if (nhanvienToDelete != null)
                     {
                         nhanvienToDelete.condition_NV = "Nghỉ việc";
+
+                        // Đánh dấu đối tượng là thay đổi
+                        dbContext.Entry(nhanvienToDelete).State = EntityState.Modified;
+
                         dbContext.SaveChanges();
 
                         // Load lại danh sách sau khi cập nhật
@@ -242,20 +259,6 @@ namespace Qly_NhaHang
             }
         }
 
-
-        private void gvNV_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            GridView view = sender as GridView;
-
-            if (e.RowHandle >= 0)
-            {
-                NhanVien nhanvien = view.GetRow(e.RowHandle) as NhanVien;
-                if (nhanvien != null && nhanvien.condition_NV == "Nghỉ việc")
-                {
-                    e.Appearance.ForeColor = Color.Gray; // Áp dụng màu chữ xám
-                }
-            }
-        }
 
         private void btnReloadNV_Click(object sender, EventArgs e)
         {

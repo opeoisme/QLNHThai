@@ -25,15 +25,6 @@ namespace Qly_NhaHang
             InitializeComponent();
         }
 
-        //public void ShowReport(List<CombinedModel> data)
-        //{
-        //    billInfoData = data;
-        //    // Tạo và hiển thị báo cáo
-        //    HoaDon report = new HoaDon(); // Thay XtraReport1 bằng tên của Report bạn đã tạo
-        //    documentViewer1.DocumentSource = report;
-        //    report.CreateDocument();
-        //}
-
         public void SetReportData(List<CombinedModel> data)
         {
             HoaDon report = new HoaDon(); 

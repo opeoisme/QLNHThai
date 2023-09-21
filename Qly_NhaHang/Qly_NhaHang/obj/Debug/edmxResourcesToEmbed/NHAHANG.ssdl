@@ -29,6 +29,7 @@
     </Key>
     <Property Name="id_Category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name_Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="condition_Category" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Discount">
     <Key>
@@ -80,7 +81,9 @@
     <Property Name="name_Ingredient" Type="nvarchar(max)" Nullable="false" />
     <Property Name="unit_Ingredient" Type="nvarchar(max)" Nullable="false" />
     <Property Name="count_Ingredient" Type="int" Nullable="false" />
-    <Property Name="comment_Ingredient" Type="nvarchar(max)" />
+    <Property Name="status_Ingredient" Type="nvarchar(max)" />
+    <Property Name="image_Ingredient" Type="varbinary(max)" />
+    <Property Name="condition_Ingredient" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>

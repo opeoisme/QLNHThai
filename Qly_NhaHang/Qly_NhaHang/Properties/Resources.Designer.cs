@@ -273,6 +273,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6397958_cancel_contact_delete_delete_account_remove_icon {
+            get {
+                object obj = ResourceManager.GetObject("_6397958_cancel_contact_delete_delete_account_remove_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7267724_ext_csv_file_document_format_icon {
             get {
                 object obj = ResourceManager.GetObject("_7267724_ext_csv_file_document_format_icon", resourceCulture);
@@ -293,9 +303,39 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8542452_trash_restore_icon {
+            get {
+                object obj = ResourceManager.GetObject("_8542452_trash_restore_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8725849_file_upload_icon {
             get {
                 object obj = ResourceManager.GetObject("_8725849_file_upload_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8725906_export_icon {
+            get {
+                object obj = ResourceManager.GetObject("_8725906_export_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8726154_import_icon {
+            get {
+                object obj = ResourceManager.GetObject("_8726154_import_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -586,6 +626,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap icons8_sex_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8_sex_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_table_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_table_100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

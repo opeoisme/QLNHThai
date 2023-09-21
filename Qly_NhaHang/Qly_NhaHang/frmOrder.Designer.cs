@@ -183,6 +183,9 @@
             // 
             // gvBill
             // 
+            this.gvBill.Appearance.HeaderPanel.Font = new System.Drawing.Font("UTM Bienvenue", 9F);
+            this.gvBill.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvBill.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvBill.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.nameFood,
             this.contityFood});
@@ -211,6 +214,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.lblTotalPrice);
             this.panel6.Controls.Add(this.labelControl1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -221,13 +225,13 @@
             // 
             // lblTotalPrice
             // 
-            this.lblTotalPrice.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblTotalPrice.Appearance.Options.UseFont = true;
             this.lblTotalPrice.Appearance.Options.UseForeColor = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(164, 12);
+            this.lblTotalPrice.Location = new System.Drawing.Point(173, 17);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(97, 35);
+            this.lblTotalPrice.Size = new System.Drawing.Size(81, 29);
             this.lblTotalPrice.TabIndex = 24;
             this.lblTotalPrice.Text = ".000VNĐ";
             // 

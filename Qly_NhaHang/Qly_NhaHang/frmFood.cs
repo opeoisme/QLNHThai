@@ -46,7 +46,6 @@ namespace Qly_NhaHang
             GridView gridView = gctFood.MainView as GridView;
             gridView.OptionsBehavior.ReadOnly = true;
             gridView.FocusedRowChanged += gridView1_FocusedRowChanged;
-            gridView.CustomDrawCell += gridView1_CustomDrawCell;
         }
 
         private void InitializeDbContext()
@@ -57,18 +56,27 @@ namespace Qly_NhaHang
         public void LoadFoodData()
         {
             var foodData = dbContext.Foods
-                .Select(f => new FoodModel
+                .Join(
+                    dbContext.CategoryFoods,
+                    food => food.id_Category,
+                    category => category.id_Category,
+                    (food, category) => new { Food = food, Category = category }
+                )
+                .Where(joinResult => joinResult.Food.condition_Food == "Được sử dụng" && joinResult.Category.condition_Category == "Được sử dụng")
+                .Select(joinResult => new FoodModel
                 {
-                    id_Food = f.id_Food,
-                    name_Food = f.name_Food,
-                    price_Food = (float)f.price_Food,
-                    condition_Food = f.condition_Food,
-                    image_Food = f.image_Food,
-                    id_Category = f.id_Category
+                    id_Food = joinResult.Food.id_Food,
+                    name_Food = joinResult.Food.name_Food,
+                    price_Food = (float)joinResult.Food.price_Food,
+                    condition_Food = joinResult.Food.condition_Food,
+                    image_Food = joinResult.Food.image_Food,
+                    id_Category = joinResult.Food.id_Category
                 })
                 .ToList();
+
             gctFood.DataSource = foodData;
         }
+
 
         private void UpdateFoodControls(int focusedRowHandle)
         {
@@ -102,6 +110,7 @@ namespace Qly_NhaHang
             cbbCategory.DisplayMember = "name_Category";
             cbbCategory.ValueMember = "id_Category";
         }
+
 
         private void SelectAndSaveImage()
         {
@@ -251,70 +260,24 @@ namespace Qly_NhaHang
                 {
                     if (int.TryParse(selectedFood.id_Food.ToString(), out int foodId))
                     {
-                        Food foodToDelete = dbContext.Foods.FirstOrDefault(f => f.id_Food == foodId);
-
-                        if (foodToDelete != null)
-                        {
-                            foodToDelete.condition_Food = "Ngừng bán";
-                            dbContext.SaveChanges();
-
-                            // Load lại danh sách sau khi cập nhật
-                            LoadFoodData();
-
-                            // Mờ trường dữ liệu tương ứng trên GridView
-                            gridView1.SetRowCellValue(focusedRowHandle, gridView1.Columns["condition_Food"], "Ngừng bán");
-                            XtraMessageBox.Show("Sản phẩm không còn được phục vụ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            GridView view = sender as GridView;
-
-            if (e.RowHandle >= 0)
-            {
-                FoodModel food = view.GetRow(e.RowHandle) as FoodModel;
-                if (food != null && food.condition_Food == "Ngừng bán")
-                {
-                    e.Appearance.ForeColor = Color.Gray; // Áp dụng màu chữ xám
-                }
-            }
-        }
-
-        private void btnReloadFood_Click(object sender, EventArgs e)
-        {
-            int[] selectedRows = gridView1.GetSelectedRows();
-            int updatedCount = 0; // Số lượng sản phẩm đã được cập nhật
-
-            foreach (int rowHandle in selectedRows)
-            {
-                FoodModel selectedFood = gridView1.GetRow(rowHandle) as FoodModel;
-                if (selectedFood != null && selectedFood.condition_Food != "Được sử dụng")
-                {
-                    if (int.TryParse(selectedFood.id_Food.ToString(), out int foodId))
-                    {
                         Food foodToUpdate = dbContext.Foods.FirstOrDefault(f => f.id_Food == foodId);
 
                         if (foodToUpdate != null)
                         {
-                            foodToUpdate.condition_Food = "Được sử dụng";
+                            foodToUpdate.condition_Food = "Ngừng bán";
+
+                            // Đánh dấu đối tượng là thay đổi
+                            dbContext.Entry(foodToUpdate).State = EntityState.Modified;
+
+                            // Lưu thay đổi
                             dbContext.SaveChanges();
-                            updatedCount++; // Tăng số lượng sản phẩm đã cập nhật
+
+                            // Nạp lại dữ liệu sau khi cập nhật
+                            LoadFoodData();
+                            XtraMessageBox.Show("Sản phẩm ngừng kinh doanh !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
-            }
-            LoadFoodData();
-            if (updatedCount > 0)
-            {
-                XtraMessageBox.Show($" {updatedCount} sản phẩm đã được đưa vào sử dụng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                XtraMessageBox.Show("Sản phẩm đang được sử dụng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -330,19 +293,16 @@ namespace Qly_NhaHang
                 using (var workbook = new ClosedXML.Excel.XLWorkbook())
                 {
                     var worksheet = workbook.Worksheets.Add("FoodData");
-
                     // Đặt chiều rộng cột cho tất cả các cột là 15
                     for (int col = 0; col < gridView1.Columns.Count; col++)
                     {
                         worksheet.Column(col + 1).Width = 15;
                     }
-
                     // Tiêu đề cột
                     for (int i = 0; i < gridView1.Columns.Count; i++)
                     {
                         worksheet.Cell(1, i + 1).Value = gridView1.Columns[i].Caption;
                     }
-
                     for (int row = 0; row < gridView1.RowCount; row++)
                     {
                         // Đặt chiều cao hàng là 60
@@ -370,10 +330,8 @@ namespace Qly_NhaHang
                             }
                         }
                     }
-
                     workbook.SaveAs(filePath);
                 }
-
                 XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -462,20 +420,9 @@ namespace Qly_NhaHang
                         y = 20;
                     }
                 }
-
                 pdf.Save(filePath);
-
                 XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
-
-
-
-
-
-
-
     }
 }

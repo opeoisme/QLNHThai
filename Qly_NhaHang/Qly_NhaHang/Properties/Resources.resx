@@ -193,6 +193,9 @@
   <data name="icons8_sex_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-sex-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_table_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-table-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_taskbar_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-taskbar-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -271,14 +274,26 @@
   <data name="_60168_catalog_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\60168_catalog_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_6397958_cancel_contact_delete_delete_account_remove_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6397958_cancel_contact_delete_delete account_remove_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_7267724_ext_csv_file_document_format_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7267724_ext_csv_file_document_format_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_7811684_warehouse_supply_cargo_distribution_logistic_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_8542452_trash_restore_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8542452_trash_restore_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_8725849_file_upload_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8725849_file_upload_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8725906_export_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8725906_export_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8726154_import_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8726154_import_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_89064_book_recipe_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\89064_book_recipe_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

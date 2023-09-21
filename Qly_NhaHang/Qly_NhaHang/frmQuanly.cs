@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DocumentFormat.OpenXml.Office2016.Drawing.Command;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,6 +75,41 @@ namespace Qly_NhaHang
         private void btnReservation_ItemClick(object sender, ItemClickEventArgs e)
         {
             openForm(typeof(frmReservation));
+        }
+
+        private void btnIngredient_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmIngredient));
+        }
+
+        private void btnImport_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmImport));
+        }
+
+        private void btnExport_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmExport));
+        }
+
+        private void btnDeleteFood_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmRestoreFood));
+        }
+
+        private void btnDeleteCategory_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmRestoreCategory));
+        }
+
+        private void btnDeleteTable_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(FrmRestoreTable));
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmRestoreNV));
         }
     }
 }

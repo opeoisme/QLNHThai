@@ -25,7 +25,9 @@ namespace Qly_NhaHang
         public string name_Ingredient { get; set; }
         public string unit_Ingredient { get; set; }
         public int count_Ingredient { get; set; }
-        public string comment_Ingredient { get; set; }
+        public string status_Ingredient { get; set; }
+        public byte[] image_Ingredient { get; set; }
+        public string condition_Ingredient { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ImportInfo> ImportInfoes { get; set; }

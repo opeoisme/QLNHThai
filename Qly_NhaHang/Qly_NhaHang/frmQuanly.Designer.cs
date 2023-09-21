@@ -46,6 +46,13 @@
             this.btnReservation = new DevExpress.XtraBars.BarButtonItem();
             this.btnRecipe = new DevExpress.XtraBars.BarButtonItem();
             this.Close = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCancleFood = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCanleCategory = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDeleteFood = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDeleteCategory = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDeleteTable = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -53,12 +60,16 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.btnRestoreFood = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -85,15 +96,23 @@
             this.btnExport,
             this.btnReservation,
             this.btnRecipe,
-            this.Close});
+            this.Close,
+            this.btnCancleFood,
+            this.btnCanleCategory,
+            this.barButtonItem1,
+            this.btnDeleteFood,
+            this.btnDeleteCategory,
+            this.btnDeleteTable,
+            this.barButtonItem3});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 18;
+            this.ribbon.MaxItemId = 27;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 403;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1748, 231);
+            this.ribbonPage1,
+            this.ribbonPage3});
+            this.ribbon.Size = new System.Drawing.Size(1944, 231);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnFood
@@ -177,6 +196,7 @@
             this.btnIngredient.Name = "btnIngredient";
             this.btnIngredient.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnIngredient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIngredient_ItemClick);
             // 
             // Nhập
             // 
@@ -192,6 +212,7 @@
             this.btnImport.Name = "btnImport";
             this.btnImport.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImport_ItemClick);
             // 
             // btnExport
             // 
@@ -201,6 +222,7 @@
             this.btnExport.Name = "btnExport";
             this.btnExport.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExport_ItemClick);
             // 
             // btnReservation
             // 
@@ -231,6 +253,73 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Close_ItemClick);
             // 
+            // btnCancleFood
+            // 
+            this.btnCancleFood.Caption = "Danh sách món ăn ngừng bán";
+            this.btnCancleFood.Id = 19;
+            this.btnCancleFood.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._8542452_trash_restore_icon;
+            this.btnCancleFood.Name = "btnCancleFood";
+            this.btnCancleFood.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnCanleCategory
+            // 
+            this.btnCanleCategory.Caption = "Danh mục bị hủy";
+            this.btnCanleCategory.Id = 20;
+            this.btnCanleCategory.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._8542452_trash_restore_icon;
+            this.btnCanleCategory.Name = "btnCanleCategory";
+            this.btnCanleCategory.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Danh mục bàn hư hỏng";
+            this.barButtonItem1.Id = 21;
+            this.barButtonItem1.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources.icons8_table_100;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnDeleteFood
+            // 
+            this.btnDeleteFood.Caption = "Sản phẩm ngừng bán";
+            this.btnDeleteFood.Id = 22;
+            this.btnDeleteFood.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._8542452_trash_restore_icon;
+            this.btnDeleteFood.Name = "btnDeleteFood";
+            this.btnDeleteFood.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDeleteFood.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteFood_ItemClick);
+            // 
+            // btnDeleteCategory
+            // 
+            this.btnDeleteCategory.Caption = "Danh mục loại sản phẩm ngừng bán";
+            this.btnDeleteCategory.Id = 24;
+            this.btnDeleteCategory.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._8542452_trash_restore_icon;
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDeleteCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteCategory_ItemClick);
+            // 
+            // btnDeleteTable
+            // 
+            this.btnDeleteTable.Caption = "Danh mục bàn ngừng sử dụng";
+            this.btnDeleteTable.Id = 25;
+            this.btnDeleteTable.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources.icons8_table_100;
+            this.btnDeleteTable.Name = "btnDeleteTable";
+            this.btnDeleteTable.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDeleteTable.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteTable_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Danh mục nhân viên nghỉ việc";
+            this.barButtonItem3.Id = 26;
+            this.barButtonItem3.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._6397958_cancel_contact_delete_delete_account_remove_icon;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -240,9 +329,9 @@
             this.ribbonPageGroup6,
             this.ribbonPageGroup4,
             this.ribbonPageGroup5,
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup9});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Quản lý ";
+            this.ribbonPage1.Text = "Danh mục quản lý ";
             // 
             // ribbonPageGroup1
             // 
@@ -285,10 +374,26 @@
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Phụ thu và Giảm giá";
             // 
-            // ribbonPageGroup8
+            // ribbonPageGroup9
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.Close);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup9.ItemLinks.Add(this.Close);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup10});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Sản phẩm bị hủy";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnDeleteFood);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnDeleteCategory);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnDeleteTable);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Danh mục lưu trữ";
             // 
             // ribbonStatusBar
             // 
@@ -296,7 +401,7 @@
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1748, 36);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1944, 36);
             // 
             // ribbonPageGroup3
             // 
@@ -318,12 +423,25 @@
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
+            // btnRestoreFood
+            // 
+            this.btnRestoreFood.Caption = "Danh sách món ăn xóa";
+            this.btnRestoreFood.Id = 18;
+            this.btnRestoreFood.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._8542452_trash_restore_icon;
+            this.btnRestoreFood.Name = "btnRestoreFood";
+            this.btnRestoreFood.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
             // frmQuanly
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1748, 1105);
+            this.ClientSize = new System.Drawing.Size(1944, 1105);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -373,6 +491,17 @@
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraBars.BarButtonItem btnRecipe;
         private DevExpress.XtraBars.BarButtonItem Close;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem btnRestoreFood;
+        private DevExpress.XtraBars.BarButtonItem btnCancleFood;
+        private DevExpress.XtraBars.BarButtonItem btnCanleCategory;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnDeleteFood;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarButtonItem btnDeleteCategory;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnDeleteTable;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }

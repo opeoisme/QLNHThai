@@ -205,6 +205,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CATEGORY.cs" />
     <Compile Include="frmChangeTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +285,12 @@
     <Compile Include="frmDiscount.Designer.cs">
       <DependentUpon>frmDiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExport.Designer.cs">
+      <DependentUpon>frmExport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,17 +303,59 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImport.Designer.cs">
+      <DependentUpon>frmImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngredient.Designer.cs">
+      <DependentUpon>frmIngredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrintBill.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrintBill.Designer.cs">
       <DependentUpon>frmPrintBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrintBillMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintBillMain.Designer.cs">
+      <DependentUpon>frmPrintBillMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmReservation.Designer.cs">
       <DependentUpon>frmReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestoreCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreCategory.Designer.cs">
+      <DependentUpon>frmRestoreCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestoreFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreFood.Designer.cs">
+      <DependentUpon>frmRestoreFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestoreNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreNV.Designer.cs">
+      <DependentUpon>frmRestoreNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRestoreTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRestoreTable.Designer.cs">
+      <DependentUpon>FrmRestoreTable.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTable.cs">
       <SubType>Form</SubType>
@@ -320,10 +369,19 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDon.cs">
+    <Compile Include="Models\CategoryView.cs" />
+    <Compile Include="Models\NhanVienView.cs" />
+    <Compile Include="Models\TableView.cs" />
+    <Compile Include="Report\BillMain.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HoaDon.Designer.cs">
+    <Compile Include="Report\BillMain.Designer.cs">
+      <DependentUpon>BillMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\HoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Import.cs">
@@ -416,12 +474,6 @@
     <Compile Include="UserControl\EmptyTable.Designer.cs">
       <DependentUpon>EmptyTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\uctCategory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\uctCategory.Designer.cs">
-      <DependentUpon>uctCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControl\uctFood.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -439,6 +491,12 @@
     </Compile>
     <Compile Include="UserControl\SetTable.Designer.cs">
       <DependentUpon>SetTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\uctIngredient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\uctIngredient.Designer.cs">
+      <DependentUpon>uctIngredient.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmChangeTable.resx">
       <DependentUpon>frmChangeTable.cs</DependentUpon>
@@ -470,11 +528,20 @@
     <EmbeddedResource Include="frmDiscount.resx">
       <DependentUpon>frmDiscount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmExport.resx">
+      <DependentUpon>frmExport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFood.resx">
       <DependentUpon>frmFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImport.resx">
+      <DependentUpon>frmImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngredient.resx">
+      <DependentUpon>frmIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListTable.resx">
       <DependentUpon>frmListTable.cs</DependentUpon>
@@ -488,11 +555,26 @@
     <EmbeddedResource Include="frmPrintBill.resx">
       <DependentUpon>frmPrintBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintBillMain.resx">
+      <DependentUpon>frmPrintBillMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProfileNV.resx">
       <DependentUpon>frmProfileNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReservation.resx">
       <DependentUpon>frmReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreCategory.resx">
+      <DependentUpon>frmRestoreCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreFood.resx">
+      <DependentUpon>frmRestoreFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreNV.resx">
+      <DependentUpon>frmRestoreNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRestoreTable.resx">
+      <DependentUpon>FrmRestoreTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTable.resx">
       <DependentUpon>frmTable.cs</DependentUpon>
@@ -500,7 +582,10 @@
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon.resx">
+    <EmbeddedResource Include="Report\BillMain.resx">
+      <DependentUpon>BillMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -526,9 +611,6 @@
     <EmbeddedResource Include="UserControl\EmptyTable.resx">
       <DependentUpon>EmptyTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\uctCategory.resx">
-      <DependentUpon>uctCategory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\uctFood.resx">
       <DependentUpon>uctFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -537,6 +619,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\SetTable.resx">
       <DependentUpon>SetTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\uctIngredient.resx">
+      <DependentUpon>uctIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="NHAHANG.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -616,6 +701,11 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\6397958_cancel_contact_delete_delete account_remove_icon.png" />
+    <None Include="Resources\icons8-table-100.png" />
+    <None Include="Resources\8542452_trash_restore_icon.png" />
+    <None Include="Resources\8725906_export_icon.png" />
+    <None Include="Resources\8726154_import_icon.png" />
     <None Include="Resources\9054941_bx_transfer_icon.png" />
     <None Include="Resources\cancle.png" />
     <None Include="Resources\Vẽ tay Hình tròn Logo %282%29.png" />

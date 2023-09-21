@@ -1,5 +1,6 @@
 ﻿using DevExpress.Data.Utils;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using Qly_NhaHang.Models;
 using Qly_NhaHang.UserControl;
@@ -7,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,14 +21,16 @@ namespace Qly_NhaHang
 {
     public partial class frmCategoryFood : DevExpress.XtraEditors.XtraForm
     {
+        private QLNHThaiEntities dbContext;
+      
         public frmCategoryFood()
         {
             InitializeComponent();
             InitializeGridViewOptions();
-            LoadFormCategory(); 
+            dbContext = new QLNHThaiEntities();
+            LoadFormCategory();
         }
-        QLNHThaiEntities db = new QLNHThaiEntities();
-
+       
         private void InitializeGridViewOptions()
         {
             GridView gridView = gctCategory.MainView as GridView;
@@ -33,11 +38,25 @@ namespace Qly_NhaHang
             gridView.FocusedRowChanged += gvCategory_FocusedRowChanged;
 
         }
+
         public void LoadFormCategory()
         {
-            List<CategoryFood> categoryFoods = new List<CategoryFood>();
-            categoryFoods = db.CategoryFoods.ToList();
-            gctCategory.DataSource = categoryFoods;
+            var categoryData = dbContext.CategoryFoods
+                             .Where(f => f.condition_Category == "Được sử dụng")
+                            .Select(f => new CategoryView
+                            {
+                                id_Category = f.id_Category,
+                                name_Category = f.name_Category,
+                                condition_Category = f.condition_Category,
+                            }).ToList();
+            gctCategory.DataSource = categoryData;
+        }
+
+        private void UpdateCategoryProperties(CategoryFood category)
+        {
+            category.name_Category = txbNameCategory.Text;
+            category.condition_Category = cbbConditionCategory.SelectedItem?.ToString();
+           
         }
 
         private void btnLoadCategory_Click(object sender, EventArgs e)
@@ -55,11 +74,12 @@ namespace Qly_NhaHang
 
         private void UpdateCategoryControls(int focusedRowHandle)
         {
-            CategoryFood selectedCategory = gvCategory.GetRow(focusedRowHandle) as CategoryFood;
+            CategoryView selectedCategory = gvCategory.GetRow(focusedRowHandle) as CategoryView;
             if (selectedCategory != null)
             {
                 txbIdCategory.Text = selectedCategory.id_Category.ToString();
                 txbNameCategory.Text = selectedCategory.name_Category;
+                cbbConditionCategory.Text = selectedCategory.condition_Category.ToString();
                
             }
         }
@@ -76,31 +96,19 @@ namespace Qly_NhaHang
 
         private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
-            string newName = txbNameCategory.Text.Trim();
-
-            // Kiểm tra xem tên danh mục mới có hợp lệ không (không rỗng)
-            if (string.IsNullOrEmpty(newName))
+            if (int.TryParse(txbIdCategory.Text, out int categoryId))
             {
-                MessageBox.Show("Vui lòng nhập tên danh mục hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                CategoryFood categoryToUpdate = dbContext.CategoryFoods.FirstOrDefault(ct => ct.id_Category == categoryId);
 
-            // Lấy dòng đang chọn trên lưới
-            int focusedRowHandle = (gctCategory.MainView as GridView).FocusedRowHandle;
-            CategoryFood selectedCategory = gvCategory.GetRow(focusedRowHandle) as CategoryFood;
+                if (categoryToUpdate != null)
+                {
+                    UpdateCategoryProperties(categoryToUpdate);
 
-            if (selectedCategory != null)
-            {
-                // Cập nhật tên danh mục trong đối tượng dòng được chọn
-                selectedCategory.name_Category = newName;
-
-                // Lưu thay đổi vào cơ sở dữ liệu
-                db.SaveChanges();
-
-                // Cập nhật lưới hiển thị
-                gvCategory.RefreshData();
-
-                XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dbContext.Entry(categoryToUpdate).State = EntityState.Modified;
+                    dbContext.SaveChanges();
+                    LoadFormCategory();
+                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -147,6 +155,46 @@ namespace Qly_NhaHang
 
                 XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            int focusedRowHandle = gvCategory.FocusedRowHandle;
+            if (focusedRowHandle >= 0)
+            {
+                CategoryView selectedCategory = gvCategory.GetRow(focusedRowHandle) as CategoryView;
+                if (selectedCategory != null)
+                {
+                    if (int.TryParse(selectedCategory.id_Category.ToString(), out int categoryId))
+                    {
+                        CategoryFood categoryToUpdate = dbContext.CategoryFoods.FirstOrDefault(ct => ct.id_Category == categoryId);
+
+                        if (categoryToUpdate != null)
+                        {
+                            categoryToUpdate.condition_Category = "Ngưng bán";
+
+                            // Đánh dấu đối tượng là thay đổi
+                            dbContext.Entry(categoryToUpdate).State = EntityState.Modified;
+
+                            // Lưu thay đổi
+                            dbContext.SaveChanges();
+
+                            // Nạp lại dữ liệu sau khi cập nhật
+                            LoadFormCategory();
+                            XtraMessageBox.Show("Sản phẩm ngừng kinh doanh !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+        }
+        private void frmCategoryFood_Load(object sender, EventArgs e)
+        {
+            LoadFormCategory();
+        }
+
+        private void frmCategoryFood_Shown(object sender, EventArgs e)
+        {
+            LoadFormCategory();
         }
     }
 }

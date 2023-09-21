@@ -303,7 +303,6 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.UserControl.SetTabl
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmDiscount.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmReservation.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.UserControl.uctFood.resources
-D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.UserControl.uctCategory.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddFood.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\BouncyCastle.Crypto.dll
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\EPPlus.dll
@@ -529,3 +528,13 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\ru\DevExpress.Diagram.v21.2.Cor
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmPrintBill.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.HoaDon.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmChangeTable.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmPrintBillMain.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.Report.BillMain.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmIngredient.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmExport.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmImport.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.UserControl.uctIngredient.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRestoreFood.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRestoreCategory.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.FrmRestoreTable.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRestoreNV.resources

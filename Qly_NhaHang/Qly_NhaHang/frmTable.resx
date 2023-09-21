@@ -121,6 +121,20 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txbStatusTable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAWEAAAAtCAYAAAB/Etp0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHeSURBVHhe7dq/btNQGIdhjx17CR0ZuRJmLoGFa0HiGrgF
+        1iZ2/pA9QzOlQgpCwYqQkVIrWJE5pkdCEWNrPobnkX5Dc9z11ZGTAoD/yGQyeb1YLG5ns1k9nU57MzN7
+        2oaepq5+Sn19k1P7t3R4PTy0Xq+buq77tm17AJ5u6OnhcOg3m81xPp/fpd7e5PT+MQR4v9/nfwFgDE3T
+        9Km3n1OIr3J+i6Kqqrep0D/yMwCMaLvdtinE73OCH2/Bw1UZgPEdj8fhPfGXnOCiKMvyoeu6fAzA2IYv
+        7HKCi2L4A4B/R4QBAokwQCARBggkwgCBRBggkAgDBBJhgEAiDBBIhAECiTBAIBEGCCTCAIFEGCCQCAME
+        EmGAQCIMEEiEAQKJMEAgEQYIJMIAgUQYIJAIAwQSYYBAIgwQSIQBAokwQCARBggkwgCBRBggkAgDBLqI
+        cFmW3fl8zkcAjO0iwvP5/K5pmnwEwJhOp1NfVVWTE/w7wu/u7++7fA7AiPb7fb9YLD7mBBfFZDK5SiH+
+        2rZtfgSAMQyvfpfL5ffU3Zuc4Efpg5epzN92u93PrnMpBnhOQ3zruu5Xq9UhXXpf5fReSiG+TiH+UJbl
+        w/DS2MzMnmfDDyBSX29TZ1/k5AIQqyh+AeQzZ7bk01MKAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="txbNameTable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVMAAAAtCAYAAAATFIhxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

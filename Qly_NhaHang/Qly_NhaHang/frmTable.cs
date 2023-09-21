@@ -26,7 +26,8 @@ namespace Qly_NhaHang
         {
             InitializeComponent();
             InitializeGridViewOptions();
-            dbContext = new QLNHThaiEntities(); // Khởi tạo dbContext ở đây
+            dbContext = new QLNHThaiEntities();
+            LoadFormTable();
         }
       
 
@@ -35,7 +36,7 @@ namespace Qly_NhaHang
             GridView gridView = gctTable.MainView as GridView;
             gridView.OptionsBehavior.ReadOnly = true;
             gridView.FocusedRowChanged += gvTable_FocusedRowChanged;
-            gridView.CustomDrawCell += gvTable_CustomDrawCell;
+          
 
         }
 
@@ -46,9 +47,17 @@ namespace Qly_NhaHang
 
         public void LoadFormTable()
         {
-            List<Tablee> tablees = new List<Tablee>();
-            tablees = dbContext.Tablees.ToList();
-            gctTable.DataSource = tablees;
+            var tableData = dbContext.Tablees
+                              .Where(tb => tb.condition_Table == "Được sử dụng")
+                             .Select(tb => new TableView
+                             {
+                                 id_Table = tb.id_Table,
+                                 name_Table = tb.name_Table,
+                                 status_Table = tb.status_Table,
+                                 seats_Table = (int)tb.seats_Table,
+                                 condition_Table = tb.condition_Table,
+                             }).ToList();
+            gctTable.DataSource = tableData;
         }
 
         private void btnLoadTable_Click(object sender, EventArgs e)
@@ -66,14 +75,14 @@ namespace Qly_NhaHang
 
         private void UpdateTableControls(int focusedRowHandle)
         {
-            Tablee selectedTable = gvTable.GetRow(focusedRowHandle) as Tablee;
+            TableView selectedTable = gvTable.GetRow(focusedRowHandle) as TableView;
             if (selectedTable != null)
             {
                 txbIdTable.Text = selectedTable.id_Table.ToString();
                 txbNameTable.Text = selectedTable.name_Table;
                 nmrSeatsTable.Value = (decimal)selectedTable.seats_Table;
                 cbbConditionTable.Text = selectedTable.condition_Table;
-                cbbStatusTable.Text = selectedTable.status_Table;
+                txbStatusTable.Text = selectedTable.status_Table;
 
             }
         }
@@ -99,7 +108,7 @@ namespace Qly_NhaHang
         private void UpdateTableProperties(Tablee table)
         {
             table.name_Table = txbNameTable.Text;
-            table.status_Table = cbbStatusTable.SelectedItem?.ToString();
+            table.status_Table = txbStatusTable.Text;
             table.condition_Table = cbbConditionTable.SelectedItem?.ToString();
             table.seats_Table = (int)nmrSeatsTable.Value;
         }
@@ -109,53 +118,8 @@ namespace Qly_NhaHang
             int focusedRowHandle = gvTable.FocusedRowHandle;
             if (focusedRowHandle >= 0)
             {
-                Tablee selectedTable = gvTable.GetRow(focusedRowHandle) as Tablee;
+                TableView selectedTable = gvTable.GetRow(focusedRowHandle) as TableView;
                 if (selectedTable != null)
-                {
-                    if (int.TryParse(selectedTable.id_Table.ToString(), out int tableId))
-                    {
-                        Tablee tableToDelete = dbContext.Tablees.FirstOrDefault(tb => tb.id_Table == tableId);
-
-                        if (tableToDelete != null)
-                        {
-                            tableToDelete.condition_Table = "Ngưng sử dụng";
-                            dbContext.SaveChanges();
-
-                            // Load lại danh sách sau khi cập nhật
-                            LoadFormTable();
-
-                            // Mờ trường dữ liệu tương ứng trên GridView
-                            gvTable.SetRowCellValue(focusedRowHandle, gvTable.Columns["condition_Table"], "Ngưng sử dụng");
-                            XtraMessageBox.Show("Sản phẩm không còn được phục vụ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void gvTable_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            GridView view = sender as GridView;
-
-            if (e.RowHandle >= 0)
-            {
-                Tablee table = view.GetRow(e.RowHandle) as Tablee;
-                if (table != null && table.condition_Table == "Ngưng sử dụng")
-                {
-                    e.Appearance.ForeColor = Color.Gray; // Áp dụng màu chữ xám
-                }
-            }
-        }
-
-        private void btnReloadTable_Click(object sender, EventArgs e)
-        {
-            int[] selectedRows = gvTable.GetSelectedRows();
-            int updatedCount = 0; // Số lượng sản phẩm đã được cập nhật
-
-            foreach (int rowHandle in selectedRows)
-            {
-                Tablee selectedTable = gvTable.GetRow(rowHandle) as Tablee;
-                if (selectedTable != null && selectedTable.condition_Table != "Được sử dụng")
                 {
                     if (int.TryParse(selectedTable.id_Table.ToString(), out int tableId))
                     {
@@ -163,16 +127,26 @@ namespace Qly_NhaHang
 
                         if (tableToUpdate != null)
                         {
-                            tableToUpdate.condition_Table = "Được sử dụng";
-                            dbContext.SaveChanges();
-                            updatedCount++; // Tăng số lượng sản phẩm đã cập nhật
-                            LoadFormTable();
-                            XtraMessageBox.Show("Bàn đã được đưa vào sử dụng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (tableToUpdate.status_Table == "Đang trống")
+                            {
+                                tableToUpdate.condition_Table = "Ngưng sử dụng";
+                                dbContext.Entry(tableToUpdate).State = EntityState.Modified;
+                                dbContext.SaveChanges();
+                                LoadFormTable();
+                                XtraMessageBox.Show("Bàn hư hỏng ngừng sử dụng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Bàn đang có khách hoặc được đặt trước, không thể cập nhật!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
             }
         }
+
+
+
 
         private void btnAddTable_Click(object sender, EventArgs e)
         {

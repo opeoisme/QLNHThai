@@ -62,7 +62,7 @@ namespace Qly_NhaHang
         {
             using (var context = new QLNHThaiEntities()) // Thay "YourDbContext" bằng context của bạn
             {
-                var CategoryList = context.CategoryFoods.ToList();
+                var CategoryList = context.CategoryFoods.Where(category => category.condition_Category == "Được sử dụng").ToList();
 
                 foreach (var category in CategoryList)
                 {
@@ -97,11 +97,16 @@ namespace Qly_NhaHang
                 }
             }
         }
+
         public void LoadFoodFLPN()
         {
             using (var context = new QLNHThaiEntities())
             {
-                var FoodList = context.Foods.Where(food => food.condition_Food == "Được sử dụng").ToList();
+                var FoodList = (from food in context.Foods
+                                join category in context.CategoryFoods
+                                on food.id_Category equals category.id_Category
+                                where food.condition_Food == "Được sử dụng" && category.condition_Category == "Được sử dụng"
+                                select food).ToList();
 
                 foreach (var monAn in FoodList)
                 {
@@ -111,6 +116,8 @@ namespace Qly_NhaHang
                 }
             }
         }
+
+
 
         public void LoadBillInfo()
         {
@@ -142,7 +149,6 @@ namespace Qly_NhaHang
                     .Where(bi => bi.id_Bill == _idBill && bi.id_Food == foodId)
                     .Select(f => f.count_Food)
                     .FirstOrDefault();
-
                 return billInfoData;
             }
         }
@@ -150,10 +156,14 @@ namespace Qly_NhaHang
         public void LoadFoodFLPNTest()
         {
             flpnFoodMenu.Controls.Clear(); // Xóa hết các user control cũ trước khi tải dữ liệu mới
-
             using (var context = new QLNHThaiEntities())
             {
-                var FoodList = context.Foods.Where(food => food.condition_Food == "Được sử dụng").ToList();
+                var FoodList = (from food in context.Foods
+                                join category in context.CategoryFoods
+                                on food.id_Category equals category.id_Category
+                                where food.condition_Food == "Được sử dụng" && category.condition_Category == "Được sử dụng"
+                                select food).ToList();
+
 
                 foreach (var monAn in FoodList)
                 {

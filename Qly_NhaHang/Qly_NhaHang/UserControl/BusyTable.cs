@@ -50,10 +50,10 @@ namespace Qly_NhaHang.UserControl
             // Gán giá trị _idBill cho frmOrder
             f.SetIdBill(_idBill);
             f.SetIdBan(_idTable);
-           this.ParentForm.Hide();
+          
             // Hiển thị frmOrder
             f.ShowDialog();
-            this.ParentForm.Show();
+          
           
         }
 

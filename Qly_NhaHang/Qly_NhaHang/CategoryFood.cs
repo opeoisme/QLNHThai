@@ -22,6 +22,7 @@ namespace Qly_NhaHang
     
         public int id_Category { get; set; }
         public string name_Category { get; set; }
+        public string condition_Category { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Food> Foods { get; set; }

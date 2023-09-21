@@ -114,8 +114,8 @@ create table Recipe(
 )
  
 select *from Bill_Info
-select * from Bill
-select *from Tablee
+select * from CategoryFood
+select *from NhanVien
 
 
 delete from Bill_Info where id_BillInfo =  163

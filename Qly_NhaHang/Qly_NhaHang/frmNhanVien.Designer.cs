@@ -115,11 +115,11 @@
             // 
             // btnAddNV
             // 
-            this.btnAddNV.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddNV.Image = global::Qly_NhaHang.Properties.Resources._299068_add_sign_icon;
             this.btnAddNV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddNV.Name = "btnAddNV";
-            this.btnAddNV.Size = new System.Drawing.Size(88, 29);
+            this.btnAddNV.Size = new System.Drawing.Size(84, 29);
             this.btnAddNV.Text = "Thêm";
             this.btnAddNV.Click += new System.EventHandler(this.btnAddNV_Click);
             // 
@@ -730,6 +730,10 @@
             // 
             // gvNV
             // 
+            this.gvNV.Appearance.HeaderPanel.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.gvNV.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvNV.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvNV.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvNV.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.idNV,
             this.nameNV,
@@ -744,7 +748,6 @@
             this.gvNV.GridControl = this.gctNV;
             this.gvNV.Name = "gvNV";
             this.gvNV.RowHeight = 125;
-            this.gvNV.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvNV_CustomDrawCell);
             this.gvNV.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvNV_FocusedRowChanged);
             // 
             // idNV

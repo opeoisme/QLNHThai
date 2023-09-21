@@ -362,6 +362,10 @@ namespace Qly_NhaHang
         private void btnPay_Click(object sender, EventArgs e)
         {
             UpdateBill();
+            List<CombinedModel> hoaDonData = LoadHoaDon();
+            frmPrintBillMain printBillForm = new frmPrintBillMain();
+            printBillForm.SetReportData(hoaDonData);
+            printBillForm.ShowDialog();
             UpdateTableStatus();
             CloseFormsAndOpenListTable();
         }
@@ -508,12 +512,9 @@ namespace Qly_NhaHang
         private void btnPrint_Click(object sender, EventArgs e)
         {
             List<CombinedModel> hoaDonData = LoadHoaDon();
-
             frmPrintBill printBillForm = new frmPrintBill();
-            this.Hide();
             printBillForm.SetReportData(hoaDonData);
             printBillForm.ShowDialog();
-            this.Show();
             // Hiển thị form in hóa đơn
         }
 

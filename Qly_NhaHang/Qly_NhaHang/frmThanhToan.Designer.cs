@@ -860,6 +860,9 @@
             // 
             // gvBill
             // 
+            this.gvBill.Appearance.HeaderPanel.Font = new System.Drawing.Font("UTM Bienvenue", 9F);
+            this.gvBill.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvBill.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvBill.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.FoodName,
             this.Quantity,
@@ -1009,6 +1012,9 @@
             // 
             // gvDiscount
             // 
+            this.gvDiscount.Appearance.HeaderPanel.Font = new System.Drawing.Font("UTM Bienvenue", 9F);
+            this.gvDiscount.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvDiscount.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvDiscount.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.nameDiscount,
             this.gclPercentDiscount});
@@ -1328,6 +1334,7 @@
             // 
             this.gvSurcharge.Appearance.HeaderPanel.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvSurcharge.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvSurcharge.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvSurcharge.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gclTypeSurcharge,
             this.gclpercentSurcharge});

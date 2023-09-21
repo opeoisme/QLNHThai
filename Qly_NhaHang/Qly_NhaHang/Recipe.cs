@@ -19,7 +19,7 @@ namespace Qly_NhaHang
         public int id_Ingredient { get; set; }
         public int count_Ingredient { get; set; }
     
-        public virtual Ingredient Ingredient { get; set; }
         public virtual Food Food { get; set; }
+        public virtual Ingredient Ingredient { get; set; }
     }
 }

@@ -29,21 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoryFood));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddCategory = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteCategory = new System.Windows.Forms.ToolStripButton();
             this.btnUpdateCategory = new System.Windows.Forms.ToolStripButton();
             this.btnLoadCategory = new System.Windows.Forms.ToolStripButton();
             this.btnPDFCategory = new System.Windows.Forms.ToolStripButton();
             this.btnCSVCategory = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbConditionCategory = new System.Windows.Forms.ComboBox();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txbNameCategory = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txbIdCategory = new Bunifu.UI.WinForms.BunifuTextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -53,6 +56,7 @@
             this.gvCategory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.idCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameCategory = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.conditionCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,6 +69,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddCategory,
+            this.btnDeleteCategory,
             this.btnUpdateCategory,
             this.btnLoadCategory,
             this.btnPDFCategory,
@@ -77,13 +82,22 @@
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddCategory.Image = global::Qly_NhaHang.Properties.Resources._299068_add_sign_icon;
             this.btnAddCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(88, 29);
+            this.btnAddCategory.Size = new System.Drawing.Size(84, 29);
             this.btnAddCategory.Text = "Thêm";
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            // 
+            // btnDeleteCategory
+            // 
+            this.btnDeleteCategory.Image = global::Qly_NhaHang.Properties.Resources._1891023_cancel_cercle_close_delete_dismiss_icon;
+            this.btnDeleteCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(71, 29);
+            this.btnDeleteCategory.Text = "Xóa";
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // btnUpdateCategory
             // 
@@ -122,6 +136,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbbConditionCategory);
+            this.panel1.Controls.Add(this.labelControl5);
             this.panel1.Controls.Add(this.txbNameCategory);
             this.panel1.Controls.Add(this.txbIdCategory);
             this.panel1.Controls.Add(this.labelControl1);
@@ -131,6 +147,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1942, 151);
             this.panel1.TabIndex = 2;
+            // 
+            // cbbConditionCategory
+            // 
+            this.cbbConditionCategory.FormattingEnabled = true;
+            this.cbbConditionCategory.Items.AddRange(new object[] {
+            "Được sử dụng",
+            "Ngưng bán"});
+            this.cbbConditionCategory.Location = new System.Drawing.Point(641, 25);
+            this.cbbConditionCategory.Name = "cbbConditionCategory";
+            this.cbbConditionCategory.Size = new System.Drawing.Size(399, 27);
+            this.cbbConditionCategory.TabIndex = 20;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(534, 22);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(86, 26);
+            this.labelControl5.TabIndex = 19;
+            this.labelControl5.Text = "Tình trạng";
             // 
             // txbNameCategory
             // 
@@ -159,32 +196,32 @@
             this.txbNameCategory.IconRight = null;
             this.txbNameCategory.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbNameCategory.Lines = new string[0];
-            this.txbNameCategory.Location = new System.Drawing.Point(1123, 45);
+            this.txbNameCategory.Location = new System.Drawing.Point(181, 83);
             this.txbNameCategory.MaxLength = 32767;
             this.txbNameCategory.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbNameCategory.Modified = false;
             this.txbNameCategory.Multiline = false;
             this.txbNameCategory.Name = "txbNameCategory";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameCategory.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameCategory.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameCategory.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameCategory.OnIdleState = stateProperties4;
+            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameCategory.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameCategory.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameCategory.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameCategory.OnIdleState = stateProperties12;
             this.txbNameCategory.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameCategory.PasswordChar = '\0';
             this.txbNameCategory.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -195,7 +232,7 @@
             this.txbNameCategory.SelectionLength = 0;
             this.txbNameCategory.SelectionStart = 0;
             this.txbNameCategory.ShortcutsEnabled = true;
-            this.txbNameCategory.Size = new System.Drawing.Size(665, 45);
+            this.txbNameCategory.Size = new System.Drawing.Size(859, 45);
             this.txbNameCategory.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txbNameCategory.TabIndex = 18;
             this.txbNameCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -233,32 +270,32 @@
             this.txbIdCategory.IconRight = null;
             this.txbIdCategory.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbIdCategory.Lines = new string[0];
-            this.txbIdCategory.Location = new System.Drawing.Point(159, 45);
+            this.txbIdCategory.Location = new System.Drawing.Point(181, 15);
             this.txbIdCategory.MaxLength = 32767;
             this.txbIdCategory.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbIdCategory.Modified = false;
             this.txbIdCategory.Multiline = false;
             this.txbIdCategory.Name = "txbIdCategory";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdCategory.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIdCategory.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdCategory.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdCategory.OnIdleState = stateProperties8;
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdCategory.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIdCategory.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdCategory.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdCategory.OnIdleState = stateProperties16;
             this.txbIdCategory.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdCategory.PasswordChar = '\0';
             this.txbIdCategory.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -269,7 +306,7 @@
             this.txbIdCategory.SelectionLength = 0;
             this.txbIdCategory.SelectionStart = 0;
             this.txbIdCategory.ShortcutsEnabled = true;
-            this.txbIdCategory.Size = new System.Drawing.Size(727, 45);
+            this.txbIdCategory.Size = new System.Drawing.Size(320, 45);
             this.txbIdCategory.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txbIdCategory.TabIndex = 17;
             this.txbIdCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -284,7 +321,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(976, 47);
+            this.labelControl1.Location = new System.Drawing.Point(33, 90);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(117, 26);
             this.labelControl1.TabIndex = 16;
@@ -294,7 +331,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(33, 47);
+            this.labelControl3.Location = new System.Drawing.Point(33, 22);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(111, 26);
             this.labelControl3.TabIndex = 15;
@@ -311,7 +348,6 @@
             // 
             // gctCategory
             // 
-            this.gctCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctCategory.Location = new System.Drawing.Point(0, 0);
             this.gctCategory.MainView = this.gvCategory;
             this.gctCategory.Name = "gctCategory";
@@ -322,9 +358,14 @@
             // 
             // gvCategory
             // 
+            this.gvCategory.Appearance.HeaderPanel.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.gvCategory.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvCategory.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvCategory.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvCategory.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.idCategory,
-            this.nameCategory});
+            this.nameCategory,
+            this.conditionCategory});
             this.gvCategory.GridControl = this.gctCategory;
             this.gvCategory.Name = "gvCategory";
             this.gvCategory.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCategory_FocusedRowChanged);
@@ -349,6 +390,16 @@
             this.nameCategory.VisibleIndex = 1;
             this.nameCategory.Width = 112;
             // 
+            // conditionCategory
+            // 
+            this.conditionCategory.Caption = "Tình trạng danh mục";
+            this.conditionCategory.FieldName = "condition_Category";
+            this.conditionCategory.MinWidth = 30;
+            this.conditionCategory.Name = "conditionCategory";
+            this.conditionCategory.Visible = true;
+            this.conditionCategory.VisibleIndex = 2;
+            this.conditionCategory.Width = 112;
+            // 
             // frmCategoryFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -360,6 +411,8 @@
             this.Name = "frmCategoryFood";
             this.Text = "Danh sách loại sản phẩm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmCategoryFood_Load);
+            this.Shown += new System.EventHandler(this.frmCategoryFood_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -390,5 +443,9 @@
         private Bunifu.UI.WinForms.BunifuTextBox txbIdCategory;
         private System.Windows.Forms.ToolStripButton btnPDFCategory;
         private System.Windows.Forms.ToolStripButton btnCSVCategory;
+        private DevExpress.XtraGrid.Columns.GridColumn conditionCategory;
+        private System.Windows.Forms.ComboBox cbbConditionCategory;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private System.Windows.Forms.ToolStripButton btnDeleteCategory;
     }
 }
