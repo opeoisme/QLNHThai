@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngredient));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddIngredient = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteIngredient = new System.Windows.Forms.ToolStripButton();
@@ -58,7 +58,16 @@
             this.imgIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.statusIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.conditionIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idCatalog = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.unitkidIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.countkidIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbbCatalog = new System.Windows.Forms.ComboBox();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.cbbUnitKid = new System.Windows.Forms.ComboBox();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.nmrCountKid = new System.Windows.Forms.NumericUpDown();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.cbbUnitIngredient = new System.Windows.Forms.ComboBox();
             this.nmrCountIngredient = new System.Windows.Forms.NumericUpDown();
@@ -79,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gctIngredient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngredient)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrCountKid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCountIngredient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +144,7 @@
             this.btnUpdateIngredient.Name = "btnUpdateIngredient";
             this.btnUpdateIngredient.Size = new System.Drawing.Size(70, 29);
             this.btnUpdateIngredient.Text = "Sửa";
+            this.btnUpdateIngredient.Click += new System.EventHandler(this.btnUpdateIngredient_Click);
             // 
             // btnImportIngredient
             // 
@@ -158,6 +169,7 @@
             this.btnLoadIngredient.Name = "btnLoadIngredient";
             this.btnLoadIngredient.Size = new System.Drawing.Size(76, 29);
             this.btnLoadIngredient.Text = "Xem";
+            this.btnLoadIngredient.Click += new System.EventHandler(this.btnLoadIngredient_Click);
             // 
             // btnPDFIngredient
             // 
@@ -224,10 +236,14 @@
             this.unitIngredient,
             this.imgIngredient,
             this.statusIngredient,
-            this.conditionIngredient});
+            this.conditionIngredient,
+            this.idCatalog,
+            this.unitkidIngredient,
+            this.countkidIngredient});
             this.gvIngredient.GridControl = this.gctIngredient;
             this.gvIngredient.Name = "gvIngredient";
             this.gvIngredient.RowHeight = 125;
+            this.gvIngredient.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvIngredient_FocusedRowChanged);
             // 
             // idIngredient
             // 
@@ -237,7 +253,7 @@
             this.idIngredient.Name = "idIngredient";
             this.idIngredient.Visible = true;
             this.idIngredient.VisibleIndex = 0;
-            this.idIngredient.Width = 112;
+            this.idIngredient.Width = 139;
             // 
             // nameIngredient
             // 
@@ -247,7 +263,7 @@
             this.nameIngredient.Name = "nameIngredient";
             this.nameIngredient.Visible = true;
             this.nameIngredient.VisibleIndex = 1;
-            this.nameIngredient.Width = 112;
+            this.nameIngredient.Width = 221;
             // 
             // countIngredient
             // 
@@ -257,7 +273,7 @@
             this.countIngredient.Name = "countIngredient";
             this.countIngredient.Visible = true;
             this.countIngredient.VisibleIndex = 2;
-            this.countIngredient.Width = 112;
+            this.countIngredient.Width = 147;
             // 
             // unitIngredient
             // 
@@ -267,7 +283,7 @@
             this.unitIngredient.Name = "unitIngredient";
             this.unitIngredient.Visible = true;
             this.unitIngredient.VisibleIndex = 5;
-            this.unitIngredient.Width = 112;
+            this.unitIngredient.Width = 187;
             // 
             // imgIngredient
             // 
@@ -277,7 +293,7 @@
             this.imgIngredient.Name = "imgIngredient";
             this.imgIngredient.Visible = true;
             this.imgIngredient.VisibleIndex = 3;
-            this.imgIngredient.Width = 112;
+            this.imgIngredient.Width = 214;
             // 
             // statusIngredient
             // 
@@ -287,7 +303,7 @@
             this.statusIngredient.Name = "statusIngredient";
             this.statusIngredient.Visible = true;
             this.statusIngredient.VisibleIndex = 6;
-            this.statusIngredient.Width = 112;
+            this.statusIngredient.Width = 214;
             // 
             // conditionIngredient
             // 
@@ -297,10 +313,46 @@
             this.conditionIngredient.Name = "conditionIngredient";
             this.conditionIngredient.Visible = true;
             this.conditionIngredient.VisibleIndex = 4;
-            this.conditionIngredient.Width = 112;
+            this.conditionIngredient.Width = 179;
+            // 
+            // idCatalog
+            // 
+            this.idCatalog.Caption = "Tên danh mục";
+            this.idCatalog.FieldName = "name_Catalog";
+            this.idCatalog.MinWidth = 30;
+            this.idCatalog.Name = "idCatalog";
+            this.idCatalog.Visible = true;
+            this.idCatalog.VisibleIndex = 7;
+            this.idCatalog.Width = 237;
+            // 
+            // unitkidIngredient
+            // 
+            this.unitkidIngredient.Caption = "Đơn vị nhập";
+            this.unitkidIngredient.FieldName = "unitkid_Ingredient";
+            this.unitkidIngredient.MinWidth = 30;
+            this.unitkidIngredient.Name = "unitkidIngredient";
+            this.unitkidIngredient.Visible = true;
+            this.unitkidIngredient.VisibleIndex = 8;
+            this.unitkidIngredient.Width = 173;
+            // 
+            // countkidIngredient
+            // 
+            this.countkidIngredient.Caption = "Đơn vị theo patch";
+            this.countkidIngredient.FieldName = "countkid_Ingredient";
+            this.countkidIngredient.MinWidth = 30;
+            this.countkidIngredient.Name = "countkidIngredient";
+            this.countkidIngredient.Visible = true;
+            this.countkidIngredient.VisibleIndex = 9;
+            this.countkidIngredient.Width = 197;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cbbCatalog);
+            this.panel2.Controls.Add(this.labelControl10);
+            this.panel2.Controls.Add(this.cbbUnitKid);
+            this.panel2.Controls.Add(this.labelControl9);
+            this.panel2.Controls.Add(this.nmrCountKid);
+            this.panel2.Controls.Add(this.labelControl8);
             this.panel2.Controls.Add(this.labelControl7);
             this.panel2.Controls.Add(this.cbbUnitIngredient);
             this.panel2.Controls.Add(this.nmrCountIngredient);
@@ -321,11 +373,84 @@
             this.panel2.Size = new System.Drawing.Size(1944, 200);
             this.panel2.TabIndex = 0;
             // 
+            // cbbCatalog
+            // 
+            this.cbbCatalog.FormattingEnabled = true;
+            this.cbbCatalog.Items.AddRange(new object[] {
+            "Được sử dụng",
+            "Ngưng bán"});
+            this.cbbCatalog.Location = new System.Drawing.Point(1269, 92);
+            this.cbbCatalog.Name = "cbbCatalog";
+            this.cbbCatalog.Size = new System.Drawing.Size(275, 27);
+            this.cbbCatalog.TabIndex = 44;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(1179, 90);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(84, 26);
+            this.labelControl10.TabIndex = 43;
+            this.labelControl10.Text = "Danh mục";
+            // 
+            // cbbUnitKid
+            // 
+            this.cbbUnitKid.FormattingEnabled = true;
+            this.cbbUnitKid.Items.AddRange(new object[] {
+            "gram",
+            "viên",
+            "KG",
+            "vắt",
+            "ml",
+            "Lít",
+            "Lọ",
+            "psc",
+            "lon",
+            "ly",
+            "chai"});
+            this.cbbUnitKid.Location = new System.Drawing.Point(985, 29);
+            this.cbbUnitKid.Name = "cbbUnitKid";
+            this.cbbUnitKid.Size = new System.Drawing.Size(167, 27);
+            this.cbbUnitKid.TabIndex = 42;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(875, 26);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(99, 26);
+            this.labelControl9.TabIndex = 41;
+            this.labelControl9.Text = "Đơn vị nhập";
+            // 
+            // nmrCountKid
+            // 
+            this.nmrCountKid.Location = new System.Drawing.Point(792, 26);
+            this.nmrCountKid.Maximum = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            0});
+            this.nmrCountKid.Name = "nmrCountKid";
+            this.nmrCountKid.Size = new System.Drawing.Size(68, 27);
+            this.nmrCountKid.TabIndex = 40;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(654, 26);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(110, 26);
+            this.labelControl8.TabIndex = 39;
+            this.labelControl8.Text = "Batch/patch";
+            // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(621, 106);
+            this.labelControl7.Location = new System.Drawing.Point(654, 157);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(90, 26);
             this.labelControl7.TabIndex = 38;
@@ -335,30 +460,39 @@
             // 
             this.cbbUnitIngredient.FormattingEnabled = true;
             this.cbbUnitIngredient.Items.AddRange(new object[] {
-            "Được sử dụng",
-            "Ngưng bán"});
-            this.cbbUnitIngredient.Location = new System.Drawing.Point(743, 105);
+            "gram",
+            "viên",
+            "KG",
+            "vắt",
+            "ml",
+            "Lít",
+            "Lọ",
+            "psc",
+            "lon",
+            "ly",
+            "chai"});
+            this.cbbUnitIngredient.Location = new System.Drawing.Point(792, 156);
             this.cbbUnitIngredient.Name = "cbbUnitIngredient";
-            this.cbbUnitIngredient.Size = new System.Drawing.Size(386, 27);
+            this.cbbUnitIngredient.Size = new System.Drawing.Size(360, 27);
             this.cbbUnitIngredient.TabIndex = 37;
             // 
             // nmrCountIngredient
             // 
-            this.nmrCountIngredient.Location = new System.Drawing.Point(743, 33);
+            this.nmrCountIngredient.Location = new System.Drawing.Point(547, 157);
             this.nmrCountIngredient.Maximum = new decimal(new int[] {
             -1486618624,
             232830643,
             0,
             0});
             this.nmrCountIngredient.Name = "nmrCountIngredient";
-            this.nmrCountIngredient.Size = new System.Drawing.Size(200, 27);
+            this.nmrCountIngredient.Size = new System.Drawing.Size(68, 27);
             this.nmrCountIngredient.TabIndex = 36;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(621, 33);
+            this.labelControl2.Location = new System.Drawing.Point(427, 157);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(105, 26);
             this.labelControl2.TabIndex = 35;
@@ -367,30 +501,33 @@
             // imageIngredient
             // 
             this.imageIngredient.Image = global::Qly_NhaHang.Properties.Resources.Food0;
-            this.imageIngredient.Location = new System.Drawing.Point(1329, 6);
+            this.imageIngredient.Location = new System.Drawing.Point(1734, 6);
             this.imageIngredient.Name = "imageIngredient";
             this.imageIngredient.Size = new System.Drawing.Size(143, 191);
             this.imageIngredient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageIngredient.TabIndex = 31;
             this.imageIngredient.TabStop = false;
+            this.imageIngredient.Click += new System.EventHandler(this.imageIngredient_Click);
             // 
             // cbbConditionIngredient
             // 
             this.cbbConditionIngredient.FormattingEnabled = true;
             this.cbbConditionIngredient.Items.AddRange(new object[] {
-            "Được sử dụng",
-            "Ngưng bán"});
-            this.cbbConditionIngredient.Location = new System.Drawing.Point(743, 157);
+            "Sử dụng",
+            "Ngừng sử dụng"});
+            this.cbbConditionIngredient.Location = new System.Drawing.Point(792, 96);
             this.cbbConditionIngredient.Name = "cbbConditionIngredient";
-            this.cbbConditionIngredient.Size = new System.Drawing.Size(386, 27);
+            this.cbbConditionIngredient.Size = new System.Drawing.Size(360, 27);
             this.cbbConditionIngredient.TabIndex = 30;
             // 
             // cbbStatusIngredient
             // 
             this.cbbStatusIngredient.FormattingEnabled = true;
+            this.cbbStatusIngredient.Items.AddRange(new object[] {
+            "Ổn định"});
             this.cbbStatusIngredient.Location = new System.Drawing.Point(184, 158);
             this.cbbStatusIngredient.Name = "cbbStatusIngredient";
-            this.cbbStatusIngredient.Size = new System.Drawing.Size(395, 27);
+            this.cbbStatusIngredient.Size = new System.Drawing.Size(228, 27);
             this.cbbStatusIngredient.TabIndex = 29;
             // 
             // txbNameIngredient
@@ -426,26 +563,26 @@
             this.txbNameIngredient.Modified = false;
             this.txbNameIngredient.Multiline = false;
             this.txbNameIngredient.Name = "txbNameIngredient";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameIngredient.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnIdleState = stateProperties4;
+            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameIngredient.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnIdleState = stateProperties12;
             this.txbNameIngredient.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameIngredient.PasswordChar = '\0';
             this.txbNameIngredient.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -456,7 +593,7 @@
             this.txbNameIngredient.SelectionLength = 0;
             this.txbNameIngredient.SelectionStart = 0;
             this.txbNameIngredient.ShortcutsEnabled = true;
-            this.txbNameIngredient.Size = new System.Drawing.Size(395, 45);
+            this.txbNameIngredient.Size = new System.Drawing.Size(431, 45);
             this.txbNameIngredient.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txbNameIngredient.TabIndex = 28;
             this.txbNameIngredient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -500,26 +637,26 @@
             this.txbIdIngredient.Modified = false;
             this.txbIdIngredient.Multiline = false;
             this.txbIdIngredient.Name = "txbIdIngredient";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdIngredient.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIdIngredient.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdIngredient.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdIngredient.OnIdleState = stateProperties8;
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdIngredient.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIdIngredient.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdIngredient.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdIngredient.OnIdleState = stateProperties16;
             this.txbIdIngredient.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdIngredient.PasswordChar = '\0';
             this.txbIdIngredient.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -530,7 +667,7 @@
             this.txbIdIngredient.SelectionLength = 0;
             this.txbIdIngredient.SelectionStart = 0;
             this.txbIdIngredient.ShortcutsEnabled = true;
-            this.txbIdIngredient.Size = new System.Drawing.Size(395, 45);
+            this.txbIdIngredient.Size = new System.Drawing.Size(431, 45);
             this.txbIdIngredient.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txbIdIngredient.TabIndex = 27;
             this.txbIdIngredient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -545,7 +682,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(1175, 91);
+            this.labelControl6.Location = new System.Drawing.Point(1580, 91);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(117, 26);
             this.labelControl6.TabIndex = 26;
@@ -555,7 +692,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(621, 158);
+            this.labelControl5.Location = new System.Drawing.Point(654, 97);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(86, 26);
             this.labelControl5.TabIndex = 25;
@@ -601,6 +738,8 @@
             this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._5120875_butter_creamy_dairy_food_ingredient_icon;
             this.Name = "frmIngredient";
             this.Text = "Nguyên vật liệu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmIngredient_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -609,6 +748,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvIngredient)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrCountKid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCountIngredient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).EndInit();
             this.ResumeLayout(false);
@@ -654,5 +794,14 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.ToolStripButton btnImportIngredient;
         private System.Windows.Forms.ToolStripButton btnExportIngredient;
+        private DevExpress.XtraGrid.Columns.GridColumn idCatalog;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private System.Windows.Forms.ComboBox cbbUnitKid;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private System.Windows.Forms.NumericUpDown nmrCountKid;
+        private DevExpress.XtraGrid.Columns.GridColumn unitkidIngredient;
+        private DevExpress.XtraGrid.Columns.GridColumn countkidIngredient;
+        private System.Windows.Forms.ComboBox cbbCatalog;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
     }
 }

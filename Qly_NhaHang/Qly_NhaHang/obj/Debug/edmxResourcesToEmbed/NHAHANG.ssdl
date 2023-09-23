@@ -23,6 +23,14 @@
     <Property Name="id_Food" Type="int" Nullable="false" />
     <Property Name="count_Food" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="CatalogIngredient">
+    <Key>
+      <PropertyRef Name="id_Catalog" />
+    </Key>
+    <Property Name="id_Catalog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_Catalog" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="condition_Catalog" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="CategoryFood">
     <Key>
       <PropertyRef Name="id_Category" />
@@ -80,10 +88,13 @@
     <Property Name="id_Ingredient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name_Ingredient" Type="nvarchar(max)" Nullable="false" />
     <Property Name="unit_Ingredient" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="count_Ingredient" Type="int" Nullable="false" />
+    <Property Name="count_Ingredient" Type="float" />
     <Property Name="status_Ingredient" Type="nvarchar(max)" />
     <Property Name="image_Ingredient" Type="varbinary(max)" />
     <Property Name="condition_Ingredient" Type="nvarchar(max)" />
+    <Property Name="unitkid_Ingredient" Type="nvarchar(max)" />
+    <Property Name="countkid_Ingredient" Type="float" />
+    <Property Name="id_Catalog" Type="int" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
@@ -261,9 +272,35 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Ingredient_Catalog">
+    <End Role="CatalogIngredient" Type="Self.CatalogIngredient" Multiplicity="0..1" />
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogIngredient">
+        <PropertyRef Name="id_Catalog" />
+      </Principal>
+      <Dependent Role="Ingredient">
+        <PropertyRef Name="id_Catalog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="FN_DoanhThuTheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="checkIn" Type="datetime" Mode="In" />
+    <Parameter Name="checkOut" Type="datetime" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="IDDOANHTHU" Type="bigint" />
+          <Property Name="NGAY" Type="date" />
+          <Property Name="TONGDOANHTHU" Type="float" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <EntityContainer Name="QLNHThaiModelStoreContainer">
     <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogIngredient" EntityType="Self.CatalogIngredient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CategoryFood" EntityType="Self.CategoryFood" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
@@ -317,6 +354,10 @@
     <AssociationSet Name="FK__Reservati__id_Ta__440B1D61" Association="Self.FK__Reservati__id_Ta__440B1D61">
       <End Role="Tablee" EntitySet="Tablee" />
       <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ingredient_Catalog" Association="Self.FK_Ingredient_Catalog">
+      <End Role="CatalogIngredient" EntitySet="CatalogIngredient" />
+      <End Role="Ingredient" EntitySet="Ingredient" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

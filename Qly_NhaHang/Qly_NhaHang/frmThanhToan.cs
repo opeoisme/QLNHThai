@@ -29,6 +29,7 @@ namespace Qly_NhaHang
         private BindingList<Discount> selectedDiscountList = new BindingList<Discount>();
         private Discount selectedDiscount;
         private bool hasChanged = false;
+
         private List<CombinedModel> billInfoData = new List<CombinedModel>();
 
         public frmThanhToan(int idBill, double total)
@@ -58,7 +59,7 @@ namespace Qly_NhaHang
         private void LoadSurchangeData()
         {
             var discount = dbContext.Discounts
-                .Where(d => d.type_Discount == "Phụ thu")
+                .Where(d => d.type_Discount == "Phụ thu" && d.condition_Discount == "Được áp dụng")
                 .ToList();
 
             cbbSurcharge.Properties.Items.Clear(); // Xóa tất cả các mục cũ
@@ -72,7 +73,7 @@ namespace Qly_NhaHang
         private void LoadDiscountData()
         {
             var discount = dbContext.Discounts
-                .Where(d => d.type_Discount == "Giảm giá")
+                .Where(d => d.type_Discount == "Giảm giá" && d.condition_Discount == "Được áp dụng")
                 .ToList();
             cbbDiscount.Properties.Items.Clear(); // Xóa tất cả các mục cũ
             foreach (var item in discount)
@@ -270,28 +271,6 @@ namespace Qly_NhaHang
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         #endregion
 
 
@@ -446,67 +425,27 @@ namespace Qly_NhaHang
         //Thay đổi tiền khách trả
         private void txbMoneyCash_TextChange(object sender, EventArgs e)
         {
-            // Kiểm tra xem txbMoneyCash có giá trị hợp lệ không
+
             if (decimal.TryParse(txbMoneyCash.Text.Replace(",", "").Replace(",", ""), out decimal moneyCash))
             {
-                // Lấy giá trị hiện tại của txbTotalBill và chuyển nó thành số decimal
                 decimal currentTotal = decimal.Parse(txbTotalBill.Text.Replace(",", "").Replace(",", ""));
-
-                // Tính tiền thừa
                 decimal moneyChange = moneyCash - currentTotal;
-
-                // Kiểm tra xem tiền thừa có âm hay không
                 if (moneyChange < 0)
                 {
                     txbMoneyChange.Text = "CHƯA ĐỦ TIỀN";
                 }
                 else
                 {
-                    // Hiển thị tiền thừa trên txbMoneyChange
                     txbMoneyChange.Text = String.Format("{0:0,0 }", moneyChange);
                 }
             }
             else
             {
-                // Đặt giá trị txbMoneyChange về 0 nếu số tiền không hợp lệ
                 txbMoneyChange.Text = "0";
             }
         }
 
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         private void btnPrint_Click(object sender, EventArgs e)

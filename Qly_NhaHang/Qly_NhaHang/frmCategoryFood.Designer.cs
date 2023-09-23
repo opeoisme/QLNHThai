@@ -348,6 +348,7 @@
             // 
             // gctCategory
             // 
+            this.gctCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctCategory.Location = new System.Drawing.Point(0, 0);
             this.gctCategory.MainView = this.gvCategory;
             this.gctCategory.Name = "gctCategory";

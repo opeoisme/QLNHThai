@@ -52,7 +52,10 @@
             this.btnDeleteFood = new DevExpress.XtraBars.BarButtonItem();
             this.btnDeleteCategory = new DevExpress.XtraBars.BarButtonItem();
             this.btnDeleteTable = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDeleteNV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCatalog = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDeleteDiscount = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -63,6 +66,9 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -103,10 +109,13 @@
             this.btnDeleteFood,
             this.btnDeleteCategory,
             this.btnDeleteTable,
-            this.barButtonItem3});
+            this.btnDeleteNV,
+            this.btnCatalog,
+            this.barButtonItem5,
+            this.btnDeleteDiscount});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 27;
+            this.ribbon.MaxItemId = 30;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 403;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -181,16 +190,17 @@
             // 
             // btnRevenue
             // 
-            this.btnRevenue.Caption = "Báo cáo thống kê doanh thu";
+            this.btnRevenue.Caption = "Doanh thu theo ngày";
             this.btnRevenue.Id = 10;
             this.btnRevenue.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._1743801_analysis_analytics_chart_graph_report_icon;
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRevenue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevenue_ItemClick);
             // 
             // btnIngredient
             // 
-            this.btnIngredient.Caption = "Danh sách nguyên vật liệu";
+            this.btnIngredient.Caption = "Danh sách nguyên liệu";
             this.btnIngredient.Id = 11;
             this.btnIngredient.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._5120875_butter_creamy_dairy_food_ingredient_icon;
             this.btnIngredient.Name = "btnIngredient";
@@ -310,15 +320,41 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnDeleteTable.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteTable_ItemClick);
             // 
-            // barButtonItem3
+            // btnDeleteNV
             // 
-            this.barButtonItem3.Caption = "Danh mục nhân viên nghỉ việc";
-            this.barButtonItem3.Id = 26;
-            this.barButtonItem3.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._6397958_cancel_contact_delete_delete_account_remove_icon;
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnDeleteNV.Caption = "Danh mục nhân viên nghỉ việc";
+            this.btnDeleteNV.Id = 26;
+            this.btnDeleteNV.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._6397958_cancel_contact_delete_delete_account_remove_icon;
+            this.btnDeleteNV.Name = "btnDeleteNV";
+            this.btnDeleteNV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            this.btnDeleteNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteNV_ItemClick);
+            // 
+            // btnCatalog
+            // 
+            this.btnCatalog.Caption = "Danh sách loại nguyên liệu";
+            this.btnCatalog.Id = 27;
+            this.btnCatalog.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._9045222_shopping_catalog_icon;
+            this.btnCatalog.Name = "btnCatalog";
+            this.btnCatalog.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnCatalog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCatalog_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 28;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // btnDeleteDiscount
+            // 
+            this.btnDeleteDiscount.Caption = "Phụ thu và Giảm giá";
+            this.btnDeleteDiscount.Id = 29;
+            this.btnDeleteDiscount.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._3890937_black_friday_cheap_discount_price_reduced_icon;
+            this.btnDeleteDiscount.Name = "btnDeleteDiscount";
+            this.btnDeleteDiscount.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDeleteDiscount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteDiscount_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -338,6 +374,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnFood);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCategory);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnIngredient);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnCatalog);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnRecipe);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Sản phẩm";
@@ -382,7 +419,10 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup10});
+            this.ribbonPageGroup10,
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup12});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Sản phẩm bị hủy";
             // 
@@ -390,10 +430,26 @@
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btnDeleteFood);
             this.ribbonPageGroup10.ItemLinks.Add(this.btnDeleteCategory);
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnDeleteTable);
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Danh mục lưu trữ";
+            this.ribbonPageGroup10.Text = "Thực phẩm";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnDeleteTable);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Bàn";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnDeleteNV);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Nhân viên";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.btnDeleteDiscount);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Chương trình";
             // 
             // ribbonStatusBar
             // 
@@ -502,6 +558,12 @@
         private DevExpress.XtraBars.BarButtonItem btnDeleteCategory;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnDeleteTable;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnDeleteNV;
+        private DevExpress.XtraBars.BarButtonItem btnCatalog;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnDeleteDiscount;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
     }
 }

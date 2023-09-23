@@ -36,7 +36,6 @@ namespace Qly_NhaHang
             GridView gridView = gctCategory.MainView as GridView;
             gridView.OptionsBehavior.ReadOnly = true;
             gridView.FocusedRowChanged += gvCategory_FocusedRowChanged;
-
         }
 
         public void LoadFormCategory()
@@ -80,7 +79,6 @@ namespace Qly_NhaHang
                 txbIdCategory.Text = selectedCategory.id_Category.ToString();
                 txbNameCategory.Text = selectedCategory.name_Category;
                 cbbConditionCategory.Text = selectedCategory.condition_Category.ToString();
-               
             }
         }
 

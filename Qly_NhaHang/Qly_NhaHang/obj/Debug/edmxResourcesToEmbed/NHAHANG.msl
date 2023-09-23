@@ -120,9 +120,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CategoryFoods">
+      <EntityTypeMapping TypeName="QLNHThaiModel.CategoryFood">
+        <MappingFragment StoreEntitySet="CategoryFood">
+          <ScalarProperty Name="condition_Category" ColumnName="condition_Category" />
+          <ScalarProperty Name="name_Category" ColumnName="name_Category" />
+          <ScalarProperty Name="id_Category" ColumnName="id_Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Ingredients">
       <EntityTypeMapping TypeName="QLNHThaiModel.Ingredient">
         <MappingFragment StoreEntitySet="Ingredient">
+          <ScalarProperty Name="id_Catalog" ColumnName="id_Catalog" />
+          <ScalarProperty Name="countkid_Ingredient" ColumnName="countkid_Ingredient" />
+          <ScalarProperty Name="unitkid_Ingredient" ColumnName="unitkid_Ingredient" />
           <ScalarProperty Name="condition_Ingredient" ColumnName="condition_Ingredient" />
           <ScalarProperty Name="image_Ingredient" ColumnName="image_Ingredient" />
           <ScalarProperty Name="status_Ingredient" ColumnName="status_Ingredient" />
@@ -133,14 +145,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CategoryFoods">
-      <EntityTypeMapping TypeName="QLNHThaiModel.CategoryFood">
-        <MappingFragment StoreEntitySet="CategoryFood">
-          <ScalarProperty Name="condition_Category" ColumnName="condition_Category" />
-          <ScalarProperty Name="name_Category" ColumnName="name_Category" />
-          <ScalarProperty Name="id_Category" ColumnName="id_Category" />
+    <EntitySetMapping Name="CatalogIngredients">
+      <EntityTypeMapping TypeName="QLNHThaiModel.CatalogIngredient">
+        <MappingFragment StoreEntitySet="CatalogIngredient">
+          <ScalarProperty Name="condition_Catalog" ColumnName="condition_Catalog" />
+          <ScalarProperty Name="name_Catalog" ColumnName="name_Catalog" />
+          <ScalarProperty Name="id_Catalog" ColumnName="id_Catalog" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="FN_DoanhThuTheoNgay" FunctionName="QLNHThaiModel.Store.FN_DoanhThuTheoNgay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLNHThaiModel.FN_DoanhThuTheoNgay_Result">
+          <ScalarProperty Name="IDDOANHTHU" ColumnName="IDDOANHTHU" />
+          <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+          <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

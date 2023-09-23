@@ -84,7 +84,7 @@ namespace Qly_NhaHang
 
         private void btnImport_ItemClick(object sender, ItemClickEventArgs e)
         {
-            openForm(typeof(frmImport));
+            openForm(typeof(frmImportCoupon));
         }
 
         private void btnExport_ItemClick(object sender, ItemClickEventArgs e)
@@ -107,9 +107,26 @@ namespace Qly_NhaHang
             openForm(typeof(FrmRestoreTable));
         }
 
-        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        
+
+        private void btnCatalog_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmCatalog));
+        }
+
+        private void btnDeleteNV_ItemClick(object sender, ItemClickEventArgs e)
         {
             openForm(typeof(frmRestoreNV));
+        }
+
+        private void btnDeleteDiscount_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmRestoreDiscount));
+        }
+
+        private void btnRevenue_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmThongKe));
         }
     }
 }

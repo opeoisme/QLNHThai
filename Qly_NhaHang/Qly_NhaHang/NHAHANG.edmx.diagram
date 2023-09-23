@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="QLNHThaiModel.Import" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNHThaiModel.ImportInfo" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNHThaiModel.NhanVien" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNHThaiModel.Recipe" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHThaiModel.Recipe" Width="1.5" PointX="7.25" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNHThaiModel.Reservation" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNHThaiModel.Tablee" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
         <AssociationConnector Association="QLNHThaiModel.FK__Import__id_NV__6754599E" ManuallyRouted="false" />
@@ -23,11 +23,13 @@
         <AssociationConnector Association="QLNHThaiModel.FK__Bill__id_NV__5812160E" />
         <AssociationConnector Association="QLNHThaiModel.FK__Bill__id_Table__571DF1D5" />
         <AssociationConnector Association="QLNHThaiModel.FK__Bill_Info__count__619B8048" />
-        <EntityTypeShape EntityType="QLNHThaiModel.Ingredient" Width="1.5" PointX="3" PointY="0.875" />
-        <AssociationConnector Association="QLNHThaiModel.FK__ImportInf__id_In__6B24EA82" />
-        <AssociationConnector Association="QLNHThaiModel.FK__Recipe__id_Ingre__6EF57B66" />
         <EntityTypeShape EntityType="QLNHThaiModel.CategoryFood" Width="1.5" PointX="0.75" PointY="12.875" />
         <AssociationConnector Association="QLNHThaiModel.FK__Food__condition___5DCAEF64" />
+        <EntityTypeShape EntityType="QLNHThaiModel.Ingredient" Width="1.5" PointX="9.75" PointY="6.625" />
+        <AssociationConnector Association="QLNHThaiModel.FK__ImportInf__id_In__6B24EA82" />
+        <AssociationConnector Association="QLNHThaiModel.FK__Recipe__id_Ingre__6EF57B66" />
+        <EntityTypeShape EntityType="QLNHThaiModel.CatalogIngredient" Width="1.5" PointX="9.875" PointY="10.5" />
+        <AssociationConnector Association="QLNHThaiModel.FK_Ingredient_Catalog" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -26,7 +26,8 @@ create table Tablee (
 
  create table CategoryFood (
 	id_Category int identity primary key,
-	name_Category nvarchar(50) not null
+	name_Category nvarchar(50) not null,
+	condition_Category nvarchar(50)
 )
 
 create table Food (
@@ -104,6 +105,12 @@ create table ImportInfo(
 	foreign key (id_Ingredient) references Ingredient (id_Ingredient)
 )
 
+ create table CatalogIngredient (
+	id_Catalog int identity primary key,
+	name_Catalalog nvarchar(50) not null,
+	condition_Catalog nvarchar(50)
+)
+
 create table Recipe(
 	id_Recipe int identity primary key,
 	id_Food int not null,
@@ -114,9 +121,29 @@ create table Recipe(
 )
  
 select *from Bill_Info
-select * from CategoryFood
-select *from NhanVien
+select * from Ingredient
+select *from CatalogIngredient
 
+CREATE FUNCTION dbo.FN_DoanhThuTheoNgay
+(
+    @checkIn datetime,
+    @checkOut datetime
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT ROW_NUMBER() OVER (ORDER BY CONVERT(date, DateCheckOut )) AS IDDOANHTHU,
+           CONVERT(date, DateCheckOut) AS NGAY,
+           SUM(totalPrice_Bill) AS TONGDOANHTHU
+    FROM Bill
+    WHERE CONVERT(date, DateCheckIn) >= CONVERT(date, @checkIn)
+        AND CONVERT(date, DateCheckOut) <= CONVERT(date, @checkOut)
+        AND status_Bill = 1
+    GROUP BY CONVERT(date, DateCheckOut)
+);
 
-delete from Bill_Info where id_BillInfo =  163
+select * from FN_DoanhThuTheoNgay ('2023-09-19', '2023-09-19')
 
+select* from Bill
+select* from Ingredient

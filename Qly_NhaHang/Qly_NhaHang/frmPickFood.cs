@@ -19,15 +19,10 @@ namespace Qly_NhaHang
         private int foodCount;
         public event EventHandler PickFoodFormClosed;
 
-
-
-
         public frmPickFood(string nameFood, double priceFood, int idBill, int foodCount)
         {
             InitializeComponent();
-        
             lblNameFood.Text = nameFood;
-          
             lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceFood);
             lblPriceValue = priceFood;
             lblID.Text = idBill.ToString();

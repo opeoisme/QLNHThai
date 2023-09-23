@@ -2,6 +2,7 @@
 using DevExpress.XtraGrid.Views.Grid;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using Qly_NhaHang.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,15 +32,23 @@ namespace Qly_NhaHang
             GridView gridView = gctDiscount.MainView as GridView;
             gridView.OptionsBehavior.ReadOnly = true;
             gridView.FocusedRowChanged += gvDiscount_FocusedRowChanged;
-            gridView.CustomDrawCell += gvDiscount_CustomDrawCell;
         }
 
            
         public void LoadFormDiscount()
         {
-            List<Discount> discounts = new List<Discount>();
-            discounts = dbContext.Discounts.ToList();
-            gctDiscount.DataSource = discounts;
+            var discountData = dbContext.Discounts
+                              .Where(dc => dc.condition_Discount == "Được áp dụng")
+                             .Select(dc => new DiscountView
+                             {
+                                 id_Discount = dc.id_Discount,
+                                 name_Discount = dc.name_Discount,
+                                 percent_Discount = dc.percent_Discount,
+                                 type_Discount = dc.type_Discount,  
+                                 condition_Discount = dc.condition_Discount,    
+                                 
+                             }).ToList();
+            gctDiscount.DataSource = discountData;
         }
         private void btnLoadDiscount_Click(object sender, EventArgs e)
         {
@@ -87,7 +96,7 @@ namespace Qly_NhaHang
 
         private void UpdateDiscountControls(int focusedRowHandle)
         {
-            Discount selectedDiscount = gvDiscount.GetRow(focusedRowHandle) as Discount;
+            DiscountView selectedDiscount = gvDiscount.GetRow(focusedRowHandle) as DiscountView;
             if (selectedDiscount != null)
             {
                 txbIdDiscount.Text = selectedDiscount.id_Discount.ToString();
@@ -103,40 +112,28 @@ namespace Qly_NhaHang
             int focusedRowHandle = gvDiscount.FocusedRowHandle;
             if (focusedRowHandle >= 0)
             {
-                Discount selectedDiscount = gvDiscount.GetRow(focusedRowHandle) as Discount;
+                DiscountView selectedDiscount = gvDiscount.GetRow(focusedRowHandle) as DiscountView;
                 if (selectedDiscount != null)
                 {
                     if (int.TryParse(selectedDiscount.id_Discount.ToString(), out int discountId))
                     {
-                        Discount discountToDelete = dbContext.Discounts.FirstOrDefault(dc => dc.id_Discount == discountId);
+                        Discount discountToUpdate = dbContext.Discounts.FirstOrDefault(dc => dc.id_Discount == discountId);
 
-                        if (discountToDelete != null)
+                        if (discountToUpdate != null)
                         {
-                            discountToDelete.condition_Discount = "Hết chương trình";
+                            discountToUpdate.condition_Discount = "Hết chương trình";
+
+                            // Đánh dấu đối tượng là thay đổi
+                            dbContext.Entry(discountToUpdate).State = EntityState.Modified;
+
+                            // Lưu thay đổi
                             dbContext.SaveChanges();
 
-                            // Load lại danh sách sau khi cập nhật
+                            // Nạp lại dữ liệu sau khi cập nhật
                             LoadFormDiscount();
-
-                            // Mờ trường dữ liệu tương ứng trên GridView
-                            gvDiscount.SetRowCellValue(focusedRowHandle, gvDiscount.Columns["condition_Table"], "Ngưng sử dụng");
-                            XtraMessageBox.Show("Ưu đãi đã hết chương trình khuyến mãi !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show("Chương trình ngừng hoạt động !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                }
-            }
-        }
-
-        private void gvDiscount_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            GridView view = sender as GridView;
-
-            if (e.RowHandle >= 0)
-            {
-                Discount discount = view.GetRow(e.RowHandle) as Discount;
-                if (discount != null && discount.condition_Discount == "Hết chương trình")
-                {
-                    e.Appearance.ForeColor = Color.Gray; // Áp dụng màu chữ xám
                 }
             }
         }

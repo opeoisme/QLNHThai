@@ -97,6 +97,8 @@
     <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -205,6 +207,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\THONGKE.cs" />
+    <Compile Include="FN_DoanhThuTheoNgay_Result.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCatalog.Designer.cs">
+      <DependentUpon>frmCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogIngredient.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\CATEGORY.cs" />
     <Compile Include="frmChangeTable.cs">
       <SubType>Form</SubType>
@@ -303,17 +318,23 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmImport.cs">
+    <Compile Include="frmImportCoupon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport.Designer.cs">
-      <DependentUpon>frmImport.cs</DependentUpon>
+    <Compile Include="frmImportCoupon.Designer.cs">
+      <DependentUpon>frmImportCoupon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmIngredient.Designer.cs">
       <DependentUpon>frmIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImport.Designer.cs">
+      <DependentUpon>frmImport.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrintBill.cs">
       <SubType>Form</SubType>
@@ -338,6 +359,12 @@
     </Compile>
     <Compile Include="frmRestoreCategory.Designer.cs">
       <DependentUpon>frmRestoreCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestoreDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreDiscount.Designer.cs">
+      <DependentUpon>frmRestoreDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRestoreFood.cs">
       <SubType>Form</SubType>
@@ -369,7 +396,18 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKe.Designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CatalogView.cs" />
     <Compile Include="Models\CategoryView.cs" />
+    <Compile Include="Models\DiscountView.cs" />
+    <Compile Include="Models\DoanhThuModel.cs" />
+    <Compile Include="Models\DoanhThuNgay.cs" />
+    <Compile Include="Models\IngredientView.cs" />
     <Compile Include="Models\NhanVienView.cs" />
     <Compile Include="Models\TableView.cs" />
     <Compile Include="Report\BillMain.cs">
@@ -498,6 +536,9 @@
     <Compile Include="UserControl\uctIngredient.Designer.cs">
       <DependentUpon>uctIngredient.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmCatalog.resx">
+      <DependentUpon>frmCatalog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangeTable.resx">
       <DependentUpon>frmChangeTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +581,9 @@
     <EmbeddedResource Include="frmImport.resx">
       <DependentUpon>frmImport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmImportCoupon.resx">
+      <DependentUpon>frmImportCoupon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngredient.resx">
       <DependentUpon>frmIngredient.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,6 +611,9 @@
     <EmbeddedResource Include="frmRestoreCategory.resx">
       <DependentUpon>frmRestoreCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreDiscount.resx">
+      <DependentUpon>frmRestoreDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRestoreFood.resx">
       <DependentUpon>frmRestoreFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -581,6 +628,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BillMain.resx">
       <DependentUpon>BillMain.cs</DependentUpon>
@@ -701,6 +751,7 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\9045222_shopping_catalog_icon.png" />
     <None Include="Resources\6397958_cancel_contact_delete_delete account_remove_icon.png" />
     <None Include="Resources\icons8-table-100.png" />
     <None Include="Resources\8542452_trash_restore_icon.png" />
@@ -769,6 +820,7 @@
     <None Include="Resources\1591871_booking_hotel_social_icon.png" />
     <None Include="Resources\37049_isync_reload_refresh_icon.png" />
     <None Include="Resources\11025579_transfer_arrow_direction_way_sign_icon.png" />
+    <None Include="Resources\3890937_black friday_cheap_discount_price_reduced_icon.png" />
     <Content Include="Resources\5120875_butter_creamy_dairy_food_ingredient_icon.png" />
     <None Include="Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png" />
   </ItemGroup>
