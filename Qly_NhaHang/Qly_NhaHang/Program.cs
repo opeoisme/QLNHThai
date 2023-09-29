@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Qly_NhaHang.GUI_ADMIN;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace Qly_NhaHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThongKe());
+            Application.Run(new frmLogin());
             if (Environment.OSVersion.Version.Major >= 6)
             {
                 SetProcessDPIAware();

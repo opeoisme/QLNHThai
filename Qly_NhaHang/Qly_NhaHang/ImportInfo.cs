@@ -18,8 +18,6 @@ namespace Qly_NhaHang
         public int id_Import { get; set; }
         public int id_Ingredient { get; set; }
         public int count_Ingredient { get; set; }
-        public string type_Import { get; set; }
-        public Nullable<int> expỉry_Import { get; set; }
         public Nullable<System.DateTime> date_Expiry { get; set; }
     
         public virtual Import Import { get; set; }

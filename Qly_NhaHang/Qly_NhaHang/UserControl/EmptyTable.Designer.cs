@@ -111,14 +111,14 @@
             this.btnInsertBIll,
             this.btnReservationTable});
             this.ctmntOption.Name = "ctmntOption";
-            this.ctmntOption.Size = new System.Drawing.Size(249, 101);
+            this.ctmntOption.Size = new System.Drawing.Size(194, 68);
             this.ctmntOption.Text = "Option";
             // 
             // btnInsertBIll
             // 
             this.btnInsertBIll.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
             this.btnInsertBIll.Name = "btnInsertBIll";
-            this.btnInsertBIll.Size = new System.Drawing.Size(248, 32);
+            this.btnInsertBIll.Size = new System.Drawing.Size(193, 32);
             this.btnInsertBIll.Text = "Tạo hóa đơn";
             this.btnInsertBIll.Click += new System.EventHandler(this.btnInsertBIll_Click);
             // 
@@ -126,7 +126,7 @@
             // 
             this.btnReservationTable.Image = global::Qly_NhaHang.Properties.Resources.dinner_table;
             this.btnReservationTable.Name = "btnReservationTable";
-            this.btnReservationTable.Size = new System.Drawing.Size(248, 32);
+            this.btnReservationTable.Size = new System.Drawing.Size(193, 32);
             this.btnReservationTable.Text = "Đặt bàn";
             this.btnReservationTable.Click += new System.EventHandler(this.btnReservationTable_Click);
             // 

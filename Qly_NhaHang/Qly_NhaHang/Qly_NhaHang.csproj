@@ -207,85 +207,107 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\THONGKE.cs" />
-    <Compile Include="FN_DoanhThuTheoNgay_Result.cs">
-      <DependentUpon>NHAHANG.tt</DependentUpon>
-    </Compile>
-    <Compile Include="frmCatalog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCatalog.Designer.cs">
-      <DependentUpon>frmCatalog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CatalogIngredient.cs">
-      <DependentUpon>NHAHANG.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\CATEGORY.cs" />
-    <Compile Include="frmChangeTable.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChangeTable.Designer.cs">
-      <DependentUpon>frmChangeTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Reservation_DAO.cs" />
-    <Compile Include="DAO\THANHTOAN.cs" />
-    <Compile Include="frmAddDiscount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddDiscount.Designer.cs">
-      <DependentUpon>frmAddDiscount.cs</DependentUpon>
-    </Compile>
     <Compile Include="Bill.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
     <Compile Include="Bill_Info.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\BAN.cs" />
-    <Compile Include="DAO\Bill_DAO.cs" />
-    <Compile Include="frmAddCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddCategory.Designer.cs">
-      <DependentUpon>frmAddCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAddFood.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddFood.Designer.cs">
-      <DependentUpon>frmAddFood.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAddNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddNhanVien.Designer.cs">
-      <DependentUpon>frmAddNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAddTable.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddTable.Designer.cs">
-      <DependentUpon>frmAddTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmBookingTable.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBookingTable.Designer.cs">
-      <DependentUpon>frmBookingTable.cs</DependentUpon>
+    <Compile Include="CatalogIngredient.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
     <Compile Include="CategoryFood.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Import_DAO.cs" />
+    <Compile Include="DAO\THONGKE.cs" />
     <Compile Include="Discount.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FN_DoanhThuTheoNgay_Result.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FN_TopSanPhamDichVu_Result.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
     <Compile Include="Food.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmCategoryFood.cs">
+    <Compile Include="frmImport_Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategoryFood.Designer.cs">
+    <Compile Include="frmImport_Info.Designer.cs">
+      <DependentUpon>frmImport_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddCatalog.Designer.cs">
+      <DependentUpon>frmAddCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmCatalog.Designer.cs">
+      <DependentUpon>frmCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CATEGORY.cs" />
+    <Compile Include="GUI_ADMIN\frmThongKeFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmThongKeFood.Designer.cs">
+      <DependentUpon>frmThongKeFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_SELL\frmChangeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_SELL\frmChangeTable.Designer.cs">
+      <DependentUpon>frmChangeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Reservation_DAO.cs" />
+    <Compile Include="DAO\THANHTOAN.cs" />
+    <Compile Include="GUI_ADD\frmAddDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddDiscount.Designer.cs">
+      <DependentUpon>frmAddDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\BAN.cs" />
+    <Compile Include="DAO\Bill_DAO.cs" />
+    <Compile Include="GUI_ADD\frmAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddCategory.Designer.cs">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddFood.Designer.cs">
+      <DependentUpon>frmAddFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddNhanVien.Designer.cs">
+      <DependentUpon>frmAddNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddTable.Designer.cs">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_SELL\frmBookingTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_SELL\frmBookingTable.Designer.cs">
+      <DependentUpon>frmBookingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmCategoryFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmCategoryFood.Designer.cs">
       <DependentUpon>frmCategoryFood.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChangePass.cs">
@@ -294,22 +316,22 @@
     <Compile Include="frmChangePass.Designer.cs">
       <DependentUpon>frmChangePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDiscount.cs">
+    <Compile Include="GUI_ADMIN\frmDiscount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDiscount.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmDiscount.Designer.cs">
       <DependentUpon>frmDiscount.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmExport.cs">
+    <Compile Include="GUI_ADMIN\frmExport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmExport.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmExport.Designer.cs">
       <DependentUpon>frmExport.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFood.cs">
+    <Compile Include="GUI_ADMIN\frmFood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFood.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmFood.Designer.cs">
       <DependentUpon>frmFood.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
@@ -318,109 +340,101 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmImportCoupon.cs">
+    <Compile Include="GUI_ADMIN\frmImportCoupon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImportCoupon.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmImportCoupon.Designer.cs">
       <DependentUpon>frmImportCoupon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmIngredient.cs">
+    <Compile Include="GUI_ADMIN\frmIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmIngredient.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmIngredient.Designer.cs">
       <DependentUpon>frmIngredient.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmImport.cs">
+    <Compile Include="GUI_ADMIN\frmImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmImport.Designer.cs">
       <DependentUpon>frmImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrintBill.cs">
+    <Compile Include="GUI_SELL\frmPrintBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrintBill.Designer.cs">
+    <Compile Include="GUI_SELL\frmPrintBill.Designer.cs">
       <DependentUpon>frmPrintBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrintBillMain.cs">
+    <Compile Include="GUI_SELL\frmPrintBillMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrintBillMain.Designer.cs">
+    <Compile Include="GUI_SELL\frmPrintBillMain.Designer.cs">
       <DependentUpon>frmPrintBillMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReservation.cs">
+    <Compile Include="GUI_ADMIN\frmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReservation.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmReservation.Designer.cs">
       <DependentUpon>frmReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRestoreCategory.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreCatalog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRestoreCategory.Designer.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreCatalog.Designer.cs">
+      <DependentUpon>frmRestoreCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmRestoreCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmRestoreCategory.Designer.cs">
       <DependentUpon>frmRestoreCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRestoreDiscount.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreDiscount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRestoreDiscount.Designer.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreDiscount.Designer.cs">
       <DependentUpon>frmRestoreDiscount.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRestoreFood.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreFood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRestoreFood.Designer.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreFood.Designer.cs">
       <DependentUpon>frmRestoreFood.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRestoreNV.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRestoreNV.Designer.cs">
+    <Compile Include="GUI_RESTORE\frmRestoreIngredient.Designer.cs">
+      <DependentUpon>frmRestoreIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmRestoreNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmRestoreNV.Designer.cs">
       <DependentUpon>frmRestoreNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRestoreTable.cs">
+    <Compile Include="GUI_RESTORE\FrmRestoreTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRestoreTable.Designer.cs">
+    <Compile Include="GUI_RESTORE\FrmRestoreTable.Designer.cs">
       <DependentUpon>FrmRestoreTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTable.cs">
+    <Compile Include="GUI_ADMIN\frmTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTable.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmTable.Designer.cs">
       <DependentUpon>frmTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanVien.cs">
+    <Compile Include="GUI_ADMIN\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhanVien.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKe.cs">
+    <Compile Include="GUI_ADMIN\frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKe.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CatalogView.cs" />
-    <Compile Include="Models\CategoryView.cs" />
-    <Compile Include="Models\DiscountView.cs" />
-    <Compile Include="Models\DoanhThuModel.cs" />
-    <Compile Include="Models\DoanhThuNgay.cs" />
-    <Compile Include="Models\IngredientView.cs" />
-    <Compile Include="Models\NhanVienView.cs" />
-    <Compile Include="Models\TableView.cs" />
-    <Compile Include="Report\BillMain.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Report\BillMain.Designer.cs">
-      <DependentUpon>BillMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Report\HoaDon.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Report\HoaDon.Designer.cs">
-      <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Import.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
@@ -431,22 +445,16 @@
     <Compile Include="Ingredient.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmListTable.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmListTable.Designer.cs">
-      <DependentUpon>frmListTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BillInfoViewModel.cs" />
-    <Compile Include="Models\BillViewPay.cs" />
-    <Compile Include="Models\FoodViewModel.cs" />
-    <Compile Include="Models\CombinedModel.cs" />
+    <Compile Include="Models\CatalogView.cs" />
+    <Compile Include="Models\CategoryView.cs" />
+    <Compile Include="Models\DiscountView.cs" />
+    <Compile Include="Models\DoanhThuModel.cs" />
+    <Compile Include="Models\DoanhThuNgay.cs" />
+    <Compile Include="Models\ImportInfoViewModel.cs" />
+    <Compile Include="Models\IngredientView.cs" />
+    <Compile Include="Models\NhanVienView.cs" />
+    <Compile Include="Models\TableView.cs" />
+    <Compile Include="Models\TopFood.cs" />
     <Compile Include="NHAHANG.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -465,10 +473,41 @@
     <Compile Include="NhanVien.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmPickFood.cs">
+    <Compile Include="Recipe.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Report\BillMain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\BillMain.Designer.cs">
+      <DependentUpon>BillMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\HoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_SELL\frmListTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPickFood.Designer.cs">
+    <Compile Include="GUI_SELL\frmListTable.Designer.cs">
+      <DependentUpon>frmListTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BillInfoViewModel.cs" />
+    <Compile Include="Models\BillViewPay.cs" />
+    <Compile Include="Models\FoodViewModel.cs" />
+    <Compile Include="Models\CombinedModel.cs" />
+    <Compile Include="GUI_SELL\frmPickFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_SELL\frmPickFood.Designer.cs">
       <DependentUpon>frmPickFood.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProfileNV.cs">
@@ -479,32 +518,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmQuanly.cs">
+    <Compile Include="GUI_ADMIN\frmQuanly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanly.Designer.cs">
+    <Compile Include="GUI_ADMIN\frmQuanly.Designer.cs">
       <DependentUpon>frmQuanly.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOrder.cs">
+    <Compile Include="GUI_SELL\frmOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOrder.Designer.cs">
+    <Compile Include="GUI_SELL\frmOrder.Designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Recipe.cs">
-      <DependentUpon>NHAHANG.tt</DependentUpon>
+    <Compile Include="GUI_SELL\frmThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_SELL\frmThanhToan.Designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservation.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
     <Compile Include="Tablee.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
-    </Compile>
-    <Compile Include="frmThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThanhToan.Designer.cs">
-      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\EmptyTable.cs">
       <SubType>UserControl</SubType>
@@ -536,100 +572,115 @@
     <Compile Include="UserControl\uctIngredient.Designer.cs">
       <DependentUpon>uctIngredient.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmCatalog.resx">
+    <EmbeddedResource Include="frmImport_Info.resx">
+      <DependentUpon>frmImport_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADD\frmAddCatalog.resx">
+      <DependentUpon>frmAddCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADMIN\frmCatalog.resx">
       <DependentUpon>frmCatalog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChangeTable.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmThongKeFood.resx">
+      <DependentUpon>frmThongKeFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_SELL\frmChangeTable.resx">
       <DependentUpon>frmChangeTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddDiscount.resx">
+    <EmbeddedResource Include="GUI_ADD\frmAddDiscount.resx">
       <DependentUpon>frmAddDiscount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddCategory.resx">
+    <EmbeddedResource Include="GUI_ADD\frmAddCategory.resx">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddFood.resx">
+    <EmbeddedResource Include="GUI_ADD\frmAddFood.resx">
       <DependentUpon>frmAddFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddNhanVien.resx">
+    <EmbeddedResource Include="GUI_ADD\frmAddNhanVien.resx">
       <DependentUpon>frmAddNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddTable.resx">
+    <EmbeddedResource Include="GUI_ADD\frmAddTable.resx">
       <DependentUpon>frmAddTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBookingTable.resx">
+    <EmbeddedResource Include="GUI_SELL\frmBookingTable.resx">
       <DependentUpon>frmBookingTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategoryFood.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmCategoryFood.resx">
       <DependentUpon>frmCategoryFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePass.resx">
       <DependentUpon>frmChangePass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDiscount.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmDiscount.resx">
       <DependentUpon>frmDiscount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmExport.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmExport.resx">
       <DependentUpon>frmExport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFood.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmFood.resx">
       <DependentUpon>frmFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmImport.resx">
       <DependentUpon>frmImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportCoupon.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmImportCoupon.resx">
       <DependentUpon>frmImportCoupon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmIngredient.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmIngredient.resx">
       <DependentUpon>frmIngredient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListTable.resx">
+    <EmbeddedResource Include="GUI_SELL\frmListTable.resx">
       <DependentUpon>frmListTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPickFood.resx">
+    <EmbeddedResource Include="GUI_SELL\frmPickFood.resx">
       <DependentUpon>frmPickFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintBill.resx">
+    <EmbeddedResource Include="GUI_SELL\frmPrintBill.resx">
       <DependentUpon>frmPrintBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintBillMain.resx">
+    <EmbeddedResource Include="GUI_SELL\frmPrintBillMain.resx">
       <DependentUpon>frmPrintBillMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProfileNV.resx">
       <DependentUpon>frmProfileNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReservation.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmReservation.resx">
       <DependentUpon>frmReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRestoreCategory.resx">
+    <EmbeddedResource Include="GUI_RESTORE\frmRestoreCatalog.resx">
+      <DependentUpon>frmRestoreCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_RESTORE\frmRestoreCategory.resx">
       <DependentUpon>frmRestoreCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRestoreDiscount.resx">
+    <EmbeddedResource Include="GUI_RESTORE\frmRestoreDiscount.resx">
       <DependentUpon>frmRestoreDiscount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRestoreFood.resx">
+    <EmbeddedResource Include="GUI_RESTORE\frmRestoreFood.resx">
       <DependentUpon>frmRestoreFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRestoreNV.resx">
+    <EmbeddedResource Include="GUI_RESTORE\frmRestoreIngredient.resx">
+      <DependentUpon>frmRestoreIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_RESTORE\frmRestoreNV.resx">
       <DependentUpon>frmRestoreNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRestoreTable.resx">
+    <EmbeddedResource Include="GUI_RESTORE\FrmRestoreTable.resx">
       <DependentUpon>FrmRestoreTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTable.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmTable.resx">
       <DependentUpon>frmTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhanVien.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKe.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BillMain.resx">
@@ -649,13 +700,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="frmQuanly.resx">
+    <EmbeddedResource Include="GUI_ADMIN\frmQuanly.resx">
       <DependentUpon>frmQuanly.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOrder.resx">
+    <EmbeddedResource Include="GUI_SELL\frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThanhToan.resx">
+    <EmbeddedResource Include="GUI_SELL\frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\EmptyTable.resx">
@@ -673,13 +724,13 @@
     <EmbeddedResource Include="UserControl\uctIngredient.resx">
       <DependentUpon>uctIngredient.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <EntityDeploy Include="NHAHANG.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NHAHANG.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
     <None Include="NHAHANG.edmx.diagram">
       <DependentUpon>NHAHANG.edmx</DependentUpon>
     </None>
@@ -751,6 +802,7 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\7727367_custom_nutrition_researching_analysis_healthy_icon.png" />
     <None Include="Resources\9045222_shopping_catalog_icon.png" />
     <None Include="Resources\6397958_cancel_contact_delete_delete account_remove_icon.png" />
     <None Include="Resources\icons8-table-100.png" />
@@ -798,16 +850,6 @@
     <None Include="Resources\3592651_cloud_cloudy_export_network_server_icon.png" />
     <None Include="Resources\3643769_building_home_house_main_menu_icon.png" />
     <None Include="Resources\3209363_booking_calendar_date_day_month_icon.png" />
-    <Content Include="NHAHANG.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NHAHANG.Context.cs</LastGenOutput>
-      <DependentUpon>NHAHANG.edmx</DependentUpon>
-    </Content>
-    <Content Include="NHAHANG.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NHAHANG.edmx</DependentUpon>
-      <LastGenOutput>NHAHANG.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\2303114_explore_lense_magnifier_search_searching_icon.png" />
     <None Include="Resources\299068_add_sign_icon.png" />
     <None Include="Resources\100035_restore_system_icon.png" />
@@ -821,6 +863,17 @@
     <None Include="Resources\37049_isync_reload_refresh_icon.png" />
     <None Include="Resources\11025579_transfer_arrow_direction_way_sign_icon.png" />
     <None Include="Resources\3890937_black friday_cheap_discount_price_reduced_icon.png" />
+    <Content Include="NHAHANG.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NHAHANG.edmx</DependentUpon>
+      <LastGenOutput>NHAHANG.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NHAHANG.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NHAHANG.edmx</DependentUpon>
+      <LastGenOutput>NHAHANG.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\383996_approve_best_hand_like_thumbs up_icon.png" />
     <Content Include="Resources\5120875_butter_creamy_dairy_food_ingredient_icon.png" />
     <None Include="Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png" />
   </ItemGroup>

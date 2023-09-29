@@ -30,10 +30,9 @@ namespace Qly_NhaHang.UserControl
             this.idBill = _idBill;
             this.foodCount = foodCount;
             lblFoodName.Text = nameFood ;
-          //  lblPrice.Text = priceFood.ToString("c");
             lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceFood);
 
-            using (var dbContext = new QLNHThaiEntities()) // Thay thế YourDbContext bằng tên DbContext của bạn
+            using (var dbContext = new QLNHThaiEntities()) 
             {
                 var food = dbContext.Foods.FirstOrDefault(f => f.name_Food == nameFood);
                 if (food != null && food.image_Food != null)
@@ -45,7 +44,6 @@ namespace Qly_NhaHang.UserControl
                 }
                 else
                 {
-                    // Load ảnh mặc định từ tài nguyên
                     imageFood.Image = Properties.Resources.Food0;
                 }
             }

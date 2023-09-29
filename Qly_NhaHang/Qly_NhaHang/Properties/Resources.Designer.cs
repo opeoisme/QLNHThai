@@ -203,6 +203,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _383996_approve_best_hand_like_thumbs_up_icon {
+            get {
+                object obj = ResourceManager.GetObject("_383996_approve_best_hand_like_thumbs_up_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3890937_black_friday_cheap_discount_price_reduced_icon {
             get {
                 object obj = ResourceManager.GetObject("_3890937_black_friday_cheap_discount_price_reduced_icon", resourceCulture);
@@ -296,6 +306,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap _7267724_ext_csv_file_document_format_icon {
             get {
                 object obj = ResourceManager.GetObject("_7267724_ext_csv_file_document_format_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7727367_custom_nutrition_researching_analysis_healthy_icon {
+            get {
+                object obj = ResourceManager.GetObject("_7727367_custom_nutrition_researching_analysis_healthy_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

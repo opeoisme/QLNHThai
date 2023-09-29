@@ -44,5 +44,43 @@ namespace Qly_NhaHang.DAO
 
             return lstDoanhThuTheoNgay;
         }
+
+
+
+
+
+
+        public List<TopFood> TopMonan()
+        {
+            TopFood topsanphamdichvu;
+            List<TopFood> lstTopsanpham = new List<TopFood>();
+
+
+            using (var context = new QLNHThaiEntities())
+            {
+                var lsttopspdv = context.FN_TopSanPhamDichVu();
+                foreach (var item in lsttopspdv)
+                {
+                    if (item != null)
+                    {
+                        topsanphamdichvu = new TopFood();
+                        topsanphamdichvu.id_Food = item.id_Food;
+                        topsanphamdichvu.name_Food = item.name_Food;
+                        topsanphamdichvu.SOLUONG = item.SOLUONG;
+                        lstTopsanpham.Add(topsanphamdichvu);
+                    }
+                    else
+                    {
+                       
+                    }
+                }
+
+
+            }
+
+            return lstTopsanpham;
+        }
+
+
     }
 }

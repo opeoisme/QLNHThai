@@ -544,3 +544,8 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRestoreDiscount.
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmThongKe.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\DevExpress.XtraCharts.v21.2.UI.dll
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\DevExpress.XtraCharts.v21.2.UI.xml
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRestoreIngredient.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRestoreCatalog.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddCatalog.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmImport_Info.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.GUI_ADMIN.frmThongKeFood.resources

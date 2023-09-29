@@ -39,16 +39,17 @@
             this.imageIngredient.Image = global::Qly_NhaHang.Properties.Resources.Food0;
             this.imageIngredient.Location = new System.Drawing.Point(0, 0);
             this.imageIngredient.Name = "imageIngredient";
-            this.imageIngredient.Size = new System.Drawing.Size(220, 138);
+            this.imageIngredient.Size = new System.Drawing.Size(287, 138);
             this.imageIngredient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageIngredient.TabIndex = 22;
             this.imageIngredient.TabStop = false;
+            this.imageIngredient.Click += new System.EventHandler(this.imageIngredient_Click);
             // 
             // lblIngredientName
             // 
             this.lblIngredientName.AutoSize = true;
             this.lblIngredientName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngredientName.Location = new System.Drawing.Point(3, 152);
+            this.lblIngredientName.Location = new System.Drawing.Point(75, 141);
             this.lblIngredientName.Name = "lblIngredientName";
             this.lblIngredientName.Size = new System.Drawing.Size(145, 25);
             this.lblIngredientName.TabIndex = 23;
@@ -61,7 +62,7 @@
             this.Controls.Add(this.lblIngredientName);
             this.Controls.Add(this.imageIngredient);
             this.Name = "uctIngredient";
-            this.Size = new System.Drawing.Size(220, 214);
+            this.Size = new System.Drawing.Size(287, 195);
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

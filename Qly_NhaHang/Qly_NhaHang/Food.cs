@@ -30,8 +30,8 @@ namespace Qly_NhaHang
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill_Info> Bill_Info { get; set; }
+        public virtual CategoryFood CategoryFood { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recipe> Recipes { get; set; }
-        public virtual CategoryFood CategoryFood { get; set; }
     }
 }

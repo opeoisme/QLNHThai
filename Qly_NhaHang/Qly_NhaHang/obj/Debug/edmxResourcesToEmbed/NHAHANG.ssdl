@@ -77,8 +77,6 @@
     <Property Name="id_Import" Type="int" Nullable="false" />
     <Property Name="id_Ingredient" Type="int" Nullable="false" />
     <Property Name="count_Ingredient" Type="int" Nullable="false" />
-    <Property Name="type_Import" Type="nvarchar(max)" />
-    <Property Name="expỉry_Import" Type="int" />
     <Property Name="date_Expiry" Type="date" />
   </EntityType>
   <EntityType Name="Ingredient">
@@ -293,6 +291,17 @@
           <Property Name="IDDOANHTHU" Type="bigint" />
           <Property Name="NGAY" Type="date" />
           <Property Name="TONGDOANHTHU" Type="float" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="FN_TopSanPhamDichVu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="id_Food" Type="int" />
+          <Property Name="name_Food" Type="nvarchar" MaxLength="200" />
+          <Property Name="SOLUONG" Type="int" />
         </RowType>
       </CollectionType>
     </ReturnType>

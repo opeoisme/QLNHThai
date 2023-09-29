@@ -19,7 +19,7 @@ namespace Qly_NhaHang
         public int id_Food { get; set; }
         public int count_Food { get; set; }
     
-        public virtual Food Food { get; set; }
         public virtual Bill Bill { get; set; }
+        public virtual Food Food { get; set; }
     }
 }

@@ -143,7 +143,38 @@ RETURN
     GROUP BY CONVERT(date, DateCheckOut)
 );
 
-select * from FN_DoanhThuTheoNgay ('2023-09-19', '2023-09-19')
 
-select* from Bill
+
+CREATE FUNCTION dbo.FN_TopSanPhamDichVu()
+RETURNS @TopSellingProducts TABLE (
+    id_Food int,
+    name_Food nvarchar(200),
+    SOLUONG int
+)
+AS
+BEGIN
+    INSERT INTO @TopSellingProducts (id_Food, name_Food, SOLUONG)
+    SELECT TOP 5 sp.id_Food , sp.name_Food , SUM(dp.count_Food) AS SOLUONG
+    FROM Bill_Info dp
+    INNER JOIN Food sp ON dp.id_Food = sp.id_Food
+    GROUP BY sp.id_Food, sp.name_Food
+    ORDER BY SOLUONG DESC
+
+    RETURN
+END
+
+SELECT TOP 3 sp.id_Food , sp.name_Food, SUM(dp.count_Food) AS SOLUONG
+FROM Bill_Info dp
+INNER JOIN Food sp ON dp.id_Food = sp.id_Food
+GROUP BY sp.id_Food, sp.name_Food
+ORDER BY SOLUONG DESC
+
+
+delete from ImportInfo
 select* from Ingredient
+select *from Bill_Info
+
+select *from Import
+select* from ImportInfo
+
+DBCC CHECKIDENT (Import, RESEED, 1);

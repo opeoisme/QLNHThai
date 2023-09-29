@@ -253,6 +253,9 @@
   <data name="_3709729_charge_extra_money_online_service_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3709729_charge_extra_money_online_service_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_383996_approve_best_hand_like_thumbs_up_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\383996_approve_best_hand_like_thumbs up_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_3890937_black_friday_cheap_discount_price_reduced_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3890937_black friday_cheap_discount_price_reduced_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -282,6 +285,9 @@
   </data>
   <data name="_7267724_ext_csv_file_document_format_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7267724_ext_csv_file_document_format_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7727367_custom_nutrition_researching_analysis_healthy_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7727367_custom_nutrition_researching_analysis_healthy_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_7811684_warehouse_supply_cargo_distribution_logistic_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
