@@ -482,7 +482,7 @@ namespace Qly_NhaHang
 
             // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry hơn ngày hiện tại + 2 ngày và count_Ingredient > 0
             var ondinh = dbContext.ImportInfoes
-                .Where(info => info.date_Expiry > currentDate && info.count_Ingredient > 0)
+                .Where(info => info.date_Expiry >= currentDate && info.count_Ingredient == 0)
                 .Select(info => info.id_Ingredient)
                 .Distinct()
                 .ToList();
@@ -572,7 +572,7 @@ namespace Qly_NhaHang
                 if (status == "Có hàng cận date")
                 {
                     e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
-                    e.Appearance.ForeColor = Color.Teal; // Đặt màu chữ
+                    e.Appearance.ForeColor = Color.YellowGreen; // Đặt màu chữ
                 }
             }
         }

@@ -233,10 +233,16 @@
     <Compile Include="Food.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmImport_Info.cs">
+    <Compile Include="frmImportDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_Info.Designer.cs">
+    <Compile Include="frmImportDetail.Designer.cs">
+      <DependentUpon>frmImportDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmImport_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmImport_Info.Designer.cs">
       <DependentUpon>frmImport_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_ADD\frmAddCatalog.cs">
@@ -450,7 +456,9 @@
     <Compile Include="Models\DiscountView.cs" />
     <Compile Include="Models\DoanhThuModel.cs" />
     <Compile Include="Models\DoanhThuNgay.cs" />
+    <Compile Include="Models\ImportDetail.cs" />
     <Compile Include="Models\ImportInfoViewModel.cs" />
+    <Compile Include="Models\ImportModel.cs" />
     <Compile Include="Models\IngredientView.cs" />
     <Compile Include="Models\NhanVienView.cs" />
     <Compile Include="Models\TableView.cs" />
@@ -572,7 +580,10 @@
     <Compile Include="UserControl\uctIngredient.Designer.cs">
       <DependentUpon>uctIngredient.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmImport_Info.resx">
+    <EmbeddedResource Include="frmImportDetail.resx">
+      <DependentUpon>frmImportDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADMIN\frmImport_Info.resx">
       <DependentUpon>frmImport_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADD\frmAddCatalog.resx">

@@ -33,13 +33,13 @@ namespace Qly_NhaHang
         public virtual DbSet<CategoryFood> CategoryFoods { get; set; }
         public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
-        public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<Ingredient> Ingredients { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Recipe> Recipes { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Tablee> Tablees { get; set; }
         public virtual DbSet<ImportInfo> ImportInfoes { get; set; }
+        public virtual DbSet<Import> Imports { get; set; }
     
         [DbFunction("QLNHThaiEntities", "FN_DoanhThuTheoNgay")]
         public virtual IQueryable<FN_DoanhThuTheoNgay_Result> FN_DoanhThuTheoNgay(Nullable<System.DateTime> checkIn, Nullable<System.DateTime> checkOut)

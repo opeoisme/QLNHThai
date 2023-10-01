@@ -170,7 +170,7 @@ GROUP BY sp.id_Food, sp.name_Food
 ORDER BY SOLUONG DESC
 
 
-delete from ImportInfo
+
 select* from Ingredient
 select *from Bill_Info
 

@@ -68,6 +68,7 @@
     <Property Name="date_Import" Type="date" Nullable="false" />
     <Property Name="id_NV" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="type_Import" Type="nvarchar(max)" />
+    <Property Name="status_Import" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="ImportInfo">
     <Key>

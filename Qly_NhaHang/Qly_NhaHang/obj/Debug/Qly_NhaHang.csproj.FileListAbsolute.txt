@@ -549,3 +549,4 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRestoreCatalog.r
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddCatalog.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmImport_Info.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.GUI_ADMIN.frmThongKeFood.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmImportDetail.resources

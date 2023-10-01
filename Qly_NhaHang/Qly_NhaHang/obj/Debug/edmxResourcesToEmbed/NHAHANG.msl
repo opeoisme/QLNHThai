@@ -67,16 +67,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Imports">
-      <EntityTypeMapping TypeName="QLNHThaiModel.Import">
-        <MappingFragment StoreEntitySet="Import">
-          <ScalarProperty Name="id_Import" ColumnName="id_Import" />
-          <ScalarProperty Name="date_Import" ColumnName="date_Import" />
-          <ScalarProperty Name="id_NV" ColumnName="id_NV" />
-          <ScalarProperty Name="type_Import" ColumnName="type_Import" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Ingredients">
       <EntityTypeMapping TypeName="QLNHThaiModel.Ingredient">
         <MappingFragment StoreEntitySet="Ingredient">
@@ -167,6 +157,17 @@
           <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
           <ScalarProperty Name="id_Import" ColumnName="id_Import" />
           <ScalarProperty Name="id_ImportInfo" ColumnName="id_ImportInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imports">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Import">
+        <MappingFragment StoreEntitySet="Import">
+          <ScalarProperty Name="status_Import" ColumnName="status_Import" />
+          <ScalarProperty Name="type_Import" ColumnName="type_Import" />
+          <ScalarProperty Name="id_NV" ColumnName="id_NV" />
+          <ScalarProperty Name="date_Import" ColumnName="date_Import" />
+          <ScalarProperty Name="id_Import" ColumnName="id_Import" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

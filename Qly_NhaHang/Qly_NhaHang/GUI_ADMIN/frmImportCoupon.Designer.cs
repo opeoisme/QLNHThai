@@ -38,6 +38,7 @@
             this.idImport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateImport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.statusImport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctImport)).BeginInit();
@@ -64,6 +65,7 @@
             this.btnLoadImport.Name = "btnLoadImport";
             this.btnLoadImport.Size = new System.Drawing.Size(76, 29);
             this.btnLoadImport.Text = "Xem";
+            this.btnLoadImport.Click += new System.EventHandler(this.btnLoadImport_Click);
             // 
             // btnPDFImport
             // 
@@ -116,10 +118,13 @@
             this.gvImport.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.idImport,
             this.dateImport,
-            this.nameNV});
+            this.nameNV,
+            this.statusImport});
             this.gvImport.GridControl = this.gctImport;
             this.gvImport.Name = "gvImport";
             this.gvImport.RowHeight = 125;
+            this.gvImport.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvImport_RowClick);
+            this.gvImport.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvImport_RowCellStyle);
             // 
             // idImport
             // 
@@ -129,7 +134,7 @@
             this.idImport.Name = "idImport";
             this.idImport.Visible = true;
             this.idImport.VisibleIndex = 0;
-            this.idImport.Width = 414;
+            this.idImport.Width = 391;
             // 
             // dateImport
             // 
@@ -139,7 +144,7 @@
             this.dateImport.Name = "dateImport";
             this.dateImport.Visible = true;
             this.dateImport.VisibleIndex = 1;
-            this.dateImport.Width = 747;
+            this.dateImport.Width = 705;
             // 
             // nameNV
             // 
@@ -149,17 +154,29 @@
             this.nameNV.Name = "nameNV";
             this.nameNV.Visible = true;
             this.nameNV.VisibleIndex = 2;
-            this.nameNV.Width = 747;
+            this.nameNV.Width = 478;
             // 
-            // frmImport
+            // statusImport
+            // 
+            this.statusImport.Caption = "Trạng thái phiếu nhập";
+            this.statusImport.FieldName = "status_Import";
+            this.statusImport.MinWidth = 30;
+            this.statusImport.Name = "statusImport";
+            this.statusImport.Visible = true;
+            this.statusImport.VisibleIndex = 3;
+            this.statusImport.Width = 334;
+            // 
+            // frmImportCoupon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmImport";
+            this.Name = "frmImportCoupon";
             this.Text = "Danh sách phiếu nhập";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmImportCoupon_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -182,5 +199,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn idImport;
         private DevExpress.XtraGrid.Columns.GridColumn dateImport;
         private DevExpress.XtraGrid.Columns.GridColumn nameNV;
+        private DevExpress.XtraGrid.Columns.GridColumn statusImport;
     }
 }

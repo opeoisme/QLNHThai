@@ -24,6 +24,7 @@ namespace Qly_NhaHang
         public System.DateTime date_Import { get; set; }
         public string id_NV { get; set; }
         public string type_Import { get; set; }
+        public string status_Import { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
