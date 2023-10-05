@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngredient));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddIngredient = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteIngredient = new System.Windows.Forms.ToolStripButton();
@@ -81,6 +81,9 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.priceIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.nmrPriceIngre = new System.Windows.Forms.NumericUpDown();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmrCountKid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCountIngredient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrPriceIngre)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -118,6 +122,7 @@
             this.btnAddIngredient.Name = "btnAddIngredient";
             this.btnAddIngredient.Size = new System.Drawing.Size(84, 29);
             this.btnAddIngredient.Text = "Thêm";
+            this.btnAddIngredient.Click += new System.EventHandler(this.btnAddIngredient_Click);
             // 
             // btnDeleteIngredient
             // 
@@ -228,12 +233,13 @@
             this.nameIngredient,
             this.countIngredient,
             this.unitIngredient,
-            this.imgIngredient,
+            this.priceIngredient,
             this.statusIngredient,
-            this.conditionIngredient,
+            this.imgIngredient,
             this.idCatalog,
             this.unitkidIngredient,
-            this.countkidIngredient});
+            this.countkidIngredient,
+            this.conditionIngredient});
             this.gvIngredient.GridControl = this.gctIngredient;
             this.gvIngredient.Name = "gvIngredient";
             this.gvIngredient.RowHeight = 125;
@@ -242,13 +248,13 @@
             // 
             // idIngredient
             // 
-            this.idIngredient.Caption = "Mã nguyên liệu";
+            this.idIngredient.Caption = "Mã";
             this.idIngredient.FieldName = "id_Ingredient";
             this.idIngredient.MinWidth = 30;
             this.idIngredient.Name = "idIngredient";
             this.idIngredient.Visible = true;
             this.idIngredient.VisibleIndex = 0;
-            this.idIngredient.Width = 139;
+            this.idIngredient.Width = 70;
             // 
             // nameIngredient
             // 
@@ -258,27 +264,27 @@
             this.nameIngredient.Name = "nameIngredient";
             this.nameIngredient.Visible = true;
             this.nameIngredient.VisibleIndex = 1;
-            this.nameIngredient.Width = 221;
+            this.nameIngredient.Width = 210;
             // 
             // countIngredient
             // 
-            this.countIngredient.Caption = "Số lượng tồn";
+            this.countIngredient.Caption = "SL tồn";
             this.countIngredient.FieldName = "count_Ingredient";
             this.countIngredient.MinWidth = 30;
             this.countIngredient.Name = "countIngredient";
             this.countIngredient.Visible = true;
             this.countIngredient.VisibleIndex = 2;
-            this.countIngredient.Width = 147;
+            this.countIngredient.Width = 126;
             // 
             // unitIngredient
             // 
-            this.unitIngredient.Caption = "Đơn vị tính";
+            this.unitIngredient.Caption = "ĐVT";
             this.unitIngredient.FieldName = "unit_Ingredient";
             this.unitIngredient.MinWidth = 30;
             this.unitIngredient.Name = "unitIngredient";
             this.unitIngredient.Visible = true;
-            this.unitIngredient.VisibleIndex = 5;
-            this.unitIngredient.Width = 187;
+            this.unitIngredient.VisibleIndex = 3;
+            this.unitIngredient.Width = 136;
             // 
             // imgIngredient
             // 
@@ -287,8 +293,8 @@
             this.imgIngredient.MinWidth = 30;
             this.imgIngredient.Name = "imgIngredient";
             this.imgIngredient.Visible = true;
-            this.imgIngredient.VisibleIndex = 3;
-            this.imgIngredient.Width = 214;
+            this.imgIngredient.VisibleIndex = 4;
+            this.imgIngredient.Width = 215;
             // 
             // statusIngredient
             // 
@@ -298,7 +304,7 @@
             this.statusIngredient.Name = "statusIngredient";
             this.statusIngredient.Visible = true;
             this.statusIngredient.VisibleIndex = 6;
-            this.statusIngredient.Width = 214;
+            this.statusIngredient.Width = 191;
             // 
             // conditionIngredient
             // 
@@ -307,8 +313,8 @@
             this.conditionIngredient.MinWidth = 30;
             this.conditionIngredient.Name = "conditionIngredient";
             this.conditionIngredient.Visible = true;
-            this.conditionIngredient.VisibleIndex = 4;
-            this.conditionIngredient.Width = 179;
+            this.conditionIngredient.VisibleIndex = 10;
+            this.conditionIngredient.Width = 212;
             // 
             // idCatalog
             // 
@@ -318,7 +324,7 @@
             this.idCatalog.Name = "idCatalog";
             this.idCatalog.Visible = true;
             this.idCatalog.VisibleIndex = 7;
-            this.idCatalog.Width = 237;
+            this.idCatalog.Width = 211;
             // 
             // unitkidIngredient
             // 
@@ -328,7 +334,7 @@
             this.unitkidIngredient.Name = "unitkidIngredient";
             this.unitkidIngredient.Visible = true;
             this.unitkidIngredient.VisibleIndex = 8;
-            this.unitkidIngredient.Width = 173;
+            this.unitkidIngredient.Width = 152;
             // 
             // countkidIngredient
             // 
@@ -338,10 +344,12 @@
             this.countkidIngredient.Name = "countkidIngredient";
             this.countkidIngredient.Visible = true;
             this.countkidIngredient.VisibleIndex = 9;
-            this.countkidIngredient.Width = 197;
+            this.countkidIngredient.Width = 217;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.nmrPriceIngre);
+            this.panel2.Controls.Add(this.labelControl11);
             this.panel2.Controls.Add(this.cbbCatalog);
             this.panel2.Controls.Add(this.labelControl10);
             this.panel2.Controls.Add(this.cbbUnitKid);
@@ -375,7 +383,7 @@
             this.cbbCatalog.Items.AddRange(new object[] {
             "Được sử dụng",
             "Ngưng bán"});
-            this.cbbCatalog.Location = new System.Drawing.Point(1269, 92);
+            this.cbbCatalog.Location = new System.Drawing.Point(1279, 92);
             this.cbbCatalog.Name = "cbbCatalog";
             this.cbbCatalog.Size = new System.Drawing.Size(275, 27);
             this.cbbCatalog.TabIndex = 44;
@@ -566,26 +574,26 @@
             this.txbNameIngredient.Modified = false;
             this.txbNameIngredient.Multiline = false;
             this.txbNameIngredient.Name = "txbNameIngredient";
-            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameIngredient.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.White;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnIdleState = stateProperties12;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameIngredient.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnIdleState = stateProperties4;
             this.txbNameIngredient.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameIngredient.PasswordChar = '\0';
             this.txbNameIngredient.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -640,26 +648,26 @@
             this.txbIdIngredient.Modified = false;
             this.txbIdIngredient.Multiline = false;
             this.txbIdIngredient.Name = "txbIdIngredient";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdIngredient.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIdIngredient.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdIngredient.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdIngredient.OnIdleState = stateProperties16;
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdIngredient.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIdIngredient.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdIngredient.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdIngredient.OnIdleState = stateProperties8;
             this.txbIdIngredient.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdIngredient.PasswordChar = '\0';
             this.txbIdIngredient.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -731,6 +739,38 @@
             this.labelControl3.TabIndex = 21;
             this.labelControl3.Text = "Mã nguyên liệu";
             // 
+            // priceIngredient
+            // 
+            this.priceIngredient.Caption = "Giá nhập";
+            this.priceIngredient.FieldName = "price_Ingredient";
+            this.priceIngredient.MinWidth = 30;
+            this.priceIngredient.Name = "priceIngredient";
+            this.priceIngredient.Visible = true;
+            this.priceIngredient.VisibleIndex = 5;
+            this.priceIngredient.Width = 168;
+            // 
+            // nmrPriceIngre
+            // 
+            this.nmrPriceIngre.Location = new System.Drawing.Point(1279, 30);
+            this.nmrPriceIngre.Maximum = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            0});
+            this.nmrPriceIngre.Name = "nmrPriceIngre";
+            this.nmrPriceIngre.Size = new System.Drawing.Size(153, 27);
+            this.nmrPriceIngre.TabIndex = 46;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(1179, 26);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(63, 26);
+            this.labelControl11.TabIndex = 45;
+            this.labelControl11.Text = "Đơn giá";
+            // 
             // frmIngredient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -754,6 +794,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmrCountKid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCountIngredient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrPriceIngre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -805,5 +846,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn countkidIngredient;
         private System.Windows.Forms.ComboBox cbbCatalog;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraGrid.Columns.GridColumn priceIngredient;
+        private System.Windows.Forms.NumericUpDown nmrPriceIngre;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
     }
 }

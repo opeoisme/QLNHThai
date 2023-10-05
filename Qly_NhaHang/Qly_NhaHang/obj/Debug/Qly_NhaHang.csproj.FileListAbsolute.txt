@@ -550,3 +550,12 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddCatalog.resou
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmImport_Info.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.GUI_ADMIN.frmThongKeFood.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmImportDetail.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmRecipe.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\FuzzyString.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.UserControl.uctRecipeIngredient.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.GUI_ADD.frmAddIngredient.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmDetailRecipe.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\log4net.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\Newtonsoft.Json.dll
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\log4net.xml
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\Newtonsoft.Json.xml

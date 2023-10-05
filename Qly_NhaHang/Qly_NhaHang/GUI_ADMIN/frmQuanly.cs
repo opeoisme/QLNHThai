@@ -144,5 +144,13 @@ namespace Qly_NhaHang
         {
             openForm(typeof(frmThongKeFood));
         }
+
+        private void btnRecipe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmRecipe f = new frmRecipe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

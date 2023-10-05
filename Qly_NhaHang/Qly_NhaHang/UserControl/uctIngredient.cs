@@ -17,12 +17,13 @@ namespace Qly_NhaHang.UserControl
     {
         private int idImport;
         private string nameIngredient;
+        private double priceIngre;
         private string ĐVT;
         private string Unit;
         private double countKid;
         private DateTime HSD;
         private double count;
-        public uctIngredient(string nameIngredient , string ĐVT, string Unit, double countKid, int idImport, DateTime? HSD, double count)
+        public uctIngredient(string nameIngredient , string ĐVT, string Unit, double countKid, int idImport, DateTime? HSD, double count, double priceIngre)
         {
             InitializeComponent();
             this.nameIngredient = nameIngredient;
@@ -40,6 +41,8 @@ namespace Qly_NhaHang.UserControl
             }
             this.idImport = idImport;
             this.count = count;
+            this.priceIngre = priceIngre;
+            lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceIngre);
 
             using (var dbContext = new QLNHThaiEntities()) 
             {
@@ -62,7 +65,7 @@ namespace Qly_NhaHang.UserControl
 
         private void imageIngredient_Click(object sender, EventArgs e)
         {
-            frmImport_Info pickFoodForm = new frmImport_Info(nameIngredient, Unit, ĐVT, countKid, count, idImport ,HSD );
+            frmImport_Info pickFoodForm = new frmImport_Info(nameIngredient, Unit, ĐVT, countKid, count, idImport ,HSD, priceIngre );
             pickFoodForm.ShowDialog();
         }
     }

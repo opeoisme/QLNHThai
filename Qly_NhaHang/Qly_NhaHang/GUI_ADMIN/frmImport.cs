@@ -28,7 +28,7 @@ namespace Qly_NhaHang
         private void frmImport_Load(object sender, EventArgs e)
         {
             _import = new Import_DAO();
-            lblIDBILL.Text = _idImport.ToString();
+            lblIDIMPORT.Text = _idImport.ToString();
             LoadIngredientFLPN();
             LoadCatalogFLPN();
             LoadImportInfo();
@@ -54,11 +54,11 @@ namespace Qly_NhaHang
         {
             using (var dbContext = new QLNHThaiEntities())
             {
-                var billInfoData = dbContext.ImportInfoes
+                var importInfoData = dbContext.ImportInfoes
                      .Where(ip => ip.id_Import == _idImport && ip.id_Ingredient == ingredientId)
                     .Select(f => f.count_Ingredient)
                     .FirstOrDefault();
-                return billInfoData;
+                return importInfoData;
             }
         }
 
@@ -74,7 +74,7 @@ namespace Qly_NhaHang
                 foreach (var nguyenlieu in IngredientList)
                 {
                     // Tạo instance của user control và thêm vào FlowLayoutPanel
-                    var Ingredientct = new uctIngredient( nguyenlieu.name_Ingredient, nguyenlieu.unitkid_Ingredient ,nguyenlieu.unit_Ingredient, nguyenlieu.countkid_Ingredient.GetValueOrDefault(),_idImport ,GetIngredientDate(nguyenlieu.id_Ingredient), GetIngredientCount(nguyenlieu.id_Ingredient));
+                    var Ingredientct = new uctIngredient( nguyenlieu.name_Ingredient, nguyenlieu.unitkid_Ingredient ,nguyenlieu.unit_Ingredient, nguyenlieu.countkid_Ingredient.GetValueOrDefault(),_idImport ,GetIngredientDate(nguyenlieu.id_Ingredient), GetIngredientCount(nguyenlieu.id_Ingredient), (float)nguyenlieu.price_Ingredient);
                     flpnIngredient.Controls.Add(Ingredientct);
                 }
             }
@@ -116,7 +116,7 @@ namespace Qly_NhaHang
                 flpnIngredient.Controls.Clear();
                 foreach (var ingredient in ingredientInCatalog)
                 {
-                    uctIngredient ingredientControl = new uctIngredient(ingredient.name_Ingredient,ingredient.unitkid_Ingredient, ingredient.unit_Ingredient, ingredient.countkid_Ingredient.GetValueOrDefault(), _idImport, GetIngredientDate(ingredient.id_Ingredient), GetIngredientCount(ingredient.id_Ingredient));
+                    uctIngredient ingredientControl = new uctIngredient(ingredient.name_Ingredient,ingredient.unitkid_Ingredient, ingredient.unit_Ingredient, ingredient.countkid_Ingredient.GetValueOrDefault(), _idImport, GetIngredientDate(ingredient.id_Ingredient), GetIngredientCount(ingredient.id_Ingredient), (float)ingredient.price_Ingredient);
                     flpnIngredient.Controls.Add(ingredientControl);
                 }
             }
@@ -142,6 +142,23 @@ namespace Qly_NhaHang
                     })
                     .ToList();
                 gctImport.DataSource = importInfoData;
+               
+                double total = CalculateTotalPrice();
+                lblTotalPrice.Text = String.Format("{0:0,0 vnđ}", total);
+            }
+        }
+
+        public double CalculateTotalPrice()
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                var importInfoData = dbContext.ImportInfoes
+                    .Where(ip => ip.id_Import == _idImport)
+                    .Join(dbContext.Ingredients, ip => ip.id_Ingredient, ingre => ingre.id_Ingredient, (ip, ingre) => new { ip.count_Ingredient, ingre.price_Ingredient, ingre.countkid_Ingredient })
+                    .ToList();
+
+                double total = (double)importInfoData.Sum(item => (item.count_Ingredient/item.countkid_Ingredient) * item.price_Ingredient);
+                return total;
             }
         }
 
@@ -167,6 +184,9 @@ namespace Qly_NhaHang
                         }
                     }
                     dbContext.SaveChanges();
+
+                    double total = CalculateTotalPrice();
+                    UpdateTotalPriceInImport(total);
                     this.Close();
                     if (Application.OpenForms["frmIngredient"] is frmIngredient ingredientForm)
                     {
@@ -178,6 +198,21 @@ namespace Qly_NhaHang
             {
                 // GctImport trống, thực hiện thông báo hoặc xử lý khác tùy theo yêu cầu của bạn
                 XtraMessageBox.Show("Bạn chưa nhập bất kì loại hàng nào!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        private void UpdateTotalPriceInImport(double total)
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                var importToUpdate = dbContext.Imports.FirstOrDefault(b => b.id_Import == _idImport);
+
+                if (importToUpdate != null)
+                {
+                    importToUpdate.total_Price = total;
+                    dbContext.SaveChanges();
+                }
             }
         }
 

@@ -30,6 +30,7 @@
         {
             this.imageIngredient = new System.Windows.Forms.PictureBox();
             this.lblIngredientName = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,14 +56,25 @@
             this.lblIngredientName.TabIndex = 23;
             this.lblIngredientName.Text = "Tên nguyên liệu";
             // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(75, 175);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(75, 25);
+            this.lblPrice.TabIndex = 24;
+            this.lblPrice.Text = "Đơn giá";
+            // 
             // uctIngredient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblIngredientName);
             this.Controls.Add(this.imageIngredient);
             this.Name = "uctIngredient";
-            this.Size = new System.Drawing.Size(287, 195);
+            this.Size = new System.Drawing.Size(287, 217);
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -73,5 +85,6 @@
 
         private System.Windows.Forms.PictureBox imageIngredient;
         private System.Windows.Forms.Label lblIngredientName;
+        private System.Windows.Forms.Label lblPrice;
     }
 }

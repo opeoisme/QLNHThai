@@ -39,6 +39,7 @@
             this.dateImport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.statusImport = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.total_Price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctImport)).BeginInit();
@@ -119,7 +120,8 @@
             this.idImport,
             this.dateImport,
             this.nameNV,
-            this.statusImport});
+            this.statusImport,
+            this.total_Price});
             this.gvImport.GridControl = this.gctImport;
             this.gvImport.Name = "gvImport";
             this.gvImport.RowHeight = 125;
@@ -134,7 +136,7 @@
             this.idImport.Name = "idImport";
             this.idImport.Visible = true;
             this.idImport.VisibleIndex = 0;
-            this.idImport.Width = 391;
+            this.idImport.Width = 191;
             // 
             // dateImport
             // 
@@ -144,7 +146,7 @@
             this.dateImport.Name = "dateImport";
             this.dateImport.Visible = true;
             this.dateImport.VisibleIndex = 1;
-            this.dateImport.Width = 705;
+            this.dateImport.Width = 411;
             // 
             // nameNV
             // 
@@ -154,7 +156,7 @@
             this.nameNV.Name = "nameNV";
             this.nameNV.Visible = true;
             this.nameNV.VisibleIndex = 2;
-            this.nameNV.Width = 478;
+            this.nameNV.Width = 437;
             // 
             // statusImport
             // 
@@ -164,7 +166,17 @@
             this.statusImport.Name = "statusImport";
             this.statusImport.Visible = true;
             this.statusImport.VisibleIndex = 3;
-            this.statusImport.Width = 334;
+            this.statusImport.Width = 487;
+            // 
+            // total_Price
+            // 
+            this.total_Price.Caption = "Thanh toán";
+            this.total_Price.FieldName = "total_Price";
+            this.total_Price.MinWidth = 30;
+            this.total_Price.Name = "total_Price";
+            this.total_Price.Visible = true;
+            this.total_Price.VisibleIndex = 4;
+            this.total_Price.Width = 382;
             // 
             // frmImportCoupon
             // 
@@ -200,5 +212,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn dateImport;
         private DevExpress.XtraGrid.Columns.GridColumn nameNV;
         private DevExpress.XtraGrid.Columns.GridColumn statusImport;
+        private DevExpress.XtraGrid.Columns.GridColumn total_Price;
     }
 }

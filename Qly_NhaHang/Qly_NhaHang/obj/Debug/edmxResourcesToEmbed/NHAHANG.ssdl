@@ -69,6 +69,7 @@
     <Property Name="id_NV" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="type_Import" Type="nvarchar(max)" />
     <Property Name="status_Import" Type="nvarchar(max)" />
+    <Property Name="total_Price" Type="float" />
   </EntityType>
   <EntityType Name="ImportInfo">
     <Key>
@@ -94,6 +95,7 @@
     <Property Name="unitkid_Ingredient" Type="nvarchar(max)" />
     <Property Name="countkid_Ingredient" Type="float" />
     <Property Name="id_Catalog" Type="int" />
+    <Property Name="price_Ingredient" Type="float" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>

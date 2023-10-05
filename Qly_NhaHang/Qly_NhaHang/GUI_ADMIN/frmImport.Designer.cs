@@ -38,13 +38,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.gctImport = new DevExpress.XtraGrid.GridControl();
             this.gvImport = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contityIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateExpiry = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblTotalPrice = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblIDBILL = new System.Windows.Forms.Label();
+            this.lblIDIMPORT = new System.Windows.Forms.Label();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flpnCatalog = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,8 +59,11 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctImport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvImport)).BeginInit();
+            this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,12 +143,31 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.gctImport);
+            this.panel7.Controls.Add(this.panel6);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(547, 848);
             this.panel7.TabIndex = 35;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(547, 848);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.gctImport);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(547, 776);
+            this.panel9.TabIndex = 1;
             // 
             // gctImport
             // 
@@ -148,7 +175,7 @@
             this.gctImport.Location = new System.Drawing.Point(0, 0);
             this.gctImport.MainView = this.gvImport;
             this.gctImport.Name = "gctImport";
-            this.gctImport.Size = new System.Drawing.Size(547, 848);
+            this.gctImport.Size = new System.Drawing.Size(547, 776);
             this.gctImport.TabIndex = 33;
             this.gctImport.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvImport});
@@ -195,10 +222,45 @@
             this.dateExpiry.VisibleIndex = 2;
             this.dateExpiry.Width = 127;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.lblTotalPrice);
+            this.panel8.Controls.Add(this.labelControl1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 776);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(547, 72);
+            this.panel8.TabIndex = 0;
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblTotalPrice.Appearance.Options.UseFont = true;
+            this.lblTotalPrice.Appearance.Options.UseForeColor = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(211, 26);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(81, 29);
+            this.lblTotalPrice.TabIndex = 26;
+            this.lblTotalPrice.Text = ".000VNĐ";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(6, 21);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(163, 35);
+            this.labelControl1.TabIndex = 25;
+            this.labelControl1.Text = "Tổng đơn nhập";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.lblIDBILL);
+            this.panel4.Controls.Add(this.lblIDIMPORT);
             this.panel4.Controls.Add(this.labelControl8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -206,16 +268,16 @@
             this.panel4.Size = new System.Drawing.Size(547, 57);
             this.panel4.TabIndex = 0;
             // 
-            // lblIDBILL
+            // lblIDIMPORT
             // 
-            this.lblIDBILL.AutoSize = true;
-            this.lblIDBILL.Font = new System.Drawing.Font("UTM Bienvenue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDBILL.ForeColor = System.Drawing.Color.Black;
-            this.lblIDBILL.Location = new System.Drawing.Point(265, 10);
-            this.lblIDBILL.Name = "lblIDBILL";
-            this.lblIDBILL.Size = new System.Drawing.Size(97, 41);
-            this.lblIDBILL.TabIndex = 6;
-            this.lblIDBILL.Text = "label2";
+            this.lblIDIMPORT.AutoSize = true;
+            this.lblIDIMPORT.Font = new System.Drawing.Font("UTM Bienvenue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDIMPORT.ForeColor = System.Drawing.Color.Black;
+            this.lblIDIMPORT.Location = new System.Drawing.Point(265, 10);
+            this.lblIDIMPORT.Name = "lblIDIMPORT";
+            this.lblIDIMPORT.Size = new System.Drawing.Size(97, 41);
+            this.lblIDIMPORT.TabIndex = 6;
+            this.lblIDIMPORT.Text = "label2";
             // 
             // labelControl8
             // 
@@ -346,8 +408,12 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctImport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvImport)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -368,11 +434,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn nameIngredient;
         private DevExpress.XtraGrid.Columns.GridColumn contityIngredient;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblIDBILL;
+        private System.Windows.Forms.Label lblIDIMPORT;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private System.Windows.Forms.FlowLayoutPanel flpnCatalog;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn dateExpiry;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private DevExpress.XtraEditors.LabelControl lblTotalPrice;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

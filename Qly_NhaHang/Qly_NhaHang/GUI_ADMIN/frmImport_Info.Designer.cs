@@ -48,6 +48,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrQuantity)).BeginInit();
@@ -61,7 +65,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 47);
+            this.panel1.Size = new System.Drawing.Size(631, 47);
             this.panel1.TabIndex = 1;
             // 
             // lblID
@@ -89,6 +93,10 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblTotalPrice);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.lblPrice);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.dtpkHSD);
             this.panel3.Controls.Add(this.lblUnit1);
@@ -102,7 +110,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(21, 69);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(486, 260);
+            this.panel3.Size = new System.Drawing.Size(598, 260);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -120,7 +128,7 @@
             this.dtpkHSD.Font = new System.Drawing.Font("UTM Bienvenue", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpkHSD.Location = new System.Drawing.Point(158, 203);
             this.dtpkHSD.Name = "dtpkHSD";
-            this.dtpkHSD.Size = new System.Drawing.Size(323, 31);
+            this.dtpkHSD.Size = new System.Drawing.Size(395, 31);
             this.dtpkHSD.TabIndex = 12;
             // 
             // lblUnit1
@@ -260,7 +268,7 @@
             this.btnClose.IdleIconLeftImage = null;
             this.btnClose.IdleIconRightImage = null;
             this.btnClose.IndicateFocus = false;
-            this.btnClose.Location = new System.Drawing.Point(379, 363);
+            this.btnClose.Location = new System.Drawing.Point(491, 363);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnClose.OnDisabledState.BorderRadius = 15;
@@ -349,7 +357,7 @@
             this.btnSave.IdleIconLeftImage = null;
             this.btnSave.IdleIconRightImage = null;
             this.btnSave.IndicateFocus = false;
-            this.btnSave.Location = new System.Drawing.Point(222, 363);
+            this.btnSave.Location = new System.Drawing.Point(334, 363);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.OnDisabledState.BorderRadius = 15;
@@ -392,11 +400,51 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(349, 89);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 24);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Đơn giá:";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(469, 90);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(22, 25);
+            this.lblPrice.TabIndex = 15;
+            this.lblPrice.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(349, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 24);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Thành tiền:";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(469, 145);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(22, 25);
+            this.lblTotalPrice.TabIndex = 17;
+            this.lblTotalPrice.Text = "0";
+            // 
             // frmImport_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 421);
+            this.ClientSize = new System.Drawing.Size(631, 421);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
@@ -432,5 +480,9 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpkHSD;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label label5;
     }
 }

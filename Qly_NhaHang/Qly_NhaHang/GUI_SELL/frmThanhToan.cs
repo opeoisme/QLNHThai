@@ -1,4 +1,6 @@
 ﻿using DevExpress.ChartRangeControlClient.Core;
+using DevExpress.CodeParser.Diagnostics;
+using DevExpress.DataAccess.Native.Json;
 using DevExpress.Xpo;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
@@ -16,11 +18,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
+using JObject = Newtonsoft.Json.Linq.JObject;
 
 namespace Qly_NhaHang
 {
     public partial class frmThanhToan : DevExpress.XtraEditors.XtraForm
     {
+        // Thông tin Bill
         private int _idBill;
         private double _total;
         private QLNHThaiEntities dbContext;
@@ -29,7 +34,12 @@ namespace Qly_NhaHang
         private BindingList<Discount> selectedDiscountList = new BindingList<Discount>();
         private Discount selectedDiscount;
         private bool hasChanged = false;
-
+        //Momo
+        string endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
+        string partnerCode = "MOMO5RGX20191128"; // thay bang key cua minh
+        string accessKey = "M8brj9K6E22vXoDB";   // thay bang key cua minh
+        string serectkey = "nqQiVSgDMy809JoPF6OzP5OdBUB550Y4"; // thay bang key cua minh
+        string order_id;
         private List<CombinedModel> billInfoData = new List<CombinedModel>();
 
         public frmThanhToan(int idBill, double total)
@@ -440,9 +450,6 @@ namespace Qly_NhaHang
             }
         }
 
-        #endregion
-
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             List<CombinedModel> hoaDonData = LoadHoaDon();
@@ -454,6 +461,84 @@ namespace Qly_NhaHang
 
 
 
+        #endregion
 
+
+
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private void btnPayMomo_Click(object sender, EventArgs e)
+        {
+            // Lấy số tiền từ TextBox txtamount
+            float amount;
+            if (!float.TryParse(txbTotalBill.Text, out amount) || amount <= 0)
+            {
+                MessageBox.Show("Vui lòng không thanh toán bill 0đ.", "Thông báo");
+                return; // Không thực hiện thanh toán nếu số tiền không hợp lệ hoặc bằng 0
+            }
+            //request params need to request to MoMo system
+
+            string orderInfo = textOrderInfo.Text;
+            string redirectUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";//Link trang Web cua doanh nghiep
+            string ipnUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";//
+            string requestType = "captureWallet";
+
+            string tongtieng = txbTotalBill.Text;
+            string orderId = Guid.NewGuid().ToString();
+            order_id = orderId;
+            string requestId = Guid.NewGuid().ToString();
+            string extraData = "";
+            ;
+            //Before sign HMAC SHA256 signature
+            string rawHash = "accessKey=" + accessKey +
+                "&amount=" + amount +
+                "&extraData=" + extraData +
+                "&ipnUrl=" + ipnUrl +
+                "&orderId=" + orderId +
+                "&orderInfo=" + orderInfo +
+                "&partnerCode=" + partnerCode +
+                "&redirectUrl=" + redirectUrl +
+                "&requestId=" + requestId +
+                "&requestType=" + requestType
+                ;
+
+            log.Debug("rawHash = " + rawHash);
+
+            MoMoSecurity crypto = new MoMoSecurity();
+            //sign signature SHA256
+            string signature = crypto.signSHA256(rawHash, serectkey);
+            log.Debug("Signature = " + signature);
+
+            //build body json request
+            JObject message = new JObject();
+            message.Add("partnerCode", partnerCode);
+            message.Add("partnerName", "Test");
+            message.Add("storeId", "MomoTestStore");
+            message.Add("requestId", requestId);
+            message.Add("amount", amount);
+            message.Add("orderId", orderId);
+            message.Add("orderInfo", orderInfo);
+            message.Add("redirectUrl", redirectUrl);
+            message.Add("ipnUrl", ipnUrl);
+            message.Add("lang", "en");
+            message.Add("extraData", extraData);
+            message.Add("requestType", requestType);
+            message.Add("signature", signature);
+
+            log.Debug("Json request to MoMo: " + message.ToString());
+            string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
+
+            JObject jmessage = JObject.Parse(responseFromMomo);
+            log.Debug("Return from MoMo: " + jmessage.ToString());
+            DialogResult result = XtraMessageBox.Show("Xác nhận thanh toán qua Momo", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result == DialogResult.OK)
+            {
+                System.Diagnostics.Process.Start(jmessage.GetValue("payUrl").ToString());
+            }
+            else if (result == DialogResult.Cancel)
+            {
+
+            }
+            float tongtien = float.Parse(txbTotalBill.Text); // Tính giá tiền
+        }
     }
 }

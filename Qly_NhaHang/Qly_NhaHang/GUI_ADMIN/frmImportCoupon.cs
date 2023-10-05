@@ -37,6 +37,7 @@ namespace Qly_NhaHang
                     date_Import = a.date_Import,
                     id_NV = a.id_NV,
                     status_Import = a.status_Import,
+                    total_Price = (float)a.total_Price,
                 })
                 .ToList();
 
@@ -84,7 +85,7 @@ namespace Qly_NhaHang
 
             // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry hơn ngày hiện tại + 2 ngày và count_Ingredient > 0
             var ondinh = dbContext.ImportInfoes
-                .Where(info => info.date_Expiry >= currentDate && info.count_Ingredient == 0)
+                .Where(info => info.date_Expiry >= currentDate && info.count_Ingredient >= 0)
                 .Select(info => info.id_Import)
                 .Distinct()
                 .ToList();

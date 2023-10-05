@@ -343,6 +343,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8666693_search_icon {
+            get {
+                object obj = ResourceManager.GetObject("_8666693_search_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8725849_file_upload_icon {
             get {
                 object obj = ResourceManager.GetObject("_8725849_file_upload_icon", resourceCulture);

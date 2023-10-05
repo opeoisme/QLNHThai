@@ -128,11 +128,20 @@
     <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
     </Reference>
+    <Reference Include="FuzzyString, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FuzzyString.1.0.0\lib\FuzzyString.dll</HintPath>
+    </Reference>
     <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
       <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
@@ -193,6 +202,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -233,11 +243,29 @@
     <Compile Include="Food.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmDetailRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetailRecipe.Designer.cs">
+      <DependentUpon>frmDetailRecipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmImportDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmImportDetail.Designer.cs">
       <DependentUpon>frmImportDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecipe.Designer.cs">
+      <DependentUpon>frmRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddIngredient.Designer.cs">
+      <DependentUpon>frmAddIngredient.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_ADMIN\frmImport_Info.cs">
       <SubType>Form</SubType>
@@ -461,8 +489,10 @@
     <Compile Include="Models\ImportModel.cs" />
     <Compile Include="Models\IngredientView.cs" />
     <Compile Include="Models\NhanVienView.cs" />
+    <Compile Include="Models\RecipeModels.cs" />
     <Compile Include="Models\TableView.cs" />
     <Compile Include="Models\TopFood.cs" />
+    <Compile Include="PayWithMomo\MoMoSecurity.cs" />
     <Compile Include="NHAHANG.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -481,6 +511,7 @@
     <Compile Include="NhanVien.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
+    <Compile Include="PayWithMomo\PaymentRequest.cs" />
     <Compile Include="Recipe.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
@@ -580,8 +611,23 @@
     <Compile Include="UserControl\uctIngredient.Designer.cs">
       <DependentUpon>uctIngredient.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\uctRecipeIngredient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\uctRecipeIngredient.Designer.cs">
+      <DependentUpon>uctRecipeIngredient.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmDetailRecipe.resx">
+      <DependentUpon>frmDetailRecipe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmImportDetail.resx">
       <DependentUpon>frmImportDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecipe.resx">
+      <DependentUpon>frmRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADD\frmAddIngredient.resx">
+      <DependentUpon>frmAddIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADMIN\frmImport_Info.resx">
       <DependentUpon>frmImport_Info.cs</DependentUpon>
@@ -735,6 +781,9 @@
     <EmbeddedResource Include="UserControl\uctIngredient.resx">
       <DependentUpon>uctIngredient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\uctRecipeIngredient.resx">
+      <DependentUpon>uctRecipeIngredient.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -813,6 +862,7 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\8666693_search_icon.png" />
     <None Include="Resources\7727367_custom_nutrition_researching_analysis_healthy_icon.png" />
     <None Include="Resources\9045222_shopping_catalog_icon.png" />
     <None Include="Resources\6397958_cancel_contact_delete_delete account_remove_icon.png" />

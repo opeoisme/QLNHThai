@@ -10,6 +10,7 @@ namespace Qly_NhaHang.Models
     public class IngredientView
     {
         private int _id_Catalog;
+        public float price_Ingredient { get; set; }
         public int id_Ingredient { get; set; }
         public string name_Ingredient { get; set; }
         public string unit_Ingredient { get; set; }

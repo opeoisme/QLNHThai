@@ -20,7 +20,7 @@ namespace Qly_NhaHang
         public int count_Ingredient { get; set; }
         public Nullable<System.DateTime> date_Expiry { get; set; }
     
-        public virtual Ingredient Ingredient { get; set; }
         public virtual Import Import { get; set; }
+        public virtual Ingredient Ingredient { get; set; }
     }
 }

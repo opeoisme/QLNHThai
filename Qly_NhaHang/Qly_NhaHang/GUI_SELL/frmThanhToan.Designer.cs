@@ -44,10 +44,11 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.lblIDBILL = new DevExpress.XtraEditors.LabelControl();
@@ -55,6 +56,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.textOrderInfo = new System.Windows.Forms.TextBox();
             this.btnReload = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btnApply = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnPrint = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -76,10 +78,6 @@
             this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Money = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbtCash = new DevExpress.XtraEditors.CheckButton();
-            this.cbtMomo = new DevExpress.XtraEditors.CheckButton();
-            this.cbtZaloPay = new DevExpress.XtraEditors.CheckButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -111,6 +109,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblMoneySurcharge = new DevExpress.XtraEditors.LabelControl();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnPayMomo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel2.SuspendLayout();
@@ -123,7 +125,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
@@ -142,6 +143,8 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSurcharge.Properties)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -242,6 +245,17 @@
             this.groupControl4.Size = new System.Drawing.Size(1062, 286);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "Xác nhận thanh toán";
+            // 
+            // textOrderInfo
+            // 
+            this.textOrderInfo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textOrderInfo.Location = new System.Drawing.Point(3, 37);
+            this.textOrderInfo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textOrderInfo.Multiline = true;
+            this.textOrderInfo.Name = "textOrderInfo";
+            this.textOrderInfo.Size = new System.Drawing.Size(473, 41);
+            this.textOrderInfo.TabIndex = 38;
+            this.textOrderInfo.Text = "thanh toán hóa đơn Gõ Thái Noodle";
             // 
             // btnReload
             // 
@@ -920,51 +934,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(1056, 126);
             this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "Phương thức thanh toán";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.cbtCash);
-            this.flowLayoutPanel1.Controls.Add(this.cbtMomo);
-            this.flowLayoutPanel1.Controls.Add(this.cbtZaloPay);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 34);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1052, 90);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // cbtCash
-            // 
-            this.cbtCash.Appearance.Font = new System.Drawing.Font("Sitka Display", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtCash.Appearance.Options.UseFont = true;
-            this.cbtCash.Location = new System.Drawing.Point(3, 3);
-            this.cbtCash.Name = "cbtCash";
-            this.cbtCash.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.cbtCash.Size = new System.Drawing.Size(333, 89);
-            this.cbtCash.TabIndex = 0;
-            this.cbtCash.Text = "Tiền mặt";
-            // 
-            // cbtMomo
-            // 
-            this.cbtMomo.Appearance.Font = new System.Drawing.Font("Sitka Display", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtMomo.Appearance.Options.UseFont = true;
-            this.cbtMomo.Location = new System.Drawing.Point(342, 3);
-            this.cbtMomo.Name = "cbtMomo";
-            this.cbtMomo.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.cbtMomo.Size = new System.Drawing.Size(333, 89);
-            this.cbtMomo.TabIndex = 1;
-            this.cbtMomo.Text = "Momo";
-            // 
-            // cbtZaloPay
-            // 
-            this.cbtZaloPay.Appearance.Font = new System.Drawing.Font("Sitka Display", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtZaloPay.Appearance.Options.UseFont = true;
-            this.cbtZaloPay.Location = new System.Drawing.Point(681, 3);
-            this.cbtZaloPay.Name = "cbtZaloPay";
-            this.cbtZaloPay.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.cbtZaloPay.Size = new System.Drawing.Size(333, 89);
-            this.cbtZaloPay.TabIndex = 2;
-            this.cbtZaloPay.Text = "ZaloPay";
+            this.groupControl2.Text = "Phương thức thanh toán Momo";
             // 
             // panel3
             // 
@@ -1072,11 +1042,11 @@
             this.btnDeleteDis.ColorContrastOnClick = 45;
             this.btnDeleteDis.ColorContrastOnHover = 45;
             this.btnDeleteDis.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnDeleteDis.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnDeleteDis.CustomizableEdges = borderEdges5;
             this.btnDeleteDis.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDeleteDis.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeleteDis.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1162,11 +1132,11 @@
             this.btnDiscount.ColorContrastOnClick = 45;
             this.btnDiscount.ColorContrastOnHover = 45;
             this.btnDiscount.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnDiscount.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnDiscount.CustomizableEdges = borderEdges6;
             this.btnDiscount.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDiscount.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDiscount.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1392,11 +1362,11 @@
             this.btnDeleteSurcharge.ColorContrastOnClick = 45;
             this.btnDeleteSurcharge.ColorContrastOnHover = 45;
             this.btnDeleteSurcharge.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btnDeleteSurcharge.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnDeleteSurcharge.CustomizableEdges = borderEdges7;
             this.btnDeleteSurcharge.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDeleteSurcharge.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeleteSurcharge.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1482,11 +1452,11 @@
             this.btnSurcharge.ColorContrastOnClick = 45;
             this.btnSurcharge.ColorContrastOnHover = 45;
             this.btnSurcharge.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.btnSurcharge.CustomizableEdges = borderEdges7;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnSurcharge.CustomizableEdges = borderEdges8;
             this.btnSurcharge.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSurcharge.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSurcharge.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1615,6 +1585,125 @@
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = -1;
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.labelControl2);
+            this.panel12.Controls.Add(this.textOrderInfo);
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(479, 84);
+            this.panel12.TabIndex = 0;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(10, 3);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(174, 26);
+            this.labelControl2.TabIndex = 39;
+            this.labelControl2.Text = "Nội dung thanh toán:";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.panel12);
+            this.flowLayoutPanel1.Controls.Add(this.btnPayMomo);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 34);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1052, 90);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // btnPayMomo
+            // 
+            this.btnPayMomo.AllowAnimations = true;
+            this.btnPayMomo.AllowMouseEffects = true;
+            this.btnPayMomo.AllowToggling = false;
+            this.btnPayMomo.AnimationSpeed = 200;
+            this.btnPayMomo.AutoGenerateColors = false;
+            this.btnPayMomo.AutoRoundBorders = false;
+            this.btnPayMomo.AutoSizeLeftIcon = true;
+            this.btnPayMomo.AutoSizeRightIcon = true;
+            this.btnPayMomo.BackColor = System.Drawing.Color.Transparent;
+            this.btnPayMomo.BackColor1 = System.Drawing.Color.Teal;
+            this.btnPayMomo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPayMomo.BackgroundImage")));
+            this.btnPayMomo.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPayMomo.ButtonText = "Thanh toán Momo";
+            this.btnPayMomo.ButtonTextMarginLeft = 0;
+            this.btnPayMomo.ColorContrastOnClick = 45;
+            this.btnPayMomo.ColorContrastOnHover = 45;
+            this.btnPayMomo.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnPayMomo.CustomizableEdges = borderEdges4;
+            this.btnPayMomo.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPayMomo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnPayMomo.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnPayMomo.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnPayMomo.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnPayMomo.Font = new System.Drawing.Font("UTM BryantLG", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayMomo.ForeColor = System.Drawing.Color.White;
+            this.btnPayMomo.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayMomo.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnPayMomo.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnPayMomo.IconMarginLeft = 11;
+            this.btnPayMomo.IconPadding = 10;
+            this.btnPayMomo.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPayMomo.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnPayMomo.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnPayMomo.IconSize = 25;
+            this.btnPayMomo.IdleBorderColor = System.Drawing.Color.Teal;
+            this.btnPayMomo.IdleBorderRadius = 5;
+            this.btnPayMomo.IdleBorderThickness = 5;
+            this.btnPayMomo.IdleFillColor = System.Drawing.Color.Teal;
+            this.btnPayMomo.IdleIconLeftImage = null;
+            this.btnPayMomo.IdleIconRightImage = null;
+            this.btnPayMomo.IndicateFocus = false;
+            this.btnPayMomo.Location = new System.Drawing.Point(488, 3);
+            this.btnPayMomo.Name = "btnPayMomo";
+            this.btnPayMomo.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnPayMomo.OnDisabledState.BorderRadius = 5;
+            this.btnPayMomo.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPayMomo.OnDisabledState.BorderThickness = 5;
+            this.btnPayMomo.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnPayMomo.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnPayMomo.OnDisabledState.IconLeftImage = null;
+            this.btnPayMomo.OnDisabledState.IconRightImage = null;
+            this.btnPayMomo.onHoverState.BorderColor = System.Drawing.Color.White;
+            this.btnPayMomo.onHoverState.BorderRadius = 5;
+            this.btnPayMomo.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPayMomo.onHoverState.BorderThickness = 5;
+            this.btnPayMomo.onHoverState.FillColor = System.Drawing.Color.White;
+            this.btnPayMomo.onHoverState.ForeColor = System.Drawing.Color.Teal;
+            this.btnPayMomo.onHoverState.IconLeftImage = null;
+            this.btnPayMomo.onHoverState.IconRightImage = null;
+            this.btnPayMomo.OnIdleState.BorderColor = System.Drawing.Color.Teal;
+            this.btnPayMomo.OnIdleState.BorderRadius = 5;
+            this.btnPayMomo.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPayMomo.OnIdleState.BorderThickness = 5;
+            this.btnPayMomo.OnIdleState.FillColor = System.Drawing.Color.Teal;
+            this.btnPayMomo.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnPayMomo.OnIdleState.IconLeftImage = null;
+            this.btnPayMomo.OnIdleState.IconRightImage = null;
+            this.btnPayMomo.OnPressedState.BorderColor = System.Drawing.Color.Teal;
+            this.btnPayMomo.OnPressedState.BorderRadius = 5;
+            this.btnPayMomo.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPayMomo.OnPressedState.BorderThickness = 5;
+            this.btnPayMomo.OnPressedState.FillColor = System.Drawing.Color.Teal;
+            this.btnPayMomo.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnPayMomo.OnPressedState.IconLeftImage = null;
+            this.btnPayMomo.OnPressedState.IconRightImage = null;
+            this.btnPayMomo.Size = new System.Drawing.Size(198, 78);
+            this.btnPayMomo.TabIndex = 38;
+            this.btnPayMomo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPayMomo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPayMomo.TextMarginLeft = 0;
+            this.btnPayMomo.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnPayMomo.UseDefaultRadiusAndThickness = true;
+            this.btnPayMomo.Click += new System.EventHandler(this.btnPayMomo_Click);
+            // 
             // frmThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1642,7 +1731,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
@@ -1665,6 +1753,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbbSurcharge.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1716,10 +1807,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private DevExpress.XtraEditors.CheckButton cbtCash;
-        private DevExpress.XtraEditors.CheckButton cbtMomo;
-        private DevExpress.XtraEditors.CheckButton cbtZaloPay;
         private System.Windows.Forms.PictureBox btnBack;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDeleteSurcharge;
         private DevExpress.XtraEditors.LabelControl lblMoneySurcharge;
@@ -1734,5 +1821,10 @@
         private DevExpress.XtraEditors.LabelControl lblMoneyDiscount;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnApply;
         private Bunifu.UI.WinForms.BunifuImageButton btnReload;
+        private System.Windows.Forms.TextBox textOrderInfo;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel12;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPayMomo;
     }
 }

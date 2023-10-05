@@ -12,6 +12,7 @@ namespace Qly_NhaHang.Models
         public int id_Import { get; set; }
         public System.DateTime? date_Import { get; set; }
         public string _id_NV;
+        public float total_Price { get; set; }
         public string name_NV { get; set; }
         public string status_Import { get; set; }
         public string id_NV

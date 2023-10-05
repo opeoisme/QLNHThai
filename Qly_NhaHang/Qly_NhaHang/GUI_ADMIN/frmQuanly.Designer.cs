@@ -257,6 +257,7 @@
             this.btnRecipe.Name = "btnRecipe";
             this.btnRecipe.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRecipe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRecipe_ItemClick);
             // 
             // Close
             // 

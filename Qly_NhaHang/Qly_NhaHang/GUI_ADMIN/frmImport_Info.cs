@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,9 @@ namespace Qly_NhaHang
         private double count;
         private DateTime? HSD;
         private int quantity;
-        public frmImport_Info(string nameFood, string ĐVT, string Unit, double countKid, double count, int idImport ,DateTime? HSD)
+        private double price;
+        private int quantities;
+        public frmImport_Info(string nameFood, string ĐVT, string Unit, double countKid, double count, int idImport ,DateTime? HSD, double priceIngre)
         {
             InitializeComponent();
             nmrQuantity.ValueChanged += nmrQuantity_ValueChanged;
@@ -41,19 +44,27 @@ namespace Qly_NhaHang
             dtpkHSD.Value = (DateTime)HSD;
             this.count = count;
             nmrQuantity.Value = (decimal)count;
+            this.price = priceIngre;
+            lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceIngre);
+
             UpdateTotalPrice();
         }
 
         private void nmrQuantity_ValueChanged(object sender, EventArgs e)
         {
             quantity = (int)(nmrQuantity.Value * 10);
+            quantities= (int)nmrQuantity.Value; 
             UpdateTotalPrice();
         }
         private void UpdateTotalPrice()
         {
-            double totalPrice = (double)quantity/10 * lblPriceValue;
+            double totalCount = (double)quantity/10 * lblPriceValue;
 
-            lblCount.Text = totalPrice.ToString();
+            lblCount.Text = totalCount.ToString();
+
+            double totalPrice = (double)quantity/10 * price;
+
+            lblTotalPrice.Text = lblTotalPrice.Text = String.Format("{0:0,0 vnđ}", totalPrice);
         }
 
         private void nmrQuantity_KeyPress(object sender, KeyPressEventArgs e)
@@ -78,7 +89,7 @@ namespace Qly_NhaHang
                 int idIngredient = GetIngredientIdByName(lblNameIngredient.Text);
                 string idImportText = lblID.Text;
                 int idImportValue = int.Parse(idImportText);
-                double totalPrice = (double)quantity / 10 * lblPriceValue; 
+                double totalCount = (double)quantity / 10 * lblPriceValue; 
                 DateTime dateExpiry = dtpkHSD.Value;
 
                 //DateTime? HSD = dtpkHSD.Value;
@@ -108,8 +119,9 @@ namespace Qly_NhaHang
                             {
                                 id_Import = idImportValue,
                                 id_Ingredient = idIngredient,
-                                count_Ingredient = (int)totalPrice,
-                                date_Expiry = dateExpiry ,
+                                count_Ingredient = (int)totalCount,
+                                date_Expiry = dateExpiry,
+  
 
                             };
                             dbContext.ImportInfoes.Add(newImportInfo);
@@ -125,7 +137,7 @@ namespace Qly_NhaHang
                     }
                     else
                     {
-                        existingImportInfo.count_Ingredient = (int)totalPrice;
+                        existingImportInfo.count_Ingredient = (int)totalCount;
                         existingImportInfo.date_Expiry = dateExpiry;
                     }
                 }
@@ -135,7 +147,7 @@ namespace Qly_NhaHang
                 this.Close();
                 if (Application.OpenForms["frmImport"] is frmImport importForm)
                 {
-                    importForm.LoadImportInfo(); // Giả sử tên phương thức là LoadFoodData()
+                    importForm.LoadImportInfo(); 
 
                 }
             }

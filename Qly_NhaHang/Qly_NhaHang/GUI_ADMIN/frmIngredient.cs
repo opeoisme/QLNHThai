@@ -3,6 +3,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using Qly_NhaHang.GUI_ADD;
 using Qly_NhaHang.Models;
 using Qly_NhaHang.UserControl;
 using System;
@@ -87,6 +88,7 @@ namespace Qly_NhaHang
                     id_Catalog = (int)joinResult.Ingredient.id_Catalog,
                     countkid_Ingredient = (float)joinResult.Ingredient.countkid_Ingredient,
                     unitkid_Ingredient = joinResult.Ingredient.unitkid_Ingredient,
+                    price_Ingredient = (float)joinResult.Ingredient.price_Ingredient,
                 })
                 .ToList();
             gctIngredient.DataSource = ingredientData;
@@ -123,6 +125,7 @@ namespace Qly_NhaHang
                 cbbStatusIngredient.Text = selectedIngredient.status_Ingredient;
                 cbbUnitKid.Text = selectedIngredient.unitkid_Ingredient;
                 cbbUnitIngredient.Text = selectedIngredient.unit_Ingredient;
+                nmrPriceIngre.Value = (decimal)selectedIngredient.price_Ingredient;
                 if (selectedIngredient.image_Ingredient != null)
                 {
                     using (MemoryStream ms = new MemoryStream(selectedIngredient.image_Ingredient))
@@ -202,6 +205,7 @@ namespace Qly_NhaHang
             ingredient.status_Ingredient = cbbStatusIngredient.SelectedItem?.ToString();
             ingredient.unitkid_Ingredient = cbbUnitKid.SelectedItem?.ToString();
             ingredient.unit_Ingredient = cbbUnitIngredient.SelectedItem?.ToString();
+            ingredient.price_Ingredient = (float)nmrPriceIngre.Value;
 
 
         }
@@ -574,6 +578,16 @@ namespace Qly_NhaHang
                     e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
                     e.Appearance.ForeColor = Color.YellowGreen; // Đặt màu chữ
                 }
+            }
+        }
+
+        private void btnAddIngredient_Click(object sender, EventArgs e)
+        {
+            frmAddIngredient addIngreidnetForm = new frmAddIngredient();
+            DialogResult result = addIngreidnetForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                LoadIngredientData();
             }
         }
 
