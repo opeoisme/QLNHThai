@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Data.Utils;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -64,27 +65,39 @@ namespace Qly_NhaHang
         {
             if (int.TryParse(txbIdDiscount.Text, out int discountId))
             {
-                Discount discountToUpdate = dbContext.Discounts.FirstOrDefault(dc => dc.id_Discount == discountId);
+                Discount discountToUpdate = dbContext.Discounts.FirstOrDefault(i => i.id_Discount == discountId);
 
                 if (discountToUpdate != null)
                 {
-                    UpdateDiscountProperties(discountToUpdate);
-
-                    dbContext.Entry(discountToUpdate).State = EntityState.Modified;
-                    dbContext.SaveChanges();
-                    LoadFormDiscount();
-                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Kiểm tra và cập nhật các thuộc tính của Ingredient chỉ khi tất cả đều hợp lệ
+                    if (UpdateDiscountProperties(discountToUpdate))
+                    {
+                        dbContext.Entry(discountToUpdate).State = EntityState.Modified;
+                        dbContext.SaveChanges();
+                        LoadFormDiscount();
+                        XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                  
                 }
             }
         }
 
-        private void UpdateDiscountProperties(Discount discount)
+        private bool UpdateDiscountProperties(Discount discount)
         {
             discount.name_Discount = txbNameDiscount.Text;
             discount.type_Discount = cbbTypeDiscount.SelectedItem?.ToString();
-            discount.percent_Discount = (int)nmrPercentDiscount.Value;
-            discount.condition_Discount = cbbConditionDiscount.SelectedItem?.ToString();
+            if (int.TryParse(txbPercentDiscount.Text, out int percent))
+            {
+                discount.percent_Discount = percent;
+                return true; // Trả về true nếu mọi thứ hợp lệ
+            }
+            else
+            {
+                XtraMessageBox.Show("Phần trăm giảm giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Trả về false nếu có lỗi
+            }
         }
+
 
         private void gvDiscount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -101,9 +114,9 @@ namespace Qly_NhaHang
             {
                 txbIdDiscount.Text = selectedDiscount.id_Discount.ToString();
                 txbNameDiscount.Text = selectedDiscount.name_Discount;
-                nmrPercentDiscount.Value = (decimal)selectedDiscount.percent_Discount;
+              //  nmrPercentDiscount.Value = (decimal)selectedDiscount.percent_Discount;
                 cbbTypeDiscount.Text = selectedDiscount.type_Discount;
-                cbbConditionDiscount.Text = selectedDiscount.condition_Discount;
+                txbPercentDiscount.Text = selectedDiscount.percent_Discount.ToString();
             }
         }
 

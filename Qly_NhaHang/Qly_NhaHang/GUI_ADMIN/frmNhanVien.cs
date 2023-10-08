@@ -139,7 +139,7 @@ namespace Qly_NhaHang
                 txbAddressNV.Text = selectedNhanvien.address_NV;
                 txbCCCDNV.Text = selectedNhanvien.CCCD_NV;
                 txbPhoneNV.Text = selectedNhanvien.phone_NV;
-                cbbConditionNV.SelectedItem = selectedNhanvien.condition_NV;
+
                 cbbTypeNV.SelectedItem = selectedNhanvien.type_NV;
 
                 if (selectedNhanvien.image_NV != null)
@@ -203,9 +203,8 @@ namespace Qly_NhaHang
             nhanvien.address_NV = txbAddressNV.Text;
             nhanvien.CCCD_NV = txbCCCDNV.Text;
             nhanvien.type_NV = cbbTypeNV.SelectedItem?.ToString();
-            nhanvien.condition_NV = cbbConditionNV.SelectedItem?.ToString();
-        }
 
+        }
         private void UpdateNhanvienImage(NhanVien nhanvienToUpdate)
         {
             byte[] imageBytes = ConvertImageToByteArray(imgNV.Image); // Fix: imageNV to imgNV
@@ -259,39 +258,6 @@ namespace Qly_NhaHang
             }
         }
 
-
-        private void btnReloadNV_Click(object sender, EventArgs e)
-        {
-            int[] selectedRows = gvNV.GetSelectedRows();
-            int updatedCount = 0; // Số lượng nhân viên đã được cập nhật
-
-            foreach (int rowHandle in selectedRows)
-            {
-                NhanVien selectedNhanvien = gvNV.GetRow(rowHandle) as NhanVien;
-                if (selectedNhanvien != null && selectedNhanvien.condition_NV != "Làm việc")
-                {
-                    string nhanvienId = selectedNhanvien.id_NV; // Sử dụng kiểu string
-
-                    NhanVien nhanvienToUpdate = dbContext.NhanViens.FirstOrDefault(nv => nv.id_NV == nhanvienId);
-
-                    if (nhanvienToUpdate != null)
-                    {
-                        nhanvienToUpdate.condition_NV = "Làm việc";
-                        dbContext.SaveChanges();
-                        updatedCount++; // Tăng số lượng nhân viên đã cập nhật
-                    }
-                }
-            }
-            LoadFormNV();
-            if (updatedCount > 0)
-            {
-                XtraMessageBox.Show($"{updatedCount} nhân viên đã được trở lại làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                XtraMessageBox.Show("Nhân viên này vẫn đang làm việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
 
         private void btnCSVNV_Click(object sender, EventArgs e)
         {

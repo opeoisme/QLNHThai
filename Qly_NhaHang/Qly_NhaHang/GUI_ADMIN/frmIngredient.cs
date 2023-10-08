@@ -35,10 +35,9 @@ namespace Qly_NhaHang
             LoadCategoryData();
             UpdateIngredientStatus();
             InitializeGridViewOptions();
-            
-
-
         }
+
+        #region method
         private void InitializeGridViewOptions()
         {
             GridView gridView = gctIngredient.MainView as GridView;
@@ -47,25 +46,15 @@ namespace Qly_NhaHang
 
             gvIngredient.RowCellStyle += gvIngredient_RowCellStyle;
         }
-        private void btnLoadIngredient_Click(object sender, EventArgs e)
-        {
-            LoadIngredientData();
-            UpdateIngredientStatus();
-        }
-
-        private void frmIngredient_Load(object sender, EventArgs e)
-        {
-            LoadIngredientData();
-            UpdateIngredientStatus();
-        }
         private void LoadCategoryData()
         {
-            var catalog = dbContext.CatalogIngredients.ToList();
+            var catalog = dbContext.CatalogIngredients
+                 .Where(catalogs => catalogs.condition_Catalog == "Sử dụng")
+                .ToList();
             cbbCatalog.DataSource = catalog;
             cbbCatalog.DisplayMember = "name_Catalog";
             cbbCatalog.ValueMember = "id_Catalog";
         }
-
         public void LoadIngredientData()
         {
             var ingredientData = dbContext.Ingredients
@@ -93,24 +82,6 @@ namespace Qly_NhaHang
                 .ToList();
             gctIngredient.DataSource = ingredientData;
         }
-
-
-
-
-
-
-        private void gvIngredient_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (e.FocusedRowHandle >= 0)
-            {
-                UpdateIngredientControls(e.FocusedRowHandle);
-            }
-        }
-
-
-
-
-
         private void UpdateIngredientControls(int focusedRowHandle)
         {
             IngredientView selectedIngredient = gvIngredient.GetRow(focusedRowHandle) as IngredientView;
@@ -118,14 +89,16 @@ namespace Qly_NhaHang
             {
                 txbIdIngredient.Text = selectedIngredient.id_Ingredient.ToString();
                 txbNameIngredient.Text = selectedIngredient.name_Ingredient;
-                cbbCatalog.SelectedValue = selectedIngredient.id_Catalog;
-                cbbConditionIngredient.Text = selectedIngredient.condition_Ingredient;
-                nmrCountKid.Value = (decimal)selectedIngredient.countkid_Ingredient;
-                nmrCountIngredient.Value = (decimal)selectedIngredient.count_Ingredient;
-                cbbStatusIngredient.Text = selectedIngredient.status_Ingredient;
+                txbCountIngre.Text = selectedIngredient.count_Ingredient.ToString();
                 cbbUnitKid.Text = selectedIngredient.unitkid_Ingredient;
+                txbCountKidIngre.Text = selectedIngredient.countkid_Ingredient.ToString();
                 cbbUnitIngredient.Text = selectedIngredient.unit_Ingredient;
-                nmrPriceIngre.Value = (decimal)selectedIngredient.price_Ingredient;
+                txbStatusIngre.Text = selectedIngredient.status_Ingredient;
+                txbPriceIngre.Text = String.Format("{0:0,0}", selectedIngredient.price_Ingredient);
+                cbbCatalog.SelectedValue = selectedIngredient.id_Catalog;
+               
+
+
                 if (selectedIngredient.image_Ingredient != null)
                 {
                     using (MemoryStream ms = new MemoryStream(selectedIngredient.image_Ingredient))
@@ -162,7 +135,6 @@ namespace Qly_NhaHang
                 }
             }
         }
-
         private byte[] ConvertImageToByteArray(Image image)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -195,21 +167,7 @@ namespace Qly_NhaHang
             }
         }
 
-        private void UpdateIngredientProperties(Ingredient ingredient)
-        {
-            ingredient.name_Ingredient = txbNameIngredient.Text;
-            ingredient.id_Catalog = Convert.ToInt32(cbbCatalog.SelectedValue);
-            ingredient.condition_Ingredient = cbbConditionIngredient.SelectedItem?.ToString();
-            ingredient.count_Ingredient = (float)nmrCountIngredient.Value;
-            ingredient.countkid_Ingredient = (float)nmrCountKid.Value;
-            ingredient.status_Ingredient = cbbStatusIngredient.SelectedItem?.ToString();
-            ingredient.unitkid_Ingredient = cbbUnitKid.SelectedItem?.ToString();
-            ingredient.unit_Ingredient = cbbUnitIngredient.SelectedItem?.ToString();
-            ingredient.price_Ingredient = (float)nmrPriceIngre.Value;
-
-
-        }
-
+       
         private void UpdateIngredientImage(Ingredient ingredientToUpdate)
         {
             byte[] imageBytes = ConvertImageToByteArray(imageIngredient.Image);
@@ -220,12 +178,160 @@ namespace Qly_NhaHang
             }
         }
 
+        private bool ValidateAndSetIngredientProperties(Ingredient ingredient)
+        {
+            // Kiểm tra và gán giá trị cho count_Ingredient
+            if (double.TryParse(txbCountIngre.Text, out double count))
+            {
+                ingredient.count_Ingredient = count;
+            }
+            else
+            {
+                XtraMessageBox.Show("Giá trị Count không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Trả về false nếu có lỗi
+            }
+
+            if (double.TryParse(txbCountKidIngre.Text, out double countkid))
+            {
+                ingredient.countkid_Ingredient = countkid;
+            }
+            else
+            {
+                XtraMessageBox.Show("Giá trị Count Kid không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Trả về false nếu có lỗi
+            }
+            ingredient.name_Ingredient = txbNameIngredient.Text;
+            ingredient.unitkid_Ingredient = cbbUnitKid.SelectedItem?.ToString();
+            ingredient.unit_Ingredient = cbbUnitIngredient.SelectedItem?.ToString();
+            ingredient.id_Catalog = Convert.ToInt32(cbbCatalog.SelectedValue);
+
+
+            // Kiểm tra và gán giá trị cho price_Ingredient
+            if (double.TryParse(txbPriceIngre.Text, out double price))
+            {
+                ingredient.price_Ingredient = price;
+            }
+            else
+            {
+                XtraMessageBox.Show("Giá trị Price không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Trả về false nếu có lỗi
+            }
+
+            // Trả về true nếu tất cả giá trị hợp lệ
+            return true;
+        }
+        private void UpdateIngredientStatus()
+        {
+            DateTime currentDate = DateTime.Today.AddDays(1); // Ngày hiện tại + 1 ngày
+
+            //Danh sách cận date
+            var candate = dbContext.ImportInfoes
+                .Where(info => info.date_Expiry == currentDate && info.count_Ingredient > 0)
+                .Select(info => info.id_Ingredient)
+                .Distinct()
+                .ToList();
+
+            //Danh sách ổn định
+            var ondinh = dbContext.ImportInfoes
+                .Where(info => /*info.date_Expiry >= currentDate &&*/ info.count_Ingredient == 0)
+                .Select(info => info.id_Ingredient)
+                .Distinct()
+                .ToList();
+
+            // Danh sách hết date
+            var hetdate = dbContext.ImportInfoes
+                .Where(info => info.date_Expiry < currentDate && info.count_Ingredient > 0)
+                .Select(info => info.id_Ingredient)
+                .Distinct()
+                .ToList();
+
+            // Danh sách cận date hết hạn
+            var hethancandate = candate
+                .Where(id => hetdate.Contains(id))
+                .ToList();
+
+
+            foreach (var ingredientId in ondinh)
+            {
+                // Tìm nguyên liệu tương ứng trong bảng Ingredients
+                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
+
+                if (ingredientToUpdate != null)
+                {
+                    // Ưu tiên trạng thái "Ổn định"
+                    ingredientToUpdate.status_Ingredient = "Ổn định";
+                }
+            }
+
+            foreach (var ingredientId in candate)
+            {
+                // Tìm nguyên liệu tương ứng trong bảng Ingredients
+                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
+
+                if (ingredientToUpdate != null)
+                {
+                    // Ưu tiên trạng thái "Có hàng sắp hết hạn"
+                    ingredientToUpdate.status_Ingredient = "Có hàng cận date";
+                }
+            }
+
+            foreach (var ingredientId in hetdate)
+            {
+                // Tìm nguyên liệu tương ứng trong bảng Ingredients
+                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
+
+                if (ingredientToUpdate != null)
+                {
+                    // Ưu tiên trạng thái "Có hàng hết hạn"
+                    ingredientToUpdate.status_Ingredient = "Có hàng hết date";
+                }
+            }
+
+            foreach (var ingredientId in hethancandate)
+            {
+                // Tìm nguyên liệu tương ứng trong bảng Ingredients
+                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
+
+                if (ingredientToUpdate != null)
+                {
+                    // Đặt trạng thái "Có hàng cận date và đã hết hạn"
+                    ingredientToUpdate.status_Ingredient = "Có hàng cận date và hết hạn";
+                }
+            }
+
+            // Lưu thay đổi vào cơ sở dữ liệu
+            dbContext.SaveChanges();
+        }
+
+
+        #endregion
+
+
+        #region events
+        private void btnLoadIngredient_Click(object sender, EventArgs e)
+        {
+            LoadIngredientData();
+            UpdateIngredientStatus();
+        }
+
+        private void frmIngredient_Load(object sender, EventArgs e)
+        {
+            LoadIngredientData();
+            UpdateIngredientStatus();
+        }
+        private void gvIngredient_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle >= 0)
+            {
+                UpdateIngredientControls(e.FocusedRowHandle);
+            }
+        }
+
         private void imageIngredient_Click(object sender, EventArgs e)
         {
             SelectAndSaveImage();
             isImageChanged = true;
         }
-
         private void btnUpdateIngredient_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txbIdIngredient.Text, out int ingredientId))
@@ -234,21 +340,24 @@ namespace Qly_NhaHang
 
                 if (ingredientToUpdate != null)
                 {
-                    UpdateIngredientProperties(ingredientToUpdate);
-
-                    dbContext.Entry(ingredientToUpdate).State = EntityState.Modified;
-
-                    if (isImageChanged && imageIngredient.Image != null)
+                    // Kiểm tra và cập nhật các thuộc tính của Ingredient chỉ khi tất cả đều hợp lệ
+                    if (ValidateAndSetIngredientProperties(ingredientToUpdate))
                     {
-                        UpdateIngredientImage(ingredientToUpdate);
+                        dbContext.Entry(ingredientToUpdate).State = EntityState.Modified;
+
+                        if (isImageChanged && imageIngredient.Image != null)
+                        {
+                            UpdateIngredientImage(ingredientToUpdate);
+                        }
+                        dbContext.SaveChanges();
+                        LoadIngredientData();
+                        XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    dbContext.SaveChanges();
-                    LoadIngredientData();
-                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             isImageChanged = false;
         }
+
 
         private void btnDeleteIngredient_Click(object sender, EventArgs e)
         {
@@ -340,21 +449,16 @@ namespace Qly_NhaHang
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "PDF Files|*.pdf";
-
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-
                 PdfDocument pdf = new PdfDocument();
                 pdf.Info.Title = "Danh sách nhân viên";
-
                 XFont font = new XFont("Arial", 7);
                 int rowHeight = 60; // Điều chỉnh chiều cao của mỗi hàng
                 double y = 20; // Vị trí bắt đầu của hàng đầu tiên
-
                 PdfPage page = null; // Khởi tạo trang
                 XGraphics gfx = null;
-
                 for (int row = 0; row < gvIngredient.RowCount; row++)
                 {
                     double x = 20;
@@ -376,7 +480,6 @@ namespace Qly_NhaHang
                         y += 20; // Điều chỉnh khoảng cách giữa tiêu đề cột và dữ liệu
                         x = 20;
                     }
-
                     for (int col = 0; col < gvIngredient.Columns.Count; col++)
                     {
                         object cellValue = gvIngredient.GetRowCellValue(row, gvIngredient.Columns[col]);
@@ -388,8 +491,6 @@ namespace Qly_NhaHang
                                 using (MemoryStream ms = new MemoryStream(imageBytes))
                                 {
                                     System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
-
-                                    // Điều chỉnh kích thước của hình ảnh để tối ưu hóa trên trang
                                     double imageWidth = 50;
                                     double imageHeight = 30;
                                     XImage xImage = XImage.FromStream(ms);
@@ -408,10 +509,7 @@ namespace Qly_NhaHang
 
                         x += 60; // Điều chỉnh khoảng cách giữa các cột
                     }
-
                     y += rowHeight;
-
-                    // Kiểm tra nếu không đủ không gian cho hàng tiếp theo, tạo trang mới
                     if (y + rowHeight > page.Height - 20 && row < gvIngredient.RowCount - 1)
                     {
                         page = null; // Đánh dấu để tạo trang mới trong vòng lặp tiếp theo
@@ -424,7 +522,6 @@ namespace Qly_NhaHang
                 XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btnImportIngredient_Click(object sender, EventArgs e)
         {
             string id_NV = loggedInIdNV;
@@ -434,13 +531,13 @@ namespace Qly_NhaHang
             {
                 using (var context = new QLNHThaiEntities())
                 {
-                    Import newImport = new Import 
+                    Import newImport = new Import
                     {
                         date_Import = currentTime,
                         id_NV = id_NV,
-                        type_Import = "Nhập hàng",                               
+                        type_Import = "Nhập hàng",
                     };
-                    context.Imports.Add(newImport); 
+                    context.Imports.Add(newImport);
                     context.SaveChanges();
                     int idImport = newImport.id_Import;
                     frmImport f = new frmImport();
@@ -455,107 +552,6 @@ namespace Qly_NhaHang
                 return;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void UpdateIngredientStatus()
-        {
-            DateTime currentDate = DateTime.Today.AddDays(1); // Ngày hiện tại + 1 ngày
-
-            // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry hơn ngày hiện tại + 1 ngày và count_Ingredient > 0
-            var candate = dbContext.ImportInfoes
-                .Where(info => info.date_Expiry == currentDate && info.count_Ingredient > 0)
-                .Select(info => info.id_Ingredient)
-                .Distinct()
-                .ToList();
-
-            // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry hơn ngày hiện tại + 2 ngày và count_Ingredient > 0
-            var ondinh = dbContext.ImportInfoes
-                .Where(info => info.date_Expiry >= currentDate && info.count_Ingredient == 0)
-                .Select(info => info.id_Ingredient)
-                .Distinct()
-                .ToList();
-
-            // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry bằng ngày hiện tại và count_Ingredient > 0
-            var hetdate = dbContext.ImportInfoes
-                .Where(info => info.date_Expiry < currentDate && info.count_Ingredient > 0)
-                .Select(info => info.id_Ingredient)
-                .Distinct()
-                .ToList();
-
-            // Lấy danh sách các id_Ingredient có cả "Có hàng sắp hết hạn" và "Có hàng hết hạn"
-            var hethancandate = candate
-                .Where(id => hetdate.Contains(id))
-                .ToList();
-
-
-            foreach (var ingredientId in ondinh)
-            {
-                // Tìm nguyên liệu tương ứng trong bảng Ingredients
-                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
-
-                if (ingredientToUpdate != null)
-                {
-                    // Ưu tiên trạng thái "Ổn định"
-                    ingredientToUpdate.status_Ingredient = "Ổn định";
-                }
-            }
-
-            foreach (var ingredientId in candate)
-            {
-                // Tìm nguyên liệu tương ứng trong bảng Ingredients
-                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
-
-                if (ingredientToUpdate != null)
-                {
-                    // Ưu tiên trạng thái "Có hàng sắp hết hạn"
-                    ingredientToUpdate.status_Ingredient = "Có hàng cận date";
-                }
-            }
-
-            foreach (var ingredientId in hetdate)
-            {
-                // Tìm nguyên liệu tương ứng trong bảng Ingredients
-                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
-
-                if (ingredientToUpdate != null)
-                {
-                    // Ưu tiên trạng thái "Có hàng hết hạn"
-                    ingredientToUpdate.status_Ingredient = "Có hàng hết date";
-                }
-            }
-
-            foreach (var ingredientId in hethancandate)
-            {
-                // Tìm nguyên liệu tương ứng trong bảng Ingredients
-                var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == ingredientId);
-
-                if (ingredientToUpdate != null)
-                {
-                    // Đặt trạng thái "Có hàng cận date và đã hết hạn"
-                    ingredientToUpdate.status_Ingredient = "Có hàng cận date và hết hạn";
-                }
-            }
-
-            // Lưu thay đổi vào cơ sở dữ liệu
-            dbContext.SaveChanges();
-        }
-
         private void gvIngredient_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             if (e.Column.FieldName == "status_Ingredient" && e.CellValue != null)
@@ -591,102 +587,7 @@ namespace Qly_NhaHang
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //private void UpdateIngredientStatus()
-        //{
-        //    DateTime currentDate1 = DateTime.Today.AddDays(1); // Ngày hiện tại + 1 ngày
-        //  // DateTime currentDate = DateTime.Today;
-
-        //    var candate = dbContext.ImportInfoes
-        //        .Where(info => info.date_Expiry == currentDate1 && info.count_Ingredient > 0)
-        //        .ToList();
-
-        //    var ondinh = dbContext.ImportInfoes
-        //        .Where(info => info.date_Expiry > currentDate1 )
-        //        .ToList();
-
-        //    var hethan = dbContext.ImportInfoes
-        //        .Where(info => info.date_Expiry < currentDate1 && info.count_Ingredient > 0)
-        //        .ToList();
-
-        //    var candatehethan = dbContext.ImportInfoes
-        //        .Where(info => info.date_Expiry < currentDate1 && info.date_Expiry == currentDate1 && info.count_Ingredient > 0)
-        //        .ToList();
-
-
-        //    foreach (var importInfo in ondinh)
-        //    {
-        //        // Tìm nguyên liệu tương ứng trong bảng Ingredients
-        //        var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == importInfo.id_Ingredient);
-
-        //        if (ingredientToUpdate != null)
-        //        {
-        //            // Cập nhật trạng thái của nguyên liệu
-        //            ingredientToUpdate.status_Ingredient = "Ổn định";
-        //        }
-        //        dbContext.SaveChanges();
-        //    }
-        //    foreach (var importInfo in candate)
-        //    {
-        //        // Tìm nguyên liệu tương ứng trong bảng Ingredients
-        //        var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == importInfo.id_Ingredient);
-
-        //        if (ingredientToUpdate != null)
-        //        {
-        //            // Cập nhật trạng thái của nguyên liệu
-        //            ingredientToUpdate.status_Ingredient = "Có hàng sắp hết hạn";
-        //        }
-        //        dbContext.SaveChanges();
-        //    }
-        //    foreach (var importInfo in hethan)
-        //    {
-        //        // Tìm nguyên liệu tương ứng trong bảng Ingredients
-        //        var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == importInfo.id_Ingredient);
-
-        //        if (ingredientToUpdate != null)
-        //        {
-        //            // Cập nhật trạng thái của nguyên liệu
-        //            ingredientToUpdate.status_Ingredient = "Hàng hết hạn";
-        //        }
-        //        dbContext.SaveChanges();
-        //    }
-        //    foreach (var importInfo in candatehethan)
-        //    {
-        //        // Tìm nguyên liệu tương ứng trong bảng Ingredients
-        //        var ingredientToUpdate = dbContext.Ingredients.FirstOrDefault(ingredient => ingredient.id_Ingredient == importInfo.id_Ingredient);
-
-        //        if (ingredientToUpdate != null)
-        //        {
-        //            // Cập nhật trạng thái của nguyên liệu
-        //            ingredientToUpdate.status_Ingredient = "Hàng cận date và hết hạn";
-        //        }
-        //        dbContext.SaveChanges();
-        //    }
-
-        //    dbContext.SaveChanges();
-        //}
+        #endregion
 
     }
 }

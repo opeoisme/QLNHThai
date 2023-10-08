@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Utils;
+using DevExpress.Printing.Core.PdfExport.Metafile;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using PdfSharp.Drawing;
@@ -80,8 +81,7 @@ namespace Qly_NhaHang
             {
                 txbIdTable.Text = selectedTable.id_Table.ToString();
                 txbNameTable.Text = selectedTable.name_Table;
-                nmrSeatsTable.Value = (decimal)selectedTable.seats_Table;
-                cbbConditionTable.Text = selectedTable.condition_Table;
+                txbSeatTable.Text = selectedTable.seats_Table.ToString();
                 txbStatusTable.Text = selectedTable.status_Table;
 
             }
@@ -91,26 +91,38 @@ namespace Qly_NhaHang
         {
             if (int.TryParse(txbIdTable.Text, out int tableId))
             {
-                Tablee tableToUpdate = dbContext.Tablees.FirstOrDefault(tb => tb.id_Table == tableId);
+                Tablee tableToUpdate = dbContext.Tablees.FirstOrDefault(i => i.id_Table == tableId);
 
                 if (tableToUpdate != null)
                 {
-                    UpdateTableProperties(tableToUpdate);
-
-                    dbContext.Entry(tableToUpdate).State = EntityState.Modified;
-                    dbContext.SaveChanges();
-                    LoadFormTable();
-                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Kiểm tra và cập nhật các thuộc tính của Ingredient chỉ khi tất cả đều hợp lệ
+                    if (UpdateTableProperties(tableToUpdate))
+                    {
+                        dbContext.Entry(tableToUpdate).State = EntityState.Modified;
+                        dbContext.SaveChanges();
+                        LoadFormTable();
+                        XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                   
                 }
             }
         }
 
-        private void UpdateTableProperties(Tablee table)
+        private bool UpdateTableProperties(Tablee table)
         {
             table.name_Table = txbNameTable.Text;
-            table.status_Table = txbStatusTable.Text;
-            table.condition_Table = cbbConditionTable.SelectedItem?.ToString();
-            table.seats_Table = (int)nmrSeatsTable.Value;
+            if (int.TryParse(txbSeatTable.Text, out int seat))
+            {
+                table.seats_Table = seat;
+                return true; // Trả về true nếu mọi thứ hợp lệ
+            }
+            else
+            {
+                XtraMessageBox.Show("Số ghế không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Trả về false nếu có lỗi
+            }
+
+
         }
 
         private void btnDeleteTable_Click(object sender, EventArgs e)

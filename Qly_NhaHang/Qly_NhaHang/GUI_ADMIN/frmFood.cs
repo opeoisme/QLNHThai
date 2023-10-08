@@ -86,8 +86,7 @@ namespace Qly_NhaHang
                 txbIdFood.Text = selectedFood.id_Food.ToString();
                 txbNameFood.Text = selectedFood.name_Food;
                 cbbCategory.SelectedValue = selectedFood.id_Category;
-                cbbCondition.SelectedItem = selectedFood.condition_Food;
-                nmrPriceFood.Value = (decimal)selectedFood.price_Food;
+                txbPriceFood.Text = String.Format("{0:0,0}", selectedFood.price_Food);
 
                 if (selectedFood.image_Food != null)
                 {
@@ -103,12 +102,35 @@ namespace Qly_NhaHang
             }
         }
 
+        private bool ValidateAndSetFoodProperties(Food food)
+        {
+            food.name_Food = txbNameFood.Text;
+            food.id_Category = Convert.ToInt32(cbbCategory.SelectedValue);
+            // Kiểm tra và gán giá trị cho count_Ingredient
+            if (double.TryParse(txbPriceFood.Text, out double price))
+            {
+                food.price_Food = price;
+            }
+            else
+            {
+                XtraMessageBox.Show("Giá bán không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Trả về false nếu có lỗi
+            }
+            return true;
+        }
+
+
         private void LoadCategoryData()
         {
-            var categories = dbContext.CategoryFoods.ToList();
+
+            var categories = dbContext.CategoryFoods
+                 .Where(category => category.condition_Category == "Được sử dụng")
+                .ToList();
             cbbCategory.DataSource = categories;
             cbbCategory.DisplayMember = "name_Category";
             cbbCategory.ValueMember = "id_Category";
+
+            
         }
 
 
@@ -167,12 +189,19 @@ namespace Qly_NhaHang
             }
         }
 
+
         private void UpdateFoodProperties(Food food)
         {
             food.name_Food = txbNameFood.Text;
             food.id_Category = Convert.ToInt32(cbbCategory.SelectedValue);
-            food.condition_Food = cbbCondition.SelectedItem?.ToString();
-            food.price_Food = (float)nmrPriceFood.Value;
+            if (double.TryParse(txbPriceFood.Text, out double price))
+            {
+                food.price_Food = price;
+            }
+            else
+            {
+                XtraMessageBox.Show("Giá trị không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void UpdateFoodImage(Food foodToUpdate)
@@ -214,24 +243,25 @@ namespace Qly_NhaHang
         {
             if (int.TryParse(txbIdFood.Text, out int foodId))
             {
-                Food foodToUpdate = dbContext.Foods.FirstOrDefault(f => f.id_Food == foodId);
+                Food foodToUpdate = dbContext.Foods.FirstOrDefault(i => i.id_Food == foodId);
 
                 if (foodToUpdate != null)
                 {
-                    UpdateFoodProperties(foodToUpdate);
-
-                    dbContext.Entry(foodToUpdate).State = EntityState.Modified;
-
-                    if (isImageChanged && imageFood.Image != null)
+                    // Kiểm tra và cập nhật các thuộc tính của Ingredient chỉ khi tất cả đều hợp lệ
+                    if (ValidateAndSetFoodProperties(foodToUpdate))
                     {
-                        UpdateFoodImage(foodToUpdate);
+                        dbContext.Entry(foodToUpdate).State = EntityState.Modified;
+
+                        if (isImageChanged && imageFood.Image != null)
+                        {
+                            UpdateFoodImage(foodToUpdate);
+                        }
+                        dbContext.SaveChanges();
+                        LoadFoodData();
+                        XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    dbContext.SaveChanges();
-                    LoadFoodData();
-                    XtraMessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            // Reset isImageChanged sau khi đã sử dụng
             isImageChanged = false;
         }
 

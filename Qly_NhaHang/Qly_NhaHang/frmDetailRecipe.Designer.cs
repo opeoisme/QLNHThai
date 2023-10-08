@@ -60,7 +60,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.White;
+            this.lblID.BackColor = System.Drawing.Color.Teal;
             this.lblID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.Teal;
             this.lblID.Location = new System.Drawing.Point(321, 9);
@@ -223,6 +223,7 @@
             this.btnClose.TextMarginLeft = 0;
             this.btnClose.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnClose.UseDefaultRadiusAndThickness = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 

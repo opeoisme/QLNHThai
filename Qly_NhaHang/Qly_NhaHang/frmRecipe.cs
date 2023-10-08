@@ -165,9 +165,33 @@ namespace Qly_NhaHang
             }
         }
 
+
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+
+
+        public void LoadIngredientFLPNTest()
+        {
+            flpnIngredient.Controls.Clear();
+            using (var context = new QLNHThaiEntities())
+            {
+                var IngredientList = (from ingredient in context.Ingredients
+                                      join catalog in context.CatalogIngredients
+                                      on ingredient.id_Catalog equals catalog.id_Catalog
+                                      where ingredient.condition_Ingredient == "Sử dụng" && catalog.condition_Catalog == "Sử dụng"
+                                      select ingredient).ToList();
+                foreach (var nguyenlieu in IngredientList)
+                {
+                    // Tạo instance của user control và thêm vào FlowLayoutPanel
+                    var Ingredientct = new uctRecipeIngredient(nguyenlieu.name_Ingredient, nguyenlieu.unit_Ingredient, GetIngredientCount(nguyenlieu.id_Ingredient), selectedFoodId);
+                    flpnIngredient.Controls.Add(Ingredientct);
+                }
+            }
         }
     }
 }

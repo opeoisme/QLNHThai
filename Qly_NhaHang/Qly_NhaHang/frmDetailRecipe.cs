@@ -94,13 +94,25 @@ namespace Qly_NhaHang
                 dbContext.SaveChanges();
 
                 this.Close();
-               
+                if (Application.OpenForms["frmRecipe"] is frmRecipe recipeForm)
+                {
+                    recipeForm.LoadDataRecipe(); // Giả sử tên phương thức là LoadFoodData()
+
+                    recipeForm.GetIngredientCount(ingredientCount);
+                    recipeForm.LoadIngredientFLPNTest();
+                }
+
             }
         }
 
         private void nmrQuantity_ValueChanged(object sender, EventArgs e)
         {
             quantity = (int)nmrQuantity.Value;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -62,7 +62,7 @@ namespace Qly_NhaHang
             {
                 txbIdCatalog.Text = selectedCatalog.id_Catalog.ToString();
                 txbNameCatalog.Text = selectedCatalog.name_Catalog;
-                cbbConditionCatalog.Text = selectedCatalog.condition_Catalog.ToString();
+                //cbbConditionCatalog.Text = selectedCatalog.condition_Catalog.ToString();
             }
         }
 
@@ -122,7 +122,7 @@ namespace Qly_NhaHang
         private void UpdateCategoryProperties(CatalogIngredient catalog)
         {
             catalog.name_Catalog = txbNameCatalog.Text;
-            catalog.condition_Catalog = cbbConditionCatalog.SelectedItem?.ToString();
+        
         }
 
         private void btnCSVCatalog_Click(object sender, EventArgs e)

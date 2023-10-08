@@ -37,7 +37,7 @@ namespace Qly_NhaHang
                     date_Import = a.date_Import,
                     id_NV = a.id_NV,
                     status_Import = a.status_Import,
-                    total_Price = (float)a.total_Price,
+                    total_Price = a.total_Price != null ? (float)a.total_Price : 0.0f, // Kiểm tra giá trị null trước khi chuyển đổi
                 })
                 .ToList();
 
@@ -76,28 +76,28 @@ namespace Qly_NhaHang
         {
             DateTime currentDate = DateTime.Today.AddDays(1); // Ngày hiện tại + 1 ngày
 
-            // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry hơn ngày hiện tại + 1 ngày và count_Ingredient > 0
+            //Danh sách cận date
             var candate = dbContext.ImportInfoes
                 .Where(info => info.date_Expiry == currentDate && info.count_Ingredient > 0)
                 .Select(info => info.id_Import)
                 .Distinct()
                 .ToList();
 
-            // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry hơn ngày hiện tại + 2 ngày và count_Ingredient > 0
+            //Danh sách ổn định
             var ondinh = dbContext.ImportInfoes
-                .Where(info => info.date_Expiry >= currentDate && info.count_Ingredient >= 0)
+                .Where(info => /*info.date_Expiry >= currentDate &&*/ info.count_Ingredient == 0)
                 .Select(info => info.id_Import)
                 .Distinct()
                 .ToList();
 
-            // Lấy danh sách các id_Ingredient có ít nhất một Import_Info có date_Expiry bằng ngày hiện tại và count_Ingredient > 0
+           // Danh sách hết date
             var hetdate = dbContext.ImportInfoes
                 .Where(info => info.date_Expiry < currentDate && info.count_Ingredient > 0)
                 .Select(info => info.id_Import)
                 .Distinct()
                 .ToList();
 
-            // Lấy danh sách các id_Ingredient có cả "Có hàng sắp hết hạn" và "Có hàng hết hạn"
+            // Danh sách cận date hết hạn
             var hethancandate = candate
                 .Where(id => hetdate.Contains(id))
                 .ToList();

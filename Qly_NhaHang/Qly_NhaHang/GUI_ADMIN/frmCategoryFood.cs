@@ -56,7 +56,6 @@ namespace Qly_NhaHang
         private void UpdateCategoryProperties(CategoryFood category)
         {
             category.name_Category = txbNameCategory.Text;
-            category.condition_Category = cbbConditionCategory.SelectedItem?.ToString();
         }
 
         private void btnLoadCategory_Click(object sender, EventArgs e)
@@ -79,7 +78,6 @@ namespace Qly_NhaHang
             {
                 txbIdCategory.Text = selectedCategory.id_Category.ToString();
                 txbNameCategory.Text = selectedCategory.name_Category;
-                cbbConditionCategory.Text = selectedCategory.condition_Category.ToString();
             }
         }
 
