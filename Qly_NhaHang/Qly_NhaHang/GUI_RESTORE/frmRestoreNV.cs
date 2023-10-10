@@ -75,7 +75,6 @@ namespace Qly_NhaHang
                 txbAddressNV.Text = selectedNhanvien.address_NV;
                 txbCCCDNV.Text = selectedNhanvien.CCCD_NV;
                 txbPhoneNV.Text = selectedNhanvien.phone_NV;
-                cbbConditionNV.SelectedItem = selectedNhanvien.condition_NV;
                 cbbTypeNV.SelectedItem = selectedNhanvien.type_NV;
 
                 if (selectedNhanvien.image_NV != null)

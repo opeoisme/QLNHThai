@@ -54,6 +54,7 @@ namespace Qly_NhaHang
                     id_Catalog = (int)joinResult.Ingredient.id_Catalog,
                     countkid_Ingredient = (float)joinResult.Ingredient.countkid_Ingredient,
                     unitkid_Ingredient = joinResult.Ingredient.unitkid_Ingredient,
+                    price_Ingredient = (float)joinResult.Ingredient.price_Ingredient,
                 })
                 .ToList();
             gctIngredient.DataSource = ingredientData;
@@ -69,13 +70,7 @@ namespace Qly_NhaHang
             LoadIngredientData();
         }
 
-        private void gvIngredient_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (e.FocusedRowHandle >= 0)
-            {
-                UpdateIngredientControls(e.FocusedRowHandle);
-            }
-        }
+
 
         private void UpdateIngredientControls(int focusedRowHandle)
         {
@@ -84,13 +79,13 @@ namespace Qly_NhaHang
             {
                 txbIdIngredient.Text = selectedIngredient.id_Ingredient.ToString();
                 txbNameIngredient.Text = selectedIngredient.name_Ingredient;
-                cbbCatalog.SelectedValue = selectedIngredient.id_Catalog;
-                cbbConditionIngredient.Text = selectedIngredient.condition_Ingredient;
-                nmrCountKid.Value = (decimal)selectedIngredient.countkid_Ingredient;
-                nmrCountIngredient.Value = (decimal)selectedIngredient.count_Ingredient;
-                cbbStatusIngredient.Text = selectedIngredient.status_Ingredient;
+                txbCountIngre.Text = selectedIngredient.count_Ingredient.ToString();
                 cbbUnitKid.Text = selectedIngredient.unitkid_Ingredient;
+                txbCountKidIngre.Text = selectedIngredient.countkid_Ingredient.ToString();
                 cbbUnitIngredient.Text = selectedIngredient.unit_Ingredient;
+                txbStatusIngre.Text = selectedIngredient.status_Ingredient;
+                txbPriceIngre.Text = String.Format("{0:0,0}", selectedIngredient.price_Ingredient);
+                cbbCatalog.SelectedValue = selectedIngredient.id_Catalog;
                 if (selectedIngredient.image_Ingredient != null)
                 {
                     using (MemoryStream ms = new MemoryStream(selectedIngredient.image_Ingredient))
@@ -133,6 +128,14 @@ namespace Qly_NhaHang
                         }
                     }
                 }
+            }
+        }
+
+        private void gvIngredient_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle >= 0)
+            {
+                UpdateIngredientControls(e.FocusedRowHandle);
             }
         }
     }

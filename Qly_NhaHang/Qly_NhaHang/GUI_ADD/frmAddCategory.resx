@@ -118,6 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txbNameCategory.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAWkAAAAtCAYAAABsxZqAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABfSURBVHhe7cNBDQAwCASw+TfFOQNULDzapA8AAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfktSu1W9
+        Nj0QjZPUWF8WRAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAAAuCAYAAADgKBFVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -142,20 +150,6 @@
         aRKainU8ADdZaDqW8YqYEzysswXTMI8HYAcPviFMT7wubjbcFNY0hwjesg1WrhXKPxvKH2f4LfC+scnK
         9IXyb6FOzW9MCC02vGQvWDn6qusuePnjhLCLjfHqON8eVo57uEa36X/+OFX1C/9eiOwjugLKAAAAAElF
         TkSuQmCC
-</value>
-  </data>
-  <data name="txbNameCategory.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAWkAAAAtCAYAAABsxZqAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHhSURBVHhe7dq/attQGIdhjRlzCRk79ko69xK69FoKvYbe
-        QtfYkv/Uu4d4iik4FFeYooIjXGHUo+ZAMZ0TfYXngd8QH2V9OcguAPiPTCaTt4vF4nY2m9XT6bQ3M7Pn
-        3dDb1N0vqb/vcor/lQ6vh4fW63VT13Xftm0PwPMbens4HPrNZnOcz+d3qcc3Oc1/DYHe7/f5XwAYQ9M0
-        ferx1xTqq5znoqiq6n0q+M/8DAAjur+/b1OoP+ZEP92ih6s2AOM7Ho/De+qHnOiiKMvyseu6fAzA2IYv
-        FHOii2L4A4A4RBogMJEGCEykAQITaYDARBogMJEGCEykAQITaYDARBogMJEGCEykAQITaYDARBogMJEG
-        CEykAQITaYDARBogMJEGCEykAQITaYDARBogMJEGCEykAQITaYDARBogMJEGCEykAQITaYDARBogMJEG
-        COwi0mVZdufzOR8BMLaLSM/n87umafIRAGM6nU59VVVNTvSfSH/YbrddPgdgRPv9vl8sFp9zootiMplc
-        pVB/a9s2PwLAGIZXz8vl8kfq8k1O9JP0wetU7u+73e5X17lUA7ykIc51Xfer1eqQLs1vcpovpVBfp1B/
-        KsvycXhpbWZmL7PhBxypv7epw69ykgGIrSh+A4E4ttEa6yuLAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

@@ -77,30 +77,26 @@ namespace Qly_NhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txbNameFood.Text) || cbbCategory.SelectedItem == null || imageFood.Image == null)
+            if (string.IsNullOrWhiteSpace(txbNameFood.Text) || cbbCategory.SelectedItem == null || imageFood.Image == null || string.IsNullOrWhiteSpace(txbPriceFood.Text))
             {
                 XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (nmrPriceFood.Value <= 0)
+            if (!double.TryParse(txbPriceFood.Text, out double priceValue) || priceValue <= 0)
             {
                 XtraMessageBox.Show("Vui lòng nhập giá hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (cbbCondition.SelectedItem == null)
-            {
-                XtraMessageBox.Show("Vui lòng cho biết sản phẩm có được bán liền hay không.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+
             // Tạo một đối tượng Food mới
             Food newFood = new Food
             {
                 name_Food = txbNameFood.Text,
                 id_Category = (int)cbbCategory.SelectedValue,
                 image_Food = isImageChanged ? ConvertImageToByteArray(imageFood.Image) : null,
-                condition_Food = cbbCondition.Text,
-                price_Food = (double)nmrPriceFood.Value // Chuyển đổi từ decimal sang double
+                condition_Food = "Được sử dụng",
+                price_Food = priceValue
             };
 
             // Thêm đối tượng mới vào cơ sở dữ liệu
@@ -121,6 +117,7 @@ namespace Qly_NhaHang
                 XtraMessageBox.Show("Lỗi khi thêm món ăn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {

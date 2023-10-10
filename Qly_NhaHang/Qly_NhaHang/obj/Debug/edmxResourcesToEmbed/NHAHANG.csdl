@@ -282,6 +282,10 @@
       <End Role="Ingredient" EntitySet="Ingredients" />
       <End Role="Recipe" EntitySet="Recipes" />
     </AssociationSet>
+    <FunctionImport Name="FN_DoanhThuTheoThang" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_DoanhThuTheoThang_Result)">
+      <Parameter Name="checkIn" Mode="In" Type="DateTime" />
+      <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="ImportInfo">
     <Key>
@@ -387,4 +391,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="FN_DoanhThuTheoThang_Result">
+    <Property Type="DateTime" Name="THANG" Nullable="true" Precision="10" />
+    <Property Type="Double" Name="TONGDOANHTHU" Nullable="true" />
+  </ComplexType>
 </Schema>

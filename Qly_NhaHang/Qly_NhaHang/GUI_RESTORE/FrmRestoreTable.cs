@@ -62,8 +62,7 @@ namespace Qly_NhaHang
             {
                 txbIdTable.Text = selectedTable.id_Table.ToString();
                 txbNameTable.Text = selectedTable.name_Table;
-                nmrSeatsTable.Value = (decimal)selectedTable.seats_Table;
-                cbbConditionTable.Text = selectedTable.condition_Table;
+                txbSeatTable.Text = selectedTable.seats_Table.ToString();
                 txbStatusTable.Text = selectedTable.status_Table;
 
             }

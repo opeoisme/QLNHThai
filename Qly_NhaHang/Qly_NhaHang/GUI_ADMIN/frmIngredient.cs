@@ -536,6 +536,7 @@ namespace Qly_NhaHang
                         date_Import = currentTime,
                         id_NV = id_NV,
                         type_Import = "Nhập hàng",
+                        status_Import = "Ổn định",
                     };
                     context.Imports.Add(newImport);
                     context.SaveChanges();

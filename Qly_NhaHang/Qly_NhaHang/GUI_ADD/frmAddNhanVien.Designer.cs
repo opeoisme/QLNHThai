@@ -28,32 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties33 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties34 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties35 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties36 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties37 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties38 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties39 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties40 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddNhanVien));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties61 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties62 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties63 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties64 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties65 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties66 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties67 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties68 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties69 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties70 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties71 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties72 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties73 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties74 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties75 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties76 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties77 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties78 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties79 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties80 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txbCCCD = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txbAddressNV = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,12 +71,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txbCCCD = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cbbCondition = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageNhanVien)).BeginInit();
             this.SuspendLayout();
@@ -98,419 +98,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhân viên mới";
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.cbbCondition);
-            this.panel3.Controls.Add(this.labelControl1);
-            this.panel3.Controls.Add(this.txbCCCD);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.txbAddressNV);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txbFullName);
-            this.panel3.Controls.Add(this.txbPhone);
-            this.panel3.Controls.Add(this.cbbSex);
-            this.panel3.Controls.Add(this.labelControl5);
-            this.panel3.Controls.Add(this.imageNhanVien);
-            this.panel3.Controls.Add(this.labelControl6);
-            this.panel3.Controls.Add(this.txbIDNhanVien);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(15, 54);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(826, 584);
-            this.panel3.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 319);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 24);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Căn cước công dân";
-            // 
-            // txbAddressNV
-            // 
-            this.txbAddressNV.AcceptsReturn = false;
-            this.txbAddressNV.AcceptsTab = false;
-            this.txbAddressNV.AnimationSpeed = 200;
-            this.txbAddressNV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbAddressNV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbAddressNV.BackColor = System.Drawing.Color.Transparent;
-            this.txbAddressNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbAddressNV.BackgroundImage")));
-            this.txbAddressNV.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbAddressNV.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbAddressNV.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbAddressNV.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbAddressNV.BorderRadius = 10;
-            this.txbAddressNV.BorderThickness = 1;
-            this.txbAddressNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbAddressNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbAddressNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbAddressNV.DefaultText = "";
-            this.txbAddressNV.FillColor = System.Drawing.Color.White;
-            this.txbAddressNV.HideSelection = true;
-            this.txbAddressNV.IconLeft = null;
-            this.txbAddressNV.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbAddressNV.IconPadding = 10;
-            this.txbAddressNV.IconRight = null;
-            this.txbAddressNV.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbAddressNV.Lines = new string[0];
-            this.txbAddressNV.Location = new System.Drawing.Point(215, 234);
-            this.txbAddressNV.MaxLength = 32767;
-            this.txbAddressNV.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbAddressNV.Modified = false;
-            this.txbAddressNV.Multiline = false;
-            this.txbAddressNV.Name = "txbAddressNV";
-            stateProperties25.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties25.FillColor = System.Drawing.Color.Empty;
-            stateProperties25.ForeColor = System.Drawing.Color.Empty;
-            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbAddressNV.OnActiveState = stateProperties25;
-            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbAddressNV.OnDisabledState = stateProperties26;
-            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties27.FillColor = System.Drawing.Color.Empty;
-            stateProperties27.ForeColor = System.Drawing.Color.Empty;
-            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbAddressNV.OnHoverState = stateProperties27;
-            stateProperties28.BorderColor = System.Drawing.Color.Silver;
-            stateProperties28.FillColor = System.Drawing.Color.White;
-            stateProperties28.ForeColor = System.Drawing.Color.Empty;
-            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbAddressNV.OnIdleState = stateProperties28;
-            this.txbAddressNV.Padding = new System.Windows.Forms.Padding(3);
-            this.txbAddressNV.PasswordChar = '\0';
-            this.txbAddressNV.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbAddressNV.PlaceholderText = "Địa chỉ liên lạc...";
-            this.txbAddressNV.ReadOnly = false;
-            this.txbAddressNV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbAddressNV.SelectedText = "";
-            this.txbAddressNV.SelectionLength = 0;
-            this.txbAddressNV.SelectionStart = 0;
-            this.txbAddressNV.ShortcutsEnabled = true;
-            this.txbAddressNV.Size = new System.Drawing.Size(584, 45);
-            this.txbAddressNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbAddressNV.TabIndex = 28;
-            this.txbAddressNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbAddressNV.TextMarginBottom = 0;
-            this.txbAddressNV.TextMarginLeft = 3;
-            this.txbAddressNV.TextMarginTop = 0;
-            this.txbAddressNV.TextPlaceholder = "Địa chỉ liên lạc...";
-            this.txbAddressNV.UseSystemPasswordChar = false;
-            this.txbAddressNV.WordWrap = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 245);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 24);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Địa chỉ liên lạc";
-            // 
-            // txbFullName
-            // 
-            this.txbFullName.AcceptsReturn = false;
-            this.txbFullName.AcceptsTab = false;
-            this.txbFullName.AnimationSpeed = 200;
-            this.txbFullName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbFullName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbFullName.BackColor = System.Drawing.Color.Transparent;
-            this.txbFullName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbFullName.BackgroundImage")));
-            this.txbFullName.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbFullName.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbFullName.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbFullName.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbFullName.BorderRadius = 10;
-            this.txbFullName.BorderThickness = 1;
-            this.txbFullName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbFullName.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbFullName.DefaultText = "";
-            this.txbFullName.FillColor = System.Drawing.Color.White;
-            this.txbFullName.HideSelection = true;
-            this.txbFullName.IconLeft = null;
-            this.txbFullName.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbFullName.IconPadding = 10;
-            this.txbFullName.IconRight = null;
-            this.txbFullName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbFullName.Lines = new string[0];
-            this.txbFullName.Location = new System.Drawing.Point(215, 104);
-            this.txbFullName.MaxLength = 32767;
-            this.txbFullName.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbFullName.Modified = false;
-            this.txbFullName.Multiline = false;
-            this.txbFullName.Name = "txbFullName";
-            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties29.FillColor = System.Drawing.Color.Empty;
-            stateProperties29.ForeColor = System.Drawing.Color.Empty;
-            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbFullName.OnActiveState = stateProperties29;
-            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbFullName.OnDisabledState = stateProperties30;
-            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties31.FillColor = System.Drawing.Color.Empty;
-            stateProperties31.ForeColor = System.Drawing.Color.Empty;
-            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbFullName.OnHoverState = stateProperties31;
-            stateProperties32.BorderColor = System.Drawing.Color.Silver;
-            stateProperties32.FillColor = System.Drawing.Color.White;
-            stateProperties32.ForeColor = System.Drawing.Color.Empty;
-            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbFullName.OnIdleState = stateProperties32;
-            this.txbFullName.Padding = new System.Windows.Forms.Padding(3);
-            this.txbFullName.PasswordChar = '\0';
-            this.txbFullName.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbFullName.PlaceholderText = "Họ tên nhân viên...";
-            this.txbFullName.ReadOnly = false;
-            this.txbFullName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbFullName.SelectedText = "";
-            this.txbFullName.SelectionLength = 0;
-            this.txbFullName.SelectionStart = 0;
-            this.txbFullName.ShortcutsEnabled = true;
-            this.txbFullName.Size = new System.Drawing.Size(584, 45);
-            this.txbFullName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbFullName.TabIndex = 26;
-            this.txbFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbFullName.TextMarginBottom = 0;
-            this.txbFullName.TextMarginLeft = 3;
-            this.txbFullName.TextMarginTop = 0;
-            this.txbFullName.TextPlaceholder = "Họ tên nhân viên...";
-            this.txbFullName.UseSystemPasswordChar = false;
-            this.txbFullName.WordWrap = true;
-            // 
-            // txbPhone
-            // 
-            this.txbPhone.AcceptsReturn = false;
-            this.txbPhone.AcceptsTab = false;
-            this.txbPhone.AnimationSpeed = 200;
-            this.txbPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbPhone.BackColor = System.Drawing.Color.Transparent;
-            this.txbPhone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbPhone.BackgroundImage")));
-            this.txbPhone.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbPhone.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbPhone.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbPhone.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbPhone.BorderRadius = 10;
-            this.txbPhone.BorderThickness = 1;
-            this.txbPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbPhone.DefaultText = "";
-            this.txbPhone.FillColor = System.Drawing.Color.White;
-            this.txbPhone.HideSelection = true;
-            this.txbPhone.IconLeft = null;
-            this.txbPhone.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPhone.IconPadding = 10;
-            this.txbPhone.IconRight = null;
-            this.txbPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPhone.Lines = new string[0];
-            this.txbPhone.Location = new System.Drawing.Point(555, 170);
-            this.txbPhone.MaxLength = 32767;
-            this.txbPhone.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbPhone.Modified = false;
-            this.txbPhone.Multiline = false;
-            this.txbPhone.Name = "txbPhone";
-            stateProperties33.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties33.FillColor = System.Drawing.Color.Empty;
-            stateProperties33.ForeColor = System.Drawing.Color.Empty;
-            stateProperties33.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbPhone.OnActiveState = stateProperties33;
-            stateProperties34.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties34.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbPhone.OnDisabledState = stateProperties34;
-            stateProperties35.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties35.FillColor = System.Drawing.Color.Empty;
-            stateProperties35.ForeColor = System.Drawing.Color.Empty;
-            stateProperties35.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbPhone.OnHoverState = stateProperties35;
-            stateProperties36.BorderColor = System.Drawing.Color.Silver;
-            stateProperties36.FillColor = System.Drawing.Color.White;
-            stateProperties36.ForeColor = System.Drawing.Color.Empty;
-            stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbPhone.OnIdleState = stateProperties36;
-            this.txbPhone.Padding = new System.Windows.Forms.Padding(3);
-            this.txbPhone.PasswordChar = '\0';
-            this.txbPhone.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbPhone.PlaceholderText = "Số điện thoại liên lạc...";
-            this.txbPhone.ReadOnly = false;
-            this.txbPhone.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbPhone.SelectedText = "";
-            this.txbPhone.SelectionLength = 0;
-            this.txbPhone.SelectionStart = 0;
-            this.txbPhone.ShortcutsEnabled = true;
-            this.txbPhone.Size = new System.Drawing.Size(244, 45);
-            this.txbPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbPhone.TabIndex = 25;
-            this.txbPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbPhone.TextMarginBottom = 0;
-            this.txbPhone.TextMarginLeft = 3;
-            this.txbPhone.TextMarginTop = 0;
-            this.txbPhone.TextPlaceholder = "Số điện thoại liên lạc...";
-            this.txbPhone.UseSystemPasswordChar = false;
-            this.txbPhone.WordWrap = true;
-            // 
-            // cbbSex
-            // 
-            this.cbbSex.FormattingEnabled = true;
-            this.cbbSex.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ ",
-            "Khác"});
-            this.cbbSex.Location = new System.Drawing.Point(215, 174);
-            this.cbbSex.Name = "cbbSex";
-            this.cbbSex.Size = new System.Drawing.Size(146, 27);
-            this.cbbSex.TabIndex = 24;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(448, 175);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(96, 26);
-            this.labelControl5.TabIndex = 23;
-            this.labelControl5.Text = "SĐT liên lạc";
-            // 
-            // imageNhanVien
-            // 
-            this.imageNhanVien.Image = global::Qly_NhaHang.Properties.Resources.Food0;
-            this.imageNhanVien.Location = new System.Drawing.Point(242, 368);
-            this.imageNhanVien.Name = "imageNhanVien";
-            this.imageNhanVien.Size = new System.Drawing.Size(211, 197);
-            this.imageNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageNhanVien.TabIndex = 22;
-            this.imageNhanVien.TabStop = false;
-            this.imageNhanVien.Click += new System.EventHandler(this.imageNhanVien_Click);
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(44, 450);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(117, 26);
-            this.labelControl6.TabIndex = 21;
-            this.labelControl6.Text = "Ảnh minh họa";
-            // 
-            // txbIDNhanVien
-            // 
-            this.txbIDNhanVien.AcceptsReturn = false;
-            this.txbIDNhanVien.AcceptsTab = false;
-            this.txbIDNhanVien.AnimationSpeed = 200;
-            this.txbIDNhanVien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbIDNhanVien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbIDNhanVien.BackColor = System.Drawing.Color.Transparent;
-            this.txbIDNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbIDNhanVien.BackgroundImage")));
-            this.txbIDNhanVien.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbIDNhanVien.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbIDNhanVien.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbIDNhanVien.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbIDNhanVien.BorderRadius = 10;
-            this.txbIDNhanVien.BorderThickness = 1;
-            this.txbIDNhanVien.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbIDNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIDNhanVien.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbIDNhanVien.DefaultText = "";
-            this.txbIDNhanVien.FillColor = System.Drawing.Color.White;
-            this.txbIDNhanVien.HideSelection = true;
-            this.txbIDNhanVien.IconLeft = null;
-            this.txbIDNhanVien.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIDNhanVien.IconPadding = 10;
-            this.txbIDNhanVien.IconRight = null;
-            this.txbIDNhanVien.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIDNhanVien.Lines = new string[0];
-            this.txbIDNhanVien.Location = new System.Drawing.Point(215, 26);
-            this.txbIDNhanVien.MaxLength = 32767;
-            this.txbIDNhanVien.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbIDNhanVien.Modified = false;
-            this.txbIDNhanVien.Multiline = false;
-            this.txbIDNhanVien.Name = "txbIDNhanVien";
-            stateProperties37.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties37.FillColor = System.Drawing.Color.Empty;
-            stateProperties37.ForeColor = System.Drawing.Color.Empty;
-            stateProperties37.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIDNhanVien.OnActiveState = stateProperties37;
-            stateProperties38.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties38.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties38.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIDNhanVien.OnDisabledState = stateProperties38;
-            stateProperties39.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties39.FillColor = System.Drawing.Color.Empty;
-            stateProperties39.ForeColor = System.Drawing.Color.Empty;
-            stateProperties39.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIDNhanVien.OnHoverState = stateProperties39;
-            stateProperties40.BorderColor = System.Drawing.Color.Silver;
-            stateProperties40.FillColor = System.Drawing.Color.White;
-            stateProperties40.ForeColor = System.Drawing.Color.Empty;
-            stateProperties40.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIDNhanVien.OnIdleState = stateProperties40;
-            this.txbIDNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.txbIDNhanVien.PasswordChar = '\0';
-            this.txbIDNhanVien.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbIDNhanVien.PlaceholderText = "Mã nhân viên...";
-            this.txbIDNhanVien.ReadOnly = false;
-            this.txbIDNhanVien.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbIDNhanVien.SelectedText = "";
-            this.txbIDNhanVien.SelectionLength = 0;
-            this.txbIDNhanVien.SelectionStart = 0;
-            this.txbIDNhanVien.ShortcutsEnabled = true;
-            this.txbIDNhanVien.Size = new System.Drawing.Size(584, 45);
-            this.txbIDNhanVien.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbIDNhanVien.TabIndex = 15;
-            this.txbIDNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbIDNhanVien.TextMarginBottom = 0;
-            this.txbIDNhanVien.TextMarginLeft = 3;
-            this.txbIDNhanVien.TextMarginTop = 0;
-            this.txbIDNhanVien.TextPlaceholder = "Mã nhân viên...";
-            this.txbIDNhanVien.UseSystemPasswordChar = false;
-            this.txbIDNhanVien.WordWrap = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 24);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Họ và tên";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Giới tính";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã nhân viên";
-            // 
             // btnClose
             // 
             this.btnClose.AllowAnimations = true;
@@ -530,11 +117,11 @@
             this.btnClose.ColorContrastOnClick = 45;
             this.btnClose.ColorContrastOnHover = 45;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnClose.CustomizableEdges = borderEdges3;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnClose.CustomizableEdges = borderEdges7;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnClose.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnClose.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -558,7 +145,7 @@
             this.btnClose.IdleIconLeftImage = null;
             this.btnClose.IdleIconRightImage = null;
             this.btnClose.IndicateFocus = false;
-            this.btnClose.Location = new System.Drawing.Point(714, 650);
+            this.btnClose.Location = new System.Drawing.Point(709, 594);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnClose.OnDisabledState.BorderRadius = 15;
@@ -620,11 +207,11 @@
             this.btnSave.ColorContrastOnClick = 45;
             this.btnSave.ColorContrastOnHover = 45;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnSave.CustomizableEdges = borderEdges4;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnSave.CustomizableEdges = borderEdges8;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSave.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -648,7 +235,7 @@
             this.btnSave.IdleIconLeftImage = null;
             this.btnSave.IdleIconRightImage = null;
             this.btnSave.IndicateFocus = false;
-            this.btnSave.Location = new System.Drawing.Point(557, 650);
+            this.btnSave.Location = new System.Drawing.Point(552, 594);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.OnDisabledState.BorderRadius = 15;
@@ -691,6 +278,39 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnClose);
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 47);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(854, 885);
+            this.panel4.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txbCCCD);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txbAddressNV);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.txbFullName);
+            this.panel3.Controls.Add(this.txbPhone);
+            this.panel3.Controls.Add(this.cbbSex);
+            this.panel3.Controls.Add(this.labelControl5);
+            this.panel3.Controls.Add(this.imageNhanVien);
+            this.panel3.Controls.Add(this.labelControl6);
+            this.panel3.Controls.Add(this.txbIDNhanVien);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(19, 6);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(818, 564);
+            this.panel3.TabIndex = 0;
+            // 
             // txbCCCD
             // 
             this.txbCCCD.AcceptsReturn = false;
@@ -698,7 +318,7 @@
             this.txbCCCD.AnimationSpeed = 200;
             this.txbCCCD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txbCCCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbCCCD.BackColor = System.Drawing.Color.Transparent;
+            this.txbCCCD.BackColor = System.Drawing.Color.White;
             this.txbCCCD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbCCCD.BackgroundImage")));
             this.txbCCCD.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txbCCCD.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -718,82 +338,451 @@
             this.txbCCCD.IconRight = null;
             this.txbCCCD.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbCCCD.Lines = new string[0];
-            this.txbCCCD.Location = new System.Drawing.Point(215, 309);
+            this.txbCCCD.Location = new System.Drawing.Point(204, 314);
             this.txbCCCD.MaxLength = 32767;
             this.txbCCCD.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbCCCD.Modified = false;
             this.txbCCCD.Multiline = false;
             this.txbCCCD.Name = "txbCCCD";
-            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbCCCD.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbCCCD.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbCCCD.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.Silver;
-            stateProperties24.FillColor = System.Drawing.Color.White;
-            stateProperties24.ForeColor = System.Drawing.Color.Empty;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbCCCD.OnIdleState = stateProperties24;
+            stateProperties61.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties61.FillColor = System.Drawing.Color.Empty;
+            stateProperties61.ForeColor = System.Drawing.Color.Empty;
+            stateProperties61.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbCCCD.OnActiveState = stateProperties61;
+            stateProperties62.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties62.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties62.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbCCCD.OnDisabledState = stateProperties62;
+            stateProperties63.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties63.FillColor = System.Drawing.Color.Empty;
+            stateProperties63.ForeColor = System.Drawing.Color.Empty;
+            stateProperties63.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbCCCD.OnHoverState = stateProperties63;
+            stateProperties64.BorderColor = System.Drawing.Color.Silver;
+            stateProperties64.FillColor = System.Drawing.Color.White;
+            stateProperties64.ForeColor = System.Drawing.Color.Empty;
+            stateProperties64.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbCCCD.OnIdleState = stateProperties64;
             this.txbCCCD.Padding = new System.Windows.Forms.Padding(3);
             this.txbCCCD.PasswordChar = '\0';
             this.txbCCCD.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbCCCD.PlaceholderText = "Căn cước công dân...";
+            this.txbCCCD.PlaceholderText = "";
             this.txbCCCD.ReadOnly = false;
             this.txbCCCD.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbCCCD.SelectedText = "";
             this.txbCCCD.SelectionLength = 0;
             this.txbCCCD.SelectionStart = 0;
             this.txbCCCD.ShortcutsEnabled = true;
-            this.txbCCCD.Size = new System.Drawing.Size(211, 45);
-            this.txbCCCD.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbCCCD.TabIndex = 30;
+            this.txbCCCD.Size = new System.Drawing.Size(584, 45);
+            this.txbCCCD.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbCCCD.TabIndex = 44;
             this.txbCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txbCCCD.TextMarginBottom = 0;
             this.txbCCCD.TextMarginLeft = 3;
             this.txbCCCD.TextMarginTop = 0;
-            this.txbCCCD.TextPlaceholder = "Căn cước công dân...";
+            this.txbCCCD.TextPlaceholder = "";
             this.txbCCCD.UseSystemPasswordChar = false;
             this.txbCCCD.WordWrap = true;
             // 
-            // labelControl1
+            // label6
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(448, 317);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(86, 26);
-            this.labelControl1.TabIndex = 31;
-            this.labelControl1.Text = "Tình trạng";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 314);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(172, 26);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Căn cước công dân:";
             // 
-            // cbbCondition
+            // txbAddressNV
             // 
-            this.cbbCondition.FormattingEnabled = true;
-            this.cbbCondition.Items.AddRange(new object[] {
-            "Làm việc",
-            "Nhận việc"});
-            this.cbbCondition.Location = new System.Drawing.Point(555, 319);
-            this.cbbCondition.Name = "cbbCondition";
-            this.cbbCondition.Size = new System.Drawing.Size(244, 27);
-            this.cbbCondition.TabIndex = 32;
+            this.txbAddressNV.AcceptsReturn = false;
+            this.txbAddressNV.AcceptsTab = false;
+            this.txbAddressNV.AnimationSpeed = 200;
+            this.txbAddressNV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbAddressNV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbAddressNV.BackColor = System.Drawing.Color.White;
+            this.txbAddressNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbAddressNV.BackgroundImage")));
+            this.txbAddressNV.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbAddressNV.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbAddressNV.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbAddressNV.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbAddressNV.BorderRadius = 10;
+            this.txbAddressNV.BorderThickness = 1;
+            this.txbAddressNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbAddressNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbAddressNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbAddressNV.DefaultText = "";
+            this.txbAddressNV.FillColor = System.Drawing.Color.White;
+            this.txbAddressNV.HideSelection = true;
+            this.txbAddressNV.IconLeft = null;
+            this.txbAddressNV.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbAddressNV.IconPadding = 10;
+            this.txbAddressNV.IconRight = null;
+            this.txbAddressNV.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbAddressNV.Lines = new string[0];
+            this.txbAddressNV.Location = new System.Drawing.Point(204, 239);
+            this.txbAddressNV.MaxLength = 32767;
+            this.txbAddressNV.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbAddressNV.Modified = false;
+            this.txbAddressNV.Multiline = false;
+            this.txbAddressNV.Name = "txbAddressNV";
+            stateProperties65.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties65.FillColor = System.Drawing.Color.Empty;
+            stateProperties65.ForeColor = System.Drawing.Color.Empty;
+            stateProperties65.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbAddressNV.OnActiveState = stateProperties65;
+            stateProperties66.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties66.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties66.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbAddressNV.OnDisabledState = stateProperties66;
+            stateProperties67.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties67.FillColor = System.Drawing.Color.Empty;
+            stateProperties67.ForeColor = System.Drawing.Color.Empty;
+            stateProperties67.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbAddressNV.OnHoverState = stateProperties67;
+            stateProperties68.BorderColor = System.Drawing.Color.Silver;
+            stateProperties68.FillColor = System.Drawing.Color.White;
+            stateProperties68.ForeColor = System.Drawing.Color.Empty;
+            stateProperties68.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbAddressNV.OnIdleState = stateProperties68;
+            this.txbAddressNV.Padding = new System.Windows.Forms.Padding(3);
+            this.txbAddressNV.PasswordChar = '\0';
+            this.txbAddressNV.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbAddressNV.PlaceholderText = "";
+            this.txbAddressNV.ReadOnly = false;
+            this.txbAddressNV.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbAddressNV.SelectedText = "";
+            this.txbAddressNV.SelectionLength = 0;
+            this.txbAddressNV.SelectionStart = 0;
+            this.txbAddressNV.ShortcutsEnabled = true;
+            this.txbAddressNV.Size = new System.Drawing.Size(584, 45);
+            this.txbAddressNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbAddressNV.TabIndex = 42;
+            this.txbAddressNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbAddressNV.TextMarginBottom = 0;
+            this.txbAddressNV.TextMarginLeft = 3;
+            this.txbAddressNV.TextMarginTop = 0;
+            this.txbAddressNV.TextPlaceholder = "";
+            this.txbAddressNV.UseSystemPasswordChar = false;
+            this.txbAddressNV.WordWrap = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(60, 250);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(133, 26);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Địa chỉ liên lạc:";
+            // 
+            // txbFullName
+            // 
+            this.txbFullName.AcceptsReturn = false;
+            this.txbFullName.AcceptsTab = false;
+            this.txbFullName.AnimationSpeed = 200;
+            this.txbFullName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbFullName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbFullName.BackColor = System.Drawing.Color.White;
+            this.txbFullName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbFullName.BackgroundImage")));
+            this.txbFullName.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbFullName.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbFullName.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbFullName.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbFullName.BorderRadius = 10;
+            this.txbFullName.BorderThickness = 1;
+            this.txbFullName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbFullName.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbFullName.DefaultText = "";
+            this.txbFullName.FillColor = System.Drawing.Color.White;
+            this.txbFullName.HideSelection = true;
+            this.txbFullName.IconLeft = null;
+            this.txbFullName.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbFullName.IconPadding = 10;
+            this.txbFullName.IconRight = null;
+            this.txbFullName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbFullName.Lines = new string[0];
+            this.txbFullName.Location = new System.Drawing.Point(204, 110);
+            this.txbFullName.MaxLength = 32767;
+            this.txbFullName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbFullName.Modified = false;
+            this.txbFullName.Multiline = false;
+            this.txbFullName.Name = "txbFullName";
+            stateProperties69.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties69.FillColor = System.Drawing.Color.Empty;
+            stateProperties69.ForeColor = System.Drawing.Color.Empty;
+            stateProperties69.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbFullName.OnActiveState = stateProperties69;
+            stateProperties70.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties70.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties70.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties70.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbFullName.OnDisabledState = stateProperties70;
+            stateProperties71.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties71.FillColor = System.Drawing.Color.Empty;
+            stateProperties71.ForeColor = System.Drawing.Color.Empty;
+            stateProperties71.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbFullName.OnHoverState = stateProperties71;
+            stateProperties72.BorderColor = System.Drawing.Color.Silver;
+            stateProperties72.FillColor = System.Drawing.Color.White;
+            stateProperties72.ForeColor = System.Drawing.Color.Empty;
+            stateProperties72.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbFullName.OnIdleState = stateProperties72;
+            this.txbFullName.Padding = new System.Windows.Forms.Padding(3);
+            this.txbFullName.PasswordChar = '\0';
+            this.txbFullName.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbFullName.PlaceholderText = "";
+            this.txbFullName.ReadOnly = false;
+            this.txbFullName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbFullName.SelectedText = "";
+            this.txbFullName.SelectionLength = 0;
+            this.txbFullName.SelectionStart = 0;
+            this.txbFullName.ShortcutsEnabled = true;
+            this.txbFullName.Size = new System.Drawing.Size(584, 45);
+            this.txbFullName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbFullName.TabIndex = 40;
+            this.txbFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbFullName.TextMarginBottom = 0;
+            this.txbFullName.TextMarginLeft = 3;
+            this.txbFullName.TextMarginTop = 0;
+            this.txbFullName.TextPlaceholder = "";
+            this.txbFullName.UseSystemPasswordChar = false;
+            this.txbFullName.WordWrap = true;
+            // 
+            // txbPhone
+            // 
+            this.txbPhone.AcceptsReturn = false;
+            this.txbPhone.AcceptsTab = false;
+            this.txbPhone.AnimationSpeed = 200;
+            this.txbPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbPhone.BackColor = System.Drawing.Color.White;
+            this.txbPhone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbPhone.BackgroundImage")));
+            this.txbPhone.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbPhone.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbPhone.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbPhone.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbPhone.BorderRadius = 10;
+            this.txbPhone.BorderThickness = 1;
+            this.txbPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbPhone.DefaultText = "";
+            this.txbPhone.FillColor = System.Drawing.Color.White;
+            this.txbPhone.HideSelection = true;
+            this.txbPhone.IconLeft = null;
+            this.txbPhone.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPhone.IconPadding = 10;
+            this.txbPhone.IconRight = null;
+            this.txbPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPhone.Lines = new string[0];
+            this.txbPhone.Location = new System.Drawing.Point(564, 175);
+            this.txbPhone.MaxLength = 32767;
+            this.txbPhone.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbPhone.Modified = false;
+            this.txbPhone.Multiline = false;
+            this.txbPhone.Name = "txbPhone";
+            stateProperties73.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties73.FillColor = System.Drawing.Color.Empty;
+            stateProperties73.ForeColor = System.Drawing.Color.Empty;
+            stateProperties73.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPhone.OnActiveState = stateProperties73;
+            stateProperties74.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties74.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties74.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbPhone.OnDisabledState = stateProperties74;
+            stateProperties75.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties75.FillColor = System.Drawing.Color.Empty;
+            stateProperties75.ForeColor = System.Drawing.Color.Empty;
+            stateProperties75.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPhone.OnHoverState = stateProperties75;
+            stateProperties76.BorderColor = System.Drawing.Color.Silver;
+            stateProperties76.FillColor = System.Drawing.Color.White;
+            stateProperties76.ForeColor = System.Drawing.Color.Empty;
+            stateProperties76.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPhone.OnIdleState = stateProperties76;
+            this.txbPhone.Padding = new System.Windows.Forms.Padding(3);
+            this.txbPhone.PasswordChar = '\0';
+            this.txbPhone.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbPhone.PlaceholderText = "";
+            this.txbPhone.ReadOnly = false;
+            this.txbPhone.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbPhone.SelectedText = "";
+            this.txbPhone.SelectionLength = 0;
+            this.txbPhone.SelectionStart = 0;
+            this.txbPhone.ShortcutsEnabled = true;
+            this.txbPhone.Size = new System.Drawing.Size(244, 45);
+            this.txbPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbPhone.TabIndex = 39;
+            this.txbPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbPhone.TextMarginBottom = 0;
+            this.txbPhone.TextMarginLeft = 3;
+            this.txbPhone.TextMarginTop = 0;
+            this.txbPhone.TextPlaceholder = "";
+            this.txbPhone.UseSystemPasswordChar = false;
+            this.txbPhone.WordWrap = true;
+            // 
+            // cbbSex
+            // 
+            this.cbbSex.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSex.FormattingEnabled = true;
+            this.cbbSex.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ ",
+            "Khác"});
+            this.cbbSex.Location = new System.Drawing.Point(204, 179);
+            this.cbbSex.Name = "cbbSex";
+            this.cbbSex.Size = new System.Drawing.Size(168, 34);
+            this.cbbSex.TabIndex = 38;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(437, 180);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(100, 26);
+            this.labelControl5.TabIndex = 37;
+            this.labelControl5.Text = "SĐT liên lạc:";
+            // 
+            // imageNhanVien
+            // 
+            this.imageNhanVien.Image = global::Qly_NhaHang.Properties.Resources.Food0;
+            this.imageNhanVien.Location = new System.Drawing.Point(204, 382);
+            this.imageNhanVien.Name = "imageNhanVien";
+            this.imageNhanVien.Size = new System.Drawing.Size(144, 166);
+            this.imageNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageNhanVien.TabIndex = 36;
+            this.imageNhanVien.TabStop = false;
+            this.imageNhanVien.Click += new System.EventHandler(this.imageNhanVien_Click);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(73, 454);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(121, 26);
+            this.labelControl6.TabIndex = 35;
+            this.labelControl6.Text = "Ảnh minh họa:";
+            // 
+            // txbIDNhanVien
+            // 
+            this.txbIDNhanVien.AcceptsReturn = false;
+            this.txbIDNhanVien.AcceptsTab = false;
+            this.txbIDNhanVien.AnimationSpeed = 200;
+            this.txbIDNhanVien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbIDNhanVien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbIDNhanVien.BackColor = System.Drawing.Color.White;
+            this.txbIDNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbIDNhanVien.BackgroundImage")));
+            this.txbIDNhanVien.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbIDNhanVien.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbIDNhanVien.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbIDNhanVien.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbIDNhanVien.BorderRadius = 10;
+            this.txbIDNhanVien.BorderThickness = 1;
+            this.txbIDNhanVien.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbIDNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbIDNhanVien.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIDNhanVien.DefaultText = "";
+            this.txbIDNhanVien.FillColor = System.Drawing.Color.White;
+            this.txbIDNhanVien.HideSelection = true;
+            this.txbIDNhanVien.IconLeft = null;
+            this.txbIDNhanVien.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbIDNhanVien.IconPadding = 10;
+            this.txbIDNhanVien.IconRight = null;
+            this.txbIDNhanVien.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbIDNhanVien.Lines = new string[0];
+            this.txbIDNhanVien.Location = new System.Drawing.Point(204, 31);
+            this.txbIDNhanVien.MaxLength = 32767;
+            this.txbIDNhanVien.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbIDNhanVien.Modified = false;
+            this.txbIDNhanVien.Multiline = false;
+            this.txbIDNhanVien.Name = "txbIDNhanVien";
+            stateProperties77.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties77.FillColor = System.Drawing.Color.Empty;
+            stateProperties77.ForeColor = System.Drawing.Color.Empty;
+            stateProperties77.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIDNhanVien.OnActiveState = stateProperties77;
+            stateProperties78.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties78.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties78.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIDNhanVien.OnDisabledState = stateProperties78;
+            stateProperties79.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties79.FillColor = System.Drawing.Color.Empty;
+            stateProperties79.ForeColor = System.Drawing.Color.Empty;
+            stateProperties79.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIDNhanVien.OnHoverState = stateProperties79;
+            stateProperties80.BorderColor = System.Drawing.Color.Silver;
+            stateProperties80.FillColor = System.Drawing.Color.White;
+            stateProperties80.ForeColor = System.Drawing.Color.Empty;
+            stateProperties80.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIDNhanVien.OnIdleState = stateProperties80;
+            this.txbIDNhanVien.Padding = new System.Windows.Forms.Padding(3);
+            this.txbIDNhanVien.PasswordChar = '\0';
+            this.txbIDNhanVien.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbIDNhanVien.PlaceholderText = "";
+            this.txbIDNhanVien.ReadOnly = false;
+            this.txbIDNhanVien.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbIDNhanVien.SelectedText = "";
+            this.txbIDNhanVien.SelectionLength = 0;
+            this.txbIDNhanVien.SelectionStart = 0;
+            this.txbIDNhanVien.ShortcutsEnabled = true;
+            this.txbIDNhanVien.Size = new System.Drawing.Size(584, 45);
+            this.txbIDNhanVien.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbIDNhanVien.TabIndex = 34;
+            this.txbIDNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbIDNhanVien.TextMarginBottom = 0;
+            this.txbIDNhanVien.TextMarginLeft = 3;
+            this.txbIDNhanVien.TextMarginTop = 0;
+            this.txbIDNhanVien.TextPlaceholder = "";
+            this.txbIDNhanVien.UseSystemPasswordChar = false;
+            this.txbIDNhanVien.WordWrap = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(96, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 26);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Họ và tên:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(102, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 26);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Giới tính:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 26);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Mã nhân viên:";
             // 
             // frmAddNhanVien
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 1059);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(854, 932);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmAddNhanVien";
@@ -801,6 +790,7 @@
             this.Text = "Thêm mới nhân viên";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageNhanVien)).EndInit();
@@ -812,7 +802,16 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnClose;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private Bunifu.UI.WinForms.BunifuTextBox txbCCCD;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.UI.WinForms.BunifuTextBox txbAddressNV;
+        private System.Windows.Forms.Label label5;
+        private Bunifu.UI.WinForms.BunifuTextBox txbFullName;
+        private Bunifu.UI.WinForms.BunifuTextBox txbPhone;
         private System.Windows.Forms.ComboBox cbbSex;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.PictureBox imageNhanVien;
@@ -821,15 +820,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Bunifu.UI.WinForms.BunifuTextBox txbAddressNV;
-        private System.Windows.Forms.Label label5;
-        private Bunifu.UI.WinForms.BunifuTextBox txbFullName;
-        private Bunifu.UI.WinForms.BunifuTextBox txbPhone;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnClose;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
-        private System.Windows.Forms.Label label6;
-        private Bunifu.UI.WinForms.BunifuTextBox txbCCCD;
-        private System.Windows.Forms.ComboBox cbbCondition;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

@@ -3,6 +3,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using Qly_NhaHang.GUI_ADD;
 using Qly_NhaHang.Models;
 using Qly_NhaHang.UserControl;
 using System;

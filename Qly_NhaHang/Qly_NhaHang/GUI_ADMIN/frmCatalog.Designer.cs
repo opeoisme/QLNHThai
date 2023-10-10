@@ -166,7 +166,7 @@
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(215, 12);
+            this.labelControl8.Location = new System.Drawing.Point(194, 12);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(180, 29);
             this.labelControl8.TabIndex = 24;

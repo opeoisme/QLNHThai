@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddCatalog));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txbNameIngredient = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txbNameIngredient = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -63,29 +63,103 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(181, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 28);
+            this.label1.Size = new System.Drawing.Size(211, 28);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Danh sách nguyên liệu mới";
+            this.label1.Text = "Loại nguyên liệu mới";
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.labelControl1);
             this.panel3.Controls.Add(this.txbNameIngredient);
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(21, 69);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(574, 110);
             this.panel3.TabIndex = 38;
             // 
-            // label2
+            // labelControl1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tên danh sách";
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(39, 31);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(132, 29);
+            this.labelControl1.TabIndex = 17;
+            this.labelControl1.Text = "Tên danh mục:";
+            // 
+            // txbNameIngredient
+            // 
+            this.txbNameIngredient.AcceptsReturn = false;
+            this.txbNameIngredient.AcceptsTab = false;
+            this.txbNameIngredient.AnimationSpeed = 200;
+            this.txbNameIngredient.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbNameIngredient.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbNameIngredient.BackColor = System.Drawing.Color.White;
+            this.txbNameIngredient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbNameIngredient.BackgroundImage")));
+            this.txbNameIngredient.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbNameIngredient.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbNameIngredient.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbNameIngredient.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbNameIngredient.BorderRadius = 10;
+            this.txbNameIngredient.BorderThickness = 1;
+            this.txbNameIngredient.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbNameIngredient.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNameIngredient.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameIngredient.DefaultText = "";
+            this.txbNameIngredient.FillColor = System.Drawing.Color.White;
+            this.txbNameIngredient.HideSelection = true;
+            this.txbNameIngredient.IconLeft = null;
+            this.txbNameIngredient.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNameIngredient.IconPadding = 10;
+            this.txbNameIngredient.IconRight = null;
+            this.txbNameIngredient.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNameIngredient.Lines = new string[0];
+            this.txbNameIngredient.Location = new System.Drawing.Point(182, 26);
+            this.txbNameIngredient.MaxLength = 32767;
+            this.txbNameIngredient.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbNameIngredient.Modified = false;
+            this.txbNameIngredient.Multiline = false;
+            this.txbNameIngredient.Name = "txbNameIngredient";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameIngredient.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameIngredient.OnIdleState = stateProperties4;
+            this.txbNameIngredient.Padding = new System.Windows.Forms.Padding(3);
+            this.txbNameIngredient.PasswordChar = '\0';
+            this.txbNameIngredient.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbNameIngredient.PlaceholderText = "";
+            this.txbNameIngredient.ReadOnly = false;
+            this.txbNameIngredient.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbNameIngredient.SelectedText = "";
+            this.txbNameIngredient.SelectionLength = 0;
+            this.txbNameIngredient.SelectionStart = 0;
+            this.txbNameIngredient.ShortcutsEnabled = true;
+            this.txbNameIngredient.Size = new System.Drawing.Size(361, 45);
+            this.txbNameIngredient.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbNameIngredient.TabIndex = 15;
+            this.txbNameIngredient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbNameIngredient.TextMarginBottom = 0;
+            this.txbNameIngredient.TextMarginLeft = 3;
+            this.txbNameIngredient.TextMarginTop = 0;
+            this.txbNameIngredient.TextPlaceholder = "";
+            this.txbNameIngredient.UseSystemPasswordChar = false;
+            this.txbNameIngredient.WordWrap = true;
             // 
             // btnClose
             // 
@@ -267,82 +341,10 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txbNameIngredient
-            // 
-            this.txbNameIngredient.AcceptsReturn = false;
-            this.txbNameIngredient.AcceptsTab = false;
-            this.txbNameIngredient.AnimationSpeed = 200;
-            this.txbNameIngredient.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbNameIngredient.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbNameIngredient.BackColor = System.Drawing.Color.Transparent;
-            this.txbNameIngredient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbNameIngredient.BackgroundImage")));
-            this.txbNameIngredient.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbNameIngredient.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbNameIngredient.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbNameIngredient.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbNameIngredient.BorderRadius = 10;
-            this.txbNameIngredient.BorderThickness = 1;
-            this.txbNameIngredient.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbNameIngredient.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameIngredient.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbNameIngredient.DefaultText = "";
-            this.txbNameIngredient.FillColor = System.Drawing.Color.White;
-            this.txbNameIngredient.HideSelection = true;
-            this.txbNameIngredient.IconLeft = null;
-            this.txbNameIngredient.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameIngredient.IconPadding = 10;
-            this.txbNameIngredient.IconRight = null;
-            this.txbNameIngredient.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameIngredient.Lines = new string[0];
-            this.txbNameIngredient.Location = new System.Drawing.Point(182, 26);
-            this.txbNameIngredient.MaxLength = 32767;
-            this.txbNameIngredient.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbNameIngredient.Modified = false;
-            this.txbNameIngredient.Multiline = false;
-            this.txbNameIngredient.Name = "txbNameIngredient";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameIngredient.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameIngredient.OnIdleState = stateProperties4;
-            this.txbNameIngredient.Padding = new System.Windows.Forms.Padding(3);
-            this.txbNameIngredient.PasswordChar = '\0';
-            this.txbNameIngredient.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbNameIngredient.PlaceholderText = "Tên danh sách...";
-            this.txbNameIngredient.ReadOnly = false;
-            this.txbNameIngredient.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbNameIngredient.SelectedText = "";
-            this.txbNameIngredient.SelectionLength = 0;
-            this.txbNameIngredient.SelectionStart = 0;
-            this.txbNameIngredient.ShortcutsEnabled = true;
-            this.txbNameIngredient.Size = new System.Drawing.Size(361, 45);
-            this.txbNameIngredient.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbNameIngredient.TabIndex = 15;
-            this.txbNameIngredient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbNameIngredient.TextMarginBottom = 0;
-            this.txbNameIngredient.TextMarginLeft = 3;
-            this.txbNameIngredient.TextMarginTop = 0;
-            this.txbNameIngredient.TextPlaceholder = "Tên danh sách...";
-            this.txbNameIngredient.UseSystemPasswordChar = false;
-            this.txbNameIngredient.WordWrap = true;
-            // 
             // frmAddCatalog
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 264);
@@ -369,6 +371,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.UI.WinForms.BunifuTextBox txbNameIngredient;
-        private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

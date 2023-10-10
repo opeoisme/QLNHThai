@@ -427,7 +427,6 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\System.Numerics.Vectors.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.exe.config
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddCategory.resources
-D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddNhanVien.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmChangePass.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\itextsharp.dll
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\itextsharp.xml
@@ -559,3 +558,5 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\log4net.dll
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\Newtonsoft.Json.dll
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\log4net.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\Newtonsoft.Json.xml
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddNhanVien.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.GUI_ADMIN.frmDoanhThuThang.resources

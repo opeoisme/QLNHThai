@@ -82,5 +82,47 @@ namespace Qly_NhaHang.DAO
         }
 
 
+
+
+
+
+        public List<DoanhThuThangModel> DoanhThuTheoThang()
+        {
+            DoanhThuThangModel baocaodoanhthu;
+            List<DoanhThuThangModel> lstDoanhThuTheoThang = new List<DoanhThuThangModel>();
+
+            using (var context = new QLNHThaiEntities())
+            {
+                var currentYear = DateTime.Now.Year; // Năm hiện tại
+                var startYear = 2023; // Năm bắt đầu thống kê (có thể thay đổi)
+
+                for (int year = startYear; year <= currentYear; year++)
+                {
+                    for (int month = 1; month <= 12; month++)
+                    {
+                        var startDate = new DateTime(year, month, 1);
+                        var endDate = startDate.AddMonths(1).AddDays(-1);
+
+                        var doanhthuThang = context.FN_DoanhThuTheoThang(startDate, endDate).ToList();
+
+                        baocaodoanhthu = new DoanhThuThangModel();
+                        baocaodoanhthu.THANG = startDate;
+
+                        if (doanhthuThang.Count > 0)
+                        {
+                            baocaodoanhthu.TONGDOANHTHU = doanhthuThang.Sum(doanhthu => doanhthu.TONGDOANHTHU);
+                        }
+                        else
+                        {
+                            baocaodoanhthu.TONGDOANHTHU = 0;
+                        }
+                        lstDoanhThuTheoThang.Add(baocaodoanhthu);
+                    }
+                }
+            }
+
+            return lstDoanhThuTheoThang;
+        }
+
     }
 }

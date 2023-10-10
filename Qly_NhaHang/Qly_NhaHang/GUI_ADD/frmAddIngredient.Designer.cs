@@ -28,28 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddIngredient));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddIngredient));
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txbUnitKidIngre = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txbUnitIngre = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.nmrCountKid = new System.Windows.Forms.NumericUpDown();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.imageIngre = new System.Windows.Forms.PictureBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -60,13 +58,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.nmrPrice_Ingre = new System.Windows.Forms.NumericUpDown();
+            this.cbbUnitIngredient = new System.Windows.Forms.ComboBox();
+            this.cbbUnitKid = new System.Windows.Forms.ComboBox();
+            this.txbCountKid = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.txbPrice = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrCountKid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageIngre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrPrice_Ingre)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,12 +91,12 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.nmrPrice_Ingre);
+            this.panel3.Controls.Add(this.txbPrice);
+            this.panel3.Controls.Add(this.txbCountKid);
+            this.panel3.Controls.Add(this.cbbUnitKid);
+            this.panel3.Controls.Add(this.cbbUnitIngredient);
             this.panel3.Controls.Add(this.labelControl2);
-            this.panel3.Controls.Add(this.txbUnitKidIngre);
-            this.panel3.Controls.Add(this.txbUnitIngre);
             this.panel3.Controls.Add(this.labelControl1);
-            this.panel3.Controls.Add(this.nmrCountKid);
             this.panel3.Controls.Add(this.labelControl5);
             this.panel3.Controls.Add(this.imageIngre);
             this.panel3.Controls.Add(this.labelControl6);
@@ -109,156 +107,18 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(16, 75);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(674, 461);
+            this.panel3.Size = new System.Drawing.Size(674, 508);
             this.panel3.TabIndex = 3;
             // 
-            // txbUnitKidIngre
+            // labelControl2
             // 
-            this.txbUnitKidIngre.AcceptsReturn = false;
-            this.txbUnitKidIngre.AcceptsTab = false;
-            this.txbUnitKidIngre.AnimationSpeed = 200;
-            this.txbUnitKidIngre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbUnitKidIngre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbUnitKidIngre.BackColor = System.Drawing.Color.Transparent;
-            this.txbUnitKidIngre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbUnitKidIngre.BackgroundImage")));
-            this.txbUnitKidIngre.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbUnitKidIngre.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbUnitKidIngre.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbUnitKidIngre.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbUnitKidIngre.BorderRadius = 10;
-            this.txbUnitKidIngre.BorderThickness = 1;
-            this.txbUnitKidIngre.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbUnitKidIngre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbUnitKidIngre.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbUnitKidIngre.DefaultText = "";
-            this.txbUnitKidIngre.FillColor = System.Drawing.Color.White;
-            this.txbUnitKidIngre.HideSelection = true;
-            this.txbUnitKidIngre.IconLeft = null;
-            this.txbUnitKidIngre.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbUnitKidIngre.IconPadding = 10;
-            this.txbUnitKidIngre.IconRight = null;
-            this.txbUnitKidIngre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbUnitKidIngre.Lines = new string[0];
-            this.txbUnitKidIngre.Location = new System.Drawing.Point(474, 168);
-            this.txbUnitKidIngre.MaxLength = 32767;
-            this.txbUnitKidIngre.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbUnitKidIngre.Modified = false;
-            this.txbUnitKidIngre.Multiline = false;
-            this.txbUnitKidIngre.Name = "txbUnitKidIngre";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbUnitKidIngre.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbUnitKidIngre.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbUnitKidIngre.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbUnitKidIngre.OnIdleState = stateProperties4;
-            this.txbUnitKidIngre.Padding = new System.Windows.Forms.Padding(3);
-            this.txbUnitKidIngre.PasswordChar = '\0';
-            this.txbUnitKidIngre.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbUnitKidIngre.PlaceholderText = "ĐVN...";
-            this.txbUnitKidIngre.ReadOnly = false;
-            this.txbUnitKidIngre.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbUnitKidIngre.SelectedText = "";
-            this.txbUnitKidIngre.SelectionLength = 0;
-            this.txbUnitKidIngre.SelectionStart = 0;
-            this.txbUnitKidIngre.ShortcutsEnabled = true;
-            this.txbUnitKidIngre.Size = new System.Drawing.Size(179, 45);
-            this.txbUnitKidIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbUnitKidIngre.TabIndex = 27;
-            this.txbUnitKidIngre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbUnitKidIngre.TextMarginBottom = 0;
-            this.txbUnitKidIngre.TextMarginLeft = 3;
-            this.txbUnitKidIngre.TextMarginTop = 0;
-            this.txbUnitKidIngre.TextPlaceholder = "ĐVN...";
-            this.txbUnitKidIngre.UseSystemPasswordChar = false;
-            this.txbUnitKidIngre.WordWrap = true;
-            // 
-            // txbUnitIngre
-            // 
-            this.txbUnitIngre.AcceptsReturn = false;
-            this.txbUnitIngre.AcceptsTab = false;
-            this.txbUnitIngre.AnimationSpeed = 200;
-            this.txbUnitIngre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbUnitIngre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbUnitIngre.BackColor = System.Drawing.Color.Transparent;
-            this.txbUnitIngre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbUnitIngre.BackgroundImage")));
-            this.txbUnitIngre.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbUnitIngre.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbUnitIngre.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbUnitIngre.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbUnitIngre.BorderRadius = 10;
-            this.txbUnitIngre.BorderThickness = 1;
-            this.txbUnitIngre.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbUnitIngre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbUnitIngre.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbUnitIngre.DefaultText = "";
-            this.txbUnitIngre.FillColor = System.Drawing.Color.White;
-            this.txbUnitIngre.HideSelection = true;
-            this.txbUnitIngre.IconLeft = null;
-            this.txbUnitIngre.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbUnitIngre.IconPadding = 10;
-            this.txbUnitIngre.IconRight = null;
-            this.txbUnitIngre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbUnitIngre.Lines = new string[0];
-            this.txbUnitIngre.Location = new System.Drawing.Point(184, 102);
-            this.txbUnitIngre.MaxLength = 32767;
-            this.txbUnitIngre.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbUnitIngre.Modified = false;
-            this.txbUnitIngre.Multiline = false;
-            this.txbUnitIngre.Name = "txbUnitIngre";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbUnitIngre.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbUnitIngre.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbUnitIngre.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbUnitIngre.OnIdleState = stateProperties8;
-            this.txbUnitIngre.Padding = new System.Windows.Forms.Padding(3);
-            this.txbUnitIngre.PasswordChar = '\0';
-            this.txbUnitIngre.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbUnitIngre.PlaceholderText = "ĐVC...";
-            this.txbUnitIngre.ReadOnly = false;
-            this.txbUnitIngre.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbUnitIngre.SelectedText = "";
-            this.txbUnitIngre.SelectionLength = 0;
-            this.txbUnitIngre.SelectionStart = 0;
-            this.txbUnitIngre.ShortcutsEnabled = true;
-            this.txbUnitIngre.Size = new System.Drawing.Size(141, 45);
-            this.txbUnitIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbUnitIngre.TabIndex = 26;
-            this.txbUnitIngre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbUnitIngre.TextMarginBottom = 0;
-            this.txbUnitIngre.TextMarginLeft = 3;
-            this.txbUnitIngre.TextMarginTop = 0;
-            this.txbUnitIngre.TextPlaceholder = "ĐVC...";
-            this.txbUnitIngre.UseSystemPasswordChar = false;
-            this.txbUnitIngre.WordWrap = true;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(97, 261);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(66, 26);
+            this.labelControl2.TabIndex = 28;
+            this.labelControl2.Text = "Đơn giá ";
             // 
             // labelControl1
             // 
@@ -269,18 +129,6 @@
             this.labelControl1.Size = new System.Drawing.Size(99, 26);
             this.labelControl1.TabIndex = 25;
             this.labelControl1.Text = "Đơn vị nhập";
-            // 
-            // nmrCountKid
-            // 
-            this.nmrCountKid.Location = new System.Drawing.Point(182, 175);
-            this.nmrCountKid.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nmrCountKid.Name = "nmrCountKid";
-            this.nmrCountKid.Size = new System.Drawing.Size(143, 27);
-            this.nmrCountKid.TabIndex = 24;
             // 
             // labelControl5
             // 
@@ -295,7 +143,7 @@
             // imageIngre
             // 
             this.imageIngre.Image = global::Qly_NhaHang.Properties.Resources.Food0;
-            this.imageIngre.Location = new System.Drawing.Point(184, 272);
+            this.imageIngre.Location = new System.Drawing.Point(182, 320);
             this.imageIngre.Name = "imageIngre";
             this.imageIngre.Size = new System.Drawing.Size(169, 167);
             this.imageIngre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -307,7 +155,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(37, 311);
+            this.labelControl6.Location = new System.Drawing.Point(35, 359);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(117, 26);
             this.labelControl6.TabIndex = 21;
@@ -315,6 +163,7 @@
             // 
             // cbbCatalog
             // 
+            this.cbbCatalog.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCatalog.FormattingEnabled = true;
             this.cbbCatalog.Location = new System.Drawing.Point(474, 111);
             this.cbbCatalog.Name = "cbbCatalog";
@@ -328,7 +177,7 @@
             this.txbNameIngre.AnimationSpeed = 200;
             this.txbNameIngre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txbNameIngre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbNameIngre.BackColor = System.Drawing.Color.Transparent;
+            this.txbNameIngre.BackColor = System.Drawing.Color.White;
             this.txbNameIngre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbNameIngre.BackgroundImage")));
             this.txbNameIngre.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txbNameIngre.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -377,7 +226,7 @@
             this.txbNameIngre.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameIngre.PasswordChar = '\0';
             this.txbNameIngre.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbNameIngre.PlaceholderText = "Tên sản phẩm...";
+            this.txbNameIngre.PlaceholderText = "";
             this.txbNameIngre.ReadOnly = false;
             this.txbNameIngre.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbNameIngre.SelectedText = "";
@@ -385,13 +234,13 @@
             this.txbNameIngre.SelectionStart = 0;
             this.txbNameIngre.ShortcutsEnabled = true;
             this.txbNameIngre.Size = new System.Drawing.Size(471, 45);
-            this.txbNameIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txbNameIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameIngre.TabIndex = 15;
             this.txbNameIngre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txbNameIngre.TextMarginBottom = 0;
             this.txbNameIngre.TextMarginLeft = 3;
             this.txbNameIngre.TextMarginTop = 0;
-            this.txbNameIngre.TextPlaceholder = "Tên sản phẩm...";
+            this.txbNameIngre.TextPlaceholder = "";
             this.txbNameIngre.UseSystemPasswordChar = false;
             this.txbNameIngre.WordWrap = true;
             // 
@@ -409,7 +258,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 111);
+            this.label3.Location = new System.Drawing.Point(16, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 24);
             this.label3.TabIndex = 4;
@@ -472,7 +321,7 @@
             this.btnClose.IdleIconLeftImage = null;
             this.btnClose.IdleIconRightImage = null;
             this.btnClose.IndicateFocus = false;
-            this.btnClose.Location = new System.Drawing.Point(562, 566);
+            this.btnClose.Location = new System.Drawing.Point(562, 604);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnClose.OnDisabledState.BorderRadius = 15;
@@ -562,7 +411,7 @@
             this.btnSave.IdleIconLeftImage = null;
             this.btnSave.IdleIconRightImage = null;
             this.btnSave.IndicateFocus = false;
-            this.btnSave.Location = new System.Drawing.Point(405, 566);
+            this.btnSave.Location = new System.Drawing.Point(405, 604);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.OnDisabledState.BorderRadius = 15;
@@ -605,33 +454,205 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // labelControl2
+            // cbbUnitIngredient
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(37, 227);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(66, 26);
-            this.labelControl2.TabIndex = 28;
-            this.labelControl2.Text = "Đơn giá ";
+            this.cbbUnitIngredient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbUnitIngredient.FormattingEnabled = true;
+            this.cbbUnitIngredient.Items.AddRange(new object[] {
+            "gram",
+            "viên",
+            "KG",
+            "vắt",
+            "ml",
+            "Lít",
+            "Lọ",
+            "psc",
+            "lon",
+            "ly",
+            "chai",
+            "Thùng"});
+            this.cbbUnitIngredient.Location = new System.Drawing.Point(184, 108);
+            this.cbbUnitIngredient.Name = "cbbUnitIngredient";
+            this.cbbUnitIngredient.Size = new System.Drawing.Size(155, 27);
+            this.cbbUnitIngredient.TabIndex = 38;
             // 
-            // nmrPrice_Ingre
+            // cbbUnitKid
             // 
-            this.nmrPrice_Ingre.Location = new System.Drawing.Point(182, 226);
-            this.nmrPrice_Ingre.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nmrPrice_Ingre.Name = "nmrPrice_Ingre";
-            this.nmrPrice_Ingre.Size = new System.Drawing.Size(143, 27);
-            this.nmrPrice_Ingre.TabIndex = 29;
+            this.cbbUnitKid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbUnitKid.FormattingEnabled = true;
+            this.cbbUnitKid.Items.AddRange(new object[] {
+            "gram",
+            "viên",
+            "KG",
+            "vắt",
+            "ml",
+            "Lít",
+            "Lọ",
+            "psc",
+            "lon",
+            "ly",
+            "chai",
+            "Thùng"});
+            this.cbbUnitKid.Location = new System.Drawing.Point(474, 175);
+            this.cbbUnitKid.Name = "cbbUnitKid";
+            this.cbbUnitKid.Size = new System.Drawing.Size(179, 27);
+            this.cbbUnitKid.TabIndex = 39;
+            // 
+            // txbCountKid
+            // 
+            this.txbCountKid.AcceptsReturn = false;
+            this.txbCountKid.AcceptsTab = false;
+            this.txbCountKid.AnimationSpeed = 200;
+            this.txbCountKid.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbCountKid.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbCountKid.BackColor = System.Drawing.Color.White;
+            this.txbCountKid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbCountKid.BackgroundImage")));
+            this.txbCountKid.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbCountKid.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbCountKid.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbCountKid.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbCountKid.BorderRadius = 10;
+            this.txbCountKid.BorderThickness = 1;
+            this.txbCountKid.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbCountKid.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbCountKid.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbCountKid.DefaultText = "";
+            this.txbCountKid.FillColor = System.Drawing.Color.White;
+            this.txbCountKid.HideSelection = true;
+            this.txbCountKid.IconLeft = null;
+            this.txbCountKid.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbCountKid.IconPadding = 10;
+            this.txbCountKid.IconRight = null;
+            this.txbCountKid.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbCountKid.Lines = new string[0];
+            this.txbCountKid.Location = new System.Drawing.Point(184, 171);
+            this.txbCountKid.MaxLength = 32767;
+            this.txbCountKid.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbCountKid.Modified = false;
+            this.txbCountKid.Multiline = false;
+            this.txbCountKid.Name = "txbCountKid";
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbCountKid.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbCountKid.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbCountKid.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbCountKid.OnIdleState = stateProperties8;
+            this.txbCountKid.Padding = new System.Windows.Forms.Padding(3);
+            this.txbCountKid.PasswordChar = '\0';
+            this.txbCountKid.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbCountKid.PlaceholderText = "";
+            this.txbCountKid.ReadOnly = false;
+            this.txbCountKid.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbCountKid.SelectedText = "";
+            this.txbCountKid.SelectionLength = 0;
+            this.txbCountKid.SelectionStart = 0;
+            this.txbCountKid.ShortcutsEnabled = true;
+            this.txbCountKid.Size = new System.Drawing.Size(155, 45);
+            this.txbCountKid.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbCountKid.TabIndex = 40;
+            this.txbCountKid.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbCountKid.TextMarginBottom = 0;
+            this.txbCountKid.TextMarginLeft = 3;
+            this.txbCountKid.TextMarginTop = 0;
+            this.txbCountKid.TextPlaceholder = "";
+            this.txbCountKid.UseSystemPasswordChar = false;
+            this.txbCountKid.WordWrap = true;
+            // 
+            // txbPrice
+            // 
+            this.txbPrice.AcceptsReturn = false;
+            this.txbPrice.AcceptsTab = false;
+            this.txbPrice.AnimationSpeed = 200;
+            this.txbPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbPrice.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbPrice.BackColor = System.Drawing.Color.White;
+            this.txbPrice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbPrice.BackgroundImage")));
+            this.txbPrice.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbPrice.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbPrice.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbPrice.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbPrice.BorderRadius = 10;
+            this.txbPrice.BorderThickness = 1;
+            this.txbPrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPrice.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbPrice.DefaultText = "";
+            this.txbPrice.FillColor = System.Drawing.Color.White;
+            this.txbPrice.HideSelection = true;
+            this.txbPrice.IconLeft = null;
+            this.txbPrice.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPrice.IconPadding = 10;
+            this.txbPrice.IconRight = null;
+            this.txbPrice.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPrice.Lines = new string[0];
+            this.txbPrice.Location = new System.Drawing.Point(182, 242);
+            this.txbPrice.MaxLength = 32767;
+            this.txbPrice.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbPrice.Modified = false;
+            this.txbPrice.Multiline = false;
+            this.txbPrice.Name = "txbPrice";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPrice.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbPrice.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPrice.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPrice.OnIdleState = stateProperties4;
+            this.txbPrice.Padding = new System.Windows.Forms.Padding(3);
+            this.txbPrice.PasswordChar = '\0';
+            this.txbPrice.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbPrice.PlaceholderText = "";
+            this.txbPrice.ReadOnly = false;
+            this.txbPrice.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbPrice.SelectedText = "";
+            this.txbPrice.SelectionLength = 0;
+            this.txbPrice.SelectionStart = 0;
+            this.txbPrice.ShortcutsEnabled = true;
+            this.txbPrice.Size = new System.Drawing.Size(157, 45);
+            this.txbPrice.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbPrice.TabIndex = 41;
+            this.txbPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbPrice.TextMarginBottom = 0;
+            this.txbPrice.TextMarginLeft = 3;
+            this.txbPrice.TextMarginTop = 0;
+            this.txbPrice.TextPlaceholder = "";
+            this.txbPrice.UseSystemPasswordChar = false;
+            this.txbPrice.WordWrap = true;
             // 
             // frmAddIngredient
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 625);
+            this.ClientSize = new System.Drawing.Size(717, 662);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
@@ -643,9 +664,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrCountKid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageIngre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrPrice_Ingre)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,13 +682,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Bunifu.UI.WinForms.BunifuTextBox txbUnitKidIngre;
-        private Bunifu.UI.WinForms.BunifuTextBox txbUnitIngre;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.NumericUpDown nmrCountKid;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnClose;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
-        private System.Windows.Forms.NumericUpDown nmrPrice_Ingre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.ComboBox cbbUnitKid;
+        private System.Windows.Forms.ComboBox cbbUnitIngredient;
+        private Bunifu.UI.WinForms.BunifuTextBox txbPrice;
+        private Bunifu.UI.WinForms.BunifuTextBox txbCountKid;
     }
 }

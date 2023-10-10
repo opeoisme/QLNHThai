@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddCategory));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txbNameCategory = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txbNameCategory = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -67,26 +67,89 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Danh sách sản phẩm mới";
             // 
-            // panel3
+            // labelControl1
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txbNameCategory);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(17, 70);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(574, 110);
-            this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(36, 29);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(132, 29);
+            this.labelControl1.TabIndex = 17;
+            this.labelControl1.Text = "Tên danh mục:";
             // 
-            // label2
+            // txbNameCategory
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tên danh sách";
+            this.txbNameCategory.AcceptsReturn = false;
+            this.txbNameCategory.AcceptsTab = false;
+            this.txbNameCategory.AnimationSpeed = 200;
+            this.txbNameCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbNameCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbNameCategory.BackColor = System.Drawing.Color.White;
+            this.txbNameCategory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbNameCategory.BackgroundImage")));
+            this.txbNameCategory.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbNameCategory.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbNameCategory.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbNameCategory.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbNameCategory.BorderRadius = 10;
+            this.txbNameCategory.BorderThickness = 1;
+            this.txbNameCategory.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbNameCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNameCategory.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameCategory.DefaultText = "";
+            this.txbNameCategory.FillColor = System.Drawing.Color.White;
+            this.txbNameCategory.HideSelection = true;
+            this.txbNameCategory.IconLeft = null;
+            this.txbNameCategory.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNameCategory.IconPadding = 10;
+            this.txbNameCategory.IconRight = null;
+            this.txbNameCategory.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNameCategory.Lines = new string[0];
+            this.txbNameCategory.Location = new System.Drawing.Point(182, 26);
+            this.txbNameCategory.MaxLength = 32767;
+            this.txbNameCategory.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbNameCategory.Modified = false;
+            this.txbNameCategory.Multiline = false;
+            this.txbNameCategory.Name = "txbNameCategory";
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameCategory.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameCategory.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameCategory.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameCategory.OnIdleState = stateProperties8;
+            this.txbNameCategory.Padding = new System.Windows.Forms.Padding(3);
+            this.txbNameCategory.PasswordChar = '\0';
+            this.txbNameCategory.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbNameCategory.PlaceholderText = "";
+            this.txbNameCategory.ReadOnly = false;
+            this.txbNameCategory.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbNameCategory.SelectedText = "";
+            this.txbNameCategory.SelectionLength = 0;
+            this.txbNameCategory.SelectionStart = 0;
+            this.txbNameCategory.ShortcutsEnabled = true;
+            this.txbNameCategory.Size = new System.Drawing.Size(361, 45);
+            this.txbNameCategory.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbNameCategory.TabIndex = 15;
+            this.txbNameCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbNameCategory.TextMarginBottom = 0;
+            this.txbNameCategory.TextMarginLeft = 3;
+            this.txbNameCategory.TextMarginTop = 0;
+            this.txbNameCategory.TextPlaceholder = "";
+            this.txbNameCategory.UseSystemPasswordChar = false;
+            this.txbNameCategory.WordWrap = true;
             // 
             // btnClose
             // 
@@ -268,82 +331,21 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txbNameCategory
+            // panel3
             // 
-            this.txbNameCategory.AcceptsReturn = false;
-            this.txbNameCategory.AcceptsTab = false;
-            this.txbNameCategory.AnimationSpeed = 200;
-            this.txbNameCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbNameCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbNameCategory.BackColor = System.Drawing.Color.Transparent;
-            this.txbNameCategory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbNameCategory.BackgroundImage")));
-            this.txbNameCategory.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbNameCategory.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbNameCategory.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbNameCategory.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbNameCategory.BorderRadius = 10;
-            this.txbNameCategory.BorderThickness = 1;
-            this.txbNameCategory.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbNameCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameCategory.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbNameCategory.DefaultText = "";
-            this.txbNameCategory.FillColor = System.Drawing.Color.White;
-            this.txbNameCategory.HideSelection = true;
-            this.txbNameCategory.IconLeft = null;
-            this.txbNameCategory.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameCategory.IconPadding = 10;
-            this.txbNameCategory.IconRight = null;
-            this.txbNameCategory.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameCategory.Lines = new string[0];
-            this.txbNameCategory.Location = new System.Drawing.Point(182, 26);
-            this.txbNameCategory.MaxLength = 32767;
-            this.txbNameCategory.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbNameCategory.Modified = false;
-            this.txbNameCategory.Multiline = false;
-            this.txbNameCategory.Name = "txbNameCategory";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameCategory.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameCategory.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameCategory.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameCategory.OnIdleState = stateProperties8;
-            this.txbNameCategory.Padding = new System.Windows.Forms.Padding(3);
-            this.txbNameCategory.PasswordChar = '\0';
-            this.txbNameCategory.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbNameCategory.PlaceholderText = "Tên danh sách...";
-            this.txbNameCategory.ReadOnly = false;
-            this.txbNameCategory.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbNameCategory.SelectedText = "";
-            this.txbNameCategory.SelectionLength = 0;
-            this.txbNameCategory.SelectionStart = 0;
-            this.txbNameCategory.ShortcutsEnabled = true;
-            this.txbNameCategory.Size = new System.Drawing.Size(361, 45);
-            this.txbNameCategory.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txbNameCategory.TabIndex = 15;
-            this.txbNameCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txbNameCategory.TextMarginBottom = 0;
-            this.txbNameCategory.TextMarginLeft = 3;
-            this.txbNameCategory.TextMarginTop = 0;
-            this.txbNameCategory.TextPlaceholder = "Tên danh sách...";
-            this.txbNameCategory.UseSystemPasswordChar = false;
-            this.txbNameCategory.WordWrap = true;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.labelControl1);
+            this.panel3.Controls.Add(this.txbNameCategory);
+            this.panel3.Location = new System.Drawing.Point(17, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(574, 110);
+            this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // frmAddCategory
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 264);
@@ -366,10 +368,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
         private Bunifu.UI.WinForms.BunifuTextBox txbNameCategory;
-        private System.Windows.Forms.Label label2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnClose;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.Panel panel3;
     }
 }

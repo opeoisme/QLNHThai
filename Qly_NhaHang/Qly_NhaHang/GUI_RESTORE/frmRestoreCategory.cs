@@ -70,14 +70,8 @@ namespace Qly_NhaHang
                         if (categoryToUpdate != null)
                         {
                             categoryToUpdate.condition_Category = "Được sử dụng";
-
-                            // Đánh dấu đối tượng là thay đổi
                             dbContext.Entry(categoryToUpdate).State = EntityState.Modified;
-
-                            // Lưu thay đổi
                             dbContext.SaveChanges();
-
-                            // Nạp lại dữ liệu sau khi cập nhật
                             LoadFormCategory();
                             XtraMessageBox.Show("Được đưa vào kinh doanh !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -110,8 +104,6 @@ namespace Qly_NhaHang
             {
                 txbIdCategory.Text = selectedCategory.id_Category.ToString();
                 txbNameCategory.Text = selectedCategory.name_Category;
-                cbbConditionCategory.Text = selectedCategory.condition_Category.ToString();
-
             }
         }
     }

@@ -20,7 +20,7 @@ namespace Qly_NhaHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQuanly());
+            Application.Run(new frmLogin());
             if (Environment.OSVersion.Version.Major >= 6)
             {
                 SetProcessDPIAware();

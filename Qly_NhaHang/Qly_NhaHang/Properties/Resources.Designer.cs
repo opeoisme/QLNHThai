@@ -73,6 +73,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10219193_profit_chart_growth_increase_income_icon {
+            get {
+                object obj = ResourceManager.GetObject("_10219193_profit_chart_growth_increase_income_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _11025579_transfer_arrow_direction_way_sign_icon {
             get {
                 object obj = ResourceManager.GetObject("_11025579_transfer_arrow_direction_way_sign_icon", resourceCulture);

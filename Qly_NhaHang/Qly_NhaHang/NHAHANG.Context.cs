@@ -60,5 +60,19 @@ namespace Qly_NhaHang
         {
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_TopSanPhamDichVu_Result>("[QLNHThaiEntities].[FN_TopSanPhamDichVu]()");
         }
+    
+        [DbFunction("QLNHThaiEntities", "FN_DoanhThuTheoThang")]
+        public virtual IQueryable<FN_DoanhThuTheoThang_Result> FN_DoanhThuTheoThang(Nullable<System.DateTime> checkIn, Nullable<System.DateTime> checkOut)
+        {
+            var checkInParameter = checkIn.HasValue ?
+                new ObjectParameter("checkIn", checkIn) :
+                new ObjectParameter("checkIn", typeof(System.DateTime));
+    
+            var checkOutParameter = checkOut.HasValue ?
+                new ObjectParameter("checkOut", checkOut) :
+                new ObjectParameter("checkOut", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DoanhThuTheoThang_Result>("[QLNHThaiEntities].[FN_DoanhThuTheoThang](@checkIn, @checkOut)", checkInParameter, checkOutParameter);
+        }
     }
 }

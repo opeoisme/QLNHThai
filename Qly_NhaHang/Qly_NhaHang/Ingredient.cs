@@ -31,7 +31,7 @@ namespace Qly_NhaHang
         public string unitkid_Ingredient { get; set; }
         public Nullable<double> countkid_Ingredient { get; set; }
         public Nullable<int> id_Catalog { get; set; }
-        public double price_Ingredient { get; set; }
+        public Nullable<double> price_Ingredient { get; set; }
     
         public virtual CatalogIngredient CatalogIngredient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

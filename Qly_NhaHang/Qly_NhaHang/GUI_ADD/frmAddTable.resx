@@ -118,18 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txbSeatTable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAZoAAAAtCAYAAACXvq0aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABoSURBVHhe7cNBDQAwCASw+TfFOQNE7EXapA8AAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAC4LUntVtX/0wOL7jLyqGCuCwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="txbNameTable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZoAAAAtCAYAAACXvq0aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHpSURBVHhe7dq/btNQGIdhjx17CR0ZuRJmLoGFa0HiGrgF
-        1jrOP7pnaKZESEEoWBEyUmoFKzLH9EgoYqA0/To9j/QbkuPMr46cAgCeVVmWr2ez2fVkMqlHo1FvZmb2
-        rw3NSO34lBryJufkb+nwcnhosVg0dV33bdv2APAQQzN2u12/XC730+n0NjXlKufljyEy2+02/wQAHqdp
-        mj415XOKzUVOTFGMx+O3qUI/8jMAcJbVatWm2LzPmbm/zQxXHgB4Cvv9fnhv8yVnpiiqqrrrui4fA8D5
-        hj8J5MwUxfABAJ6S0AAQSmgACCU0AIQSGgBCCQ0AoYQGgFBCA0AooQEglNAAEEpoAAglNACEEhoAQgkN
-        AKGEBoBQQgNAKKEBIJTQABBKaAAIJTQAhBIaAEIJDQChhAaAUEIDQCihASCU0AAQSmgACCU0AIQSGgBC
-        CQ0AoYQGgFAnoamqqjsej/kIAM53EprpdHrbNE0+AoDzHA6HfjweNzkzv0Pzbr1ed/kcAM6y3W772Wz2
-        MWemKMqyvEix+dq2bX4EAB5neBUzn8+/p7Zc5czcS1+8TPX5ttlsfnadyw0A/2cITF3X/c3NzS5dXl7l
-        vJxKsblMsflQVdXd8BLHzMzsoRv+WJYacp1a8iJnBQCiFcUvVJU7em1SfZkAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABoSURBVHhe7cNBDQAwCASw+TfFOQNE7EXapA8AAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAC4LUntVtX/0wOL7jLyqGCuCwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

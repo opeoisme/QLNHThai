@@ -125,8 +125,7 @@ namespace Qly_NhaHang
                 txbIdFood.Text = selectedFood.id_Food.ToString();
                 txbNameFood.Text = selectedFood.name_Food;
                 cbbCategory.SelectedValue = selectedFood.id_Category;
-                cbbCondition.Text = selectedFood.condition_Food;
-                nmrPriceFood.Value = (decimal)selectedFood.price_Food;
+                txbPriceFood.Text = String.Format("{0:0,0}", selectedFood.price_Food);
 
                 if (selectedFood.image_Food != null)
                 {

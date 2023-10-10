@@ -38,7 +38,7 @@
             this.btnCategory = new DevExpress.XtraBars.BarButtonItem();
             this.btnDiscount = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRevenue = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRevenueDay = new DevExpress.XtraBars.BarButtonItem();
             this.btnIngredient = new DevExpress.XtraBars.BarButtonItem();
             this.Nhập = new DevExpress.XtraBars.BarButtonItem();
             this.btnImport = new DevExpress.XtraBars.BarButtonItem();
@@ -58,8 +58,11 @@
             this.btnDeleteIngredient = new DevExpress.XtraBars.BarButtonItem();
             this.btnDeleteCatalog = new DevExpress.XtraBars.BarButtonItem();
             this.btnTopFood = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRevenueMonth = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -68,10 +71,10 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -98,7 +101,7 @@
             this.btnCategory,
             this.btnDiscount,
             this.barButtonItem7,
-            this.btnRevenue,
+            this.btnRevenueDay,
             this.btnIngredient,
             this.Nhập,
             this.btnImport,
@@ -117,10 +120,11 @@
             this.btnDeleteDiscount,
             this.btnDeleteIngredient,
             this.btnDeleteCatalog,
-            this.btnTopFood});
+            this.btnTopFood,
+            this.btnRevenueMonth});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 33;
+            this.ribbon.MaxItemId = 34;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 403;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -176,7 +180,7 @@
             // 
             // btnDiscount
             // 
-            this.btnDiscount.Caption = "Danh sách Phụ thu và giảm giá";
+            this.btnDiscount.Caption = "Danh sách Phụ phí";
             this.btnDiscount.Id = 8;
             this.btnDiscount.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._4288575_bank_coin_deposit_money_piggy_icon;
             this.btnDiscount.Name = "btnDiscount";
@@ -193,15 +197,15 @@
             this.barButtonItem7.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // btnRevenue
+            // btnRevenueDay
             // 
-            this.btnRevenue.Caption = "Doanh thu theo ngày";
-            this.btnRevenue.Id = 10;
-            this.btnRevenue.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._1743801_analysis_analytics_chart_graph_report_icon;
-            this.btnRevenue.Name = "btnRevenue";
-            this.btnRevenue.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnRevenueDay.Caption = "Doanh thu theo ngày";
+            this.btnRevenueDay.Id = 10;
+            this.btnRevenueDay.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._1743801_analysis_analytics_chart_graph_report_icon;
+            this.btnRevenueDay.Name = "btnRevenueDay";
+            this.btnRevenueDay.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnRevenue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevenue_ItemClick);
+            this.btnRevenueDay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevenue_ItemClick);
             // 
             // btnIngredient
             // 
@@ -383,10 +387,22 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnTopFood.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTopFood_ItemClick);
             // 
+            // btnRevenueMonth
+            // 
+            this.btnRevenueMonth.Caption = "Doanh thu theo tháng";
+            this.btnRevenueMonth.Id = 33;
+            this.btnRevenueMonth.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._10219193_profit_chart_growth_increase_income_icon;
+            this.btnRevenueMonth.Name = "btnRevenueMonth";
+            this.btnRevenueMonth.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRevenueMonth.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevenueMonth_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
+            this.ribbonPageGroup14,
+            this.ribbonPageGroup15,
             this.ribbonPageGroup2,
             this.ribbonPageGroup7,
             this.ribbonPageGroup6,
@@ -400,11 +416,21 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnFood);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCategory);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnIngredient);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnCatalog);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnRecipe);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Sản phẩm";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnIngredient);
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnCatalog);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "Nguyên liệu";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnRecipe);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "Công thức";
             // 
             // ribbonPageGroup2
             // 
@@ -422,8 +448,9 @@
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnRevenue);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnRevenueDay);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnTopFood);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnRevenueMonth);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Doanh thu báo cáo";
             // 
@@ -437,7 +464,7 @@
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btnDiscount);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Phụ thu và Giảm giá";
+            this.ribbonPageGroup5.Text = "Phụ phí";
             // 
             // ribbonPageGroup9
             // 
@@ -448,10 +475,10 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup10,
+            this.ribbonPageGroup13,
             this.ribbonPageGroup8,
             this.ribbonPageGroup11,
-            this.ribbonPageGroup12,
-            this.ribbonPageGroup13});
+            this.ribbonPageGroup12});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Sản phẩm bị hủy";
             // 
@@ -461,6 +488,13 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.btnDeleteCategory);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Thực phẩm";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnDeleteIngredient);
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnDeleteCatalog);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "Nguyên liệu";
             // 
             // ribbonPageGroup8
             // 
@@ -479,13 +513,6 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.btnDeleteDiscount);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Chương trình";
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnDeleteIngredient);
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnDeleteCatalog);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "Nguyên liệu";
             // 
             // ribbonStatusBar
             // 
@@ -572,7 +599,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.BarButtonItem btnRevenue;
+        private DevExpress.XtraBars.BarButtonItem btnRevenueDay;
         private DevExpress.XtraBars.BarButtonItem btnIngredient;
         private DevExpress.XtraBars.BarButtonItem Nhập;
         private DevExpress.XtraBars.BarButtonItem btnImport;
@@ -605,5 +632,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.BarButtonItem btnDeleteCatalog;
         private DevExpress.XtraBars.BarButtonItem btnTopFood;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.BarButtonItem btnRevenueMonth;
     }
 }

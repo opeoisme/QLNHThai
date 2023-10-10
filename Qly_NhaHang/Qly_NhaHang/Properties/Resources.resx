@@ -214,6 +214,9 @@
   <data name="_100035_restore_system_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\100035_restore_system_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_10219193_profit_chart_growth_increase_income_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10219193_profit_chart_growth_increase_income_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_11025579_transfer_arrow_direction_way_sign_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\11025579_transfer_arrow_direction_way_sign_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

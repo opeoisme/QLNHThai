@@ -22,7 +22,7 @@ namespace Qly_NhaHang
 
         private void btnSaveTable_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txbNameTable.Text) || nmrSeatsTable.Value <= 1 )
+            if (string.IsNullOrEmpty(txbNameTable.Text) || string.IsNullOrWhiteSpace(txbSeatTable.Text) || !int.TryParse(txbSeatTable.Text, out int seatValue) || seatValue <= 1)
             {
                 XtraMessageBox.Show("Vui lòng nhập thông tin hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -30,10 +30,9 @@ namespace Qly_NhaHang
             Tablee newTable = new Tablee
             {
                 name_Table = txbNameTable.Text,
-                seats_Table = (int)nmrSeatsTable.Value,
-                condition_Table = "Được sử dụng", 
+                seats_Table = seatValue,
+                condition_Table = "Được sử dụng",
                 status_Table = "Đang trống"
-
             };
 
             // Thêm đối tượng mới vào cơ sở dữ liệu
@@ -54,6 +53,7 @@ namespace Qly_NhaHang
                 XtraMessageBox.Show("Lỗi khi thêm danh sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {

@@ -24,6 +24,9 @@ namespace Qly_NhaHang
         BAN _ban;
         Bill_DAO _bill;
         private QLNHThaiEntities dbContext;
+        private bool isTruncated = false; // kiểm tra click nút thanh toán
+
+
         public frmOrder()
         {
             InitializeComponent();
@@ -39,6 +42,8 @@ namespace Qly_NhaHang
             LoadFoodFLPN();
             LoadCategoryFLPN();
             LoadBillInfo();  // Load dữ liệu BillInfo
+            List<BillInfoViewModel> billInfoData = GetBillInfoData();
+            previousBillInfoData = billInfoData;
         }
 
         #region method
@@ -78,8 +83,6 @@ namespace Qly_NhaHang
                 }
             }
         }
-
-
         private void DisplayFoodsByCategory(int categoryId)
         {
             using (var dbContext = new QLNHThaiEntities())
@@ -97,7 +100,6 @@ namespace Qly_NhaHang
                 }
             }
         }
-
         public void LoadFoodFLPN()
         {
             using (var context = new QLNHThaiEntities())
@@ -116,9 +118,6 @@ namespace Qly_NhaHang
                 }
             }
         }
-
-
-
         public void LoadBillInfo()
         {
             using (var dbContext = new QLNHThaiEntities())
@@ -155,7 +154,7 @@ namespace Qly_NhaHang
 
         public void LoadFoodFLPNTest()
         {
-            flpnFoodMenu.Controls.Clear(); // Xóa hết các user control cũ trước khi tải dữ liệu mới
+            flpnFoodMenu.Controls.Clear();
             using (var context = new QLNHThaiEntities())
             {
                 var FoodList = (from food in context.Foods
@@ -163,11 +162,8 @@ namespace Qly_NhaHang
                                 on food.id_Category equals category.id_Category
                                 where food.condition_Food == "Được sử dụng" && category.condition_Category == "Được sử dụng"
                                 select food).ToList();
-
-
                 foreach (var monAn in FoodList)
                 {
-                    // Tạo instance của user control và thêm vào FlowLayoutPanel
                     var Foodct = new uctFood(monAn.name_Food, monAn.price_Food, _idBill, GetFoodCount(monAn.id_Food));
                     flpnFoodMenu.Controls.Add(Foodct);
                 }
@@ -229,5 +225,255 @@ namespace Qly_NhaHang
             thanhToanForm.ShowDialog();
             this.Show();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        private List<string> GetInsufficientIngredients()
+        {
+            List<string> insufficientIngredients = new List<string>();
+
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                foreach (var billInfoItem in GetBillInfoData())
+                {
+                    foreach (var recipeItem in dbContext.Recipes.Where(recipe => recipe.id_Food == billInfoItem.id_Food))
+                    {
+                        var ingredient = dbContext.Ingredients.FirstOrDefault(ing => ing.id_Ingredient == recipeItem.id_Ingredient);
+                        if (ingredient != null)
+                        {
+                            int countToSubtract = billInfoItem.count_Food * recipeItem.count_Ingredient;
+                            if (ingredient.count_Ingredient < countToSubtract)
+                            {
+                                insufficientIngredients.Add(billInfoItem.name_Food); 
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return insufficientIngredients;
+        }
+
+        private void ReturnIngredientCounts(List<BillInfoViewModel> removedBillInfoItems)
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                foreach (var billInfoItem in removedBillInfoItems)
+                {
+                    var recipeItems = dbContext.Recipes
+                        .Where(recipe => recipe.id_Food == billInfoItem.id_Food)
+                        .ToList();
+
+                    foreach (var recipeItem in recipeItems)
+                    {
+                        var ingredient = dbContext.Ingredients.FirstOrDefault(ing => ing.id_Ingredient == recipeItem.id_Ingredient);
+                        if (ingredient != null)
+                        {
+                            int countToAddBack = billInfoItem.count_Food * recipeItem.count_Ingredient;
+                            ingredient.count_Ingredient += countToAddBack;
+                        }
+                    }
+                }
+
+                dbContext.SaveChanges();
+            }
+        }
+
+
+        private bool isIngredientSufficient = true;
+
+        private List<BillInfoViewModel> previousBillInfoData = new List<BillInfoViewModel>();
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            List<string> insufficientIngredients = GetInsufficientIngredients();
+
+            if (insufficientIngredients.Count > 0)
+            {
+                string insufficientIngredientsMessage = "Không đủ nguyên liệu cho các món sau:\n" + string.Join(", ", insufficientIngredients);
+                XtraMessageBox.Show(insufficientIngredientsMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Không thực hiện trừ nếu có món không đủ nguyên liệu
+            }
+
+            List<BillInfoViewModel> billInfoData = GetBillInfoData();
+
+            // So sánh phiên bản trước và sau của Bill_Info để xác định những thay đổi
+            var addedBillInfoItems = billInfoData.Except(previousBillInfoData).ToList();
+            var removedBillInfoItems = previousBillInfoData.Except(billInfoData).ToList();
+
+            // Trừ những món đã thêm và cập nhật nguyên liệu
+          //  UpdateIngredientCounts(addedBillInfoItems);
+            UpdateImportInfoCounts(addedBillInfoItems, removedBillInfoItems);
+
+            // Trả lại nguyên liệu cho những món đã bị xóa (nếu cần)
+            ReturnIngredientCounts(removedBillInfoItems);
+
+            isTruncated = true; // Đánh dấu đã thực hiện trừ
+            XtraMessageBox.Show("Đơn hàng đang chế biến", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cập nhật phiên bản trước của Bill_Info
+            previousBillInfoData = billInfoData;
+        }
+
+
+
+
+        private List<BillInfoViewModel> GetBillInfoData()
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                var billInfoData = dbContext.Bill_Info.Where(bi => bi.id_Bill == _idBill)
+                    .Select(f => new BillInfoViewModel
+                    {
+                        id_Bill = f.id_Bill,
+                        id_BillInfo = f.id_BillInfo,
+                        count_Food = f.count_Food,
+                        id_Food = f.id_Food,
+                    })
+                    .ToList();
+                return billInfoData;
+            }
+        }
+      
+
+        private void UpdateImportInfoCounts(List<BillInfoViewModel> addedBillInfoItems, List<BillInfoViewModel> removedBillInfoItems)
+        {
+            using (var dbContext = new QLNHThaiEntities())
+            {
+                // Cập nhật ImportInfo cho các món ăn mới được thêm vào
+                foreach (var billInfoItem in addedBillInfoItems)
+                {
+                    var recipeItems = dbContext.Recipes
+                        .Where(recipe => recipe.id_Food == billInfoItem.id_Food)
+                        .ToList();
+
+                    foreach (var recipeItem in recipeItems)
+                    {
+                        var ingredient = dbContext.Ingredients.FirstOrDefault(ing => ing.id_Ingredient == recipeItem.id_Ingredient);
+                        if (ingredient != null)
+                        {
+                            int countToSubtract = billInfoItem.count_Food * recipeItem.count_Ingredient;
+
+                            if (ingredient.count_Ingredient >= countToSubtract)
+                            {
+                                ingredient.count_Ingredient -= countToSubtract;
+                            }
+                            else
+                            {
+                                isIngredientSufficient = false;
+                            }
+
+                            UpdateImportInfoCountsForIngredient(dbContext, ingredient.id_Ingredient, countToSubtract);
+                        }
+                    }
+                }
+
+                // Cập nhật ImportInfo cho các món ăn bị xóa
+                foreach (var billInfoItem in removedBillInfoItems)
+                {
+                    var recipeItems = dbContext.Recipes
+                        .Where(recipe => recipe.id_Food == billInfoItem.id_Food)
+                        .ToList();
+
+                    foreach (var recipeItem in recipeItems)
+                    {
+                        var ingredient = dbContext.Ingredients.FirstOrDefault(ing => ing.id_Ingredient == recipeItem.id_Ingredient);
+                        if (ingredient != null)
+                        {
+                            int countToReturn = billInfoItem.count_Food * recipeItem.count_Ingredient;
+                            ReturnIngredientCounts(dbContext, ingredient.id_Ingredient, countToReturn);
+                        }
+                    }
+                }
+
+                dbContext.SaveChanges();
+            }
+        }
+
+        private void UpdateImportInfoCountsForIngredient(QLNHThaiEntities dbContext, int idIngredient, int countToSubtract)
+        {
+            var importInfosToUpdate = dbContext.ImportInfoes
+                .Where(ii => ii.id_Ingredient == idIngredient && ii.count_Ingredient > 0)
+                .OrderBy(ii => dbContext.Imports
+                    .Where(i => i.id_Import == ii.id_Import)
+                    .Select(i => i.date_Import)
+                    .FirstOrDefault())
+                .ToList();
+
+            foreach (var importInfoToUpdate in importInfosToUpdate)
+            {
+                int availableCount = importInfoToUpdate.count_Ingredient;
+                int countSubtracted = Math.Min(countToSubtract, availableCount);
+
+                importInfoToUpdate.count_Ingredient -= countSubtracted;
+                countToSubtract -= countSubtracted;
+
+                if (countToSubtract <= 0)
+                {
+                    break;
+                }
+            }
+
+            if (countToSubtract > 0)
+            {
+                UpdateOtherImportInfoCounts(dbContext, idIngredient, countToSubtract);
+            }
+        }
+
+        private void UpdateOtherImportInfoCounts(QLNHThaiEntities dbContext, int idIngredient, int countToSubtract)
+        {
+            var otherImportInfos = dbContext.ImportInfoes
+                .Where(ii => ii.id_Ingredient == idIngredient && ii.count_Ingredient > 0)
+                .ToList();
+
+            foreach (var otherImportInfo in otherImportInfos)
+            {
+                int availableCount = otherImportInfo.count_Ingredient;
+                int countSubtracted = Math.Min(countToSubtract, availableCount);
+
+                otherImportInfo.count_Ingredient -= countSubtracted;
+                countToSubtract -= countSubtracted;
+
+                if (countToSubtract <= 0)
+                {
+                    break;
+                }
+            }
+        }
+
+        private void ReturnIngredientCounts(QLNHThaiEntities dbContext, int idIngredient, int countToReturn)
+        {
+            var importInfosToReturn = dbContext.ImportInfoes
+                .Where(ii => ii.id_Ingredient == idIngredient)
+                .OrderBy(ii => dbContext.Imports
+                    .Where(i => i.id_Import == ii.id_Import)
+                    .Select(i => i.date_Import)
+                    .FirstOrDefault())
+                .ToList();
+
+            foreach (var importInfoToReturn in importInfosToReturn)
+            {
+                int countToAdd = Math.Min(countToReturn, importInfoToReturn.count_Ingredient);
+                importInfoToReturn.count_Ingredient += countToAdd;
+                countToReturn -= countToAdd;
+
+                if (countToReturn <= 0)
+                {
+                    break;
+                }
+            }
+        }
+
+
     }
 }

@@ -170,11 +170,39 @@ GROUP BY sp.id_Food, sp.name_Food
 ORDER BY SOLUONG DESC
 
 
+CREATE FUNCTION dbo.FN_DoanhThuTheoThang
+(
+    @checkIn datetime,
+    @checkOut datetime
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT DATEFROMPARTS(YEAR(DateCheckOut), MONTH(DateCheckOut), 1) AS THANG,
+           SUM(totalPrice_Bill) AS TONGDOANHTHU
+    FROM Bill
+    WHERE CONVERT(date, DateCheckIn ) >= CONVERT(date, @checkIn)
+        AND CONVERT(date, DateCheckOut) <= DATEADD(day, -1, DATEADD(month, DATEDIFF(month, 0, @checkOut) + 1, 0))
+        AND status_Bill = 1
+    GROUP BY YEAR(DateCheckOut), MONTH(DateCheckOut)
+);
 
-select* from Ingredient
-select *from Bill_Info
+SELECT * FROM FN_DoanhThuTheoThang('2023-09-01', '2023-09-30');
 
-select *from Import
+
+select *from Bill
+select* from Ingredient where id_Ingredient > 52 and id_Ingredient < 55 
 select* from ImportInfo
+select *from Food
+
+select *from Recipe
+
+select* from Import
+select *from Ingredient
+
 
 DBCC CHECKIDENT (Import, RESEED, 1);
+
+
+

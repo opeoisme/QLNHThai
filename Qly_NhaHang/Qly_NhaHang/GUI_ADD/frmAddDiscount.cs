@@ -26,31 +26,34 @@ namespace Qly_NhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txbNameDiscount.Text) || nmrPercentDIscount.Value <= 4 || cbbTypeDiscount.SelectedItem == null)
+            if (string.IsNullOrEmpty(txbNameDiscount.Text) || string.IsNullOrEmpty(txbPercent.Text) || cbbTypeDiscount.SelectedItem == null)
             {
                 XtraMessageBox.Show("Vui lòng nhập thông tin hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (!int.TryParse(txbPercent.Text, out int percentValue))
+            {
+                XtraMessageBox.Show("Phần trăm giảm giá không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Discount newDiscount = new Discount
             {
                 name_Discount = txbNameDiscount.Text,
-                percent_Discount = (int)nmrPercentDIscount.Value,
+                percent_Discount = percentValue,
                 condition_Discount = "Được áp dụng",
                 type_Discount = cbbTypeDiscount.Text
-
             };
-
-            // Thêm đối tượng mới vào cơ sở dữ liệu
             try
             {
                 dbContext.Discounts.Add(newDiscount);
                 dbContext.SaveChanges();
-
                 XtraMessageBox.Show("Thêm mới ưu đãi thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 if (Application.OpenForms["frmDiscount"] is frmDiscount discountForm)
                 {
-                    discountForm.LoadFormDiscount(); // Giả sử tên phương thức là LoadFoodData()
+                    discountForm.LoadFormDiscount();
                 }
             }
             catch (Exception ex)
@@ -58,5 +61,6 @@ namespace Qly_NhaHang
                 XtraMessageBox.Show("Lỗi khi thêm danh sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

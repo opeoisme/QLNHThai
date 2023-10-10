@@ -74,36 +74,37 @@ namespace Qly_NhaHang.GUI_ADD
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txbNameIngre.Text) || cbbCatalog.SelectedItem == null || imageIngre.Image == null)
+            if (string.IsNullOrWhiteSpace(txbNameIngre.Text) || cbbCatalog.SelectedItem == null || imageIngre.Image == null || string.IsNullOrWhiteSpace(txbPrice.Text) || string.IsNullOrWhiteSpace(txbCountKid.Text))
             {
                 XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (nmrPrice_Ingre.Value <= 0)
+
+            if (!double.TryParse(txbPrice.Text, out double priceValue) || priceValue <= 0)
             {
                 XtraMessageBox.Show("Vui lòng nhập giá hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (nmrCountKid.Value <= 0)
+            if (!double.TryParse(txbCountKid.Text, out double countKidValue) || countKidValue <= 0)
             {
                 XtraMessageBox.Show("Vui lòng nhập số lượng chuyển đổi hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            // Tạo một đối tượng Food mới
+
+            // Tạo một đối tượng Ingredient mới
             Ingredient newIngredient = new Ingredient
             {
                 name_Ingredient = txbNameIngre.Text,
                 id_Catalog = (int)cbbCatalog.SelectedValue,
                 image_Ingredient = isImageChanged ? ConvertImageToByteArray(imageIngre.Image) : null,
-                countkid_Ingredient = (double)nmrCountKid.Value ,
-                unit_Ingredient = txbUnitIngre.Text,
+                countkid_Ingredient = countKidValue,
+                unit_Ingredient = cbbUnitIngredient.Text,
                 count_Ingredient = 0,
                 status_Ingredient = "Ổn định",
                 condition_Ingredient = "Sử dụng",
-                unitkid_Ingredient = txbUnitKidIngre.Text,
-                price_Ingredient = (float)nmrPrice_Ingre.Value,
-
+                unitkid_Ingredient = cbbUnitKid.Text,
+                price_Ingredient = priceValue,
             };
 
             // Thêm đối tượng mới vào cơ sở dữ liệu
@@ -124,6 +125,7 @@ namespace Qly_NhaHang.GUI_ADD
                 XtraMessageBox.Show("Lỗi khi thêm nguyên liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {

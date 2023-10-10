@@ -70,9 +70,9 @@ namespace Qly_NhaHang
             {
                 txbIdDiscount.Text = selectedDiscount.id_Discount.ToString();
                 txbNameDiscount.Text = selectedDiscount.name_Discount;
-                nmrPercentDiscount.Value = (decimal)selectedDiscount.percent_Discount;
+                txbPercentDiscount.Text = selectedDiscount.percent_Discount.ToString();
                 cbbTypeDiscount.Text = selectedDiscount.type_Discount;
-                cbbConditionDiscount.Text = selectedDiscount.condition_Discount;
+              
             }
         }
 

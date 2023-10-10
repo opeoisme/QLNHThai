@@ -43,20 +43,20 @@
             this.btnPDFCatalog = new System.Windows.Forms.ToolStripButton();
             this.btnCSVCatalog = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbConditionCatalog = new System.Windows.Forms.ComboBox();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txbNameCatalog = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txbIdCatalog = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txbNameCatalog = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.txbIdCatalog = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gctCatalog = new DevExpress.XtraGrid.GridControl();
             this.gvCatalog = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.idCatalog = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameCatalog = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.conditionCatalog = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctCatalog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCatalog)).BeginInit();
@@ -112,38 +112,59 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbbConditionCatalog);
-            this.panel1.Controls.Add(this.labelControl5);
-            this.panel1.Controls.Add(this.txbNameCatalog);
-            this.panel1.Controls.Add(this.txbIdCatalog);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.labelControl1);
             this.panel1.Controls.Add(this.labelControl3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 908);
+            this.panel1.Controls.Add(this.txbNameCatalog);
+            this.panel1.Controls.Add(this.txbIdCatalog);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1436, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1944, 151);
+            this.panel1.Size = new System.Drawing.Size(508, 1025);
             this.panel1.TabIndex = 4;
             // 
-            // cbbConditionCatalog
+            // panel4
             // 
-            this.cbbConditionCatalog.FormattingEnabled = true;
-            this.cbbConditionCatalog.Items.AddRange(new object[] {
-            "Được sử dụng",
-            "Ngưng bán"});
-            this.cbbConditionCatalog.Location = new System.Drawing.Point(641, 25);
-            this.cbbConditionCatalog.Name = "cbbConditionCatalog";
-            this.cbbConditionCatalog.Size = new System.Drawing.Size(399, 27);
-            this.cbbConditionCatalog.TabIndex = 20;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(109)))), ((int)(((byte)(156)))));
+            this.panel4.Controls.Add(this.labelControl8);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(508, 53);
+            this.panel4.TabIndex = 25;
             // 
-            // labelControl5
+            // labelControl8
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(534, 22);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(86, 26);
-            this.labelControl5.TabIndex = 19;
-            this.labelControl5.Text = "Tình trạng";
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(194, 12);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(180, 29);
+            this.labelControl8.TabIndex = 24;
+            this.labelControl8.Text = "Thông tin danh mục";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(19, 205);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(132, 29);
+            this.labelControl1.TabIndex = 20;
+            this.labelControl1.Text = "Tên danh mục:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(19, 132);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(129, 29);
+            this.labelControl3.TabIndex = 19;
+            this.labelControl3.Text = "Mã danh mục: ";
             // 
             // txbNameCatalog
             // 
@@ -152,7 +173,7 @@
             this.txbNameCatalog.AnimationSpeed = 200;
             this.txbNameCatalog.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txbNameCatalog.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbNameCatalog.BackColor = System.Drawing.Color.Transparent;
+            this.txbNameCatalog.BackColor = System.Drawing.Color.White;
             this.txbNameCatalog.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbNameCatalog.BackgroundImage")));
             this.txbNameCatalog.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txbNameCatalog.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -172,7 +193,7 @@
             this.txbNameCatalog.IconRight = null;
             this.txbNameCatalog.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbNameCatalog.Lines = new string[0];
-            this.txbNameCatalog.Location = new System.Drawing.Point(181, 83);
+            this.txbNameCatalog.Location = new System.Drawing.Point(166, 199);
             this.txbNameCatalog.MaxLength = 32767;
             this.txbNameCatalog.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbNameCatalog.Modified = false;
@@ -201,21 +222,21 @@
             this.txbNameCatalog.Padding = new System.Windows.Forms.Padding(3);
             this.txbNameCatalog.PasswordChar = '\0';
             this.txbNameCatalog.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbNameCatalog.PlaceholderText = "Tên danh mục loại sản phẩm...";
+            this.txbNameCatalog.PlaceholderText = "";
             this.txbNameCatalog.ReadOnly = false;
             this.txbNameCatalog.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbNameCatalog.SelectedText = "";
             this.txbNameCatalog.SelectionLength = 0;
             this.txbNameCatalog.SelectionStart = 0;
             this.txbNameCatalog.ShortcutsEnabled = true;
-            this.txbNameCatalog.Size = new System.Drawing.Size(859, 45);
-            this.txbNameCatalog.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txbNameCatalog.Size = new System.Drawing.Size(320, 45);
+            this.txbNameCatalog.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameCatalog.TabIndex = 18;
             this.txbNameCatalog.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txbNameCatalog.TextMarginBottom = 0;
             this.txbNameCatalog.TextMarginLeft = 3;
             this.txbNameCatalog.TextMarginTop = 0;
-            this.txbNameCatalog.TextPlaceholder = "Tên danh mục loại sản phẩm...";
+            this.txbNameCatalog.TextPlaceholder = "";
             this.txbNameCatalog.UseSystemPasswordChar = false;
             this.txbNameCatalog.WordWrap = true;
             // 
@@ -226,7 +247,7 @@
             this.txbIdCatalog.AnimationSpeed = 200;
             this.txbIdCatalog.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txbIdCatalog.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbIdCatalog.BackColor = System.Drawing.Color.Transparent;
+            this.txbIdCatalog.BackColor = System.Drawing.Color.White;
             this.txbIdCatalog.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbIdCatalog.BackgroundImage")));
             this.txbIdCatalog.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txbIdCatalog.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -246,7 +267,7 @@
             this.txbIdCatalog.IconRight = null;
             this.txbIdCatalog.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbIdCatalog.Lines = new string[0];
-            this.txbIdCatalog.Location = new System.Drawing.Point(181, 15);
+            this.txbIdCatalog.Location = new System.Drawing.Point(166, 126);
             this.txbIdCatalog.MaxLength = 32767;
             this.txbIdCatalog.MinimumSize = new System.Drawing.Size(1, 1);
             this.txbIdCatalog.Modified = false;
@@ -275,7 +296,7 @@
             this.txbIdCatalog.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdCatalog.PasswordChar = '\0';
             this.txbIdCatalog.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbIdCatalog.PlaceholderText = "Mã danh mục loại sản phẩm...";
+            this.txbIdCatalog.PlaceholderText = "";
             this.txbIdCatalog.ReadOnly = false;
             this.txbIdCatalog.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbIdCatalog.SelectedText = "";
@@ -283,35 +304,15 @@
             this.txbIdCatalog.SelectionStart = 0;
             this.txbIdCatalog.ShortcutsEnabled = true;
             this.txbIdCatalog.Size = new System.Drawing.Size(320, 45);
-            this.txbIdCatalog.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txbIdCatalog.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdCatalog.TabIndex = 17;
             this.txbIdCatalog.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txbIdCatalog.TextMarginBottom = 0;
             this.txbIdCatalog.TextMarginLeft = 3;
             this.txbIdCatalog.TextMarginTop = 0;
-            this.txbIdCatalog.TextPlaceholder = "Mã danh mục loại sản phẩm...";
+            this.txbIdCatalog.TextPlaceholder = "";
             this.txbIdCatalog.UseSystemPasswordChar = false;
             this.txbIdCatalog.WordWrap = true;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(33, 90);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(117, 26);
-            this.labelControl1.TabIndex = 16;
-            this.labelControl1.Text = "Tên danh mục";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(33, 22);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(111, 26);
-            this.labelControl3.TabIndex = 15;
-            this.labelControl3.Text = "Mã danh mục";
             // 
             // panel2
             // 
@@ -319,7 +320,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1944, 874);
+            this.panel2.Size = new System.Drawing.Size(1436, 1025);
             this.panel2.TabIndex = 5;
             // 
             // gctCatalog
@@ -328,7 +329,7 @@
             this.gctCatalog.Location = new System.Drawing.Point(0, 0);
             this.gctCatalog.MainView = this.gvCatalog;
             this.gctCatalog.Name = "gctCatalog";
-            this.gctCatalog.Size = new System.Drawing.Size(1944, 874);
+            this.gctCatalog.Size = new System.Drawing.Size(1436, 1025);
             this.gctCatalog.TabIndex = 0;
             this.gctCatalog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCatalog});
@@ -341,8 +342,7 @@
             this.gvCatalog.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvCatalog.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.idCatalog,
-            this.nameCatalog,
-            this.conditionCatalog});
+            this.nameCatalog});
             this.gvCatalog.GridControl = this.gctCatalog;
             this.gvCatalog.Name = "gvCatalog";
             this.gvCatalog.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCatalog_FocusedRowChanged);
@@ -367,16 +367,6 @@
             this.nameCatalog.VisibleIndex = 1;
             this.nameCatalog.Width = 112;
             // 
-            // conditionCatalog
-            // 
-            this.conditionCatalog.Caption = "Tình trạng danh mục";
-            this.conditionCatalog.FieldName = "condition_Catalog";
-            this.conditionCatalog.MinWidth = 30;
-            this.conditionCatalog.Name = "conditionCatalog";
-            this.conditionCatalog.Visible = true;
-            this.conditionCatalog.VisibleIndex = 2;
-            this.conditionCatalog.Width = 112;
-            // 
             // frmRestoreCatalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -392,6 +382,8 @@
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctCatalog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCatalog)).EndInit();
@@ -408,17 +400,16 @@
         private System.Windows.Forms.ToolStripButton btnPDFCatalog;
         private System.Windows.Forms.ToolStripButton btnCSVCatalog;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbbConditionCatalog;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private Bunifu.UI.WinForms.BunifuTextBox txbNameCatalog;
         private Bunifu.UI.WinForms.BunifuTextBox txbIdCatalog;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl gctCatalog;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCatalog;
         private DevExpress.XtraGrid.Columns.GridColumn idCatalog;
         private DevExpress.XtraGrid.Columns.GridColumn nameCatalog;
-        private DevExpress.XtraGrid.Columns.GridColumn conditionCatalog;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.Panel panel4;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

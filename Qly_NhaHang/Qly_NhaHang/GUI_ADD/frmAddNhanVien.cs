@@ -73,7 +73,7 @@ namespace Qly_NhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txbIDNhanVien.Text) || string.IsNullOrWhiteSpace(txbFullName.Text) || cbbSex.SelectedItem == null || imageNhanVien.Image == null || cbbCondition.SelectedItem == null || string.IsNullOrWhiteSpace(txbPhone.Text) || string.IsNullOrWhiteSpace(txbAddressNV.Text) || string.IsNullOrWhiteSpace(txbCCCD.Text))
+            if (string.IsNullOrWhiteSpace(txbIDNhanVien.Text) || string.IsNullOrWhiteSpace(txbFullName.Text) || cbbSex.SelectedItem == null || imageNhanVien.Image == null ||  string.IsNullOrWhiteSpace(txbPhone.Text) || string.IsNullOrWhiteSpace(txbAddressNV.Text) || string.IsNullOrWhiteSpace(txbCCCD.Text))
             {
                 XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -96,7 +96,7 @@ namespace Qly_NhaHang
                 address_NV = txbAddressNV.Text,
                 sex_NV = cbbSex.Text,
                 image_NV = isImageChanged ? ConvertImageToByteArray(imageNhanVien.Image) : null,
-                condition_NV = cbbCondition.Text,
+                condition_NV = "Làm việc",
                 pass_NV = "1", // Đặt giá trị mặc định cho pass_NV
                 type_NV = "Nhân viên" // Đặt giá trị mặc định cho type_NV
             };
@@ -120,5 +120,6 @@ namespace Qly_NhaHang
             }
         }
 
+       
     }
 }

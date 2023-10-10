@@ -121,32 +121,27 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txbNameFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAgQAAAAtCAYAAADRPnNBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHmSURBVHhe7dsxittAFIBhlVvuEbZMmZOkzhHS5CyBnCFX
-        SLu2ZMlx72JdeQl4CY4wQQGvcIRR3mQHgtkbWN8Hr7BHrt+PGBcAAK/MZrP3TdPcLxaLdj6fj8YYY4y5
-        jkm7PXb8t9j1H/Lafy0Ob9ND6/W6a9t27Pt+BACuR9rth8Nh3Gw2x7quH2L33+UM+C/FwH6/zz8BAK5Z
-        13Vj7P7vEQU3OQWKoqqqj1ELv/MzAMAEbLfbPqLgc86Bl7cD6RUCADAdx+Mx3St4yjlQFGVZPg/DkI8B
-        gKlIlw1zDhRF+gAATI8gAAAEAQAgCACAIAgAAEEAAAgCACAIAgBAEAAAggAACIIAABAEAIAgAACCIAAA
-        BAEAIAgAgCAIAABBAAAIAgAgCAIAQBAAAIIAAAiCAAAQBACAIAAAgiAAAAQBACAIAIAgCAAAQQAACAIA
-        IFwEQVmWw/l8zkcAwFRcBEFd1w9d1+UjAGAKTqfTWFVVl3PgXxB8enx8HPI5ADAB+/1+bJrma86BopjN
-        ZjcRBT/6vs+PAADXLF0VWC6Xv6IB7nIOvIgv3kYl/Nztdn+GwcsCALhGKQTath1Xq9Whrut3OQMuRRTc
-        RhR8KcvyOV0yMMYYY8x1TfojQez6+9j5b/L6BwBIiuIvlLWT2KVjJxQAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="txbIdFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAgQAAAAtCAYAAADRPnNBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHmSURBVHhe7dsxittAFIBhlVvuEbZMmZOkzhHS5CyBnCFX
-        SLu2ZMlx72JdeQl4CY4wQQGvcIRR3mQHgtkbWN8Hr7BHrt+PGBcAAK/MZrP3TdPcLxaLdj6fj8YYY4y5
-        jkm7PXb8t9j1H/Lafy0Ob9ND6/W6a9t27Pt+BACuR9rth8Nh3Gw2x7quH2L33+UM+C/FwH6/zz8BAK5Z
-        13Vj7P7vEQU3OQWKoqqqj1ELv/MzAMAEbLfbPqLgc86Bl7cD6RUCADAdx+Mx3St4yjlQFGVZPg/DkI8B
-        gKlIlw1zDhRF+gAATI8gAAAEAQAgCACAIAgAAEEAAAgCACAIAgBAEAAAggAACIIAABAEAIAgAACCIAAA
-        BAEAIAgAgCAIAABBAAAIAgAgCAIAQBAAAIIAAAiCAAAQBACAIAAAgiAAAAQBACAIAIAgCAAAQQAACAIA
-        IFwEQVmWw/l8zkcAwFRcBEFd1w9d1+UjAGAKTqfTWFVVl3PgXxB8enx8HPI5ADAB+/1+bJrma86BopjN
-        ZjcRBT/6vs+PAADXLF0VWC6Xv6IB7nIOvIgv3kYl/Nztdn+GwcsCALhGKQTath1Xq9Whrut3OQMuRRTc
-        RhR8KcvyOV0yMMYYY8x1TfojQez6+9j5b/L6BwBIiuIvlLWT2KVjJxQAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAQUAAAAtCAYAAACnHn5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABMSURBVHhe7cNBDQAgDAAx/JvinG1o4N0mPQAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8Ku676hWs+5ETylOg5auAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="txbPriceFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANgAAAAsCAYAAAAHI3biAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABGSURBVHhe7cPBCQAwCASw7r+Ut5m6QsFnAnkAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfktRu9Xp6AEUkvQc7bzY4AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="txbNameFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAQUAAAAsCAYAAABsQq3bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABLSURBVHhe7cNBDQAgDAAx/JvinG1Y4N8mPQAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwobrvqFaz6i9PKYmQFZgAAAAASUVORK5C
+        YII=
 </value>
   </data>
 </root>

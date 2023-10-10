@@ -152,5 +152,10 @@ namespace Qly_NhaHang
             f.ShowDialog();
             this.Show();
         }
+
+        private void btnRevenueMonth_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmDoanhThuThang));
+        }
     }
 }

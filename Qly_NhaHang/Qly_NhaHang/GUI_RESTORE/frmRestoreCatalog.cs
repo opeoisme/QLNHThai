@@ -69,7 +69,6 @@ namespace Qly_NhaHang
             {
                 txbIdCatalog.Text = selectedCatalog.id_Catalog.ToString();
                 txbNameCatalog.Text = selectedCatalog.name_Catalog;
-                cbbConditionCatalog.Text = selectedCatalog.condition_Catalog.ToString();
             }
         }
 
@@ -88,14 +87,8 @@ namespace Qly_NhaHang
                         if (catalogToUpdate != null)
                         {
                             catalogToUpdate.condition_Catalog = "Sử dụng";
-
-                            // Đánh dấu đối tượng là thay đổi
                             dbContext.Entry(catalogToUpdate).State = EntityState.Modified;
-
-                            // Lưu thay đổi
                             dbContext.SaveChanges();
-
-                            // Nạp lại dữ liệu sau khi cập nhật
                             LoadFormCatalog();
                             XtraMessageBox.Show("Được đưa vào kinh doanh !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
