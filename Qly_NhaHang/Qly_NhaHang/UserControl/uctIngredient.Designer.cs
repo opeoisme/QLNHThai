@@ -40,7 +40,7 @@
             this.imageIngredient.Image = global::Qly_NhaHang.Properties.Resources.Food0;
             this.imageIngredient.Location = new System.Drawing.Point(0, 0);
             this.imageIngredient.Name = "imageIngredient";
-            this.imageIngredient.Size = new System.Drawing.Size(287, 138);
+            this.imageIngredient.Size = new System.Drawing.Size(283, 138);
             this.imageIngredient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageIngredient.TabIndex = 22;
             this.imageIngredient.TabStop = false;
@@ -70,11 +70,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblIngredientName);
             this.Controls.Add(this.imageIngredient);
             this.Name = "uctIngredient";
-            this.Size = new System.Drawing.Size(287, 217);
+            this.Size = new System.Drawing.Size(283, 213);
             ((System.ComponentModel.ISupportInitialize)(this.imageIngredient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

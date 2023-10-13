@@ -295,6 +295,12 @@
       <DependentUpon>frmCatalog.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\CATEGORY.cs" />
+    <Compile Include="GUI_ADMIN\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_ADMIN\frmThongKeFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -615,6 +621,12 @@
     <Compile Include="UserControl\SetTable.Designer.cs">
       <DependentUpon>SetTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\uctIncentory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\uctIncentory.Designer.cs">
+      <DependentUpon>uctIncentory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\uctIngredient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -650,6 +662,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADMIN\frmCatalog.resx">
       <DependentUpon>frmCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADMIN\frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADMIN\frmThongKeFood.resx">
       <DependentUpon>frmThongKeFood.cs</DependentUpon>
@@ -791,6 +806,9 @@
     <EmbeddedResource Include="UserControl\SetTable.resx">
       <DependentUpon>SetTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\uctIncentory.resx">
+      <DependentUpon>uctIncentory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\uctIngredient.resx">
       <DependentUpon>uctIngredient.cs</DependentUpon>
     </EmbeddedResource>
@@ -875,6 +893,7 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-tick-250.png" />
     <None Include="Resources\8666693_search_icon.png" />
     <None Include="Resources\7727367_custom_nutrition_researching_analysis_healthy_icon.png" />
     <None Include="Resources\9045222_shopping_catalog_icon.png" />

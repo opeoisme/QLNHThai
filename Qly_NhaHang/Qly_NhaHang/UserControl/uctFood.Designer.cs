@@ -89,11 +89,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.imageFood);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblFoodName);
             this.Name = "uctFood";
-            this.Size = new System.Drawing.Size(302, 218);
+            this.Size = new System.Drawing.Size(298, 214);
             this.Click += new System.EventHandler(this.uctFood_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imageFood)).EndInit();
             this.ctmntFood.ResumeLayout(false);

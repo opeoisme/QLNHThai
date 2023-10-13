@@ -210,14 +210,15 @@
             this.lblIdBill.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[id_Bill]")});
             this.lblIdBill.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdBill.LocationFloat = new DevExpress.Utils.PointFloat(173.75F, 239.9722F);
+            this.lblIdBill.LocationFloat = new DevExpress.Utils.PointFloat(173.75F, 244.9197F);
             this.lblIdBill.Multiline = true;
             this.lblIdBill.Name = "lblIdBill";
             this.lblIdBill.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblIdBill.SizeF = new System.Drawing.SizeF(26.02777F, 19.61755F);
+            this.lblIdBill.SizeF = new System.Drawing.SizeF(378.3973F, 19.61755F);
             this.lblIdBill.StylePriority.UseFont = false;
+            this.lblIdBill.StylePriority.UseTextAlignment = false;
             this.lblIdBill.Text = "lblIdBill";
-            this.lblIdBill.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblIdBill.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // lblIdNV
             // 
@@ -375,7 +376,7 @@
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(99.77773F, 240.062F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(99.77773F, 245.0095F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);

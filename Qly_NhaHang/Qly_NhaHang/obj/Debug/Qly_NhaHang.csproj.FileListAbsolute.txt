@@ -560,3 +560,5 @@ D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\log4net.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\bin\Debug\Newtonsoft.Json.xml
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.frmAddNhanVien.resources
 D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.GUI_ADMIN.frmDoanhThuThang.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.GUI_ADMIN.frmInventory.resources
+D:\Blockchains\Qly_NhaHang\Qly_NhaHang\obj\Debug\Qly_NhaHang.UserControl.uctIncentory.resources

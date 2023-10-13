@@ -196,11 +196,9 @@ namespace Qly_NhaHang
             }
             else
             {
-                // GctImport trống, thực hiện thông báo hoặc xử lý khác tùy theo yêu cầu của bạn
                 XtraMessageBox.Show("Bạn chưa nhập bất kì loại hàng nào!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
-
 
         private void UpdateTotalPriceInImport(double total)
         {

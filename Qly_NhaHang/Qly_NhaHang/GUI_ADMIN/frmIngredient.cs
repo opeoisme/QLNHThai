@@ -4,6 +4,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using Qly_NhaHang.GUI_ADD;
+using Qly_NhaHang.GUI_ADMIN;
 using Qly_NhaHang.Models;
 using Qly_NhaHang.UserControl;
 using System;
@@ -590,5 +591,37 @@ namespace Qly_NhaHang
 
         #endregion
 
+        private void btnExportIngredient_Click(object sender, EventArgs e)
+        {
+            string id_NV = loggedInIdNV;
+            DateTime currentTime = DateTime.Now;
+            DialogResult result = XtraMessageBox.Show("Bạn có muốn kiểm tồn không?", "Xác nhận kiểm tồn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                using (var context = new QLNHThaiEntities())
+                {
+                    Import newImport = new Import
+                    {
+                        date_Import = currentTime,
+                        id_NV = id_NV,
+                        type_Import = "Kiểm tồn",
+                        status_Import = "Ổn định",
+                        total_Price = 0,
+                    };
+                    context.Imports.Add(newImport);
+                    context.SaveChanges();
+                    int idImport = newImport.id_Import;
+                    frmInventory f = new frmInventory();
+                    f.SetIdImport(idImport);
+                    this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

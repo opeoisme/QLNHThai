@@ -49,8 +49,8 @@ namespace Qly_NhaHang
                     var reservation = context.Reservations.FirstOrDefault(r => r.id_Reservation == _idReservation);
                     if (reservation != null)
                     {
-                        txbNameGuest.Text = reservation.name_Guest;
-                        txbPhoneGuest.Text = reservation.phone_Guest;
+                        txbGuestName.Text = reservation.name_Guest;
+                        txbGuestPhone.Text = reservation.phone_Guest;
                         // Chú ý chuyển đổi từ DateTime thành DateTimeOffset nếu cần
                         dtpkTimeGuest.DateTimeOffset = new DateTimeOffset(reservation.date_Reservation, TimeSpan.Zero);
                     }
@@ -88,9 +88,9 @@ namespace Qly_NhaHang
             try
             {
                 int idTable = int.Parse(lblID.Text);
-                string nameGuest = txbNameGuest.Text;
+                string nameGuest = txbGuestName.Text;
                 DateTimeOffset dateReservation = dtpkTimeGuest.DateTimeOffset;
-                string phoneGuest = txbPhoneGuest.Text;
+                string phoneGuest = txbGuestPhone.Text;
 
                 if (string.IsNullOrWhiteSpace(nameGuest))
                 {

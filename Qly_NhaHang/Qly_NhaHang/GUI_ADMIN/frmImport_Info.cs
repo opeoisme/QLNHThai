@@ -46,7 +46,6 @@ namespace Qly_NhaHang
             nmrQuantity.Value = (decimal)count;
             this.price = priceIngre;
             lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceIngre);
-
             UpdateTotalPrice();
         }
 

@@ -362,10 +362,11 @@
             this.lblIdBill.Multiline = true;
             this.lblIdBill.Name = "lblIdBill";
             this.lblIdBill.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblIdBill.SizeF = new System.Drawing.SizeF(26.02777F, 23F);
+            this.lblIdBill.SizeF = new System.Drawing.SizeF(176.7222F, 23.00002F);
             this.lblIdBill.StylePriority.UseFont = false;
+            this.lblIdBill.StylePriority.UseTextAlignment = false;
             this.lblIdBill.Text = "lblIdBill";
-            this.lblIdBill.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.lblIdBill.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // lblDCI
             // 
