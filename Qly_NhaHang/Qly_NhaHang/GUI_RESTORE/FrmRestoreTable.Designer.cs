@@ -115,6 +115,7 @@
             this.btnPDFTable.Name = "btnPDFTable";
             this.btnPDFTable.Size = new System.Drawing.Size(72, 29);
             this.btnPDFTable.Text = "PDF";
+            this.btnPDFTable.Click += new System.EventHandler(this.btnPDFTable_Click);
             // 
             // btnCSVTable
             // 
@@ -123,6 +124,7 @@
             this.btnCSVTable.Name = "btnCSVTable";
             this.btnCSVTable.Size = new System.Drawing.Size(72, 29);
             this.btnCSVTable.Text = "CSV";
+            this.btnCSVTable.Click += new System.EventHandler(this.btnCSVTable_Click);
             // 
             // gctTable
             // 
@@ -154,6 +156,8 @@
             // 
             // idTable
             // 
+            this.idTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idTable.AppearanceCell.Options.UseFont = true;
             this.idTable.Caption = "Mã bàn";
             this.idTable.FieldName = "id_Table";
             this.idTable.MinWidth = 30;
@@ -164,6 +168,8 @@
             // 
             // nameTable
             // 
+            this.nameTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameTable.AppearanceCell.Options.UseFont = true;
             this.nameTable.Caption = "Tên bàn";
             this.nameTable.FieldName = "name_Table";
             this.nameTable.MinWidth = 30;
@@ -174,6 +180,8 @@
             // 
             // seatsTable
             // 
+            this.seatsTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.seatsTable.AppearanceCell.Options.UseFont = true;
             this.seatsTable.Caption = "Số ghế";
             this.seatsTable.FieldName = "seats_Table";
             this.seatsTable.MinWidth = 30;
@@ -184,6 +192,8 @@
             // 
             // statusTable
             // 
+            this.statusTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.statusTable.AppearanceCell.Options.UseFont = true;
             this.statusTable.Caption = "Trạng thái bàn";
             this.statusTable.FieldName = "status_Table";
             this.statusTable.MinWidth = 30;
@@ -249,7 +259,7 @@
             this.txbSeatTable.BorderThickness = 1;
             this.txbSeatTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbSeatTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbSeatTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbSeatTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbSeatTable.DefaultText = "";
             this.txbSeatTable.FillColor = System.Drawing.Color.White;
             this.txbSeatTable.HideSelection = true;
@@ -295,7 +305,7 @@
             this.txbSeatTable.SelectionLength = 0;
             this.txbSeatTable.SelectionStart = 0;
             this.txbSeatTable.ShortcutsEnabled = true;
-            this.txbSeatTable.Size = new System.Drawing.Size(361, 45);
+            this.txbSeatTable.Size = new System.Drawing.Size(361, 43);
             this.txbSeatTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbSeatTable.TabIndex = 32;
             this.txbSeatTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -323,7 +333,7 @@
             this.txbStatusTable.BorderThickness = 1;
             this.txbStatusTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbStatusTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbStatusTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbStatusTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbStatusTable.DefaultText = "";
             this.txbStatusTable.FillColor = System.Drawing.Color.White;
             this.txbStatusTable.HideSelection = true;
@@ -369,7 +379,7 @@
             this.txbStatusTable.SelectionLength = 0;
             this.txbStatusTable.SelectionStart = 0;
             this.txbStatusTable.ShortcutsEnabled = true;
-            this.txbStatusTable.Size = new System.Drawing.Size(353, 45);
+            this.txbStatusTable.Size = new System.Drawing.Size(353, 43);
             this.txbStatusTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbStatusTable.TabIndex = 31;
             this.txbStatusTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -417,7 +427,7 @@
             this.txbNameTable.BorderThickness = 1;
             this.txbNameTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameTable.DefaultText = "";
             this.txbNameTable.FillColor = System.Drawing.Color.White;
             this.txbNameTable.HideSelection = true;
@@ -463,7 +473,7 @@
             this.txbNameTable.SelectionLength = 0;
             this.txbNameTable.SelectionStart = 0;
             this.txbNameTable.ShortcutsEnabled = true;
-            this.txbNameTable.Size = new System.Drawing.Size(363, 45);
+            this.txbNameTable.Size = new System.Drawing.Size(363, 43);
             this.txbNameTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameTable.TabIndex = 22;
             this.txbNameTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -491,7 +501,7 @@
             this.txbIdTable.BorderThickness = 1;
             this.txbIdTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdTable.DefaultText = "";
             this.txbIdTable.FillColor = System.Drawing.Color.White;
             this.txbIdTable.HideSelection = true;
@@ -537,7 +547,7 @@
             this.txbIdTable.SelectionLength = 0;
             this.txbIdTable.SelectionStart = 0;
             this.txbIdTable.ShortcutsEnabled = true;
-            this.txbIdTable.Size = new System.Drawing.Size(353, 45);
+            this.txbIdTable.Size = new System.Drawing.Size(353, 43);
             this.txbIdTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdTable.TabIndex = 21;
             this.txbIdTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -585,6 +595,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources.icons8_table_100;
             this.Name = "FrmRestoreTable";
             this.Text = "Danh sách bàn hỏng";
             this.toolStrip1.ResumeLayout(false);

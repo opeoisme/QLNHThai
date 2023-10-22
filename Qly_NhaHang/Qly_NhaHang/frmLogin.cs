@@ -65,18 +65,7 @@ namespace Qly_NhaHang
         }
 
 
-        private void btnLogin_Enter(object sender, KeyEventArgs e)
-        {
-           
-        }
-        private void checkBoxShowHide_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
-        {
-            
-        }
-        private void checkBoxShowHide_MouseHover(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -98,7 +87,8 @@ namespace Qly_NhaHang
                 txbPassword.PasswordChar = '\0';
             }
         }
-        private void checkBoxShowHide_MouseHover_1(object sender, EventArgs e)
+
+        private void checkBoxShowHide_MouseHover(object sender, EventArgs e)
         {
             ToolTip t = new ToolTip();
             t.IsBalloon = true;

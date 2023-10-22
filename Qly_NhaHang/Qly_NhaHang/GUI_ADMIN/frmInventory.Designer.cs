@@ -177,6 +177,8 @@
             // 
             // nameIngredient
             // 
+            this.nameIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameIngredient.AppearanceCell.Options.UseFont = true;
             this.nameIngredient.Caption = "Tên nguyên liệu";
             this.nameIngredient.FieldName = "name_Ingredient";
             this.nameIngredient.MinWidth = 30;
@@ -187,6 +189,11 @@
             // 
             // contityIngredient
             // 
+            this.contityIngredient.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.contityIngredient.AppearanceCell.BackColor2 = System.Drawing.Color.White;
+            this.contityIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.contityIngredient.AppearanceCell.Options.UseBackColor = true;
+            this.contityIngredient.AppearanceCell.Options.UseFont = true;
             this.contityIngredient.Caption = "Số lượng";
             this.contityIngredient.FieldName = "count_Ingredient";
             this.contityIngredient.MinWidth = 30;
@@ -344,6 +351,7 @@
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._7811684_warehouse_supply_cargo_distribution_logistic_icon;
             this.Name = "frmInventory";
             this.Text = "Tồn kho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

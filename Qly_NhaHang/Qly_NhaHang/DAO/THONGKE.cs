@@ -124,5 +124,43 @@ namespace Qly_NhaHang.DAO
             return lstDoanhThuTheoThang;
         }
 
+
+
+
+
+
+        public List<ThuChiModel> ThuChiTheoNgay()
+        {
+            ThuChiModel baocaothuchi;
+            List<ThuChiModel> lstThuChiTheoNgay = new List<ThuChiModel>();
+            var ngaytra = GetFirstDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+
+
+            using (var context = new QLNHThaiEntities())
+            {
+                var lstthuchi = context.FN_ThuChiTheoNgay(ngaytra).ToList();
+
+                foreach (var item in lstthuchi)
+                {
+                    if (item != null)
+                    {
+                        baocaothuchi = new ThuChiModel();
+                        baocaothuchi.IDDOANHTHU = (int?)item.IDDOANHTHU;
+                        baocaothuchi.NGAY = item.NGAY;
+                        baocaothuchi.TONGDOANHTHU = item.TONGDOANHTHU;
+                        lstThuChiTheoNgay.Add(baocaothuchi);
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+
+            }
+
+            return lstThuChiTheoNgay;
+        }
+
     }
 }

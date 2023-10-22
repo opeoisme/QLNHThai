@@ -61,7 +61,7 @@ namespace Qly_NhaHang
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem người dùng có muốn xóa hay không
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {

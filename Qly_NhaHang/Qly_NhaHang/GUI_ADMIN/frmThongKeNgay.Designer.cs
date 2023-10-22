@@ -1,6 +1,6 @@
 ﻿namespace Qly_NhaHang
 {
-    partial class frmThongKe
+    partial class frmThongKeNgay
     {
         /// <summary>
         /// Required designer variable.
@@ -33,19 +33,25 @@
             this.cNgayCot = new DevExpress.XtraCharts.ChartControl();
             this.cNgayDuong = new DevExpress.XtraCharts.ChartControl();
             this.groupctDoanhThu = new DevExpress.XtraEditors.GroupControl();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gctDoanhThuNgay = new DevExpress.XtraGrid.GridControl();
             this.gvDoanhThuNgay = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.idBill = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.totalPriceBill = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTotalMoney = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cNgayTron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cNgayCot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cNgayDuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupctDoanhThu)).BeginInit();
             this.groupctDoanhThu.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctDoanhThuNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDoanhThuNgay)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -95,7 +101,8 @@
             // 
             // groupctDoanhThu
             // 
-            this.groupctDoanhThu.Controls.Add(this.gctDoanhThuNgay);
+            this.groupctDoanhThu.Controls.Add(this.panel2);
+            this.groupctDoanhThu.Controls.Add(this.panel1);
             this.groupctDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupctDoanhThu.Location = new System.Drawing.Point(975, 3);
             this.groupctDoanhThu.Name = "groupctDoanhThu";
@@ -103,13 +110,22 @@
             this.groupctDoanhThu.TabIndex = 2;
             this.groupctDoanhThu.Text = "Doanh thu theo ngày";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gctDoanhThuNgay);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(2, 74);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(962, 447);
+            this.panel2.TabIndex = 3;
+            // 
             // gctDoanhThuNgay
             // 
             this.gctDoanhThuNgay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gctDoanhThuNgay.Location = new System.Drawing.Point(2, 34);
+            this.gctDoanhThuNgay.Location = new System.Drawing.Point(0, 0);
             this.gctDoanhThuNgay.MainView = this.gvDoanhThuNgay;
             this.gctDoanhThuNgay.Name = "gctDoanhThuNgay";
-            this.gctDoanhThuNgay.Size = new System.Drawing.Size(962, 487);
+            this.gctDoanhThuNgay.Size = new System.Drawing.Size(962, 447);
             this.gctDoanhThuNgay.TabIndex = 0;
             this.gctDoanhThuNgay.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDoanhThuNgay});
@@ -125,6 +141,8 @@
             // 
             // idBill
             // 
+            this.idBill.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idBill.AppearanceCell.Options.UseFont = true;
             this.idBill.Caption = "Mã hóa đơn";
             this.idBill.FieldName = "id_Bill";
             this.idBill.MinWidth = 30;
@@ -135,6 +153,8 @@
             // 
             // idNV
             // 
+            this.idNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idNV.AppearanceCell.Options.UseFont = true;
             this.idNV.Caption = "Tên nhân viên ";
             this.idNV.FieldName = "name_NV";
             this.idNV.MinWidth = 30;
@@ -145,7 +165,11 @@
             // 
             // totalPriceBill
             // 
+            this.totalPriceBill.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.totalPriceBill.AppearanceCell.Options.UseFont = true;
             this.totalPriceBill.Caption = "Tổng tiền hóa đơn";
+            this.totalPriceBill.DisplayFormat.FormatString = "n0";
+            this.totalPriceBill.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.totalPriceBill.FieldName = "totalPrice_Bill";
             this.totalPriceBill.MinWidth = 30;
             this.totalPriceBill.Name = "totalPriceBill";
@@ -153,13 +177,49 @@
             this.totalPriceBill.VisibleIndex = 2;
             this.totalPriceBill.Width = 112;
             // 
-            // frmThongKe
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblTotalMoney);
+            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(2, 34);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(962, 40);
+            this.panel1.TabIndex = 2;
+            // 
+            // lblTotalMoney
+            // 
+            this.lblTotalMoney.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMoney.Appearance.ForeColor = System.Drawing.Color.Teal;
+            this.lblTotalMoney.Appearance.Options.UseFont = true;
+            this.lblTotalMoney.Appearance.Options.UseForeColor = true;
+            this.lblTotalMoney.Location = new System.Drawing.Point(295, 8);
+            this.lblTotalMoney.Name = "lblTotalMoney";
+            this.lblTotalMoney.Size = new System.Drawing.Size(80, 29);
+            this.lblTotalMoney.TabIndex = 25;
+            this.lblTotalMoney.Text = "000 VNĐ";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Teal;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(3, 5);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(272, 35);
+            this.labelControl1.TabIndex = 24;
+            this.labelControl1.Text = "Tổng doanh thu hôm nay:";
+            // 
+            // frmThongKeNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmThongKe";
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._3890937_black_friday_cheap_discount_price_reduced_icon;
+            this.Name = "frmThongKeNgay";
             this.Text = "Danh sách thống kê theo ngày";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmThongKe_Load);
@@ -169,8 +229,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cNgayDuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupctDoanhThu)).EndInit();
             this.groupctDoanhThu.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctDoanhThuNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDoanhThuNgay)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -187,5 +250,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn idBill;
         private DevExpress.XtraGrid.Columns.GridColumn idNV;
         private DevExpress.XtraGrid.Columns.GridColumn totalPriceBill;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.LabelControl lblTotalMoney;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

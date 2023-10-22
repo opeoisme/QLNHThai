@@ -36,6 +36,7 @@ namespace Qly_NhaHang
             LoadCategoryData();
             UpdateIngredientStatus();
             InitializeGridViewOptions();
+            LoadUnitData();
         }
 
         #region method
@@ -47,6 +48,23 @@ namespace Qly_NhaHang
 
             gvIngredient.RowCellStyle += gvIngredient_RowCellStyle;
         }
+
+        private void LoadUnitData()
+        {
+            var unit = dbContext.Units
+                .Where(d =>  d.condition_Unit == "Sử dụng")
+                .ToList();
+
+           // cbbUnitIngredient.Items.Clear();
+            cbbUnitKid.Items.Clear();
+            foreach (var item in unit)
+            {
+                cbbUnitIngredient.Items.Add(item.name_Unit);
+                cbbUnitKid.Items.Add(item.name_Unit);
+            }
+        }
+
+
         private void LoadCategoryData()
         {
             var catalog = dbContext.CatalogIngredients
@@ -374,17 +392,22 @@ namespace Qly_NhaHang
 
                         if (ingredientToUpdate != null)
                         {
-                            ingredientToUpdate.condition_Ingredient = "Ngừng sử dụng";
+                            bool isUsedInRecipes = dbContext.Recipes.Any(r => r.id_Ingredient == ingredientId);
 
-                            // Đánh dấu đối tượng là thay đổi
-                            dbContext.Entry(ingredientToUpdate).State = EntityState.Modified;
-
-                            // Lưu thay đổi
-                            dbContext.SaveChanges();
-
-                            // Nạp lại dữ liệu sau khi cập nhật
-                            LoadIngredientData();
-                            XtraMessageBox.Show("Nguyên liệu không được sử dụng nữa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (isUsedInRecipes)
+                            {
+                                // Nguyên liệu đang được sử dụng trong Recipe, hiển thị thông báo và không cho phép xóa
+                                XtraMessageBox.Show("Nguyên liệu này đang được dùng để chế biến món ăn nên không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                ingredientToUpdate.condition_Ingredient = "Ngừng sử dụng";
+                                dbContext.Entry(ingredientToUpdate).State = EntityState.Modified;
+                                dbContext.SaveChanges();
+                                LoadIngredientData();
+                                XtraMessageBox.Show("Nguyên liệu không được sử dụng nữa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }    
+                           
                         }
                     }
                 }

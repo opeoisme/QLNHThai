@@ -146,6 +146,14 @@
           <Property Name="seats_Table" Type="int" />
           <Property Name="condition_Table" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="id_Unit" />
+          </Key>
+          <Property Name="id_Unit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_Unit" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="condition_Unit" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK__Bill__id_NV__5812160E">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
@@ -315,6 +323,18 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="FN_ThuChiTheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="checkOut" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="IDDOANHTHU" Type="bigint" />
+                <Property Name="NGAY" Type="date" />
+                <Property Name="TONGDOANHTHU" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="FN_TopSanPhamDichVu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <ReturnType>
             <CollectionType>
@@ -340,6 +360,7 @@
           <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tablee" EntityType="Self.Tablee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Bill__id_NV__5812160E" Association="Self.FK__Bill__id_NV__5812160E">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="Bill" EntitySet="Bill" />
@@ -398,6 +419,10 @@
           <Property Name="NGAY" Type="DateTime" />
           <Property Name="TONGDOANHTHU" Type="Double" />
         </ComplexType>
+        <ComplexType Name="FN_DoanhThuTheoThang_Result">
+          <Property Name="THANG" Type="DateTime" />
+          <Property Name="TONGDOANHTHU" Type="Double" />
+        </ComplexType>
         <ComplexType Name="FN_TopSanPhamDichVu_Result">
           <Property Name="id_Food" Type="Int32" />
           <Property Name="name_Food" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -438,7 +463,7 @@
           <Property Name="id_Catalog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name_Catalog" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="condition_Catalog" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Ingredients" Relationship="QLNHThaiModel.FK_Ingredient_Catalog" FromRole="CatalogIngredient" ToRole="Ingredient" />
+          <NavigationProperty Name="Ingredients" Relationship="Self.FK_Ingredient_Catalog" FromRole="CatalogIngredient" ToRole="Ingredient" />
         </EntityType>
         <EntityType Name="CategoryFood">
           <Key>
@@ -473,6 +498,50 @@
           <NavigationProperty Name="CategoryFood" Relationship="Self.FK__Food__condition___5DCAEF64" FromRole="Food" ToRole="CategoryFood" />
           <NavigationProperty Name="Recipes" Relationship="Self.FK__Recipe__id_Food__6E01572D" FromRole="Food" ToRole="Recipe" />
         </EntityType>
+        <EntityType Name="Import">
+          <Key>
+            <PropertyRef Name="id_Import" />
+          </Key>
+          <Property Name="id_Import" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_Import" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="type_Import" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status_Import" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="total_Price" Type="Double" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK__Import__id_NV__6754599E" FromRole="Import" ToRole="NhanVien" />
+          <NavigationProperty Name="ImportInfoes" Relationship="Self.FK__ImportInf__id_Im__6A30C649" FromRole="Import" ToRole="ImportInfo" />
+        </EntityType>
+        <EntityType Name="ImportInfo">
+          <Key>
+            <PropertyRef Name="id_ImportInfo" />
+          </Key>
+          <Property Name="id_ImportInfo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_Import" Type="Int32" Nullable="false" />
+          <Property Name="id_Ingredient" Type="Int32" Nullable="false" />
+          <Property Name="count_Ingredient" Type="Int32" Nullable="false" />
+          <Property Name="date_Expiry" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Import" Relationship="Self.FK__ImportInf__id_Im__6A30C649" FromRole="ImportInfo" ToRole="Import" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK__ImportInf__id_In__6B24EA82" FromRole="ImportInfo" ToRole="Ingredient" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="id_Ingredient" />
+          </Key>
+          <Property Name="id_Ingredient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="unit_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="count_Ingredient" Type="Double" />
+          <Property Name="status_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image_Ingredient" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="condition_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="unitkid_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="countkid_Ingredient" Type="Double" />
+          <Property Name="id_Catalog" Type="Int32" />
+          <Property Name="price_Ingredient" Type="Double" />
+          <NavigationProperty Name="CatalogIngredient" Relationship="Self.FK_Ingredient_Catalog" FromRole="Ingredient" ToRole="CatalogIngredient" />
+          <NavigationProperty Name="ImportInfoes" Relationship="Self.FK__ImportInf__id_In__6B24EA82" FromRole="Ingredient" ToRole="ImportInfo" />
+          <NavigationProperty Name="Recipes" Relationship="Self.FK__Recipe__id_Ingre__6EF57B66" FromRole="Ingredient" ToRole="Recipe" />
+        </EntityType>
         <EntityType Name="NhanVien">
           <Key>
             <PropertyRef Name="id_NV" />
@@ -488,7 +557,7 @@
           <Property Name="type_NV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="condition_NV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__id_NV__5812160E" FromRole="NhanVien" ToRole="Bill" />
-          <NavigationProperty Name="Imports" Relationship="QLNHThaiModel.FK__Import__id_NV__6754599E" FromRole="NhanVien" ToRole="Import" />
+          <NavigationProperty Name="Imports" Relationship="Self.FK__Import__id_NV__6754599E" FromRole="NhanVien" ToRole="Import" />
         </EntityType>
         <EntityType Name="Recipe">
           <Key>
@@ -499,7 +568,7 @@
           <Property Name="id_Ingredient" Type="Int32" Nullable="false" />
           <Property Name="count_Ingredient" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Food" Relationship="Self.FK__Recipe__id_Food__6E01572D" FromRole="Recipe" ToRole="Food" />
-          <NavigationProperty Name="Ingredient" Relationship="QLNHThaiModel.FK__Recipe__id_Ingre__6EF57B66" FromRole="Recipe" ToRole="Ingredient" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK__Recipe__id_Ingre__6EF57B66" FromRole="Recipe" ToRole="Ingredient" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -572,6 +641,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Ingredient_Catalog">
+          <End Role="CatalogIngredient" Type="Self.CatalogIngredient" Multiplicity="0..1" />
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CatalogIngredient">
+              <PropertyRef Name="id_Catalog" />
+            </Principal>
+            <Dependent Role="Ingredient">
+              <PropertyRef Name="id_Catalog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Food__condition___5DCAEF64">
           <End Role="CategoryFood" Type="Self.CategoryFood" Multiplicity="1" />
           <End Role="Food" Type="Self.Food" Multiplicity="*" />
@@ -596,6 +677,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Import__id_NV__6754599E">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+          <End Role="Import" Type="Self.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="id_NV" />
+            </Principal>
+            <Dependent Role="Import">
+              <PropertyRef Name="id_NV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ImportInf__id_Im__6A30C649">
+          <End Role="Import" Type="Self.Import" Multiplicity="1" />
+          <End Role="ImportInfo" Type="Self.ImportInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Import">
+              <PropertyRef Name="id_Import" />
+            </Principal>
+            <Dependent Role="ImportInfo">
+              <PropertyRef Name="id_Import" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ImportInf__id_In__6B24EA82">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="ImportInfo" Type="Self.ImportInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id_Ingredient" />
+            </Principal>
+            <Dependent Role="ImportInfo">
+              <PropertyRef Name="id_Ingredient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recipe__id_Ingre__6EF57B66">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="id_Ingredient" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="id_Ingredient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Reservati__id_Ta__440B1D61">
           <End Role="Tablee" Type="Self.Tablee" Multiplicity="0..1" />
           <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
@@ -615,6 +744,9 @@
           <EntitySet Name="CategoryFoods" EntityType="Self.CategoryFood" />
           <EntitySet Name="Discounts" EntityType="Self.Discount" />
           <EntitySet Name="Foods" EntityType="Self.Food" />
+          <EntitySet Name="Imports" EntityType="Self.Import" />
+          <EntitySet Name="ImportInfoes" EntityType="Self.ImportInfo" />
+          <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="Recipes" EntityType="Self.Recipe" />
           <EntitySet Name="Reservations" EntityType="Self.Reservation" />
@@ -635,12 +767,32 @@
             <End Role="Food" EntitySet="Foods" />
             <End Role="Bill_Info" EntitySet="Bill_Info" />
           </AssociationSet>
+          <AssociationSet Name="FK_Ingredient_Catalog" Association="Self.FK_Ingredient_Catalog">
+            <End Role="CatalogIngredient" EntitySet="CatalogIngredients" />
+            <End Role="Ingredient" EntitySet="Ingredients" />
+          </AssociationSet>
           <AssociationSet Name="FK__Food__condition___5DCAEF64" Association="Self.FK__Food__condition___5DCAEF64">
             <End Role="CategoryFood" EntitySet="CategoryFoods" />
             <End Role="Food" EntitySet="Foods" />
           </AssociationSet>
           <AssociationSet Name="FK__Recipe__id_Food__6E01572D" Association="Self.FK__Recipe__id_Food__6E01572D">
             <End Role="Food" EntitySet="Foods" />
+            <End Role="Recipe" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Import__id_NV__6754599E" Association="Self.FK__Import__id_NV__6754599E">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="Import" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImportInf__id_Im__6A30C649" Association="Self.FK__ImportInf__id_Im__6A30C649">
+            <End Role="Import" EntitySet="Imports" />
+            <End Role="ImportInfo" EntitySet="ImportInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImportInf__id_In__6B24EA82" Association="Self.FK__ImportInf__id_In__6B24EA82">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="ImportInfo" EntitySet="ImportInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recipe__id_Ingre__6EF57B66" Association="Self.FK__Recipe__id_Ingre__6EF57B66">
+            <End Role="Ingredient" EntitySet="Ingredients" />
             <End Role="Recipe" EntitySet="Recipes" />
           </AssociationSet>
           <AssociationSet Name="FK__Reservati__id_Ta__440B1D61" Association="Self.FK__Reservati__id_Ta__440B1D61">
@@ -651,143 +803,29 @@
             <Parameter Name="checkIn" Mode="In" Type="DateTime" />
             <Parameter Name="checkOut" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="FN_TopSanPhamDichVu" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_TopSanPhamDichVu_Result)" />
-          <EntitySet Name="ImportInfoes" EntityType="QLNHThaiModel.ImportInfo" />
-          <EntitySet Name="Imports" EntityType="QLNHThaiModel.Import" />
-          <EntitySet Name="Ingredients" EntityType="QLNHThaiModel.Ingredient" />
-          <AssociationSet Name="FK_Ingredient_Catalog" Association="QLNHThaiModel.FK_Ingredient_Catalog">
-            <End Role="CatalogIngredient" EntitySet="CatalogIngredients" />
-            <End Role="Ingredient" EntitySet="Ingredients" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Import__id_NV__6754599E" Association="QLNHThaiModel.FK__Import__id_NV__6754599E">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="Import" EntitySet="Imports" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ImportInf__id_Im__6A30C649" Association="QLNHThaiModel.FK__ImportInf__id_Im__6A30C649">
-            <End Role="Import" EntitySet="Imports" />
-            <End Role="ImportInfo" EntitySet="ImportInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ImportInf__id_In__6B24EA82" Association="QLNHThaiModel.FK__ImportInf__id_In__6B24EA82">
-            <End Role="Ingredient" EntitySet="Ingredients" />
-            <End Role="ImportInfo" EntitySet="ImportInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Recipe__id_Ingre__6EF57B66" Association="QLNHThaiModel.FK__Recipe__id_Ingre__6EF57B66">
-            <End Role="Ingredient" EntitySet="Ingredients" />
-            <End Role="Recipe" EntitySet="Recipes" />
-          </AssociationSet>
           <FunctionImport Name="FN_DoanhThuTheoThang" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_DoanhThuTheoThang_Result)">
             <Parameter Name="checkIn" Mode="In" Type="DateTime" />
             <Parameter Name="checkOut" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="FN_TopSanPhamDichVu" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_TopSanPhamDichVu_Result)" />
+          <FunctionImport Name="FN_ThuChiTheoNgay" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_ThuChiTheoNgay_Result)">
+          <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="Units" EntityType="QLNHThaiModel.Unit" />
         </EntityContainer>
-        <EntityType Name="ImportInfo">
-          <Key>
-            <PropertyRef Name="id_ImportInfo" />
-          </Key>
-          <Property Name="id_ImportInfo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_Import" Type="Int32" Nullable="false" />
-          <Property Name="id_Ingredient" Type="Int32" Nullable="false" />
-          <Property Name="count_Ingredient" Type="Int32" Nullable="false" />
-          <Property Name="date_Expiry" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Import" Relationship="QLNHThaiModel.FK__ImportInf__id_Im__6A30C649" FromRole="ImportInfo" ToRole="Import" />
-          <NavigationProperty Name="Ingredient" Relationship="QLNHThaiModel.FK__ImportInf__id_In__6B24EA82" FromRole="ImportInfo" ToRole="Ingredient" />
-        </EntityType>
-        <EntityType Name="Import">
-          <Key>
-            <PropertyRef Name="id_Import" />
-          </Key>
-          <Property Name="id_Import" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="date_Import" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="id_NV" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="type_Import" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="status_Import" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="total_Price" Type="Double" />
-          <NavigationProperty Name="NhanVien" Relationship="QLNHThaiModel.FK__Import__id_NV__6754599E" FromRole="Import" ToRole="NhanVien" />
-          <NavigationProperty Name="ImportInfoes" Relationship="QLNHThaiModel.FK__ImportInf__id_Im__6A30C649" FromRole="Import" ToRole="ImportInfo" />
-        </EntityType>
-        <EntityType Name="Ingredient">
-          <Key>
-            <PropertyRef Name="id_Ingredient" />
-          </Key>
-          <Property Name="id_Ingredient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name_Ingredient" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="unit_Ingredient" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="count_Ingredient" Type="Double" />
-          <Property Name="status_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="image_Ingredient" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="condition_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="unitkid_Ingredient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="countkid_Ingredient" Type="Double" />
-          <Property Name="id_Catalog" Type="Int32" />
-          <Property Name="price_Ingredient" Type="Double" />
-          <NavigationProperty Name="CatalogIngredient" Relationship="QLNHThaiModel.FK_Ingredient_Catalog" FromRole="Ingredient" ToRole="CatalogIngredient" />
-          <NavigationProperty Name="ImportInfoes" Relationship="QLNHThaiModel.FK__ImportInf__id_In__6B24EA82" FromRole="Ingredient" ToRole="ImportInfo" />
-          <NavigationProperty Name="Recipes" Relationship="QLNHThaiModel.FK__Recipe__id_Ingre__6EF57B66" FromRole="Ingredient" ToRole="Recipe" />
-        </EntityType>
-        <Association Name="FK_Ingredient_Catalog">
-          <End Type="QLNHThaiModel.CatalogIngredient" Role="CatalogIngredient" Multiplicity="0..1" />
-          <End Type="QLNHThaiModel.Ingredient" Role="Ingredient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CatalogIngredient">
-              <PropertyRef Name="id_Catalog" />
-            </Principal>
-            <Dependent Role="Ingredient">
-              <PropertyRef Name="id_Catalog" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Import__id_NV__6754599E">
-          <End Type="QLNHThaiModel.NhanVien" Role="NhanVien" Multiplicity="1" />
-          <End Type="QLNHThaiModel.Import" Role="Import" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhanVien">
-              <PropertyRef Name="id_NV" />
-            </Principal>
-            <Dependent Role="Import">
-              <PropertyRef Name="id_NV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ImportInf__id_Im__6A30C649">
-          <End Type="QLNHThaiModel.Import" Role="Import" Multiplicity="1" />
-          <End Type="QLNHThaiModel.ImportInfo" Role="ImportInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Import">
-              <PropertyRef Name="id_Import" />
-            </Principal>
-            <Dependent Role="ImportInfo">
-              <PropertyRef Name="id_Import" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ImportInf__id_In__6B24EA82">
-          <End Type="QLNHThaiModel.Ingredient" Role="Ingredient" Multiplicity="1" />
-          <End Type="QLNHThaiModel.ImportInfo" Role="ImportInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ingredient">
-              <PropertyRef Name="id_Ingredient" />
-            </Principal>
-            <Dependent Role="ImportInfo">
-              <PropertyRef Name="id_Ingredient" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Recipe__id_Ingre__6EF57B66">
-          <End Type="QLNHThaiModel.Ingredient" Role="Ingredient" Multiplicity="1" />
-          <End Type="QLNHThaiModel.Recipe" Role="Recipe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ingredient">
-              <PropertyRef Name="id_Ingredient" />
-            </Principal>
-            <Dependent Role="Recipe">
-              <PropertyRef Name="id_Ingredient" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <ComplexType Name="FN_DoanhThuTheoThang_Result">
-          <Property Type="DateTime" Name="THANG" Nullable="true" Precision="10" />
+        <ComplexType Name="FN_ThuChiTheoNgay_Result">
+          <Property Type="Int64" Name="IDDOANHTHU" Nullable="true" />
+          <Property Type="DateTime" Name="NGAY" Nullable="true" Precision="10" />
           <Property Type="Double" Name="TONGDOANHTHU" Nullable="true" />
         </ComplexType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="id_Unit" />
+          </Key>
+          <Property Name="id_Unit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_Unit" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="condition_Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -860,6 +898,46 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Imports">
+            <EntityTypeMapping TypeName="QLNHThaiModel.Import">
+              <MappingFragment StoreEntitySet="Import">
+                <ScalarProperty Name="id_Import" ColumnName="id_Import" />
+                <ScalarProperty Name="date_Import" ColumnName="date_Import" />
+                <ScalarProperty Name="id_NV" ColumnName="id_NV" />
+                <ScalarProperty Name="type_Import" ColumnName="type_Import" />
+                <ScalarProperty Name="status_Import" ColumnName="status_Import" />
+                <ScalarProperty Name="total_Price" ColumnName="total_Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportInfoes">
+            <EntityTypeMapping TypeName="QLNHThaiModel.ImportInfo">
+              <MappingFragment StoreEntitySet="ImportInfo">
+                <ScalarProperty Name="id_ImportInfo" ColumnName="id_ImportInfo" />
+                <ScalarProperty Name="id_Import" ColumnName="id_Import" />
+                <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
+                <ScalarProperty Name="count_Ingredient" ColumnName="count_Ingredient" />
+                <ScalarProperty Name="date_Expiry" ColumnName="date_Expiry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingredients">
+            <EntityTypeMapping TypeName="QLNHThaiModel.Ingredient">
+              <MappingFragment StoreEntitySet="Ingredient">
+                <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
+                <ScalarProperty Name="name_Ingredient" ColumnName="name_Ingredient" />
+                <ScalarProperty Name="unit_Ingredient" ColumnName="unit_Ingredient" />
+                <ScalarProperty Name="count_Ingredient" ColumnName="count_Ingredient" />
+                <ScalarProperty Name="status_Ingredient" ColumnName="status_Ingredient" />
+                <ScalarProperty Name="image_Ingredient" ColumnName="image_Ingredient" />
+                <ScalarProperty Name="condition_Ingredient" ColumnName="condition_Ingredient" />
+                <ScalarProperty Name="unitkid_Ingredient" ColumnName="unitkid_Ingredient" />
+                <ScalarProperty Name="countkid_Ingredient" ColumnName="countkid_Ingredient" />
+                <ScalarProperty Name="id_Catalog" ColumnName="id_Catalog" />
+                <ScalarProperty Name="price_Ingredient" ColumnName="price_Ingredient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="QLNHThaiModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
@@ -917,6 +995,14 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="QLNHThaiModel.Store.FN_DoanhThuTheoThang" FunctionImportName="FN_DoanhThuTheoThang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLNHThaiModel.FN_DoanhThuTheoThang_Result">
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionName="QLNHThaiModel.Store.FN_TopSanPhamDichVu" FunctionImportName="FN_TopSanPhamDichVu">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QLNHThaiModel.FN_TopSanPhamDichVu_Result">
@@ -926,54 +1012,24 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="ImportInfoes">
-            <EntityTypeMapping TypeName="QLNHThaiModel.ImportInfo">
-              <MappingFragment StoreEntitySet="ImportInfo">
-                <ScalarProperty Name="date_Expiry" ColumnName="date_Expiry" />
-                <ScalarProperty Name="count_Ingredient" ColumnName="count_Ingredient" />
-                <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
-                <ScalarProperty Name="id_Import" ColumnName="id_Import" />
-                <ScalarProperty Name="id_ImportInfo" ColumnName="id_ImportInfo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Imports">
-            <EntityTypeMapping TypeName="QLNHThaiModel.Import">
-              <MappingFragment StoreEntitySet="Import">
-                <ScalarProperty Name="total_Price" ColumnName="total_Price" />
-                <ScalarProperty Name="status_Import" ColumnName="status_Import" />
-                <ScalarProperty Name="type_Import" ColumnName="type_Import" />
-                <ScalarProperty Name="id_NV" ColumnName="id_NV" />
-                <ScalarProperty Name="date_Import" ColumnName="date_Import" />
-                <ScalarProperty Name="id_Import" ColumnName="id_Import" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ingredients">
-            <EntityTypeMapping TypeName="QLNHThaiModel.Ingredient">
-              <MappingFragment StoreEntitySet="Ingredient">
-                <ScalarProperty Name="price_Ingredient" ColumnName="price_Ingredient" />
-                <ScalarProperty Name="id_Catalog" ColumnName="id_Catalog" />
-                <ScalarProperty Name="countkid_Ingredient" ColumnName="countkid_Ingredient" />
-                <ScalarProperty Name="unitkid_Ingredient" ColumnName="unitkid_Ingredient" />
-                <ScalarProperty Name="condition_Ingredient" ColumnName="condition_Ingredient" />
-                <ScalarProperty Name="image_Ingredient" ColumnName="image_Ingredient" />
-                <ScalarProperty Name="status_Ingredient" ColumnName="status_Ingredient" />
-                <ScalarProperty Name="count_Ingredient" ColumnName="count_Ingredient" />
-                <ScalarProperty Name="unit_Ingredient" ColumnName="unit_Ingredient" />
-                <ScalarProperty Name="name_Ingredient" ColumnName="name_Ingredient" />
-                <ScalarProperty Name="id_Ingredient" ColumnName="id_Ingredient" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="FN_DoanhThuTheoThang" FunctionName="QLNHThaiModel.Store.FN_DoanhThuTheoThang">
+          <FunctionImportMapping FunctionImportName="FN_ThuChiTheoNgay" FunctionName="QLNHThaiModel.Store.FN_ThuChiTheoNgay">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="QLNHThaiModel.FN_DoanhThuTheoThang_Result">
-                <ScalarProperty Name="THANG" ColumnName="THANG" />
+              <ComplexTypeMapping TypeName="QLNHThaiModel.FN_ThuChiTheoNgay_Result">
+                <ScalarProperty Name="IDDOANHTHU" ColumnName="IDDOANHTHU" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
                 <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="QLNHThaiModel.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="condition_Unit" ColumnName="condition_Unit" />
+                <ScalarProperty Name="name_Unit" ColumnName="name_Unit" />
+                <ScalarProperty Name="id_Unit" ColumnName="id_Unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

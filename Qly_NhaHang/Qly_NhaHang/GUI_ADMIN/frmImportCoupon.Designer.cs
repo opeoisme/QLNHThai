@@ -130,6 +130,8 @@
             // 
             // idImport
             // 
+            this.idImport.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idImport.AppearanceCell.Options.UseFont = true;
             this.idImport.Caption = "Mã phiếu nhập";
             this.idImport.FieldName = "id_Import";
             this.idImport.MinWidth = 30;
@@ -140,7 +142,11 @@
             // 
             // dateImport
             // 
+            this.dateImport.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.dateImport.AppearanceCell.Options.UseFont = true;
             this.dateImport.Caption = "Ngày nhập";
+            this.dateImport.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateImport.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateImport.FieldName = "date_Import";
             this.dateImport.MinWidth = 30;
             this.dateImport.Name = "dateImport";
@@ -150,6 +156,8 @@
             // 
             // nameNV
             // 
+            this.nameNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameNV.AppearanceCell.Options.UseFont = true;
             this.nameNV.Caption = "Người nhập";
             this.nameNV.FieldName = "name_NV";
             this.nameNV.MinWidth = 30;
@@ -160,6 +168,8 @@
             // 
             // statusImport
             // 
+            this.statusImport.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.statusImport.AppearanceCell.Options.UseFont = true;
             this.statusImport.Caption = "Trạng thái phiếu nhập";
             this.statusImport.FieldName = "status_Import";
             this.statusImport.MinWidth = 30;
@@ -170,7 +180,11 @@
             // 
             // total_Price
             // 
+            this.total_Price.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.total_Price.AppearanceCell.Options.UseFont = true;
             this.total_Price.Caption = "Thanh toán";
+            this.total_Price.DisplayFormat.FormatString = "n0";
+            this.total_Price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.total_Price.FieldName = "total_Price";
             this.total_Price.MinWidth = 30;
             this.total_Price.Name = "total_Price";
@@ -185,6 +199,7 @@
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._8726154_import_icon;
             this.Name = "frmImportCoupon";
             this.Text = "Danh sách phiếu nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

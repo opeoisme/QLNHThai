@@ -348,7 +348,7 @@
             this.checkBoxShowHide.TabIndex = 11;
             this.checkBoxShowHide.UseVisualStyleBackColor = true;
             this.checkBoxShowHide.CheckedChanged += new System.EventHandler(this.chkShowHide_CheckedChanged);
-            this.checkBoxShowHide.MouseHover += new System.EventHandler(this.checkBoxShowHide_MouseHover_1);
+            this.checkBoxShowHide.MouseHover += new System.EventHandler(this.checkBoxShowHide_MouseHover);
             // 
             // pictureBox1
             // 
@@ -474,7 +474,7 @@
             this.panel1.Size = new System.Drawing.Size(738, 43);
             this.panel1.TabIndex = 7;
             // 
-            // Login
+            // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -485,7 +485,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "frmLogin";
             this.Padding = new System.Windows.Forms.Padding(30, 3, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

@@ -22,6 +22,7 @@ namespace Qly_NhaHang.GUI_ADD
         {
             InitializeComponent();
             LoadCatalogData();
+            LoadUnitData();
         }
         private void LoadCatalogData()
         {
@@ -29,6 +30,21 @@ namespace Qly_NhaHang.GUI_ADD
             cbbCatalog.DataSource = catalogs;
             cbbCatalog.DisplayMember = "name_Catalog";
             cbbCatalog.ValueMember = "id_Catalog";
+        }
+
+        private void LoadUnitData()
+        {
+            var unit = dbContext.Units
+                .Where(d => d.condition_Unit == "Sử dụng")
+                .ToList();
+
+            // cbbUnitIngredient.Items.Clear();
+            cbbUnitKid.Items.Clear();
+            foreach (var item in unit)
+            {
+                cbbUnitIngredient.Items.Add(item.name_Unit);
+                cbbUnitKid.Items.Add(item.name_Unit);
+            }
         }
 
         private void imageIngre_Click(object sender, EventArgs e)

@@ -15,10 +15,10 @@ using System.Windows.Forms;
 
 namespace Qly_NhaHang
 {
-    public partial class frmThongKe : DevExpress.XtraEditors.XtraForm
+    public partial class frmThongKeNgay : DevExpress.XtraEditors.XtraForm
     {
         private QLNHThaiEntities dbContext;
-        public frmThongKe()
+        public frmThongKeNgay()
         {
             InitializeComponent();
             dbContext = new QLNHThaiEntities();
@@ -85,11 +85,11 @@ namespace Qly_NhaHang
                 ((XYDiagram)cNgayDuong.Diagram).AxisY.Label.TextPattern = "{V:N0} VND";
 
 
-                LoadFormBill();
+                LoadFormBThongKeNgay();
             }
         }
 
-        public void LoadFormBill()
+        public void LoadFormBThongKeNgay()
         {
             DateTime today = DateTime.Today;
 
@@ -104,6 +104,15 @@ namespace Qly_NhaHang
                 }).ToList();
 
             gctDoanhThuNgay.DataSource = BillData;
+            if (BillData.Count == 0)
+            {
+                lblTotalMoney.Text = "0 VND";
+            }
+            else
+            {
+                decimal totalMoney = (decimal)BillData.Sum(b => b.totalPrice_Bill);
+                lblTotalMoney.Text = string.Format("{0:N0} VND", totalMoney);
+            }
         }
 
 

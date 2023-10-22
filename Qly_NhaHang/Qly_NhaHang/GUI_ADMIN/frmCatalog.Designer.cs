@@ -189,7 +189,7 @@
             this.txbNameCatalog.BorderThickness = 1;
             this.txbNameCatalog.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameCatalog.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameCatalog.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbNameCatalog.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameCatalog.DefaultText = "";
             this.txbNameCatalog.FillColor = System.Drawing.Color.White;
             this.txbNameCatalog.HideSelection = true;
@@ -235,7 +235,7 @@
             this.txbNameCatalog.SelectionLength = 0;
             this.txbNameCatalog.SelectionStart = 0;
             this.txbNameCatalog.ShortcutsEnabled = true;
-            this.txbNameCatalog.Size = new System.Drawing.Size(320, 47);
+            this.txbNameCatalog.Size = new System.Drawing.Size(320, 43);
             this.txbNameCatalog.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameCatalog.TabIndex = 18;
             this.txbNameCatalog.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -263,7 +263,7 @@
             this.txbIdCatalog.BorderThickness = 1;
             this.txbIdCatalog.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdCatalog.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdCatalog.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdCatalog.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdCatalog.DefaultText = "";
             this.txbIdCatalog.FillColor = System.Drawing.Color.White;
             this.txbIdCatalog.HideSelection = true;
@@ -309,7 +309,7 @@
             this.txbIdCatalog.SelectionLength = 0;
             this.txbIdCatalog.SelectionStart = 0;
             this.txbIdCatalog.ShortcutsEnabled = true;
-            this.txbIdCatalog.Size = new System.Drawing.Size(320, 45);
+            this.txbIdCatalog.Size = new System.Drawing.Size(320, 43);
             this.txbIdCatalog.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdCatalog.TabIndex = 17;
             this.txbIdCatalog.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -375,6 +375,8 @@
             // 
             // idCatalog
             // 
+            this.idCatalog.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idCatalog.AppearanceCell.Options.UseFont = true;
             this.idCatalog.Caption = "Mã loại sản phẩm";
             this.idCatalog.FieldName = "id_Catalog";
             this.idCatalog.MinWidth = 30;
@@ -385,6 +387,8 @@
             // 
             // nameCatalog
             // 
+            this.nameCatalog.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameCatalog.AppearanceCell.Options.UseFont = true;
             this.nameCatalog.Caption = "Tên loại nguyên liệu";
             this.nameCatalog.FieldName = "name_Catalog";
             this.nameCatalog.MinWidth = 30;
@@ -401,6 +405,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._60168_catalog_icon;
             this.Name = "frmCatalog";
             this.Text = "Danh sách nguyên liệu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

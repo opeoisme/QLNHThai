@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTable));
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -40,11 +45,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTable));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddTable = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteTable = new System.Windows.Forms.ToolStripButton();
@@ -53,6 +53,9 @@
             this.btnPDFTable = new System.Windows.Forms.ToolStripButton();
             this.btnCSVTable = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txbSeatTable = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txbStatusTable = new Bunifu.UI.WinForms.BunifuTextBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -67,15 +70,12 @@
             this.nameTable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.seatsTable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.statusTable = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txbSeatTable = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTable)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -167,6 +167,102 @@
             this.panel1.Size = new System.Drawing.Size(525, 956);
             this.panel1.TabIndex = 3;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(109)))), ((int)(((byte)(156)))));
+            this.panel4.Controls.Add(this.labelControl8);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(525, 53);
+            this.panel4.TabIndex = 33;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(223, 10);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(125, 29);
+            this.labelControl8.TabIndex = 24;
+            this.labelControl8.Text = "Thông tin bàn";
+            // 
+            // txbSeatTable
+            // 
+            this.txbSeatTable.AcceptsReturn = false;
+            this.txbSeatTable.AcceptsTab = false;
+            this.txbSeatTable.AnimationSpeed = 200;
+            this.txbSeatTable.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbSeatTable.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbSeatTable.BackColor = System.Drawing.Color.White;
+            this.txbSeatTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbSeatTable.BackgroundImage")));
+            this.txbSeatTable.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txbSeatTable.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txbSeatTable.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txbSeatTable.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txbSeatTable.BorderRadius = 10;
+            this.txbSeatTable.BorderThickness = 1;
+            this.txbSeatTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbSeatTable.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbSeatTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
+            this.txbSeatTable.DefaultText = "";
+            this.txbSeatTable.FillColor = System.Drawing.Color.White;
+            this.txbSeatTable.HideSelection = true;
+            this.txbSeatTable.IconLeft = null;
+            this.txbSeatTable.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbSeatTable.IconPadding = 10;
+            this.txbSeatTable.IconRight = null;
+            this.txbSeatTable.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbSeatTable.Lines = new string[0];
+            this.txbSeatTable.Location = new System.Drawing.Point(134, 256);
+            this.txbSeatTable.MaxLength = 32767;
+            this.txbSeatTable.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbSeatTable.Modified = false;
+            this.txbSeatTable.Multiline = false;
+            this.txbSeatTable.Name = "txbSeatTable";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbSeatTable.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbSeatTable.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbSeatTable.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbSeatTable.OnIdleState = stateProperties4;
+            this.txbSeatTable.Padding = new System.Windows.Forms.Padding(3);
+            this.txbSeatTable.PasswordChar = '\0';
+            this.txbSeatTable.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbSeatTable.PlaceholderText = "";
+            this.txbSeatTable.ReadOnly = false;
+            this.txbSeatTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbSeatTable.SelectedText = "";
+            this.txbSeatTable.SelectionLength = 0;
+            this.txbSeatTable.SelectionStart = 0;
+            this.txbSeatTable.ShortcutsEnabled = true;
+            this.txbSeatTable.Size = new System.Drawing.Size(361, 43);
+            this.txbSeatTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txbSeatTable.TabIndex = 32;
+            this.txbSeatTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbSeatTable.TextMarginBottom = 0;
+            this.txbSeatTable.TextMarginLeft = 3;
+            this.txbSeatTable.TextMarginTop = 0;
+            this.txbSeatTable.TextPlaceholder = "";
+            this.txbSeatTable.UseSystemPasswordChar = false;
+            this.txbSeatTable.WordWrap = true;
+            // 
             // txbStatusTable
             // 
             this.txbStatusTable.AcceptsReturn = false;
@@ -184,7 +280,7 @@
             this.txbStatusTable.BorderThickness = 1;
             this.txbStatusTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbStatusTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbStatusTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbStatusTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbStatusTable.DefaultText = "";
             this.txbStatusTable.FillColor = System.Drawing.Color.White;
             this.txbStatusTable.HideSelection = true;
@@ -230,7 +326,7 @@
             this.txbStatusTable.SelectionLength = 0;
             this.txbStatusTable.SelectionStart = 0;
             this.txbStatusTable.ShortcutsEnabled = true;
-            this.txbStatusTable.Size = new System.Drawing.Size(353, 45);
+            this.txbStatusTable.Size = new System.Drawing.Size(353, 43);
             this.txbStatusTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbStatusTable.TabIndex = 31;
             this.txbStatusTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -278,7 +374,7 @@
             this.txbNameTable.BorderThickness = 1;
             this.txbNameTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameTable.DefaultText = "";
             this.txbNameTable.FillColor = System.Drawing.Color.White;
             this.txbNameTable.HideSelection = true;
@@ -324,7 +420,7 @@
             this.txbNameTable.SelectionLength = 0;
             this.txbNameTable.SelectionStart = 0;
             this.txbNameTable.ShortcutsEnabled = true;
-            this.txbNameTable.Size = new System.Drawing.Size(363, 45);
+            this.txbNameTable.Size = new System.Drawing.Size(363, 43);
             this.txbNameTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameTable.TabIndex = 22;
             this.txbNameTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -352,7 +448,7 @@
             this.txbIdTable.BorderThickness = 1;
             this.txbIdTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdTable.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdTable.DefaultText = "";
             this.txbIdTable.FillColor = System.Drawing.Color.White;
             this.txbIdTable.HideSelection = true;
@@ -398,7 +494,7 @@
             this.txbIdTable.SelectionLength = 0;
             this.txbIdTable.SelectionStart = 0;
             this.txbIdTable.ShortcutsEnabled = true;
-            this.txbIdTable.Size = new System.Drawing.Size(353, 45);
+            this.txbIdTable.Size = new System.Drawing.Size(353, 43);
             this.txbIdTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdTable.TabIndex = 21;
             this.txbIdTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -468,6 +564,8 @@
             // 
             // idTable
             // 
+            this.idTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idTable.AppearanceCell.Options.UseFont = true;
             this.idTable.Caption = "Mã bàn";
             this.idTable.FieldName = "id_Table";
             this.idTable.MinWidth = 30;
@@ -478,6 +576,8 @@
             // 
             // nameTable
             // 
+            this.nameTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameTable.AppearanceCell.Options.UseFont = true;
             this.nameTable.Caption = "Tên bàn";
             this.nameTable.FieldName = "name_Table";
             this.nameTable.MinWidth = 30;
@@ -488,6 +588,8 @@
             // 
             // seatsTable
             // 
+            this.seatsTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.seatsTable.AppearanceCell.Options.UseFont = true;
             this.seatsTable.Caption = "Số ghế";
             this.seatsTable.FieldName = "seats_Table";
             this.seatsTable.MinWidth = 30;
@@ -498,6 +600,8 @@
             // 
             // statusTable
             // 
+            this.statusTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.statusTable.AppearanceCell.Options.UseFont = true;
             this.statusTable.Caption = "Trạng thái bàn";
             this.statusTable.FieldName = "status_Table";
             this.statusTable.MinWidth = 30;
@@ -505,102 +609,6 @@
             this.statusTable.Visible = true;
             this.statusTable.VisibleIndex = 3;
             this.statusTable.Width = 112;
-            // 
-            // txbSeatTable
-            // 
-            this.txbSeatTable.AcceptsReturn = false;
-            this.txbSeatTable.AcceptsTab = false;
-            this.txbSeatTable.AnimationSpeed = 200;
-            this.txbSeatTable.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbSeatTable.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbSeatTable.BackColor = System.Drawing.Color.White;
-            this.txbSeatTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbSeatTable.BackgroundImage")));
-            this.txbSeatTable.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txbSeatTable.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txbSeatTable.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txbSeatTable.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txbSeatTable.BorderRadius = 10;
-            this.txbSeatTable.BorderThickness = 1;
-            this.txbSeatTable.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txbSeatTable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbSeatTable.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbSeatTable.DefaultText = "";
-            this.txbSeatTable.FillColor = System.Drawing.Color.White;
-            this.txbSeatTable.HideSelection = true;
-            this.txbSeatTable.IconLeft = null;
-            this.txbSeatTable.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbSeatTable.IconPadding = 10;
-            this.txbSeatTable.IconRight = null;
-            this.txbSeatTable.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbSeatTable.Lines = new string[0];
-            this.txbSeatTable.Location = new System.Drawing.Point(134, 256);
-            this.txbSeatTable.MaxLength = 32767;
-            this.txbSeatTable.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbSeatTable.Modified = false;
-            this.txbSeatTable.Multiline = false;
-            this.txbSeatTable.Name = "txbSeatTable";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbSeatTable.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbSeatTable.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbSeatTable.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbSeatTable.OnIdleState = stateProperties4;
-            this.txbSeatTable.Padding = new System.Windows.Forms.Padding(3);
-            this.txbSeatTable.PasswordChar = '\0';
-            this.txbSeatTable.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbSeatTable.PlaceholderText = "";
-            this.txbSeatTable.ReadOnly = false;
-            this.txbSeatTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbSeatTable.SelectedText = "";
-            this.txbSeatTable.SelectionLength = 0;
-            this.txbSeatTable.SelectionStart = 0;
-            this.txbSeatTable.ShortcutsEnabled = true;
-            this.txbSeatTable.Size = new System.Drawing.Size(361, 45);
-            this.txbSeatTable.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
-            this.txbSeatTable.TabIndex = 32;
-            this.txbSeatTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txbSeatTable.TextMarginBottom = 0;
-            this.txbSeatTable.TextMarginLeft = 3;
-            this.txbSeatTable.TextMarginTop = 0;
-            this.txbSeatTable.TextPlaceholder = "";
-            this.txbSeatTable.UseSystemPasswordChar = false;
-            this.txbSeatTable.WordWrap = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(109)))), ((int)(((byte)(156)))));
-            this.panel4.Controls.Add(this.labelControl8);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(525, 53);
-            this.panel4.TabIndex = 33;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(223, 10);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(125, 29);
-            this.labelControl8.TabIndex = 24;
-            this.labelControl8.Text = "Thông tin bàn";
             // 
             // frmTable
             // 
@@ -610,6 +618,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources.icons8_table_100;
             this.Name = "frmTable";
             this.Text = "Danh sách bàn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -618,11 +627,11 @@
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTable)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

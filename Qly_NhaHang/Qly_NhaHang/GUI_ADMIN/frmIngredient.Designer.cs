@@ -174,8 +174,8 @@
             this.btnExportIngredient.Image = global::Qly_NhaHang.Properties.Resources._8725906_export_icon;
             this.btnExportIngredient.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExportIngredient.Name = "btnExportIngredient";
-            this.btnExportIngredient.Size = new System.Drawing.Size(76, 29);
-            this.btnExportIngredient.Text = "Xuất";
+            this.btnExportIngredient.Size = new System.Drawing.Size(111, 29);
+            this.btnExportIngredient.Text = "Kiểm tồn";
             this.btnExportIngredient.Click += new System.EventHandler(this.btnExportIngredient_Click);
             // 
             // btnLoadIngredient
@@ -285,6 +285,8 @@
             // 
             // idIngredient
             // 
+            this.idIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idIngredient.AppearanceCell.Options.UseFont = true;
             this.idIngredient.Caption = "Mã";
             this.idIngredient.FieldName = "id_Ingredient";
             this.idIngredient.MinWidth = 30;
@@ -295,6 +297,8 @@
             // 
             // nameIngredient
             // 
+            this.nameIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameIngredient.AppearanceCell.Options.UseFont = true;
             this.nameIngredient.Caption = "Tên NL";
             this.nameIngredient.FieldName = "name_Ingredient";
             this.nameIngredient.MinWidth = 30;
@@ -305,7 +309,11 @@
             // 
             // countIngredient
             // 
+            this.countIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.countIngredient.AppearanceCell.Options.UseFont = true;
             this.countIngredient.Caption = "SL tồn";
+            this.countIngredient.DisplayFormat.FormatString = "n0";
+            this.countIngredient.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.countIngredient.FieldName = "count_Ingredient";
             this.countIngredient.MinWidth = 30;
             this.countIngredient.Name = "countIngredient";
@@ -315,6 +323,8 @@
             // 
             // unitIngredient
             // 
+            this.unitIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.unitIngredient.AppearanceCell.Options.UseFont = true;
             this.unitIngredient.Caption = "ĐVT";
             this.unitIngredient.FieldName = "unit_Ingredient";
             this.unitIngredient.MinWidth = 30;
@@ -325,7 +335,11 @@
             // 
             // priceIngredient
             // 
+            this.priceIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.priceIngredient.AppearanceCell.Options.UseFont = true;
             this.priceIngredient.Caption = "Giá nhập";
+            this.priceIngredient.DisplayFormat.FormatString = "n0";
+            this.priceIngredient.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.priceIngredient.FieldName = "price_Ingredient";
             this.priceIngredient.MinWidth = 30;
             this.priceIngredient.Name = "priceIngredient";
@@ -335,6 +349,8 @@
             // 
             // statusIngredient
             // 
+            this.statusIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.statusIngredient.AppearanceCell.Options.UseFont = true;
             this.statusIngredient.Caption = "Trạng thái";
             this.statusIngredient.FieldName = "status_Ingredient";
             this.statusIngredient.MinWidth = 30;
@@ -345,6 +361,8 @@
             // 
             // imgIngredient
             // 
+            this.imgIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.imgIngredient.AppearanceCell.Options.UseFont = true;
             this.imgIngredient.Caption = "Hình ảnh";
             this.imgIngredient.FieldName = "image_Ingredient";
             this.imgIngredient.MinWidth = 30;
@@ -355,32 +373,40 @@
             // 
             // idCatalog
             // 
+            this.idCatalog.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idCatalog.AppearanceCell.Options.UseFont = true;
             this.idCatalog.Caption = "Loại hàng";
             this.idCatalog.FieldName = "name_Catalog";
             this.idCatalog.MinWidth = 30;
             this.idCatalog.Name = "idCatalog";
             this.idCatalog.Visible = true;
-            this.idCatalog.VisibleIndex = 7;
+            this.idCatalog.VisibleIndex = 9;
             this.idCatalog.Width = 191;
             // 
             // unitkidIngredient
             // 
+            this.unitkidIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.unitkidIngredient.AppearanceCell.Options.UseFont = true;
             this.unitkidIngredient.Caption = "ĐVN";
             this.unitkidIngredient.FieldName = "unitkid_Ingredient";
             this.unitkidIngredient.MinWidth = 30;
             this.unitkidIngredient.Name = "unitkidIngredient";
             this.unitkidIngredient.Visible = true;
-            this.unitkidIngredient.VisibleIndex = 8;
+            this.unitkidIngredient.VisibleIndex = 7;
             this.unitkidIngredient.Width = 118;
             // 
             // countkidIngredient
             // 
+            this.countkidIngredient.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.countkidIngredient.AppearanceCell.Options.UseFont = true;
             this.countkidIngredient.Caption = "Đơn vị chuyển đổi";
+            this.countkidIngredient.DisplayFormat.FormatString = "n0";
+            this.countkidIngredient.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.countkidIngredient.FieldName = "countkid_Ingredient";
             this.countkidIngredient.MinWidth = 30;
             this.countkidIngredient.Name = "countkidIngredient";
             this.countkidIngredient.Visible = true;
-            this.countkidIngredient.VisibleIndex = 9;
+            this.countkidIngredient.VisibleIndex = 8;
             this.countkidIngredient.Width = 129;
             // 
             // panel2
@@ -442,7 +468,7 @@
             this.txbPriceIngre.BorderThickness = 1;
             this.txbPriceIngre.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbPriceIngre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPriceIngre.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbPriceIngre.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbPriceIngre.DefaultText = "";
             this.txbPriceIngre.FillColor = System.Drawing.Color.White;
             this.txbPriceIngre.HideSelection = true;
@@ -488,7 +514,7 @@
             this.txbPriceIngre.SelectionLength = 0;
             this.txbPriceIngre.SelectionStart = 0;
             this.txbPriceIngre.ShortcutsEnabled = true;
-            this.txbPriceIngre.Size = new System.Drawing.Size(220, 47);
+            this.txbPriceIngre.Size = new System.Drawing.Size(220, 43);
             this.txbPriceIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbPriceIngre.TabIndex = 52;
             this.txbPriceIngre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -516,7 +542,7 @@
             this.txbStatusIngre.BorderThickness = 1;
             this.txbStatusIngre.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbStatusIngre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbStatusIngre.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbStatusIngre.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbStatusIngre.DefaultText = "";
             this.txbStatusIngre.FillColor = System.Drawing.Color.White;
             this.txbStatusIngre.HideSelection = true;
@@ -562,7 +588,7 @@
             this.txbStatusIngre.SelectionLength = 0;
             this.txbStatusIngre.SelectionStart = 0;
             this.txbStatusIngre.ShortcutsEnabled = true;
-            this.txbStatusIngre.Size = new System.Drawing.Size(281, 47);
+            this.txbStatusIngre.Size = new System.Drawing.Size(281, 43);
             this.txbStatusIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbStatusIngre.TabIndex = 51;
             this.txbStatusIngre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -590,7 +616,7 @@
             this.txbCountKidIngre.BorderThickness = 1;
             this.txbCountKidIngre.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbCountKidIngre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbCountKidIngre.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbCountKidIngre.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbCountKidIngre.DefaultText = "";
             this.txbCountKidIngre.FillColor = System.Drawing.Color.White;
             this.txbCountKidIngre.HideSelection = true;
@@ -636,7 +662,7 @@
             this.txbCountKidIngre.SelectionLength = 0;
             this.txbCountKidIngre.SelectionStart = 0;
             this.txbCountKidIngre.ShortcutsEnabled = true;
-            this.txbCountKidIngre.Size = new System.Drawing.Size(110, 47);
+            this.txbCountKidIngre.Size = new System.Drawing.Size(110, 43);
             this.txbCountKidIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbCountKidIngre.TabIndex = 50;
             this.txbCountKidIngre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -664,7 +690,7 @@
             this.txbCountIngre.BorderThickness = 1;
             this.txbCountIngre.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbCountIngre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbCountIngre.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbCountIngre.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbCountIngre.DefaultText = "";
             this.txbCountIngre.FillColor = System.Drawing.Color.White;
             this.txbCountIngre.HideSelection = true;
@@ -710,7 +736,7 @@
             this.txbCountIngre.SelectionLength = 0;
             this.txbCountIngre.SelectionStart = 0;
             this.txbCountIngre.ShortcutsEnabled = true;
-            this.txbCountIngre.Size = new System.Drawing.Size(110, 47);
+            this.txbCountIngre.Size = new System.Drawing.Size(110, 43);
             this.txbCountIngre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbCountIngre.TabIndex = 49;
             this.txbCountIngre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -766,13 +792,14 @@
             // cbbCatalog
             // 
             this.cbbCatalog.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCatalog.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbbCatalog.FormattingEnabled = true;
             this.cbbCatalog.Items.AddRange(new object[] {
             "Được sử dụng",
             "Ngưng bán"});
             this.cbbCatalog.Location = new System.Drawing.Point(174, 461);
             this.cbbCatalog.Name = "cbbCatalog";
-            this.cbbCatalog.Size = new System.Drawing.Size(275, 27);
+            this.cbbCatalog.Size = new System.Drawing.Size(275, 30);
             this.cbbCatalog.TabIndex = 44;
             // 
             // labelControl10
@@ -789,20 +816,6 @@
             // 
             this.cbbUnitKid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUnitKid.FormattingEnabled = true;
-            this.cbbUnitKid.Items.AddRange(new object[] {
-            "gram",
-            "viên",
-            "KG",
-            "patch",
-            "vắt",
-            "ml",
-            "Lít",
-            "Lọ",
-            "psc",
-            "lon",
-            "ly",
-            "chai",
-            "Thùng"});
             this.cbbUnitKid.Location = new System.Drawing.Point(363, 261);
             this.cbbUnitKid.Name = "cbbUnitKid";
             this.cbbUnitKid.Size = new System.Drawing.Size(86, 27);
@@ -832,19 +845,6 @@
             // 
             this.cbbUnitIngredient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUnitIngredient.FormattingEnabled = true;
-            this.cbbUnitIngredient.Items.AddRange(new object[] {
-            "gram",
-            "viên",
-            "KG",
-            "vắt",
-            "ml",
-            "Lít",
-            "Lọ",
-            "psc",
-            "lon",
-            "ly",
-            "chai",
-            "Thùng"});
             this.cbbUnitIngredient.Location = new System.Drawing.Point(363, 188);
             this.cbbUnitIngredient.Name = "cbbUnitIngredient";
             this.cbbUnitIngredient.Size = new System.Drawing.Size(86, 27);
@@ -888,7 +888,7 @@
             this.txbNameIngredient.BorderThickness = 1;
             this.txbNameIngredient.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameIngredient.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameIngredient.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbNameIngredient.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameIngredient.DefaultText = "";
             this.txbNameIngredient.FillColor = System.Drawing.Color.White;
             this.txbNameIngredient.HideSelection = true;
@@ -934,7 +934,7 @@
             this.txbNameIngredient.SelectionLength = 0;
             this.txbNameIngredient.SelectionStart = 0;
             this.txbNameIngredient.ShortcutsEnabled = true;
-            this.txbNameIngredient.Size = new System.Drawing.Size(263, 47);
+            this.txbNameIngredient.Size = new System.Drawing.Size(263, 43);
             this.txbNameIngredient.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameIngredient.TabIndex = 28;
             this.txbNameIngredient.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -962,7 +962,7 @@
             this.txbIdIngredient.BorderThickness = 1;
             this.txbIdIngredient.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdIngredient.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdIngredient.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdIngredient.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdIngredient.DefaultText = "";
             this.txbIdIngredient.FillColor = System.Drawing.Color.White;
             this.txbIdIngredient.HideSelection = true;
@@ -1008,7 +1008,7 @@
             this.txbIdIngredient.SelectionLength = 0;
             this.txbIdIngredient.SelectionStart = 0;
             this.txbIdIngredient.ShortcutsEnabled = true;
-            this.txbIdIngredient.Size = new System.Drawing.Size(263, 45);
+            this.txbIdIngredient.Size = new System.Drawing.Size(263, 43);
             this.txbIdIngredient.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdIngredient.TabIndex = 27;
             this.txbIdIngredient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;

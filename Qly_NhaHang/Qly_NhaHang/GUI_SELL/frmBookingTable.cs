@@ -29,15 +29,13 @@ namespace Qly_NhaHang
         private void frmBookingTable_Load(object sender, EventArgs e)
         {
             _ban = new BAN();
-            lblID.Text = _idBan.ToString(); // Cập nhật lblID.Text bằng giá trị _idBan
+            lblID.Text = _idBan.ToString(); 
             _reservation = new Reservation_DAO();
-            
             if (_idReservation != 0)
             {
                 IsUpdateMode = true;
                 LoadReservationData();
             }
-
         }
 
         private void LoadReservationData()
@@ -51,8 +49,9 @@ namespace Qly_NhaHang
                     {
                         txbGuestName.Text = reservation.name_Guest;
                         txbGuestPhone.Text = reservation.phone_Guest;
-                        // Chú ý chuyển đổi từ DateTime thành DateTimeOffset nếu cần
-                        dtpkTimeGuest.DateTimeOffset = new DateTimeOffset(reservation.date_Reservation, TimeSpan.Zero);
+                        TimeSpan timeZoneOffset = TimeSpan.FromHours(7);
+                        dtpkTimeGuest.DateTimeOffset = new DateTimeOffset(reservation.date_Reservation, timeZoneOffset);
+
                     }
                 }
             }
@@ -75,7 +74,7 @@ namespace Qly_NhaHang
 
         public void SetSeatsTable(string seatsTable)
         {
-            lblSeats.Text = seatsTable; // Hiển thị giá trị seat_Table trên lblSeats
+            lblSeats.Text = seatsTable; 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -90,29 +89,28 @@ namespace Qly_NhaHang
                 int idTable = int.Parse(lblID.Text);
                 string nameGuest = txbGuestName.Text;
                 DateTimeOffset dateReservation = dtpkTimeGuest.DateTimeOffset;
+
                 string phoneGuest = txbGuestPhone.Text;
 
                 if (string.IsNullOrWhiteSpace(nameGuest))
                 {
                     XtraMessageBox.Show("Vui lòng nhập tên khách hàng.","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Ngừng thực hiện khi có lỗi
+                    return; 
                 }
 
                 if (string.IsNullOrWhiteSpace(phoneGuest))
                 {
                     XtraMessageBox.Show("Vui lòng nhập số điện thoại khách hàng.","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Ngừng thực hiện khi có lỗi
+                    return; 
                 }
 
                 if (dateReservation == default(DateTimeOffset) || dateReservation <= DateTimeOffset.Now)
                 {
                     XtraMessageBox.Show("Vui lòng chọn một ngày và giờ đặt bàn hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Ngừng thực hiện khi có lỗi
+                    return; 
                 }
-
-                // Chuyển đổi DateTimeOffset thành DateTime
-                DateTime dateReservationUtc = dateReservation.UtcDateTime;
-
+             
+                DateTime dateReservationLocal = TimeZoneInfo.ConvertTimeFromUtc(dateReservation.UtcDateTime, TimeZoneInfo.Local);
                 using (var context = new QLNHThaiEntities())
                 {
                     if (IsUpdateMode) // Nếu đang ở chế độ cập nhật
@@ -121,7 +119,7 @@ namespace Qly_NhaHang
                         if (reservationToUpdate != null)
                         {
                             reservationToUpdate.name_Guest = nameGuest;
-                            reservationToUpdate.date_Reservation = dateReservationUtc;
+                            reservationToUpdate.date_Reservation = dateReservationLocal;
                             reservationToUpdate.phone_Guest = phoneGuest;
                         }
 
@@ -133,7 +131,7 @@ namespace Qly_NhaHang
                         {
                             id_Table = idTable,
                             name_Guest = nameGuest,
-                            date_Reservation = dateReservationUtc,
+                            date_Reservation = dateReservationLocal,
                             phone_Guest = phoneGuest
                         };
 

@@ -188,7 +188,7 @@
             this.txbNameCategory.BorderThickness = 1;
             this.txbNameCategory.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameCategory.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbNameCategory.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameCategory.DefaultText = "";
             this.txbNameCategory.FillColor = System.Drawing.Color.White;
             this.txbNameCategory.HideSelection = true;
@@ -234,7 +234,7 @@
             this.txbNameCategory.SelectionLength = 0;
             this.txbNameCategory.SelectionStart = 0;
             this.txbNameCategory.ShortcutsEnabled = true;
-            this.txbNameCategory.Size = new System.Drawing.Size(320, 47);
+            this.txbNameCategory.Size = new System.Drawing.Size(320, 43);
             this.txbNameCategory.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameCategory.TabIndex = 18;
             this.txbNameCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -262,7 +262,7 @@
             this.txbIdCategory.BorderThickness = 1;
             this.txbIdCategory.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdCategory.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdCategory.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdCategory.DefaultText = "";
             this.txbIdCategory.FillColor = System.Drawing.Color.White;
             this.txbIdCategory.HideSelection = true;
@@ -308,7 +308,7 @@
             this.txbIdCategory.SelectionLength = 0;
             this.txbIdCategory.SelectionStart = 0;
             this.txbIdCategory.ShortcutsEnabled = true;
-            this.txbIdCategory.Size = new System.Drawing.Size(320, 45);
+            this.txbIdCategory.Size = new System.Drawing.Size(320, 43);
             this.txbIdCategory.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdCategory.TabIndex = 17;
             this.txbIdCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -374,6 +374,8 @@
             // 
             // idCategory
             // 
+            this.idCategory.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idCategory.AppearanceCell.Options.UseFont = true;
             this.idCategory.Caption = "Mã loại sản phẩm";
             this.idCategory.FieldName = "id_Category";
             this.idCategory.MinWidth = 30;
@@ -384,6 +386,8 @@
             // 
             // nameCategory
             // 
+            this.nameCategory.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameCategory.AppearanceCell.Options.UseFont = true;
             this.nameCategory.Caption = "Tên loại sản phẩm";
             this.nameCategory.FieldName = "name_Category";
             this.nameCategory.MinWidth = 30;
@@ -400,6 +404,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._60168_catalog_icon;
             this.Name = "frmCategoryFood";
             this.Text = "Danh sách loại sản phẩm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

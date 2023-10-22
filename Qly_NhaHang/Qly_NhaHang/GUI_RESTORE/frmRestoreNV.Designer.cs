@@ -55,6 +55,8 @@
             this.btnPDFNV = new System.Windows.Forms.ToolStripButton();
             this.btnCSVNV = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.gctNV = new DevExpress.XtraGrid.GridControl();
             this.gvNV = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.idNV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,17 +86,15 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txbIdNV = new Bunifu.UI.WinForms.BunifuTextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNV)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgNV)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -136,6 +136,7 @@
             this.btnPDFNV.Name = "btnPDFNV";
             this.btnPDFNV.Size = new System.Drawing.Size(72, 29);
             this.btnPDFNV.Text = "PDF";
+            this.btnPDFNV.Click += new System.EventHandler(this.btnPDFNV_Click);
             // 
             // btnCSVNV
             // 
@@ -144,6 +145,7 @@
             this.btnCSVNV.Name = "btnCSVNV";
             this.btnCSVNV.Size = new System.Drawing.Size(72, 29);
             this.btnCSVNV.Text = "CSV";
+            this.btnCSVNV.Click += new System.EventHandler(this.btnCSVNV_Click);
             // 
             // panel2
             // 
@@ -153,6 +155,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1944, 1059);
             this.panel2.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel3);
+            this.panel5.Controls.Add(this.toolStrip1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1398, 1059);
+            this.panel5.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.gctNV);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 34);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1398, 1025);
+            this.panel3.TabIndex = 5;
             // 
             // gctNV
             // 
@@ -188,6 +209,8 @@
             // 
             // idNV
             // 
+            this.idNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idNV.AppearanceCell.Options.UseFont = true;
             this.idNV.Caption = "Mã nhân viên";
             this.idNV.FieldName = "id_NV";
             this.idNV.MinWidth = 30;
@@ -198,6 +221,8 @@
             // 
             // nameNV
             // 
+            this.nameNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameNV.AppearanceCell.Options.UseFont = true;
             this.nameNV.Caption = "Họ tên";
             this.nameNV.FieldName = "name_NV";
             this.nameNV.MinWidth = 30;
@@ -208,6 +233,8 @@
             // 
             // sexNV
             // 
+            this.sexNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.sexNV.AppearanceCell.Options.UseFont = true;
             this.sexNV.Caption = "Giới tính";
             this.sexNV.FieldName = "sex_NV";
             this.sexNV.MinWidth = 30;
@@ -218,6 +245,8 @@
             // 
             // addressNV
             // 
+            this.addressNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.addressNV.AppearanceCell.Options.UseFont = true;
             this.addressNV.Caption = "Địa chỉ thường trú";
             this.addressNV.FieldName = "address_NV";
             this.addressNV.MinWidth = 30;
@@ -228,6 +257,8 @@
             // 
             // cccdNV
             // 
+            this.cccdNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.cccdNV.AppearanceCell.Options.UseFont = true;
             this.cccdNV.Caption = "CCCD/CMND";
             this.cccdNV.FieldName = "CCCD_NV";
             this.cccdNV.MinWidth = 30;
@@ -238,6 +269,8 @@
             // 
             // phoneNV
             // 
+            this.phoneNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.phoneNV.AppearanceCell.Options.UseFont = true;
             this.phoneNV.Caption = "Số điện thoại liên lạc";
             this.phoneNV.FieldName = "phone_NV";
             this.phoneNV.MinWidth = 30;
@@ -248,6 +281,8 @@
             // 
             // imageNV
             // 
+            this.imageNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.imageNV.AppearanceCell.Options.UseFont = true;
             this.imageNV.Caption = "Ảnh đại diện";
             this.imageNV.FieldName = "image_NV";
             this.imageNV.MinWidth = 30;
@@ -258,6 +293,8 @@
             // 
             // typeNV
             // 
+            this.typeNV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.typeNV.AppearanceCell.Options.UseFont = true;
             this.typeNV.Caption = "Chức vụ";
             this.typeNV.FieldName = "type_NV";
             this.typeNV.MinWidth = 30;
@@ -326,13 +363,14 @@
             // 
             // cbbTypeNV
             // 
+            this.cbbTypeNV.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbbTypeNV.FormattingEnabled = true;
             this.cbbTypeNV.Items.AddRange(new object[] {
             "Nhân viên",
             "Quản lý"});
             this.cbbTypeNV.Location = new System.Drawing.Point(395, 220);
             this.cbbTypeNV.Name = "cbbTypeNV";
-            this.cbbTypeNV.Size = new System.Drawing.Size(135, 27);
+            this.cbbTypeNV.Size = new System.Drawing.Size(135, 30);
             this.cbbTypeNV.TabIndex = 46;
             // 
             // txbPhoneNV
@@ -352,7 +390,7 @@
             this.txbPhoneNV.BorderThickness = 1;
             this.txbPhoneNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbPhoneNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPhoneNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbPhoneNV.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbPhoneNV.DefaultText = "";
             this.txbPhoneNV.FillColor = System.Drawing.Color.White;
             this.txbPhoneNV.HideSelection = true;
@@ -398,7 +436,7 @@
             this.txbPhoneNV.SelectionLength = 0;
             this.txbPhoneNV.SelectionStart = 0;
             this.txbPhoneNV.ShortcutsEnabled = true;
-            this.txbPhoneNV.Size = new System.Drawing.Size(346, 45);
+            this.txbPhoneNV.Size = new System.Drawing.Size(346, 43);
             this.txbPhoneNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbPhoneNV.TabIndex = 45;
             this.txbPhoneNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -426,7 +464,7 @@
             this.txbCCCDNV.BorderThickness = 1;
             this.txbCCCDNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbCCCDNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbCCCDNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbCCCDNV.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbCCCDNV.DefaultText = "";
             this.txbCCCDNV.FillColor = System.Drawing.Color.White;
             this.txbCCCDNV.HideSelection = true;
@@ -472,7 +510,7 @@
             this.txbCCCDNV.SelectionLength = 0;
             this.txbCCCDNV.SelectionStart = 0;
             this.txbCCCDNV.ShortcutsEnabled = true;
-            this.txbCCCDNV.Size = new System.Drawing.Size(346, 45);
+            this.txbCCCDNV.Size = new System.Drawing.Size(346, 43);
             this.txbCCCDNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbCCCDNV.TabIndex = 44;
             this.txbCCCDNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -500,7 +538,7 @@
             this.txbAddressNV.BorderThickness = 1;
             this.txbAddressNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbAddressNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbAddressNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbAddressNV.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbAddressNV.DefaultText = "";
             this.txbAddressNV.FillColor = System.Drawing.Color.White;
             this.txbAddressNV.HideSelection = true;
@@ -546,7 +584,7 @@
             this.txbAddressNV.SelectionLength = 0;
             this.txbAddressNV.SelectionStart = 0;
             this.txbAddressNV.ShortcutsEnabled = true;
-            this.txbAddressNV.Size = new System.Drawing.Size(346, 45);
+            this.txbAddressNV.Size = new System.Drawing.Size(346, 43);
             this.txbAddressNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbAddressNV.TabIndex = 43;
             this.txbAddressNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -574,7 +612,7 @@
             this.txbNameNV.BorderThickness = 1;
             this.txbNameNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameNV.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameNV.DefaultText = "";
             this.txbNameNV.FillColor = System.Drawing.Color.White;
             this.txbNameNV.HideSelection = true;
@@ -620,7 +658,7 @@
             this.txbNameNV.SelectionLength = 0;
             this.txbNameNV.SelectionStart = 0;
             this.txbNameNV.ShortcutsEnabled = true;
-            this.txbNameNV.Size = new System.Drawing.Size(353, 45);
+            this.txbNameNV.Size = new System.Drawing.Size(353, 43);
             this.txbNameNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameNV.TabIndex = 42;
             this.txbNameNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -693,6 +731,7 @@
             // 
             // cbbSexNV
             // 
+            this.cbbSexNV.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbbSexNV.FormattingEnabled = true;
             this.cbbSexNV.Items.AddRange(new object[] {
             "Nam",
@@ -700,7 +739,7 @@
             "Khác..."});
             this.cbbSexNV.Location = new System.Drawing.Point(177, 220);
             this.cbbSexNV.Name = "cbbSexNV";
-            this.cbbSexNV.Size = new System.Drawing.Size(90, 27);
+            this.cbbSexNV.Size = new System.Drawing.Size(90, 30);
             this.cbbSexNV.TabIndex = 33;
             // 
             // labelControl4
@@ -730,7 +769,7 @@
             this.txbIdNV.BorderThickness = 1;
             this.txbIdNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdNV.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdNV.DefaultText = "";
             this.txbIdNV.FillColor = System.Drawing.Color.White;
             this.txbIdNV.HideSelection = true;
@@ -776,7 +815,7 @@
             this.txbIdNV.SelectionLength = 0;
             this.txbIdNV.SelectionStart = 0;
             this.txbIdNV.ShortcutsEnabled = true;
-            this.txbIdNV.Size = new System.Drawing.Size(353, 45);
+            this.txbIdNV.Size = new System.Drawing.Size(353, 43);
             this.txbIdNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdNV.TabIndex = 31;
             this.txbIdNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -797,37 +836,22 @@
             this.labelControl3.TabIndex = 30;
             this.labelControl3.Text = "Mã nhân viên:";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.panel3);
-            this.panel5.Controls.Add(this.toolStrip1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1398, 1059);
-            this.panel5.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.gctNV);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 34);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1398, 1025);
-            this.panel3.TabIndex = 5;
-            // 
             // frmRestoreNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel2);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._1287507_user_account_avatar_human_people_icon;
             this.Name = "frmRestoreNV";
             this.Text = "Danh sách nhân viên thôi việc";
             this.Load += new System.EventHandler(this.frmRestoreNV_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNV)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -835,9 +859,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgNV)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

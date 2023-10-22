@@ -468,9 +468,10 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.sidebar);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._3643769_building_home_house_main_menu_icon;
             this.Name = "frmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
+            this.Text = "Trang chủ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.Load += new System.EventHandler(this.Home_Load);

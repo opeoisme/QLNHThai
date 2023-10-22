@@ -324,9 +324,10 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._89064_book_recipe_icon;
             this.Name = "frmDetailRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Công thức";
+            this.Text = "Chi tiết công thức";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

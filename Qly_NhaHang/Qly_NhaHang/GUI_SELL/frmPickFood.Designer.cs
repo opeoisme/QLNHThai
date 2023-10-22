@@ -353,6 +353,7 @@
             this.ClientSize = new System.Drawing.Size(544, 421);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
             this.Name = "frmPickFood";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Số lượng món";

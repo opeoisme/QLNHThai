@@ -33,13 +33,14 @@ namespace Qly_NhaHang
         public virtual DbSet<CategoryFood> CategoryFoods { get; set; }
         public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
+        public virtual DbSet<Import> Imports { get; set; }
+        public virtual DbSet<ImportInfo> ImportInfoes { get; set; }
+        public virtual DbSet<Ingredient> Ingredients { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Recipe> Recipes { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Tablee> Tablees { get; set; }
-        public virtual DbSet<ImportInfo> ImportInfoes { get; set; }
-        public virtual DbSet<Import> Imports { get; set; }
-        public virtual DbSet<Ingredient> Ingredients { get; set; }
+        public virtual DbSet<Unit> Units { get; set; }
     
         [DbFunction("QLNHThaiEntities", "FN_DoanhThuTheoNgay")]
         public virtual IQueryable<FN_DoanhThuTheoNgay_Result> FN_DoanhThuTheoNgay(Nullable<System.DateTime> checkIn, Nullable<System.DateTime> checkOut)
@@ -55,12 +56,6 @@ namespace Qly_NhaHang
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DoanhThuTheoNgay_Result>("[QLNHThaiEntities].[FN_DoanhThuTheoNgay](@checkIn, @checkOut)", checkInParameter, checkOutParameter);
         }
     
-        [DbFunction("QLNHThaiEntities", "FN_TopSanPhamDichVu")]
-        public virtual IQueryable<FN_TopSanPhamDichVu_Result> FN_TopSanPhamDichVu()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_TopSanPhamDichVu_Result>("[QLNHThaiEntities].[FN_TopSanPhamDichVu]()");
-        }
-    
         [DbFunction("QLNHThaiEntities", "FN_DoanhThuTheoThang")]
         public virtual IQueryable<FN_DoanhThuTheoThang_Result> FN_DoanhThuTheoThang(Nullable<System.DateTime> checkIn, Nullable<System.DateTime> checkOut)
         {
@@ -73,6 +68,22 @@ namespace Qly_NhaHang
                 new ObjectParameter("checkOut", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DoanhThuTheoThang_Result>("[QLNHThaiEntities].[FN_DoanhThuTheoThang](@checkIn, @checkOut)", checkInParameter, checkOutParameter);
+        }
+    
+        [DbFunction("QLNHThaiEntities", "FN_TopSanPhamDichVu")]
+        public virtual IQueryable<FN_TopSanPhamDichVu_Result> FN_TopSanPhamDichVu()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_TopSanPhamDichVu_Result>("[QLNHThaiEntities].[FN_TopSanPhamDichVu]()");
+        }
+    
+        [DbFunction("QLNHThaiEntities", "FN_ThuChiTheoNgay")]
+        public virtual IQueryable<FN_ThuChiTheoNgay_Result> FN_ThuChiTheoNgay(Nullable<System.DateTime> checkOut)
+        {
+            var checkOutParameter = checkOut.HasValue ?
+                new ObjectParameter("checkOut", checkOut) :
+                new ObjectParameter("checkOut", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_ThuChiTheoNgay_Result>("[QLNHThaiEntities].[FN_ThuChiTheoNgay](@checkOut)", checkOutParameter);
         }
     }
 }

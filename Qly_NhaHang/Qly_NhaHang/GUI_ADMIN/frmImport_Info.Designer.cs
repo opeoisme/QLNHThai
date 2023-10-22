@@ -35,6 +35,10 @@
             this.lblID = new System.Windows.Forms.Label();
             this.lblNameIngredient = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpkHSD = new System.Windows.Forms.DateTimePicker();
             this.lblUnit1 = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrQuantity)).BeginInit();
@@ -112,6 +112,46 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(598, 260);
             this.panel3.TabIndex = 2;
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(469, 145);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(22, 25);
+            this.lblTotalPrice.TabIndex = 17;
+            this.lblTotalPrice.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(349, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 24);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Thành tiền:";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(469, 90);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(22, 25);
+            this.lblPrice.TabIndex = 15;
+            this.lblPrice.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(349, 89);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 24);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Đơn giá:";
             // 
             // label1
             // 
@@ -400,46 +440,6 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(349, 89);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 24);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Đơn giá:";
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(469, 90);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(22, 25);
-            this.lblPrice.TabIndex = 15;
-            this.lblPrice.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("UTM Alexander", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(349, 145);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 24);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Thành tiền:";
-            // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(469, 145);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(22, 25);
-            this.lblTotalPrice.TabIndex = 17;
-            this.lblTotalPrice.Text = "0";
-            // 
             // frmImport_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -449,6 +449,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._5120875_butter_creamy_dairy_food_ingredient_icon;
             this.Name = "frmImport_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Số lượng nguyên liệu";

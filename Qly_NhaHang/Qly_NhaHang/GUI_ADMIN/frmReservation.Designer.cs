@@ -127,6 +127,8 @@
             // 
             // idReservation
             // 
+            this.idReservation.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idReservation.AppearanceCell.Options.UseFont = true;
             this.idReservation.Caption = "Mã phiếu đặt bàn";
             this.idReservation.FieldName = "id_Reservation";
             this.idReservation.MinWidth = 30;
@@ -137,6 +139,8 @@
             // 
             // nameGuest
             // 
+            this.nameGuest.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameGuest.AppearanceCell.Options.UseFont = true;
             this.nameGuest.Caption = "Tên khách đặt bàn";
             this.nameGuest.FieldName = "name_Guest";
             this.nameGuest.MinWidth = 30;
@@ -147,7 +151,11 @@
             // 
             // dateReservation
             // 
+            this.dateReservation.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.dateReservation.AppearanceCell.Options.UseFont = true;
             this.dateReservation.Caption = "Thời gian";
+            this.dateReservation.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.dateReservation.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateReservation.FieldName = "date_Reservation";
             this.dateReservation.MinWidth = 30;
             this.dateReservation.Name = "dateReservation";
@@ -157,6 +165,8 @@
             // 
             // phoneGuest
             // 
+            this.phoneGuest.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.phoneGuest.AppearanceCell.Options.UseFont = true;
             this.phoneGuest.Caption = "Số điện thoại liên lạc";
             this.phoneGuest.FieldName = "phone_Guest";
             this.phoneGuest.MinWidth = 30;
@@ -167,6 +177,8 @@
             // 
             // idTable
             // 
+            this.idTable.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idTable.AppearanceCell.Options.UseFont = true;
             this.idTable.Caption = "Bàn đặt";
             this.idTable.FieldName = "id_Table";
             this.idTable.MinWidth = 30;
@@ -182,6 +194,7 @@
             this.ClientSize = new System.Drawing.Size(1942, 682);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._3209363_booking_calendar_date_day_month_icon;
             this.Name = "frmReservation";
             this.Text = "Danh sách phiếu đặt bàn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

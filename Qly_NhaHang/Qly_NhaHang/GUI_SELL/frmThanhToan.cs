@@ -345,13 +345,26 @@ namespace Qly_NhaHang
         // Thanh toán
         private void btnPay_Click(object sender, EventArgs e)
         {
-            UpdateBill();
-            List<CombinedModel> hoaDonData = LoadHoaDon();
-            frmPrintBillMain printBillForm = new frmPrintBillMain();
-            printBillForm.SetReportData(hoaDonData);
-            printBillForm.ShowDialog();
-            UpdateTableStatus();
-            CloseFormsAndOpenListTable();
+            if (string.IsNullOrWhiteSpace(txbMoneyChange.Text))
+            {
+                XtraMessageBox.Show("Vui lòng nhập tiền của khách đưa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Không thực hiện gì cả nếu thiếu thông tin
+            }
+
+            if ( txbMoneyChange.Text == "CHƯA ĐỦ TIỀN")
+            {
+                XtraMessageBox.Show("Khách đưa thiếu tiền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Không thực hiện gì cả nếu thiếu thông tin
+            }
+             UpdateBill();
+             List<CombinedModel> hoaDonData = LoadHoaDon();
+             frmPrintBillMain printBillForm = new frmPrintBillMain();
+             printBillForm.SetReportData(hoaDonData);
+             printBillForm.ShowDialog();
+             UpdateTableStatus();
+             CloseFormsAndOpenListTable();
+         
+           
         }
 
         // Thoát
@@ -428,27 +441,7 @@ namespace Qly_NhaHang
         }
 
         //Thay đổi tiền khách trả
-        private void txbMoneyCash_TextChange(object sender, EventArgs e)
-        {
-
-            if (decimal.TryParse(txbMoneyCash.Text.Replace(",", "").Replace(",", ""), out decimal moneyCash))
-            {
-                decimal currentTotal = decimal.Parse(txbTotalBill.Text.Replace(",", "").Replace(",", ""));
-                decimal moneyChange = moneyCash - currentTotal;
-                if (moneyChange < 0)
-                {
-                    txbMoneyChange.Text = "CHƯA ĐỦ TIỀN";
-                }
-                else
-                {
-                    txbMoneyChange.Text = String.Format("{0:0,0 }", moneyChange);
-                }
-            }
-            else
-            {
-                txbMoneyChange.Text = "0";
-            }
-        }
+      
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -539,6 +532,27 @@ namespace Qly_NhaHang
 
             }
             float tongtien = float.Parse(txbTotalBill.Text); // Tính giá tiền
+        }
+
+        private void txbMoneyCash_TextChange(object sender, EventArgs e)
+        {
+              if (decimal.TryParse(txbMoneyCash.Text.Replace(",", "").Replace(",", ""), out decimal moneyCash))
+            {
+                decimal currentTotal = decimal.Parse(txbTotalBill.Text.Replace(",", "").Replace(",", ""));
+                decimal moneyChange = moneyCash - currentTotal;
+                if (moneyChange < 0)
+                {
+                    txbMoneyChange.Text = "CHƯA ĐỦ TIỀN";
+                }
+                else
+                {
+                    txbMoneyChange.Text = String.Format("{0:0,0 }", moneyChange);
+                }
+            }
+            else
+            {
+                txbMoneyChange.Text = "0";
+            }
         }
     }
 }

@@ -42,6 +42,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txbPriceFood = new Bunifu.UI.WinForms.BunifuTextBox();
             this.imageFood = new System.Windows.Forms.PictureBox();
@@ -52,7 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageFood)).BeginInit();
@@ -96,6 +96,16 @@
             this.panel3.Size = new System.Drawing.Size(635, 415);
             this.panel3.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 26);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Giá bán:";
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,7 +133,7 @@
             this.txbPriceFood.BorderThickness = 1;
             this.txbPriceFood.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbPriceFood.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPriceFood.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbPriceFood.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbPriceFood.DefaultText = "";
             this.txbPriceFood.FillColor = System.Drawing.Color.White;
             this.txbPriceFood.HideSelection = true;
@@ -169,7 +179,7 @@
             this.txbPriceFood.SelectionLength = 0;
             this.txbPriceFood.SelectionStart = 0;
             this.txbPriceFood.ShortcutsEnabled = true;
-            this.txbPriceFood.Size = new System.Drawing.Size(132, 45);
+            this.txbPriceFood.Size = new System.Drawing.Size(132, 43);
             this.txbPriceFood.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbPriceFood.TabIndex = 23;
             this.txbPriceFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -204,10 +214,11 @@
             // cbbCategory
             // 
             this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCategory.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbbCategory.FormattingEnabled = true;
             this.cbbCategory.Location = new System.Drawing.Point(487, 116);
             this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.Size = new System.Drawing.Size(133, 27);
+            this.cbbCategory.Size = new System.Drawing.Size(133, 30);
             this.cbbCategory.TabIndex = 17;
             // 
             // txbNameFood
@@ -227,7 +238,7 @@
             this.txbNameFood.BorderThickness = 1;
             this.txbNameFood.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameFood.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameFood.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameFood.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameFood.DefaultText = "";
             this.txbNameFood.FillColor = System.Drawing.Color.White;
             this.txbNameFood.HideSelection = true;
@@ -273,7 +284,7 @@
             this.txbNameFood.SelectionLength = 0;
             this.txbNameFood.SelectionStart = 0;
             this.txbNameFood.ShortcutsEnabled = true;
-            this.txbNameFood.Size = new System.Drawing.Size(440, 45);
+            this.txbNameFood.Size = new System.Drawing.Size(440, 43);
             this.txbNameFood.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameFood.TabIndex = 15;
             this.txbNameFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -484,16 +495,6 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("UTM Bienvenue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 26);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Giá bán:";
-            // 
             // frmAddFood
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -506,6 +507,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._9951056_thanksgiving_mix_turkey_chicken_dinner_icon;
             this.Name = "frmAddFood";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm mới món ăn";

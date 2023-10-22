@@ -120,17 +120,17 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txbPriceFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIQAAAAtCAYAAABvV8OBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAA2SURBVHhe7cNBDQAgDAAx/JvinG1o4N0mPQAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAADwq7rvaDULeQesTPxnuBcAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAIQAAAArCAYAAAC5DiCcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAA1SURBVHhe7cMBDQAgDMAw/Jtizn4UoKBNegAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAOCvuu9oNQt05axMXGRCZAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="txbNameFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAbgAAAAtCAYAAADcFn73AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABtSURBVHhe7cNBDQAwCASw+TfFOQNM7EPapA8AAAAAAAAA
+        iVBORw0KGgoAAAANSUhEUgAAAbgAAAArCAYAAAAKT53qAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABpSURBVHhe7cMBDQAwCAOw+zfFnAE2TtqkDwAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAOCHJLVbVe9MD31VlFRxRxyuAAAAAElFTkSuQmCC
+        AAAA/pKkdqvqnekBb5OUVIEtcuYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

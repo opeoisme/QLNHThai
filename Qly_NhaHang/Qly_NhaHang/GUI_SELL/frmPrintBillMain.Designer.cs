@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraPrinting.Preview.PrintPreviewRepositoryItemComboBox printPreviewRepositoryItemComboBox1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRepositoryItemComboBox();
-            DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
-            DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrintBillMain));
+            this.printPreviewRepositoryItemComboBox1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRepositoryItemComboBox();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
+            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.printPreviewBarItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -145,14 +145,34 @@
             this.printPreviewBarCheckItem36 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
             this.printPreviewBarCheckItem37 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
             this.printPreviewBarCheckItem38 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
-            ((System.ComponentModel.ISupportInitialize)(printPreviewRepositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemProgressBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemZoomTrackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // printPreviewRepositoryItemComboBox1
+            // 
+            this.printPreviewRepositoryItemComboBox1.AutoComplete = false;
+            this.printPreviewRepositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.printPreviewRepositoryItemComboBox1.DropDownRows = 11;
+            this.printPreviewRepositoryItemComboBox1.Name = "printPreviewRepositoryItemComboBox1";
+            // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            // 
+            // repositoryItemZoomTrackBar1
+            // 
+            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemZoomTrackBar1.AllowFocused = false;
+            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemZoomTrackBar1.Maximum = 180;
+            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
             // 
             // printPreviewBarItem2
             // 
@@ -320,12 +340,7 @@
             // zoomBarEditItem1
             // 
             this.zoomBarEditItem1.Caption = "Zoom";
-            printPreviewRepositoryItemComboBox1.AutoComplete = false;
-            printPreviewRepositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            printPreviewRepositoryItemComboBox1.DropDownRows = 11;
-            this.zoomBarEditItem1.Edit = printPreviewRepositoryItemComboBox1;
-            this.zoomBarEditItem1.EditValue = "100%";
+            this.zoomBarEditItem1.Edit = this.printPreviewRepositoryItemComboBox1;
             this.zoomBarEditItem1.EditWidth = 70;
             this.zoomBarEditItem1.Enabled = false;
             this.zoomBarEditItem1.Hint = "Zoom";
@@ -447,7 +462,7 @@
             // 
             // progressBarEditItem2
             // 
-            this.progressBarEditItem2.Edit = repositoryItemProgressBar1;
+            this.progressBarEditItem2.Edit = this.repositoryItemProgressBar1;
             this.progressBarEditItem2.EditHeight = 12;
             this.progressBarEditItem2.EditWidth = 150;
             this.progressBarEditItem2.Id = 1;
@@ -467,11 +482,7 @@
             // zoomTrackBarEditItem2
             // 
             this.zoomTrackBarEditItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
-            repositoryItemZoomTrackBar1.AllowFocused = false;
-            repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            repositoryItemZoomTrackBar1.Maximum = 180;
-            this.zoomTrackBarEditItem2.Edit = repositoryItemZoomTrackBar1;
+            this.zoomTrackBarEditItem2.Edit = this.repositoryItemZoomTrackBar1;
             this.zoomTrackBarEditItem2.EditValue = 90;
             this.zoomTrackBarEditItem2.EditWidth = 140;
             this.zoomTrackBarEditItem2.Enabled = false;
@@ -555,8 +566,9 @@
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(660, 0);
-            this.barDockControl4.Size = new System.Drawing.Size(0, 476);
+            this.barDockControl4.Location = new System.Drawing.Point(660, 63);
+            this.barDockControl4.Manager = null;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 383);
             // 
             // printPreviewBarItem32
             // 
@@ -1360,18 +1372,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 476);
             this.Controls.Add(this.dcmvBill);
+            this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl1);
             this.Controls.Add(this.barDockControl5);
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl2);
-            this.Controls.Add(this.barDockControl4);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
             this.Name = "frmPrintBillMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPrintBillMain";
+            this.Text = "Hóa đơn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(printPreviewRepositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemProgressBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemZoomTrackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar2)).EndInit();
@@ -1494,5 +1507,8 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem31;
         private DevExpress.XtraBars.BarToolbarsListItem barToolbarsListItem1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewSubItem printPreviewSubItem4;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRepositoryItemComboBox printPreviewRepositoryItemComboBox1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1;
     }
 }

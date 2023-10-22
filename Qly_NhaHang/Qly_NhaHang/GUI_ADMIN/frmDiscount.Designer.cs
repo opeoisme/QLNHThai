@@ -193,7 +193,7 @@
             this.txbPercentDiscount.BorderThickness = 1;
             this.txbPercentDiscount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbPercentDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPercentDiscount.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbPercentDiscount.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbPercentDiscount.DefaultText = "";
             this.txbPercentDiscount.FillColor = System.Drawing.Color.White;
             this.txbPercentDiscount.HideSelection = true;
@@ -239,7 +239,7 @@
             this.txbPercentDiscount.SelectionLength = 0;
             this.txbPercentDiscount.SelectionStart = 0;
             this.txbPercentDiscount.ShortcutsEnabled = true;
-            this.txbPercentDiscount.Size = new System.Drawing.Size(335, 45);
+            this.txbPercentDiscount.Size = new System.Drawing.Size(335, 43);
             this.txbPercentDiscount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbPercentDiscount.TabIndex = 42;
             this.txbPercentDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -275,14 +275,14 @@
             // cbbTypeDiscount
             // 
             this.cbbTypeDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTypeDiscount.Font = new System.Drawing.Font("UTM Centur", 9F);
+            this.cbbTypeDiscount.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbbTypeDiscount.FormattingEnabled = true;
             this.cbbTypeDiscount.Items.AddRange(new object[] {
             "Phụ thu",
             "Giảm giá"});
             this.cbbTypeDiscount.Location = new System.Drawing.Point(187, 368);
             this.cbbTypeDiscount.Name = "cbbTypeDiscount";
-            this.cbbTypeDiscount.Size = new System.Drawing.Size(355, 33);
+            this.cbbTypeDiscount.Size = new System.Drawing.Size(355, 30);
             this.cbbTypeDiscount.TabIndex = 40;
             // 
             // labelControl4
@@ -322,7 +322,7 @@
             this.txbNameDiscount.BorderThickness = 1;
             this.txbNameDiscount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameDiscount.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameDiscount.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameDiscount.DefaultText = "";
             this.txbNameDiscount.FillColor = System.Drawing.Color.White;
             this.txbNameDiscount.HideSelection = true;
@@ -368,7 +368,7 @@
             this.txbNameDiscount.SelectionLength = 0;
             this.txbNameDiscount.SelectionStart = 0;
             this.txbNameDiscount.ShortcutsEnabled = true;
-            this.txbNameDiscount.Size = new System.Drawing.Size(375, 45);
+            this.txbNameDiscount.Size = new System.Drawing.Size(375, 43);
             this.txbNameDiscount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameDiscount.TabIndex = 18;
             this.txbNameDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -396,7 +396,7 @@
             this.txbIdDiscount.BorderThickness = 1;
             this.txbIdDiscount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdDiscount.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdDiscount.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdDiscount.DefaultText = "";
             this.txbIdDiscount.FillColor = System.Drawing.Color.White;
             this.txbIdDiscount.HideSelection = true;
@@ -442,7 +442,7 @@
             this.txbIdDiscount.SelectionLength = 0;
             this.txbIdDiscount.SelectionStart = 0;
             this.txbIdDiscount.ShortcutsEnabled = true;
-            this.txbIdDiscount.Size = new System.Drawing.Size(375, 45);
+            this.txbIdDiscount.Size = new System.Drawing.Size(375, 43);
             this.txbIdDiscount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdDiscount.TabIndex = 17;
             this.txbIdDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -512,6 +512,8 @@
             // 
             // idDiscount
             // 
+            this.idDiscount.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idDiscount.AppearanceCell.Options.UseFont = true;
             this.idDiscount.Caption = "Mã phụ giảm";
             this.idDiscount.FieldName = "id_Discount";
             this.idDiscount.MinWidth = 30;
@@ -522,6 +524,8 @@
             // 
             // nameDiscount
             // 
+            this.nameDiscount.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameDiscount.AppearanceCell.Options.UseFont = true;
             this.nameDiscount.Caption = "Tên loại sản phẩm";
             this.nameDiscount.FieldName = "name_Discount";
             this.nameDiscount.MinWidth = 30;
@@ -532,6 +536,8 @@
             // 
             // percentDiscount
             // 
+            this.percentDiscount.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.percentDiscount.AppearanceCell.Options.UseFont = true;
             this.percentDiscount.Caption = "Định mức";
             this.percentDiscount.FieldName = "percent_Discount";
             this.percentDiscount.MinWidth = 30;
@@ -542,6 +548,8 @@
             // 
             // typeDiscount
             // 
+            this.typeDiscount.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.typeDiscount.AppearanceCell.Options.UseFont = true;
             this.typeDiscount.Caption = "Loại ";
             this.typeDiscount.FieldName = "type_Discount";
             this.typeDiscount.MinWidth = 30;
@@ -558,8 +566,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._4288575_bank_coin_deposit_money_piggy_icon;
             this.Name = "frmDiscount";
-            this.Text = "Danh sách phụ thu & khuyến mãi";
+            this.Text = "Danh sách phụ phí";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDiscount_Load);
             this.toolStrip1.ResumeLayout(false);

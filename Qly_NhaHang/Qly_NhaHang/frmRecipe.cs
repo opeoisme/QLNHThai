@@ -173,8 +173,6 @@ namespace Qly_NhaHang
         }
 
 
-
-
         public void LoadIngredientFLPNTest()
         {
             flpnIngredient.Controls.Clear();

@@ -215,6 +215,8 @@
             // dateExpiry
             // 
             this.dateExpiry.Caption = "Hạn sử dụng";
+            this.dateExpiry.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateExpiry.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateExpiry.FieldName = "date_Expiry";
             this.dateExpiry.MinWidth = 30;
             this.dateExpiry.Name = "dateExpiry";
@@ -397,6 +399,7 @@
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._5120875_butter_creamy_dairy_food_ingredient_icon;
             this.Name = "frmImport";
             this.Text = "Danh sách nguyên liệu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

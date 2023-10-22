@@ -913,8 +913,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
             this.Name = "frmPrintBill";
-            this.Text = "frmPrintBill";
+            this.Text = "Hóa đơn tạm tính";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();

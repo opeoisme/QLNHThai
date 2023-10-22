@@ -107,6 +107,17 @@ namespace Qly_NhaHang.GUI_ADMIN
                 }).ToList();
 
             gctDoanhThuThang.DataSource = BillData;
+
+
+            if (BillData.Count == 0)
+            {
+                lblTotalMoney.Text = "0 VND";
+            }
+            else
+            {
+                decimal totalMoney = (decimal)BillData.Sum(b => b.totalPrice_Bill);
+                lblTotalMoney.Text = string.Format("{0:N0} VND", totalMoney);
+            }
         }
 
     }

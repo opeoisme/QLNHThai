@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using Qly_NhaHang.Models;
 using System;
 using System.Collections.Generic;
@@ -115,6 +117,144 @@ namespace Qly_NhaHang
                         XtraMessageBox.Show("Nhân viên không còn làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+        }
+
+        private void btnPDFNV_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files|*.pdf";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                PdfDocument pdf = new PdfDocument();
+                pdf.Info.Title = "Danh sách nhân viên";
+                XFont font = new XFont("Arial", 5);
+                int rowHeight = 60; // Điều chỉnh chiều cao của mỗi hàng
+                double y = 20; // Vị trí bắt đầu của hàng đầu tiên
+                // Đặt kích thước trang PDF
+                PdfPage page = pdf.AddPage();
+                page.Width = XUnit.FromInch(11); // Kích thước trang Letter (8.5 x 11 inch)
+                page.Height = XUnit.FromInch(8.5);
+                XGraphics gfx = XGraphics.FromPdfPage(page);
+                for (int row = 0; row < gvNV.RowCount; row++)
+                {
+                    double x = 20;
+
+                    if (row == 0)
+                    {
+                        // Vẽ tiêu đề cột cho trang đầu tiên
+                        foreach (DevExpress.XtraGrid.Columns.GridColumn column in gvNV.Columns)
+                        {
+                            gfx.DrawString(column.Caption, font, XBrushes.Black, x, y);
+                            x += 80; // Điều chỉnh khoảng cách giữa các cột
+                        }
+                        y += 20; // Điều chỉnh khoảng cách giữa tiêu đề cột và dữ liệu
+                        x = 20;
+                    }
+                    for (int col = 0; col < gvNV.Columns.Count; col++)
+                    {
+                        object cellValue = gvNV.GetRowCellValue(row, gvNV.Columns[col]);
+                        if (gvNV.Columns[col].FieldName == "image_NV")
+                        {
+                            byte[] imageBytes = cellValue as byte[];
+                            if (imageBytes != null)
+                            {
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
+                                    // Điều chỉnh kích thước của hình ảnh để tối ưu hóa trên trang
+                                    double imageWidth = 50;
+                                    double imageHeight = 30;
+                                    XImage xImage = XImage.FromStream(ms);
+                                    gfx.DrawImage(xImage, x, y, imageWidth, imageHeight);
+                                }
+                            }
+                            else
+                            {
+                                gfx.DrawString("", font, XBrushes.Black, x, y);
+                            }
+                        }
+                        else
+                        {
+                            gfx.DrawString(cellValue != null ? cellValue.ToString() : string.Empty, font, XBrushes.Black, x, y);
+                        }
+                        x += 80; // Điều chỉnh khoảng cách giữa các cột
+                    }
+
+                    y += rowHeight;
+
+                    // Kiểm tra nếu không đủ không gian cho hàng tiếp theo, tạo trang mới
+                    if (y + rowHeight > page.Height - 20 && row < gvNV.RowCount - 1)
+                    {
+                        page = pdf.AddPage();
+                        page.Width = XUnit.FromInch(8.5);
+                        page.Height = XUnit.FromInch(11);
+                        gfx = XGraphics.FromPdfPage(page);
+                        y = 20;
+                    }
+                }
+                pdf.Save(filePath);
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp PDF thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCSVNV_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                using (var workbook = new ClosedXML.Excel.XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add("FoodData");
+
+                    // Đặt chiều rộng cột cho tất cả các cột là 15
+                    for (int col = 0; col < gvNV.Columns.Count; col++)
+                    {
+                        worksheet.Column(col + 1).Width = 15;
+                    }
+
+                    // Tiêu đề cột
+                    for (int i = 0; i < gvNV.Columns.Count; i++)
+                    {
+                        worksheet.Cell(1, i + 1).Value = gvNV.Columns[i].Caption;
+                    }
+
+                    for (int row = 0; row < gvNV.RowCount; row++)
+                    {
+                        // Đặt chiều cao hàng là 60
+                        worksheet.Row(row + 2).Height = 60;
+
+                        for (int col = 0; col < gvNV.Columns.Count; col++)
+                        {
+                            if (gvNV.Columns[col].FieldName == "image_NV") // Xử lý cột hình ảnh
+                            {
+                                byte[] imageBytes = gvNV.GetRowCellValue(row, gvNV.Columns[col]) as byte[];
+                                if (imageBytes != null)
+                                {
+                                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                                    {
+                                        var image = worksheet.AddPicture(ms).MoveTo(worksheet.Cell(row + 2, col + 1));
+                                        image.Width = 80;
+                                        image.Height = 80;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                object cellValue = gvNV.GetRowCellValue(row, gvNV.Columns[col]);
+                                worksheet.Cell(row + 2, col + 1).Value = cellValue != null ? cellValue.ToString() : string.Empty;
+                            }
+                        }
+                    }
+                    workbook.SaveAs(filePath);
+                }
+                XtraMessageBox.Show("Dữ liệu đã được xuất ra tệp Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

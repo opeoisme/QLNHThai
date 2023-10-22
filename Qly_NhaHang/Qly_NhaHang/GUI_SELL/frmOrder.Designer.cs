@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -209,6 +209,8 @@
             // 
             // nameFood
             // 
+            this.nameFood.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.nameFood.AppearanceCell.Options.UseFont = true;
             this.nameFood.Caption = "Tên món ăn";
             this.nameFood.FieldName = "name_Food";
             this.nameFood.MinWidth = 30;
@@ -219,6 +221,8 @@
             // 
             // contityFood
             // 
+            this.contityFood.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.contityFood.AppearanceCell.Options.UseFont = true;
             this.contityFood.Caption = "Số lượng";
             this.contityFood.FieldName = "count_Food";
             this.contityFood.MinWidth = 30;
@@ -291,11 +295,11 @@
             this.btnNotification.ColorContrastOnClick = 45;
             this.btnNotification.ColorContrastOnHover = 45;
             this.btnNotification.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnNotification.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnNotification.CustomizableEdges = borderEdges3;
             this.btnNotification.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnNotification.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnNotification.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -382,11 +386,11 @@
             this.btnPay.ColorContrastOnClick = 45;
             this.btnPay.ColorContrastOnHover = 45;
             this.btnPay.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnPay.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnPay.CustomizableEdges = borderEdges4;
             this.btnPay.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPay.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPay.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -491,6 +495,7 @@
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
             this.Name = "frmOrder";
             this.Text = "Bán hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

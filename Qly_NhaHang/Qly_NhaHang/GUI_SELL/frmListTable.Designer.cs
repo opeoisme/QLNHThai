@@ -481,6 +481,7 @@
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources.icons8_table_100;
             this.Name = "frmListTable";
             this.Text = "Danh mục bàn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

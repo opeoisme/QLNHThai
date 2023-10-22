@@ -123,25 +123,24 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txbIdFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAQUAAAAtCAYAAACnHn5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABMSURBVHhe7cNBDQAgDAAx/JvinG1o4N0mPQAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8Ku676hWs+5ETylOg5auAAAAAElFTkSu
-        QmCC
+        iVBORw0KGgoAAAANSUhEUgAAAQUAAAArCAYAAABxR51jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABKSURBVHhe7cMBDQAgDMAw/Jtizn4UoKBNegAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOCvuu+oVrPmGk8p7u4/RQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="txbPriceFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANgAAAAsCAYAAAAHI3biAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABGSURBVHhe7cPBCQAwCASw7r+Ut5m6QsFnAnkAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfktRu9Xp6AEUkvQc7bzY4AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAANgAAAAoCAYAAACcsjT0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABCSURBVHhe7cNBDQAwCASw+TfFOQNE7EXapA8AAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5IUrvV39MDN6C9BwIjfGQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="txbNameFood.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAQUAAAAsCAYAAABsQq3bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABLSURBVHhe7cNBDQAgDAAx/JvinG1Y4N8mPQAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwobrvqFaz6i9PKYmQFZgAAAAASUVORK5C
-        YII=
+        iVBORw0KGgoAAAANSUhEUgAAAQUAAAAoCAYAAAD30+/NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABGSURBVHhe7cMBDQAgDMAw/Jtizn580CY9AAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfKu676hWs9nbTykmSCaPAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

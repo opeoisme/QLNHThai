@@ -91,9 +91,7 @@ namespace Qly_NhaHang
                         existingBillInfo.count_Food = quantity;
                     }
                 }
-
                 dbContext.SaveChanges();
-
                 this.Close();
                 if (Application.OpenForms["frmOrder"] is frmOrder orderForm)
                 {

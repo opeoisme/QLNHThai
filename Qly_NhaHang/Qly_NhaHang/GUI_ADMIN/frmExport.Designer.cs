@@ -64,6 +64,7 @@
             this.btnLoadExport.Name = "btnLoadExport";
             this.btnLoadExport.Size = new System.Drawing.Size(76, 29);
             this.btnLoadExport.Text = "Xem";
+            this.btnLoadExport.Click += new System.EventHandler(this.btnLoadExport_Click);
             // 
             // btnPDFExport
             // 
@@ -120,6 +121,7 @@
             this.gvExport.GridControl = this.gctExport;
             this.gvExport.Name = "gvExport";
             this.gvExport.RowHeight = 125;
+            this.gvExport.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvExport_RowClick);
             // 
             // idImport
             // 
@@ -134,6 +136,8 @@
             // dateImport
             // 
             this.dateImport.Caption = "Ngày xuất";
+            this.dateImport.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateImport.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateImport.FieldName = "date_Import";
             this.dateImport.MinWidth = 30;
             this.dateImport.Name = "dateImport";
@@ -158,8 +162,11 @@
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._8725906_export_icon;
             this.Name = "frmExport";
-            this.Text = "Danh sách phiếu xuất hàng";
+            this.Text = "Danh sách phiếu kiểm hàng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmExport_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

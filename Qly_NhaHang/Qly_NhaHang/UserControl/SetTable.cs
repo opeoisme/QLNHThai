@@ -26,10 +26,8 @@ namespace Qly_NhaHang.UserControl
         #region method
         public void SetTableData(Tablee table)
         {
-            // Cập nhật giao diện với dữ liệu từ bàn (table)
             lblnameTable.Text = table.name_Table;
             lblseatsTable.Text = table.seats_Table.ToString();
-            // Cập nhật các thông tin khác tương ứng
             IdTable = table.id_Table;
             _idReservation = new Reservation_DAO().getIdReservationByIDBan(IdTable);
         }
@@ -47,35 +45,26 @@ namespace Qly_NhaHang.UserControl
         }
         private void btnCancle_Click(object sender, EventArgs e)
         {
-            DialogResult result = XtraMessageBox.Show("Bạn có chắc chắn muốn hủy Reservation và cập nhật lại trạng thái bàn?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = XtraMessageBox.Show("Bạn có chắc chắn muốn hủy Reservation và cập nhật lại trạng thái bàn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                // Lấy IdTable và _idReservation của bàn hiện tại
                 int idTable = IdTable;
-
                 using (var context = new QLNHThaiEntities()) // Thay thế YourDbContext bằng DbContext của bạn
                 {
                     try
                     {
-                        // Xóa Reservation tương ứng
                         var reservation = context.Reservations.FirstOrDefault(r => r.id_Reservation == _idReservation);
                         if (reservation != null)
                         {
                             context.Reservations.Remove(reservation);
                             context.SaveChanges();
-
-                            // Xóa thành công Reservation
-                            // Cập nhật status_Table của bàn đó thành "Đang trống"
                             var table = context.Tablees.FirstOrDefault(t => t.id_Table == idTable);
                             if (table != null)
                             {
                                 table.status_Table = "Đang trống";
                                 context.SaveChanges();
-
-                                // Cập nhật thành công status_Table
-                                // Thực hiện các tác vụ cần thiết sau khi hủy Reservation và cập nhật trạng thái bàn
-                                MessageBox.Show("Đã hủy lịch đặt bàn.");
+                                XtraMessageBox.Show("Đã hủy lịch đặt bàn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 if (Application.OpenForms["frmListTable"] is frmListTable listtableForm)
                                 {
                                     listtableForm.loadAll();
@@ -83,19 +72,16 @@ namespace Qly_NhaHang.UserControl
                             }
                             else
                             {
-                                // Không tìm thấy bàn
-                                MessageBox.Show("Không tìm thấy bàn để cập nhật trạng thái.");
+                                XtraMessageBox.Show("Lỗi hủy bàn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            // Không tìm thấy Reservation
-                            MessageBox.Show("Không tìm thấy Reservation để hủy.");
+                            XtraMessageBox.Show("Lỗi hủy bàn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)
                     {
-                        // Xử lý lỗi
                         MessageBox.Show("Lỗi khi xóa Reservation hoặc cập nhật trạng thái bàn: " + ex.Message);
                     }
                 }
@@ -103,29 +89,29 @@ namespace Qly_NhaHang.UserControl
         }
         private void btnInsertBill_Click(object sender, EventArgs e)
         {
-            string id_NV = loggedInIdNV;   // Lấy id_NV đang đăng nhập 
-            DateTime currentTime = DateTime.Now; // Lấy thời gian hiện tại
-            int id_Table = _idTable;   // Lấy id_Table đang chọn
+            string id_NV = loggedInIdNV;   
+            DateTime currentTime = DateTime.Now;
+            int id_Table = _idTable;  
             using (var context = new QLNHThaiEntities())
             {
-                Bill newBill = new Bill // Tạo một đối tượng Bill mới
+                Bill newBill = new Bill 
                 {
                     DateCheckIn = currentTime,
                     id_Table = id_Table,
                     id_NV = id_NV,
-                    status_Bill = 0, // Đang có khách (tùy theo thiết kế cơ sở dữ liệu của bạn)                                  
+                    status_Bill = 0,                              
                 };
-                context.Bills.Add(newBill); // Thêm Bill mới vào cơ sở dữ liệu
+                context.Bills.Add(newBill); 
                 context.SaveChanges();
                 int idBill = newBill.id_Bill;
                 frmOrder f = new frmOrder();
                 f.SetIdBill(idBill);
-                f.SetIdBan(_idTable); // Gán giá trị cho _idBan trước khi mở form frmOrder
+                f.SetIdBan(_idTable); 
                 var tableToUpdate = context.Tablees.FirstOrDefault(t => t.id_Table == _idTable);
                 if (tableToUpdate != null)
                 {
-                    tableToUpdate.status_Table = "Đang có khách"; // Thay đổi trạng thái của bàn
-                    context.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+                    tableToUpdate.status_Table = "Đang có khách"; 
+                    context.SaveChanges();
                 }
                 this.Hide();
                 f.ShowDialog();

@@ -27,55 +27,37 @@ namespace Qly_NhaHang
                 var nv = db.NhanViens.Where(nhanvien => nhanvien.id_NV == nhvien).FirstOrDefault();
                 if (nv != null && nv.pass_NV == oldPassword)
                 {
-                    // Nếu mật khẩu cũ trùng khớp với mật khẩu trong CSDL, trả về true.
                     return true;
                 }
             }
-
-            // Nếu mật khẩu cũ không khớp hoặc không tìm thấy trong CSDL, trả về false.
             return false;
         }
-
-
-
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             string oldPassword = txbPassword.Text;
             string newPassword = txbNewPass.Text;
             string confirmedPassword = txbComfirmPass.Text;
-
-            // 1. Kiểm tra xem mật khẩu cũ có khớp với mật khẩu hiện tại trong CSDL không.
-            // Nếu không khớp, hiển thị thông báo lỗi.
             if (!CheckOldPassword(oldPassword, nhvien))
             {
                 lblStatus.Text = "Mật khẩu cũ không đúng. Vui lòng kiểm tra lại.";
-                lblStatus.Visible = true; // Hiển thị thông báo trên Label.
-                return; // Thoát khỏi sự kiện và không cập nhật mật khẩu mới.
+                lblStatus.Visible = true; 
+                return; 
             }
-
-            // 2. Kiểm tra xác nhận mật khẩu mới.
             if (newPassword != confirmedPassword)
             {
                 lblStatus.Text = "Mật khẩu mới và xác nhận mật khẩu không khớp. Vui lòng kiểm tra lại.";
-                lblStatus.Visible = true; // Hiển thị thông báo trên Label.
-                return; // Thoát khỏi sự kiện và không cập nhật mật khẩu mới.
+                lblStatus.Visible = true; 
+                return; 
             }
-
-            // 3. Thực hiện cập nhật mật khẩu mới trong CSDL.
             using (QLNHThaiEntities db = new QLNHThaiEntities())
             {
                 var nv = db.NhanViens.Where(nhanvien => nhanvien.id_NV == nhvien).FirstOrDefault();
                 if (nv != null)
                 {
-                    // Cập nhật mật khẩu mới cho đối tượng NhanVien.
                     nv.pass_NV = newPassword;
-
-                    // Cập nhật đối tượng NhanVien trong CSDL.
                     db.Entry(nv).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
-
-                    // Thông báo cho người dùng và đóng form "frmChangePass".
                     XtraMessageBox.Show("Mật khẩu đã được cập nhật thành công.","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DialogResult = DialogResult.OK;
                 }
@@ -89,6 +71,34 @@ namespace Qly_NhaHang
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkBoxShowHide_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxShowHide.CheckState == CheckState.Unchecked)
+            {
+                txbPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txbPassword.PasswordChar = '*';
+            }
+        }
+
+        private void checkBoxShowHide_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.IsBalloon = true;
+            t.ToolTipIcon = ToolTipIcon.Info;
+            t.ShowAlways = true;
+            if (checkBoxShowHide.CheckState == CheckState.Checked)
+            {
+                t.SetToolTip(checkBoxShowHide, "Ẩn mật khẩu");
+            }
+            else
+            {
+                t.SetToolTip(checkBoxShowHide, "Hiện mật khẩu");
+            }
         }
     }
 }

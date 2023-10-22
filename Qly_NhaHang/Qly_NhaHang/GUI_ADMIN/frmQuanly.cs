@@ -127,7 +127,7 @@ namespace Qly_NhaHang
 
         private void btnRevenue_ItemClick(object sender, ItemClickEventArgs e)
         {
-            openForm(typeof(frmThongKe));
+            openForm(typeof(frmThongKeNgay));
         }
 
         private void btnDeleteIngredient_ItemClick(object sender, ItemClickEventArgs e)
@@ -156,6 +156,11 @@ namespace Qly_NhaHang
         private void btnRevenueMonth_ItemClick(object sender, ItemClickEventArgs e)
         {
             openForm(typeof(frmDoanhThuThang));
+        }
+
+        private void btnCostPrice_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmThuChiNgay));
         }
     }
 }

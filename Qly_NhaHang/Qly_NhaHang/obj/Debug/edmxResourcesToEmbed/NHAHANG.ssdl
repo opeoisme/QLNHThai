@@ -141,6 +141,14 @@
     <Property Name="seats_Table" Type="int" />
     <Property Name="condition_Table" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="id_Unit" />
+    </Key>
+    <Property Name="id_Unit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_Unit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="condition_Unit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <Association Name="FK__Bill__id_NV__5812160E">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
@@ -310,6 +318,18 @@
       </CollectionType>
     </ReturnType>
   </Function>
+  <Function Name="FN_ThuChiTheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="checkOut" Type="datetime" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="IDDOANHTHU" Type="bigint" />
+          <Property Name="NGAY" Type="date" />
+          <Property Name="TONGDOANHTHU" Type="float" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="FN_TopSanPhamDichVu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
       <CollectionType>
@@ -335,6 +355,7 @@
     <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tablee" EntityType="Self.Tablee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Bill__id_NV__5812160E" Association="Self.FK__Bill__id_NV__5812160E">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="Bill" EntitySet="Bill" />

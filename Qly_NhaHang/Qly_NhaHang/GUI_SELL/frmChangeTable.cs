@@ -42,7 +42,7 @@ namespace Qly_NhaHang
 
             // Lọc danh sách bàn để loại bỏ bàn đang chọn
             var categories = dbContext.Tablees
-                .Where(table => table.status_Table != "Được đặt" && table.id_Table != selectedTableId)
+                .Where(table => table.status_Table != "Được đặt" && table.id_Table != selectedTableId && table.condition_Table == "Được sử dụng")
                 .ToList();
             // Gán danh sách bàn đã lọc làm nguồn dữ liệu cho ComboBox
             cbbNewTable.DataSource = categories;

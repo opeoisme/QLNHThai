@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeTable));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeTable));
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbbNewTable = new System.Windows.Forms.ComboBox();
+            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
             this.lblIdBill = new DevExpress.XtraEditors.LabelControl();
             this.lblIDTable = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -42,8 +44,6 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.cbbNewTable = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -99,6 +99,49 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(573, 143);
             this.panel3.TabIndex = 5;
+            // 
+            // cbbNewTable
+            // 
+            this.cbbNewTable.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.cbbNewTable.FormattingEnabled = true;
+            this.cbbNewTable.Location = new System.Drawing.Point(377, 85);
+            this.cbbNewTable.Name = "cbbNewTable";
+            this.cbbNewTable.Size = new System.Drawing.Size(181, 28);
+            this.cbbNewTable.TabIndex = 37;
+            // 
+            // btnPick
+            // 
+            this.btnPick.ActiveImage = null;
+            this.btnPick.AllowAnimations = true;
+            this.btnPick.AllowBuffering = false;
+            this.btnPick.AllowToggling = false;
+            this.btnPick.AllowZooming = true;
+            this.btnPick.AllowZoomingOnFocus = false;
+            this.btnPick.BackColor = System.Drawing.Color.Transparent;
+            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
+            this.btnPick.FadeWhenInactive = false;
+            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources._9054941_bx_transfer_icon;
+            this.btnPick.ImageActive = null;
+            this.btnPick.ImageLocation = null;
+            this.btnPick.ImageMargin = 10;
+            this.btnPick.ImageSize = new System.Drawing.Size(47, 35);
+            this.btnPick.ImageZoomSize = new System.Drawing.Size(57, 45);
+            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
+            this.btnPick.Location = new System.Drawing.Point(217, 74);
+            this.btnPick.Name = "btnPick";
+            this.btnPick.Rotation = 0;
+            this.btnPick.ShowActiveImage = true;
+            this.btnPick.ShowCursorChanges = true;
+            this.btnPick.ShowImageBorders = true;
+            this.btnPick.ShowSizeMarkers = false;
+            this.btnPick.Size = new System.Drawing.Size(57, 45);
+            this.btnPick.TabIndex = 36;
+            this.btnPick.ToolTipText = "";
+            this.btnPick.WaitOnLoad = false;
+            this.btnPick.Zoom = 10;
+            this.btnPick.ZoomSpeed = 10;
             // 
             // lblIdBill
             // 
@@ -330,48 +373,6 @@
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnPick
-            // 
-            this.btnPick.ActiveImage = null;
-            this.btnPick.AllowAnimations = true;
-            this.btnPick.AllowBuffering = false;
-            this.btnPick.AllowToggling = false;
-            this.btnPick.AllowZooming = true;
-            this.btnPick.AllowZoomingOnFocus = false;
-            this.btnPick.BackColor = System.Drawing.Color.Transparent;
-            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
-            this.btnPick.FadeWhenInactive = false;
-            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources._9054941_bx_transfer_icon;
-            this.btnPick.ImageActive = null;
-            this.btnPick.ImageLocation = null;
-            this.btnPick.ImageMargin = 10;
-            this.btnPick.ImageSize = new System.Drawing.Size(47, 35);
-            this.btnPick.ImageZoomSize = new System.Drawing.Size(57, 45);
-            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
-            this.btnPick.Location = new System.Drawing.Point(217, 74);
-            this.btnPick.Name = "btnPick";
-            this.btnPick.Rotation = 0;
-            this.btnPick.ShowActiveImage = true;
-            this.btnPick.ShowCursorChanges = true;
-            this.btnPick.ShowImageBorders = true;
-            this.btnPick.ShowSizeMarkers = false;
-            this.btnPick.Size = new System.Drawing.Size(57, 45);
-            this.btnPick.TabIndex = 36;
-            this.btnPick.ToolTipText = "";
-            this.btnPick.WaitOnLoad = false;
-            this.btnPick.Zoom = 10;
-            this.btnPick.ZoomSpeed = 10;
-            // 
-            // cbbNewTable
-            // 
-            this.cbbNewTable.FormattingEnabled = true;
-            this.cbbNewTable.Location = new System.Drawing.Point(377, 85);
-            this.cbbNewTable.Name = "cbbNewTable";
-            this.cbbNewTable.Size = new System.Drawing.Size(181, 27);
-            this.cbbNewTable.TabIndex = 37;
-            // 
             // frmChangeTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -381,6 +382,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._11025579_transfer_arrow_direction_way_sign_icon;
             this.Name = "frmChangeTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyển bàn";

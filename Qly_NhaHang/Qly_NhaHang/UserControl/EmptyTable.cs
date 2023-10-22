@@ -46,30 +46,30 @@ namespace Qly_NhaHang.UserControl
 
         private void btnInsertBIll_Click(object sender, EventArgs e)
         {
-            string id_NV = loggedInIdNV;   // Lấy id_NV đang đăng nhập
-            DateTime currentTime = DateTime.Now;  // Lấy thời gian hiện tại
-            int id_Table = _idBan;    // Lấy id_Table đang chọn
+            string id_NV = loggedInIdNV;   
+            DateTime currentTime = DateTime.Now; 
+            int id_Table = _idBan;    
             using (var context = new QLNHThaiEntities())
             { 
-                Bill newBill = new Bill // Tạo một đối tượng Bill mới
+                Bill newBill = new Bill 
                 {
                     DateCheckIn = currentTime,
                     id_Table = id_Table,
                     id_NV = id_NV,
-                    status_Bill = 0, // Đang có khách (tùy theo thiết kế cơ sở dữ liệu của bạn)                                  
+                    status_Bill = 0,                              
                 };
-                context.Bills.Add(newBill); // Thêm Bill mới vào cơ sở dữ liệu
+                context.Bills.Add(newBill); 
                 context.SaveChanges();
                 int idBill = newBill.id_Bill;
-                _billTable.SetBillData(newBill);// Truyền thông tin Bill sang BusyTable
+                _billTable.SetBillData(newBill);
                 frmOrder f = new frmOrder();
                 f.SetIdBill(idBill);
-                f.SetIdBan(_idBan); // Gán giá trị cho _idBan trước khi mở form frmOrder
+                f.SetIdBan(_idBan); 
                 var tableToUpdate = context.Tablees.FirstOrDefault(t => t.id_Table == _idBan);
                 if (tableToUpdate != null)
                 {
-                    tableToUpdate.status_Table = "Đang có khách"; // Thay đổi trạng thái của bàn
-                    context.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+                    tableToUpdate.status_Table = "Đang có khách"; 
+                    context.SaveChanges();
                 }
                 this.Hide();
                 f.ShowDialog();

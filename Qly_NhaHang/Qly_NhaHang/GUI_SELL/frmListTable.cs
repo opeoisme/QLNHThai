@@ -82,36 +82,59 @@ namespace Qly_NhaHang
 
         private void btnAllTable_Click(object sender, EventArgs e)
         {
+            loadAll();
+        }
+
+
+
+
+        public void loadAll()
+        {
             flpnTable.Controls.Clear();
-            LoadTablesByStatusAndCondition("Đang trống", "Được sử dụng", typeof(EmptyTable));
-            LoadTablesByStatusAndCondition("Đang có khách", "Được sử dụng", typeof(BusyTable));
-            LoadTablesByStatusAndCondition("Được đặt", "Được sử dụng", typeof(SetTable));
+
+            using (var newContext = new QLNHThaiEntities())
+            {
+                // Tải lại danh sách phòng theo thứ tự số phòng, không quan trọng trạng thái
+                LoadAllRoomsAndSortByRoomNumber(newContext);
+            }
+        }
+
+        private void LoadAllRoomsAndSortByRoomNumber(QLNHThaiEntities dbContext)
+        {
+            var allRooms = dbContext.Tablees
+                .OrderBy(t => t.id_Table)
+                .Where(t => t.condition_Table =="Được sử dụng")
+                .ToList();
+
+            foreach (var room in allRooms)
+            {
+                if (room.status_Table == "Đang có khách")
+                {
+                    LoadTable(typeof(BusyTable), room);
+                }
+                else if (room.status_Table == "Đang trống")
+                {
+                    LoadTable(typeof(EmptyTable), room);
+                }
+                else if (room.status_Table == "Được đặt")
+                {
+                    LoadTable(typeof(SetTable), room);
+                }
+               
+            }
+        }
+
+        private void LoadTable(Type controlType, Tablee tablee)
+        {
+            var tableControl = (DevExpress.XtraEditors.XtraUserControl)Activator.CreateInstance(controlType);
+            UpdateTableData(tableControl, tablee);
+            flpnTable.Controls.Add(tableControl);
         }
 
         #endregion
 
         #region method
-        public void loadAll()
-        {
-            flpnTable.Controls.Clear();
-            LoadTablesByStatusAndCondition("Đang trống", "Được sử dụng", typeof(EmptyTable));
-            LoadTablesByStatusAndCondition("Đang có khách", "Được sử dụng", typeof(BusyTable));
-            LoadTablesByStatusAndCondition("Được đặt", "Được sử dụng", typeof(SetTable));
-        }
 
-        private void LoadTablesByStatusAndCondition(string status, string condition, Type controlType)
-        {
-            var tables = dbContext.Tablees
-                .Where(t => t.status_Table == status && t.condition_Table == condition)
-                .ToList();
-
-            foreach (var table in tables)
-            {
-                var tableControl = (DevExpress.XtraEditors.XtraUserControl)Activator.CreateInstance(controlType);
-                UpdateTableData(tableControl, table);
-                flpnTable.Controls.Add(tableControl);
-            }
-        }
 
         private void UpdateTableData(DevExpress.XtraEditors.XtraUserControl tableControl, Tablee table)
         {

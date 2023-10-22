@@ -104,7 +104,7 @@
             this.txbNameIngredient.BorderThickness = 1;
             this.txbNameIngredient.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameIngredient.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameIngredient.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbNameIngredient.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameIngredient.DefaultText = "";
             this.txbNameIngredient.FillColor = System.Drawing.Color.White;
             this.txbNameIngredient.HideSelection = true;
@@ -150,7 +150,7 @@
             this.txbNameIngredient.SelectionLength = 0;
             this.txbNameIngredient.SelectionStart = 0;
             this.txbNameIngredient.ShortcutsEnabled = true;
-            this.txbNameIngredient.Size = new System.Drawing.Size(361, 45);
+            this.txbNameIngredient.Size = new System.Drawing.Size(361, 43);
             this.txbNameIngredient.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameIngredient.TabIndex = 15;
             this.txbNameIngredient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -352,6 +352,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._60168_catalog_icon;
             this.Name = "frmAddCatalog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm mới loại nguyên liệu";

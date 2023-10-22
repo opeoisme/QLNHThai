@@ -36,19 +36,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gctImportInfo = new DevExpress.XtraGrid.GridControl();
+            this.ctmsImportDetail = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.gvImportInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.countIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateExpriry = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ctmsImportDetail = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gctImportInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvImportInfo)).BeginInit();
             this.ctmsImportDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvImportInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,6 +131,21 @@
             this.gctImportInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvImportInfo});
             // 
+            // ctmsImportDetail
+            // 
+            this.ctmsImportDetail.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.ctmsImportDetail.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnDelete});
+            this.ctmsImportDetail.Name = "ctmsImportDetail";
+            this.ctmsImportDetail.Size = new System.Drawing.Size(162, 36);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(161, 32);
+            this.btnDelete.Text = "Hủy hàng";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // gvImportInfo
             // 
             this.gvImportInfo.Appearance.HeaderPanel.BackColor = System.Drawing.Color.AliceBlue;
@@ -179,27 +194,13 @@
             this.dateExpriry.VisibleIndex = 2;
             this.dateExpriry.Width = 747;
             // 
-            // ctmsImportDetail
-            // 
-            this.ctmsImportDetail.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.ctmsImportDetail.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDelete});
-            this.ctmsImportDetail.Name = "ctmsImportDetail";
-            this.ctmsImportDetail.Size = new System.Drawing.Size(241, 69);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(240, 32);
-            this.btnDelete.Text = "Hủy hàng";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // frmImportDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 593);
             this.Controls.Add(this.panel2);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._8726154_import_icon;
             this.Name = "frmImportDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chi tiết hàng nhập";
@@ -210,8 +211,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gctImportInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvImportInfo)).EndInit();
             this.ctmsImportDetail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvImportInfo)).EndInit();
             this.ResumeLayout(false);
 
         }

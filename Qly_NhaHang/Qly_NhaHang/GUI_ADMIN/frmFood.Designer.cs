@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFood));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddFood = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteFood = new System.Windows.Forms.ToolStripButton();
@@ -203,7 +203,7 @@
             this.txbIdFood.BorderThickness = 1;
             this.txbIdFood.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbIdFood.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbIdFood.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txbIdFood.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbIdFood.DefaultText = "";
             this.txbIdFood.FillColor = System.Drawing.Color.White;
             this.txbIdFood.HideSelection = true;
@@ -219,26 +219,26 @@
             this.txbIdFood.Modified = false;
             this.txbIdFood.Multiline = false;
             this.txbIdFood.Name = "txbIdFood";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdFood.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbIdFood.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdFood.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbIdFood.OnIdleState = stateProperties16;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdFood.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbIdFood.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdFood.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbIdFood.OnIdleState = stateProperties4;
             this.txbIdFood.Padding = new System.Windows.Forms.Padding(3);
             this.txbIdFood.PasswordChar = '\0';
             this.txbIdFood.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -249,7 +249,7 @@
             this.txbIdFood.SelectionLength = 0;
             this.txbIdFood.SelectionStart = 0;
             this.txbIdFood.ShortcutsEnabled = true;
-            this.txbIdFood.Size = new System.Drawing.Size(261, 45);
+            this.txbIdFood.Size = new System.Drawing.Size(261, 43);
             this.txbIdFood.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbIdFood.TabIndex = 13;
             this.txbIdFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -319,7 +319,7 @@
             this.txbPriceFood.BorderThickness = 1;
             this.txbPriceFood.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbPriceFood.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPriceFood.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txbPriceFood.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbPriceFood.DefaultText = "";
             this.txbPriceFood.FillColor = System.Drawing.Color.White;
             this.txbPriceFood.HideSelection = true;
@@ -336,26 +336,26 @@
             this.txbPriceFood.Modified = false;
             this.txbPriceFood.Multiline = false;
             this.txbPriceFood.Name = "txbPriceFood";
-            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbPriceFood.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbPriceFood.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbPriceFood.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.Silver;
-            stateProperties20.FillColor = System.Drawing.Color.White;
-            stateProperties20.ForeColor = System.Drawing.Color.Empty;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbPriceFood.OnIdleState = stateProperties20;
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPriceFood.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbPriceFood.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPriceFood.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbPriceFood.OnIdleState = stateProperties8;
             this.txbPriceFood.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
             this.txbPriceFood.PasswordChar = '\0';
             this.txbPriceFood.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -366,7 +366,7 @@
             this.txbPriceFood.SelectionLength = 0;
             this.txbPriceFood.SelectionStart = 0;
             this.txbPriceFood.ShortcutsEnabled = true;
-            this.txbPriceFood.Size = new System.Drawing.Size(216, 44);
+            this.txbPriceFood.Size = new System.Drawing.Size(216, 40);
             this.txbPriceFood.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbPriceFood.TabIndex = 21;
             this.txbPriceFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -381,11 +381,11 @@
             // 
             this.cbbCategory.BackColor = System.Drawing.Color.White;
             this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCategory.Font = new System.Drawing.Font("UTM Centur", 9F);
+            this.cbbCategory.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbbCategory.FormattingEnabled = true;
             this.cbbCategory.Location = new System.Drawing.Point(156, 257);
             this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.Size = new System.Drawing.Size(261, 33);
+            this.cbbCategory.Size = new System.Drawing.Size(261, 30);
             this.cbbCategory.TabIndex = 16;
             // 
             // labelControl1
@@ -436,7 +436,7 @@
             this.txbNameFood.BorderThickness = 1;
             this.txbNameFood.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNameFood.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNameFood.DefaultFont = new System.Drawing.Font("UTM Amerika Sans", 9F);
+            this.txbNameFood.DefaultFont = new System.Drawing.Font("Times New Roman", 10F);
             this.txbNameFood.DefaultText = "";
             this.txbNameFood.FillColor = System.Drawing.Color.White;
             this.txbNameFood.HideSelection = true;
@@ -453,26 +453,26 @@
             this.txbNameFood.Modified = false;
             this.txbNameFood.Multiline = false;
             this.txbNameFood.Name = "txbNameFood";
-            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameFood.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txbNameFood.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameFood.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.Silver;
-            stateProperties24.FillColor = System.Drawing.Color.White;
-            stateProperties24.ForeColor = System.Drawing.Color.Empty;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbNameFood.OnIdleState = stateProperties24;
+            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameFood.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txbNameFood.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameFood.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbNameFood.OnIdleState = stateProperties12;
             this.txbNameFood.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
             this.txbNameFood.PasswordChar = '\0';
             this.txbNameFood.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -483,7 +483,7 @@
             this.txbNameFood.SelectionLength = 0;
             this.txbNameFood.SelectionStart = 0;
             this.txbNameFood.ShortcutsEnabled = true;
-            this.txbNameFood.Size = new System.Drawing.Size(261, 44);
+            this.txbNameFood.Size = new System.Drawing.Size(261, 40);
             this.txbNameFood.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txbNameFood.TabIndex = 14;
             this.txbNameFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -539,6 +539,7 @@
             this.gctFood.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gctFood.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.Red;
             this.gctFood.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gctFood.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.gctFood.Location = new System.Drawing.Point(0, 0);
             this.gctFood.MainView = this.gridView1;
             this.gctFood.Name = "gctFood";
@@ -549,6 +550,8 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.AliceBlue;
             this.gridView1.Appearance.HeaderPanel.BackColor2 = System.Drawing.Color.White;
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -570,6 +573,8 @@
             // 
             // idFood
             // 
+            this.idFood.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.idFood.AppearanceCell.Options.UseFont = true;
             this.idFood.Caption = "Mã món ăn";
             this.idFood.FieldName = "id_Food";
             this.idFood.MinWidth = 30;
@@ -580,6 +585,8 @@
             // 
             // nameFood
             // 
+            this.nameFood.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameFood.AppearanceCell.Options.UseFont = true;
             this.nameFood.Caption = "Tên món ăn";
             this.nameFood.FieldName = "name_Food";
             this.nameFood.MinWidth = 30;
@@ -590,7 +597,11 @@
             // 
             // priceFood
             // 
+            this.priceFood.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceFood.AppearanceCell.Options.UseFont = true;
             this.priceFood.Caption = "Giá món (vnđ)";
+            this.priceFood.DisplayFormat.FormatString = "n0";
+            this.priceFood.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.priceFood.FieldName = "price_Food";
             this.priceFood.MinWidth = 30;
             this.priceFood.Name = "priceFood";

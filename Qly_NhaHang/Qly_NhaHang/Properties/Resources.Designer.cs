@@ -143,6 +143,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2250033_cash_fees_money_purse_shop_icon {
+            get {
+                object obj = ResourceManager.GetObject("_2250033_cash_fees_money_purse_shop_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2303114_explore_lense_magnifier_search_searching_icon {
             get {
                 object obj = ResourceManager.GetObject("_2303114_explore_lense_magnifier_search_searching_icon", resourceCulture);
@@ -176,6 +186,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap _3592651_cloud_cloudy_export_network_server_icon {
             get {
                 object obj = ResourceManager.GetObject("_3592651_cloud_cloudy_export_network_server_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643769_building_home_house_main_menu_icon {
+            get {
+                object obj = ResourceManager.GetObject("3643769_building_home_house_main_menu_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

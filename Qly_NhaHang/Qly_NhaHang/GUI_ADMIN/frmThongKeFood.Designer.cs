@@ -101,6 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1944, 1059);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.IconOptions.Image = global::Qly_NhaHang.Properties.Resources._1743801_analysis_analytics_chart_graph_report_icon;
             this.Name = "frmThongKeFood";
             this.Text = "Món ăn yêu thích";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
