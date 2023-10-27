@@ -21,7 +21,6 @@ namespace Qly_NhaHang.UserControl
         private string nameFood;
         private double priceFood;
         private int foodCount;
-
         public uctFood(string nameFood, double priceFood, int _idBill, int foodCount)
         {
             InitializeComponent();
@@ -31,7 +30,6 @@ namespace Qly_NhaHang.UserControl
             this.foodCount = foodCount;
             lblFoodName.Text = nameFood ;
             lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceFood);
-
             using (var dbContext = new QLNHThaiEntities()) 
             {
                 var food = dbContext.Foods.FirstOrDefault(f => f.name_Food == nameFood);

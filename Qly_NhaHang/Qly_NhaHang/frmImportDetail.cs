@@ -36,7 +36,6 @@ namespace Qly_NhaHang
                  .Where(a => a.id_Import == selectedImportId)
                 .Select(a => new ImportDetail
                 {
-                    
                     id_ImportInfo = a.id_ImportInfo,
                     id_Import = a.id_Import,
                     count_Ingredient = a.count_Ingredient,
@@ -44,7 +43,6 @@ namespace Qly_NhaHang
                     id_Ingredient = a.id_Ingredient,
                 })
                 .ToList();
-
             gctImportInfo.DataSource = importData;
         }
 
@@ -60,39 +58,26 @@ namespace Qly_NhaHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem người dùng có muốn xóa hay không
-            DialogResult result = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = XtraMessageBox.Show("Bạn có chắc chắn muốn hủy?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                // Lấy danh sách các hàng đã chọn
                 var selectedRows = gvImportInfo.GetSelectedRows();
 
                 foreach (var rowHandle in selectedRows)
                 {
-                    // Lấy đối tượng ImportDetail tương ứng với hàng đã chọn
                     ImportDetail selectedImportDetail = gvImportInfo.GetRow(rowHandle) as ImportDetail;
 
                     if (selectedImportDetail != null)
                     {
-                        // Lấy id_ImportInfo của hàng đã chọn
                         int importInfoId = selectedImportDetail.id_ImportInfo;
-
-                        // Truy vấn và cập nhật dữ liệu trong bảng ImportInfo
                         var importInfo = dbContext.ImportInfoes.FirstOrDefault(i => i.id_ImportInfo == importInfoId);
-
                         if (importInfo != null)
                         {
-                            // Lấy thông tin id_Ingredient và count_Ingredient từ bảng ImportDetail
                             int ingredientId = selectedImportDetail.id_Ingredient;
                             int countToSubtract = selectedImportDetail.count_Ingredient;
-
-                            // Trừ giá trị hiện tại của count_Ingredient từ chính nó để đạt giá trị 0
                             importInfo.count_Ingredient -= countToSubtract;
-
-                            // Truy vấn và cập nhật dữ liệu trong bảng Ingredient
                             var ingredient = dbContext.Ingredients.FirstOrDefault(i => i.id_Ingredient == ingredientId);
-
                             if (ingredient != null)
                             {
                                 ingredient.count_Ingredient -= countToSubtract;
@@ -101,8 +86,6 @@ namespace Qly_NhaHang
                     }
                 }
                 dbContext.SaveChanges();
-
-                // Sau khi cập nhật xong, làm mới dữ liệu trên GridControl
                 LoadImportInfoData();
             }
         }

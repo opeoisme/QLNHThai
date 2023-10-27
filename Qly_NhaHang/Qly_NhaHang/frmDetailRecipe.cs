@@ -58,7 +58,6 @@ namespace Qly_NhaHang
                             .FirstOrDefault(bi => bi.id_Food == idFoodValue && bi.id_Ingredient == idIngredient);
                     if (existingRecipe == null)
                     {
-                        // Tạo mới một BillInfo nếu không tồn tại
                         if (ingredientCount == 0 && quantity == 0)
                         {
                             XtraMessageBox.Show("Vui lòng nhập số lượng món.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

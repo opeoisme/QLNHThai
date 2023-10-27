@@ -50,7 +50,7 @@ namespace Qly_NhaHang.UserControl
             if (result == DialogResult.Yes)
             {
                 int idTable = IdTable;
-                using (var context = new QLNHThaiEntities()) // Thay thế YourDbContext bằng DbContext của bạn
+                using (var context = new QLNHThaiEntities()) 
                 {
                     try
                     {

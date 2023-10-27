@@ -237,10 +237,16 @@
     <Compile Include="FN_DoanhThuTheoNgay_Result.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
+    <Compile Include="FN_DoanhThuTheoQuy_Result.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
     <Compile Include="FN_DoanhThuTheoThang_Result.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
     <Compile Include="FN_ThuChiTheoNgay_Result.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FN_ThuChiTheoThang_Result.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
     <Compile Include="FN_TopSanPhamDichVu_Result.cs">
@@ -254,6 +260,12 @@
     </Compile>
     <Compile Include="frmDetailRecipe.Designer.cs">
       <DependentUpon>frmDetailRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoanhThuQuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoanhThuQuy.Designer.cs">
+      <DependentUpon>frmDoanhThuQuy.cs</DependentUpon>
     </Compile>
     <Compile Include="frmImportDetail.cs">
       <SubType>Form</SubType>
@@ -278,6 +290,12 @@
     </Compile>
     <Compile Include="GUI_ADD\frmAddIngredient.Designer.cs">
       <DependentUpon>frmAddIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddUnit.Designer.cs">
+      <DependentUpon>frmAddUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_ADMIN\frmDoanhThuThang.cs">
       <SubType>Form</SubType>
@@ -321,6 +339,24 @@
     </Compile>
     <Compile Include="GUI_ADMIN\frmThongKeFood.Designer.cs">
       <DependentUpon>frmThongKeFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmThuChiThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmThuChiThang.Designer.cs">
+      <DependentUpon>frmThuChiThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmUnit.Designer.cs">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmRestoreUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmRestoreUnit.Designer.cs">
+      <DependentUpon>frmRestoreUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_SELL\frmChangeTable.cs">
       <SubType>Form</SubType>
@@ -509,6 +545,7 @@
     <Compile Include="Ingredient.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\baocaodoanhthuQuyDTO.cs" />
     <Compile Include="Models\CatalogView.cs" />
     <Compile Include="Models\CategoryView.cs" />
     <Compile Include="Models\DiscountView.cs" />
@@ -523,7 +560,10 @@
     <Compile Include="Models\RecipeModels.cs" />
     <Compile Include="Models\TableView.cs" />
     <Compile Include="Models\ThuChiModel.cs" />
+    <Compile Include="Models\ThuChiNgay.cs" />
+    <Compile Include="Models\ThuChiThang.cs" />
     <Compile Include="Models\TopFood.cs" />
+    <Compile Include="Models\UnitModel.cs" />
     <Compile Include="NHAHANG.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -661,6 +701,9 @@
     <EmbeddedResource Include="frmDetailRecipe.resx">
       <DependentUpon>frmDetailRecipe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDoanhThuQuy.resx">
+      <DependentUpon>frmDoanhThuQuy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmImportDetail.resx">
       <DependentUpon>frmImportDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -672,6 +715,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADD\frmAddIngredient.resx">
       <DependentUpon>frmAddIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADD\frmAddUnit.resx">
+      <DependentUpon>frmAddUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADMIN\frmDoanhThuThang.resx">
       <DependentUpon>frmDoanhThuThang.cs</DependentUpon>
@@ -693,6 +739,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADMIN\frmThongKeFood.resx">
       <DependentUpon>frmThongKeFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADMIN\frmThuChiThang.resx">
+      <DependentUpon>frmThuChiThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADMIN\frmUnit.resx">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_RESTORE\frmRestoreUnit.resx">
+      <DependentUpon>frmRestoreUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_SELL\frmChangeTable.resx">
       <DependentUpon>frmChangeTable.cs</DependentUpon>
@@ -918,6 +973,8 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\6791534_business_management_office_sub divisi_unit_icon.png" />
+    <None Include="Resources\8673915_ic_fluent_star_three_quarter_icon.png" />
     <None Include="Resources\icons8-tick-250.png" />
     <None Include="Resources\8666693_search_icon.png" />
     <None Include="Resources\7727367_custom_nutrition_researching_analysis_healthy_icon.png" />
@@ -995,6 +1052,7 @@
     </Content>
     <None Include="Resources\2250033_cash_fees_money_purse_shop_icon.png" />
     <None Include="Resources\3643769_building_home_house_main_menu_icon1.png" />
+    <None Include="Resources\41969_money_cash_atm_funds_bank_icon.png" />
     <Content Include="Resources\5120875_butter_creamy_dairy_food_ingredient_icon.png" />
     <None Include="Resources\7811684_warehouse_supply_cargo_distribution_logistic_icon.png" />
   </ItemGroup>

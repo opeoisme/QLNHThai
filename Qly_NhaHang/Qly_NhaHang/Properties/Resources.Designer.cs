@@ -263,6 +263,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _41969_money_cash_atm_funds_bank_icon {
+            get {
+                object obj = ResourceManager.GetObject("_41969_money_cash_atm_funds_bank_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _4288575_bank_coin_deposit_money_piggy_icon {
             get {
                 object obj = ResourceManager.GetObject("_4288575_bank_coin_deposit_money_piggy_icon", resourceCulture);
@@ -333,6 +343,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6791534_business_management_office_sub_divisi_unit_icon {
+            get {
+                object obj = ResourceManager.GetObject("_6791534_business_management_office_sub_divisi_unit_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7267724_ext_csv_file_document_format_icon {
             get {
                 object obj = ResourceManager.GetObject("_7267724_ext_csv_file_document_format_icon", resourceCulture);
@@ -376,6 +396,16 @@ namespace Qly_NhaHang.Properties {
         internal static System.Drawing.Bitmap _8666693_search_icon {
             get {
                 object obj = ResourceManager.GetObject("_8666693_search_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8673915_ic_fluent_star_three_quarter_icon {
+            get {
+                object obj = ResourceManager.GetObject("_8673915_ic_fluent_star_three_quarter_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

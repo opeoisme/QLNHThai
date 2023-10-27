@@ -51,7 +51,6 @@ namespace Qly_NhaHang
                         txbGuestPhone.Text = reservation.phone_Guest;
                         TimeSpan timeZoneOffset = TimeSpan.FromHours(7);
                         dtpkTimeGuest.DateTimeOffset = new DateTimeOffset(reservation.date_Reservation, timeZoneOffset);
-
                     }
                 }
             }
@@ -89,9 +88,7 @@ namespace Qly_NhaHang
                 int idTable = int.Parse(lblID.Text);
                 string nameGuest = txbGuestName.Text;
                 DateTimeOffset dateReservation = dtpkTimeGuest.DateTimeOffset;
-
                 string phoneGuest = txbGuestPhone.Text;
-
                 if (string.IsNullOrWhiteSpace(nameGuest))
                 {
                     XtraMessageBox.Show("Vui lòng nhập tên khách hàng.","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -113,7 +110,7 @@ namespace Qly_NhaHang
                 DateTime dateReservationLocal = TimeZoneInfo.ConvertTimeFromUtc(dateReservation.UtcDateTime, TimeZoneInfo.Local);
                 using (var context = new QLNHThaiEntities())
                 {
-                    if (IsUpdateMode) // Nếu đang ở chế độ cập nhật
+                    if (IsUpdateMode) 
                     {
                         var reservationToUpdate = context.Reservations.FirstOrDefault(r => r.id_Reservation == _idReservation);
                         if (reservationToUpdate != null)
@@ -122,10 +119,8 @@ namespace Qly_NhaHang
                             reservationToUpdate.date_Reservation = dateReservationLocal;
                             reservationToUpdate.phone_Guest = phoneGuest;
                         }
-
-                        // Cập nhật thông tin đặt bàn
                     }
-                    else // Nếu đang ở chế độ thêm mới
+                    else 
                     {
                         Reservation newReservation = new Reservation
                         {

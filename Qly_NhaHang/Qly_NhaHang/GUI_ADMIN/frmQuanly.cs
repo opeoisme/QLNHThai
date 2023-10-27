@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DocumentFormat.OpenXml.Office2016.Drawing.Command;
 using Qly_NhaHang.GUI_ADMIN;
+using Qly_NhaHang.GUI_RESTORE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -161,6 +162,26 @@ namespace Qly_NhaHang
         private void btnCostPrice_ItemClick(object sender, ItemClickEventArgs e)
         {
             openForm(typeof(frmThuChiNgay));
+        }
+
+        private void btnCostPriceMonth_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmThuChiThang));
+        }
+
+        private void btnQuarter_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmDoanhThuQuy));
+        }
+
+        private void btnUnit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmUnit));
+        }
+
+        private void btnRestoreUnit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmRestoreUnit));
         }
     }
 }

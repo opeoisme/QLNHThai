@@ -311,6 +311,18 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="FN_DoanhThuTheoQuy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="checkIn" Type="datetime" Mode="In" />
+          <Parameter Name="checkOut" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="QUY" Type="varchar" MaxLength="5" />
+                <Property Name="TONGDOANHTHU" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="FN_DoanhThuTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="checkIn" Type="datetime" Mode="In" />
           <Parameter Name="checkOut" Type="datetime" Mode="In" />
@@ -330,6 +342,17 @@
               <RowType>
                 <Property Name="IDDOANHTHU" Type="bigint" />
                 <Property Name="NGAY" Type="date" />
+                <Property Name="TONGDOANHTHU" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FN_ThuChiTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="checkOut" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="THANG" Type="date" />
                 <Property Name="TONGDOANHTHU" Type="float" />
               </RowType>
             </CollectionType>
@@ -812,6 +835,13 @@
           <Parameter Name="checkOut" Mode="In" Type="DateTime" />
           </FunctionImport>
           <EntitySet Name="Units" EntityType="QLNHThaiModel.Unit" />
+          <FunctionImport Name="FN_ThuChiTheoThang" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_ThuChiTheoThang_Result)">
+          <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="FN_DoanhThuTheoQuy" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_DoanhThuTheoQuy_Result)">
+            <Parameter Name="checkIn" Mode="In" Type="DateTime" />
+            <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="FN_ThuChiTheoNgay_Result">
           <Property Type="Int64" Name="IDDOANHTHU" Nullable="true" />
@@ -826,6 +856,14 @@
           <Property Name="name_Unit" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="condition_Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="FN_ThuChiTheoThang_Result">
+          <Property Type="DateTime" Name="THANG" Nullable="true" Precision="10" />
+          <Property Type="Double" Name="TONGDOANHTHU" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FN_DoanhThuTheoQuy_Result">
+          <Property Type="String" Name="QUY" Nullable="true" MaxLength="5" />
+          <Property Type="Double" Name="TONGDOANHTHU" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1030,6 +1068,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="FN_ThuChiTheoThang" FunctionName="QLNHThaiModel.Store.FN_ThuChiTheoThang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLNHThaiModel.FN_ThuChiTheoThang_Result">
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FN_DoanhThuTheoQuy" FunctionName="QLNHThaiModel.Store.FN_DoanhThuTheoQuy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLNHThaiModel.FN_DoanhThuTheoQuy_Result">
+                <ScalarProperty Name="QUY" ColumnName="QUY" />
+                <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

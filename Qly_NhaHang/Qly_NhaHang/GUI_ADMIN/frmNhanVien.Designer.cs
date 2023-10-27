@@ -87,6 +87,7 @@
             this.phoneNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.imageNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.typeNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnResetPass = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -106,7 +107,8 @@
             this.btnUpdateNV,
             this.btnLoadNV,
             this.btnPDFNV,
-            this.btnCSVNV});
+            this.btnCSVNV,
+            this.btnResetPass});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1398, 34);
@@ -853,6 +855,15 @@
             this.typeNV.VisibleIndex = 7;
             this.typeNV.Width = 139;
             // 
+            // btnResetPass
+            // 
+            this.btnResetPass.Image = global::Qly_NhaHang.Properties.Resources.icons8_password_24__1_;
+            this.btnResetPass.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnResetPass.Name = "btnResetPass";
+            this.btnResetPass.Size = new System.Drawing.Size(90, 29);
+            this.btnResetPass.Text = "Đặt lại";
+            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -920,5 +931,6 @@
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ToolStripButton btnResetPass;
     }
 }

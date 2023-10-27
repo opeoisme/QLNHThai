@@ -21,7 +21,7 @@ namespace Qly_NhaHang
         }
     
         public int id_Import { get; set; }
-        public System.DateTime date_Import { get; set; }
+        public Nullable<System.DateTime> date_Import { get; set; }
         public string id_NV { get; set; }
         public string type_Import { get; set; }
         public string status_Import { get; set; }

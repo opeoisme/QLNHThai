@@ -11,7 +11,7 @@ namespace Qly_NhaHang.Models
     {
         public string _id_NV;
         public int id_Bill { get; set; }
-        public System.DateTime DateCheckIn { get; set; }
+        public Nullable<System.DateTime> DateCheckIn { get; set; }
         public Nullable<System.DateTime> DateCheckOut { get; set; }
         public int id_Table { get; set; }
         public string name_NV { get; set; }

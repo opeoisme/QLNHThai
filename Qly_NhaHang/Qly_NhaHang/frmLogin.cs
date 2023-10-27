@@ -30,7 +30,6 @@ namespace Qly_NhaHang
 
         private void LoadFormData()
         {
-            // Thực hiện tải lại dữ liệu từ cơ sở dữ liệu và cập nhật danh sách tài khoản NhanVien
             dbContext = new QLNHThaiEntities();
         }
         private void btnLogin_Click(object sender, EventArgs e)
@@ -41,7 +40,6 @@ namespace Qly_NhaHang
 
             if (nhanvien != null && nhanvien.condition_NV == "Làm việc")
             {
-                // Đăng nhập thành công
                 LoggedInIdNV = idNV;
                 XtraMessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadFormData();
@@ -54,17 +52,13 @@ namespace Qly_NhaHang
             }
             else if (nhanvien != null && nhanvien.condition_NV != "Làm việc")
             {
-                // Người dùng đã nghỉ việc
                 XtraMessageBox.Show("Tài khoản này đã nghỉ việc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                // Đăng nhập thất bại
                 XtraMessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
       
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)

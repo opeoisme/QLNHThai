@@ -398,6 +398,13 @@
       <Parameter Name="checkOut" Mode="In" Type="DateTime" />
     </FunctionImport>
     <EntitySet Name="Units" EntityType="QLNHThaiModel.Unit" />
+    <FunctionImport Name="FN_ThuChiTheoThang" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_ThuChiTheoThang_Result)">
+      <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="FN_DoanhThuTheoQuy" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_DoanhThuTheoQuy_Result)">
+      <Parameter Name="checkIn" Mode="In" Type="DateTime" />
+      <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="FN_ThuChiTheoNgay_Result">
     <Property Type="Int64" Name="IDDOANHTHU" Nullable="true" />
@@ -412,4 +419,12 @@
     <Property Name="name_Unit" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="condition_Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <ComplexType Name="FN_ThuChiTheoThang_Result">
+    <Property Type="DateTime" Name="THANG" Nullable="true" Precision="10" />
+    <Property Type="Double" Name="TONGDOANHTHU" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="FN_DoanhThuTheoQuy_Result">
+    <Property Type="String" Name="QUY" Nullable="true" MaxLength="5" />
+    <Property Type="Double" Name="TONGDOANHTHU" Nullable="true" />
+  </ComplexType>
 </Schema>

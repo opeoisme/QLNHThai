@@ -50,14 +50,10 @@ namespace Qly_NhaHang
                 int idFood = GetFoodIdByName(lblNameFood.Text);
                 string idBillText = lblID.Text;
                 int idBillValue = int.Parse(idBillText);
-
-                // Tìm và cập nhật BillInfo đã tồn tại hoặc tạo mới nếu không tồn tại
                 Bill_Info existingBillInfo = dbContext.Bill_Info
                     .FirstOrDefault(bi => bi.id_Bill == idBillValue && bi.id_Food == idFood);
-
                 if (existingBillInfo == null)
                 {
-                    // Tạo mới một BillInfo nếu không tồn tại
                     if (foodCount == 0 && quantity == 0)
                     {
                         XtraMessageBox.Show("Vui lòng nhập số lượng món.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -82,12 +78,10 @@ namespace Qly_NhaHang
                 {
                     if (nmrQuantity.Value == 0)
                     {
-                        // Xóa BillInfo nếu foodCount bằng 0
                         dbContext.Bill_Info.Remove(existingBillInfo);
                     }
                     else
                     {
-                        // Cập nhật count_Food nếu foodCount khác 0
                         existingBillInfo.count_Food = quantity;
                     }
                 }
@@ -95,7 +89,7 @@ namespace Qly_NhaHang
                 this.Close();
                 if (Application.OpenForms["frmOrder"] is frmOrder orderForm)
                 {
-                    orderForm.LoadBillInfo(); // Giả sử tên phương thức là LoadFoodData()
+                    orderForm.LoadBillInfo(); 
                     double total = orderForm.CalculateTotalPrice();
                     orderForm.GetFoodCount(foodCount);
                     orderForm.LoadFoodFLPNTest();
@@ -114,7 +108,7 @@ namespace Qly_NhaHang
                 {
                     return food.id_Food;
                 }
-                return -1; // Trả về một giá trị không hợp lệ nếu không tìm thấy món ăn
+                return -1; 
             }
         }
 

@@ -30,7 +30,6 @@ namespace Qly_NhaHang.UserControl
         #region method
         public void SetTableData(Tablee table)
         {
-            // Cập nhật giao diện với dữ liệu từ bàn (table)
             lblnameTable.Text = table.name_Table;
             lblseatsTable.Text = table.seats_Table.ToString();
             _idBan = table.id_Table;

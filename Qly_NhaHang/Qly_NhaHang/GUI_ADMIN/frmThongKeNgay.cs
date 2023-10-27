@@ -85,11 +85,11 @@ namespace Qly_NhaHang
                 ((XYDiagram)cNgayDuong.Diagram).AxisY.Label.TextPattern = "{V:N0} VND";
 
 
-                LoadFormBThongKeNgay();
+                LoadFormThongKeNgay();
             }
         }
 
-        public void LoadFormBThongKeNgay()
+        public void LoadFormThongKeNgay()
         {
             DateTime today = DateTime.Today;
 

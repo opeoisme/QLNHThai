@@ -13,7 +13,6 @@ namespace Qly_NhaHang
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public MoMoSecurity()
         {
-            //encrypt and decrypt password using secure
         }
         public string getHash(string partnerCode, string merchantRefId,
             string amount, string paymentCode, string storeId, string storeName, string publicKeyXML)
@@ -28,11 +27,10 @@ namespace Qly_NhaHang
             log.Debug("Raw hash: " + json);
             byte[] data = Encoding.UTF8.GetBytes(json);
             string result = null;
-            using (var rsa = new RSACryptoServiceProvider(4096)) //KeySize
+            using (var rsa = new RSACryptoServiceProvider(4096)) 
             {
                 try
                 {
-                    // MoMo's public key has format PEM.
                     // You must convert it to XML format. Recommend tool: https://superdry.apphb.com/tools/online-rsa-key-converter
                     rsa.FromXmlString(publicKeyXML);
                     var encryptedData = rsa.Encrypt(data, false);
@@ -63,7 +61,6 @@ namespace Qly_NhaHang
             {
                 try
                 {
-                    // client encrypting data with public key issued by server
                     rsa.FromXmlString(publicKey);
                     var encryptedData = rsa.Encrypt(data, false);
                     var base64Encrypted = Convert.ToBase64String(encryptedData);
@@ -96,7 +93,6 @@ namespace Qly_NhaHang
             {
                 try
                 {
-                    // client encrypting data with public key issued by server
                     rsa.FromXmlString(publicKey);
                     var encryptedData = rsa.Encrypt(data, false);
                     var base64Encrypted = Convert.ToBase64String(encryptedData);
@@ -106,7 +102,6 @@ namespace Qly_NhaHang
                 {
                     rsa.PersistKeyInCsp = false;
                 }
-
             }
 
             return result;
@@ -122,7 +117,6 @@ namespace Qly_NhaHang
                 string hex = BitConverter.ToString(hashmessage);
                 hex = hex.Replace("-", "").ToLower();
                 return hex;
-
             }
         }
     }

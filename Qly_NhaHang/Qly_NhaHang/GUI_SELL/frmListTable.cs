@@ -34,23 +34,21 @@ namespace Qly_NhaHang
 
         private void btnEmptyTable_Click(object sender, EventArgs e)
         {
-            flpnTable.Controls.Clear(); // Xóa các controls cũ trong FlowLayoutPanel
-
+            flpnTable.Controls.Clear(); 
             var emptyTables = dbContext.Tablees
                 .Where(t => t.condition_Table == "Được sử dụng" && t.status_Table == "Đang trống")
                 .ToList();
-
             foreach (var table in emptyTables)
             {
                 EmptyTable emptyTableControl = new EmptyTable();
-                emptyTableControl.SetTableData(table); // Hàm này sẽ hiển thị dữ liệu trong EmptyTable User Control
+                emptyTableControl.SetTableData(table); 
                 flpnTable.Controls.Add(emptyTableControl);
             }
         }
 
         private void btnBusyTable_Click(object sender, EventArgs e)
         {
-            flpnTable.Controls.Clear(); // Xóa các controls cũ trong FlowLayoutPanel
+            flpnTable.Controls.Clear(); 
 
             var busyTables = dbContext.Tablees
                 .Where(t => t.condition_Table == "Được sử dụng" && t.status_Table == "Đang có khách")
@@ -59,23 +57,22 @@ namespace Qly_NhaHang
             foreach (var table in busyTables)
             {
                 BusyTable busyTableControl = new BusyTable();
-                busyTableControl.SetTableData(table); // Hàm này sẽ hiển thị dữ liệu trong EmptyTable User Control
+                busyTableControl.SetTableData(table);
                 flpnTable.Controls.Add(busyTableControl);
             }
         }
 
         private void btnSetTable_Click(object sender, EventArgs e)
         {
-            flpnTable.Controls.Clear(); // Xóa các controls cũ trong FlowLayoutPanel
+            flpnTable.Controls.Clear(); 
 
             var setTables = dbContext.Tablees
                 .Where(t => t.condition_Table == "Được sử dụng" && t.status_Table == "Được đặt")
                 .ToList();
-
             foreach (var table in setTables)
             {
                 SetTable SetTableControl = new SetTable();
-                SetTableControl.SetTableData(table); // Hàm này sẽ hiển thị dữ liệu trong EmptyTable User Control
+                SetTableControl.SetTableData(table);
                 flpnTable.Controls.Add(SetTableControl);
             }
         }
@@ -94,7 +91,6 @@ namespace Qly_NhaHang
 
             using (var newContext = new QLNHThaiEntities())
             {
-                // Tải lại danh sách phòng theo thứ tự số phòng, không quan trọng trạng thái
                 LoadAllRoomsAndSortByRoomNumber(newContext);
             }
         }

@@ -197,7 +197,7 @@ namespace Qly_NhaHang.GUI_ADMIN
             foreach (var importInfoItem in addedImportInfoItems)
             {
                 var importInfoToUpdate = dbContext.ImportInfoes
-                    .Where(ii => ii.Import.date_Import == minDateImport && ii.Import.type_Import == "Nhập hàng" && ii.count_Ingredient > 0)
+                    .Where(ii => ii.Import.date_Import == minDateImport && ii.Import.type_Import == "Nhập hàng" && ii.count_Ingredient > 0 && ii.id_Ingredient == importInfoItem.id_Ingredient)
                     .ToList()
                     .FirstOrDefault(ii => importInfoData.Any(iid => iid.id_Ingredient == ii.id_Ingredient));
 
@@ -212,6 +212,7 @@ namespace Qly_NhaHang.GUI_ADMIN
                     else
                     {
                         importInfoToUpdate.count_Ingredient += importInfoItem.count_Ingredient;
+
                     }
                 }
             }
@@ -232,6 +233,11 @@ namespace Qly_NhaHang.GUI_ADMIN
             {
                 
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

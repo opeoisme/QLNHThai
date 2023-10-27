@@ -163,5 +163,10 @@ namespace Qly_NhaHang
                 return -1; // Trả về một giá trị không hợp lệ nếu không tìm thấy món ăn
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

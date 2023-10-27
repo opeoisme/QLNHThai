@@ -34,7 +34,6 @@ namespace Qly_NhaHang
             {
                 btnAdmin.Visible = false;
             }
-            //btnAdmin.Visible = false;
         }
 
         public void UpdateNameNV(string name_NV)
@@ -156,19 +155,13 @@ namespace Qly_NhaHang
             f.ShowDialog();
             this.Show();
         }
-
-
-        #endregion
-
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            frmProfileNV p = new frmProfileNV(nhanVien); // Truyền thông tin nhân viên cho FormProfileNV
+            frmProfileNV p = new frmProfileNV(nhanVien);
             this.Hide();
             p.ShowDialog();
             this.Show();
         }
-
-
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             frmQuanly f = new frmQuanly();
@@ -176,5 +169,25 @@ namespace Qly_NhaHang
             f.ShowDialog();
             this.Show();
         }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            XtraMessageBox.Show("Chức năng đang được cập nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            XtraMessageBox.Show("Chức năng đang được cập nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            XtraMessageBox.Show("Chức năng đang được cập nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+
+        #endregion
+
+
     }
 }

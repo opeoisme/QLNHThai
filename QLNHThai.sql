@@ -119,6 +119,12 @@ create table Recipe(
 	foreign key (id_Food) references Food (id_Food),
 	foreign key (id_Ingredient) references Ingredient (id_Ingredient)
 )
+
+ create table Unit (
+	id_Unit int identity primary key,
+	name_Unit nvarchar(max) not null,
+	condition_Unit nvarchar(50)
+)
  
 select *from Bill_Info
 select * from Ingredient
@@ -188,21 +194,90 @@ RETURN
     GROUP BY YEAR(DateCheckOut), MONTH(DateCheckOut)
 );
 
-SELECT * FROM FN_DoanhThuTheoThang('2023-09-01', '2023-09-30');
+
 
 
 select *from Bill
-select* from Ingredient where id_Ingredient > 52 and id_Ingredient < 55 
+select* from Unit
 select* from ImportInfo
 select *from Food
+select *from Reservation
 
-select *from Recipe
-
-select* from Import
+select *from Ingredient
+select* from Import where date_Import >= '2023-10-01' and type_Import = N'Nhập hàng'
 select *from Ingredient
 
 
 DBCC CHECKIDENT (Import, RESEED, 1);
+SELECT * FROM FN_DoanhThuTheoThang('2023-10-01', '2023-10-31');
 
 
 
+create FUNCTION dbo.FN_ThuChiTheoNgay
+(
+    @checkOut datetime
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT ROW_NUMBER() OVER (ORDER BY CONVERT(date, date_Import )) AS IDDOANHTHU,
+           CONVERT(date, date_Import) AS NGAY,
+           SUM(total_Price) AS TONGDOANHTHU
+    FROM Import
+WHERE CONVERT(date, date_Import) >= DATEADD(month, DATEDIFF(month, 0, @checkOut), 0)
+  AND CONVERT(date, date_Import) < DATEADD(month, DATEDIFF(month, 0, @checkOut) + 1, 0)
+  AND type_Import = N'Nhập hàng'
+
+    GROUP BY CONVERT(date, date_Import)
+);
+
+
+CREATE FUNCTION dbo.FN_ThuChiTheoThang
+(
+    @checkOut datetime
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT DATEFROMPARTS(YEAR(date_Import), MONTH(date_Import), 1) AS THANG,
+           SUM(total_Price) AS TONGDOANHTHU
+    FROM Import
+    WHERE CONVERT(date, date_Import ) >= CONVERT(date, @checkOut)
+        AND CONVERT(date, date_Import) <= DATEADD(day, -1, DATEADD(month, DATEDIFF(month, 0, @checkOut) + 1, 0))
+        AND type_Import = N'Nhập hàng'
+    GROUP BY YEAR(date_Import), MONTH(date_Import)
+);
+
+CREATE FUNCTION dbo.FN_DoanhThuTheoQuy
+(
+    @checkIn datetime,
+    @checkOut datetime
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT
+        CASE 
+            WHEN MONTH(DateCheckOut) BETWEEN 1 AND 3 THEN 'Quý 1'
+            WHEN MONTH(DateCheckOut) BETWEEN 4 AND 6 THEN 'Quý 2'
+            WHEN MONTH(DateCheckOut) BETWEEN 7 AND 9 THEN 'Quý 3'
+            WHEN MONTH(DateCheckOut) BETWEEN 10 AND 12 THEN 'Quý 4'
+        END AS QUY,
+        SUM(totalPrice_Bill) AS TONGDOANHTHU
+    FROM Bill
+    WHERE CONVERT(date, DateCheckIn) >= CONVERT(date, @checkIn)
+        AND CONVERT(date, DateCheckOut) <= CONVERT(date, @checkOut)
+        AND status_Bill = 1
+    GROUP BY 
+        CASE 
+            WHEN MONTH(DateCheckOut) BETWEEN 1 AND 3 THEN 'Quý 1'
+            WHEN MONTH(DateCheckOut) BETWEEN 4 AND 6 THEN 'Quý 2'
+            WHEN MONTH(DateCheckOut) BETWEEN 7 AND 9 THEN 'Quý 3'
+            WHEN MONTH(DateCheckOut) BETWEEN 10 AND 12 THEN 'Quý 4'
+        END
+);
+
+SELECT * FROM FN_DoanhThuTheoQuy('2023-07-01', '2023-09-30');

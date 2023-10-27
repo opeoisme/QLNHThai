@@ -85,5 +85,29 @@ namespace Qly_NhaHang
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_ThuChiTheoNgay_Result>("[QLNHThaiEntities].[FN_ThuChiTheoNgay](@checkOut)", checkOutParameter);
         }
+    
+        [DbFunction("QLNHThaiEntities", "FN_ThuChiTheoThang")]
+        public virtual IQueryable<FN_ThuChiTheoThang_Result> FN_ThuChiTheoThang(Nullable<System.DateTime> checkOut)
+        {
+            var checkOutParameter = checkOut.HasValue ?
+                new ObjectParameter("checkOut", checkOut) :
+                new ObjectParameter("checkOut", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_ThuChiTheoThang_Result>("[QLNHThaiEntities].[FN_ThuChiTheoThang](@checkOut)", checkOutParameter);
+        }
+    
+        [DbFunction("QLNHThaiEntities", "FN_DoanhThuTheoQuy")]
+        public virtual IQueryable<FN_DoanhThuTheoQuy_Result> FN_DoanhThuTheoQuy(Nullable<System.DateTime> checkIn, Nullable<System.DateTime> checkOut)
+        {
+            var checkInParameter = checkIn.HasValue ?
+                new ObjectParameter("checkIn", checkIn) :
+                new ObjectParameter("checkIn", typeof(System.DateTime));
+    
+            var checkOutParameter = checkOut.HasValue ?
+                new ObjectParameter("checkOut", checkOut) :
+                new ObjectParameter("checkOut", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DoanhThuTheoQuy_Result>("[QLNHThaiEntities].[FN_DoanhThuTheoQuy](@checkIn, @checkOut)", checkInParameter, checkOutParameter);
+        }
     }
 }

@@ -37,8 +37,8 @@ namespace Qly_NhaHang.UserControl
 
         public void SetTableData(Tablee table)
         {
-            lblnameTable.Text = table.name_Table; // Cập nhật giao diện với dữ liệu từ bàn (table)
-            lblseatsTable.Text = table.seats_Table.ToString();// Cập nhật các thông tin khác tương ứng
+            lblnameTable.Text = table.name_Table; 
+            lblseatsTable.Text = table.seats_Table.ToString();
             IdTable = table.id_Table;
             _idBill = new Bill_DAO().getIdBillByIDBan(IdTable);
         }
@@ -47,11 +47,8 @@ namespace Qly_NhaHang.UserControl
         private void btnBill_Click(object sender, EventArgs e)
         {
             frmOrder f = new frmOrder();
-            // Gán giá trị _idBill cho frmOrder
             f.SetIdBill(_idBill);
             f.SetIdBan(_idTable);
-          
-            // Hiển thị frmOrder
             f.ShowDialog();
           
           
@@ -59,16 +56,10 @@ namespace Qly_NhaHang.UserControl
 
         private void btnChangeTable_Click(object sender, EventArgs e)
         {
-            // Tạo một thể hiện mới của frmOrder
             frmChangeTable f = new frmChangeTable();
-
-            // Gán giá trị _idBill cho frmOrder
             f.SetIdBill(_idBill);
             f.SetIdBan(_idTable);
-            //  this.ParentForm.Hide();
-            // Hiển thị frmOrder
             f.ShowDialog();
-            //this.ParentForm.Show();
         }
     }
 }

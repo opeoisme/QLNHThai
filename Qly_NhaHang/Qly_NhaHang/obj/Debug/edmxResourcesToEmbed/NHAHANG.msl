@@ -199,5 +199,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="FN_ThuChiTheoThang" FunctionName="QLNHThaiModel.Store.FN_ThuChiTheoThang">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLNHThaiModel.FN_ThuChiTheoThang_Result">
+          <ScalarProperty Name="THANG" ColumnName="THANG" />
+          <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FN_DoanhThuTheoQuy" FunctionName="QLNHThaiModel.Store.FN_DoanhThuTheoQuy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLNHThaiModel.FN_DoanhThuTheoQuy_Result">
+          <ScalarProperty Name="QUY" ColumnName="QUY" />
+          <ScalarProperty Name="TONGDOANHTHU" ColumnName="TONGDOANHTHU" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

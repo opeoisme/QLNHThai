@@ -122,12 +122,12 @@ namespace Qly_NhaHang
                 pdf.Info.Title = "Danh sách Bàn";
 
                 XFont font = new XFont("Arial", 9);
-                int rowHeight = 60; // Điều chỉnh chiều cao của mỗi hàng
-                double y = 20; // Vị trí bắt đầu của hàng đầu tiên
+                int rowHeight = 60;
+                double y = 20; 
 
                 // Đặt kích thước trang PDF
                 PdfPage page = pdf.AddPage();
-                page.Width = XUnit.FromInch(8.5); // Kích thước trang Letter (8.5 x 11 inch)
+                page.Width = XUnit.FromInch(8.5); 
                 page.Height = XUnit.FromInch(11);
 
                 XGraphics gfx = XGraphics.FromPdfPage(page);
@@ -138,13 +138,13 @@ namespace Qly_NhaHang
 
                     if (row == 0)
                     {
-                        // Vẽ tiêu đề cột cho trang đầu tiên
+                       
                         foreach (DevExpress.XtraGrid.Columns.GridColumn column in gvCategory.Columns)
                         {
                             gfx.DrawString(column.Caption, font, XBrushes.Black, x, y);
                             x += 100;
                         }
-                        y += 20; // Điều chỉnh khoảng cách giữa tiêu đề cột và dữ liệu
+                        y += 20; 
                         x = 20;
                     }
 
@@ -152,7 +152,7 @@ namespace Qly_NhaHang
                     {
                         object cellValue = gvCategory.GetRowCellValue(row, gvCategory.Columns[col]);
                         gfx.DrawString(cellValue.ToString(), font, XBrushes.Black, x, y);
-                        x += 100; // Điều chỉnh khoảng cách giữa các cột
+                        x += 100;
                     }
 
                     y += rowHeight;

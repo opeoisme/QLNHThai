@@ -30,10 +30,6 @@ namespace Qly_NhaHang
             this.nhanVien = nhv;
             this.nhvien = nhv.id_NV;
             LoadProfile();
-
-            // Hiển thị thông tin trong các controls
-
-
         }
 
         public void LoadProfile()
@@ -50,7 +46,6 @@ namespace Qly_NhaHang
                     txbAddress.Text = nv.address_NV;
                     txbSDT.Text = nv.phone_NV;
                     txbPosition.Text = nv.type_NV;
-
                     if (nv.image_NV != null)
                     {
                         byte[] imageBytes = nv.image_NV;
@@ -72,7 +67,6 @@ namespace Qly_NhaHang
             this.Close();
         }
 
-
         public byte[] ImageToBase64(Image image, ImageFormat format)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -93,42 +87,27 @@ namespace Qly_NhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Lấy dữ liệu từ các control
             string diaChi = txbAddress.Text;
-
-            // Thực hiện lưu dữ liệu vào CSDL
             using (QLNHThaiEntities db = new QLNHThaiEntities())
             {
                 var nv = db.NhanViens.Where(nhanvien => nhanvien.id_NV == nhvien).FirstOrDefault();
                 if (nv != null)
                 {
                     nv.address_NV = diaChi;
-
-                    // Chỉ cập nhật ảnh nếu ptbNV.Image không null và đã thay đổi ảnh
                     if (ptbNV.Image != null && isImageChanged)
                     {
                         using (MemoryStream ms = new MemoryStream())
                         {
-                            // Lưu ảnh trực tiếp vào MemoryStream
                             ptbNV.Image.Save(ms, ImageFormat.Jpeg);
-
-                            // Chuyển đổi từ MemoryStream thành mảng byte
                             byte[] codeimage = ms.ToArray();
-
-                            // Cập nhật dữ liệu hình ảnh
                             nv.image_NV = codeimage;
                         }
                     }
 
                     db.Entry(nv).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
-
                     XtraMessageBox.Show("Dữ liệu đã được lưu thành công!");
-
-                    // Đặt lại biến isImageChanged về false sau khi lưu
                     isImageChanged = false;
-
-                    // Gọi lại phương thức LoadProfile để cập nhật dữ liệu trên form
                     LoadProfile();
                 }
                 else
@@ -148,24 +127,15 @@ namespace Qly_NhaHang
             {
                 string path = open.FileName;
                 Bitmap bt = new Bitmap(Image.FromFile(path));
-
-                //-- Xuất ra pictureBox 
                 ptbNV.Image = bt;
-
                 byte[] codeimage = ImageToBase64(bt, ImageFormat.Jpeg);
-
                 using (QLNHThaiEntities db = new QLNHThaiEntities())
                 {
                     var nv = db.NhanViens.Where(nhanvien => nhanvien.id_NV == nhvien).FirstOrDefault();
                     if (nv != null)
                     {
-                        // Lưu dữ liệu hình ảnh vào cơ sở dữ liệu
                         nv.image_NV = codeimage;
-
-                        // Đánh dấu là đã thay đổi ảnh
                         isImageChanged = true;
-
-                        // Cập nhật dữ liệu và lưu vào CSDL
                         db.Entry(nv).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
                         XtraMessageBox.Show("Cập nhật thành công","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -180,7 +150,7 @@ namespace Qly_NhaHang
             {
                 if (changePassForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Sau khi cập nhật mật khẩu thành công, bạn có thể thực hiện các hành động khác tại đây.
+                    XtraMessageBox.Show("Cập nhật thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

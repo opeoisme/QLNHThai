@@ -77,11 +77,12 @@ namespace Qly_NhaHang
         {
             if (checkBoxShowHide.CheckState == CheckState.Unchecked)
             {
-                txbPassword.PasswordChar = '\0';
+                
+                txbPassword.PasswordChar = '*';
             }
             else
             {
-                txbPassword.PasswordChar = '*';
+                txbPassword.PasswordChar = '\0';
             }
         }
 
@@ -98,6 +99,64 @@ namespace Qly_NhaHang
             else
             {
                 t.SetToolTip(checkBoxShowHide, "Hiện mật khẩu");
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.CheckState == CheckState.Unchecked)
+            {
+
+                txbNewPass.PasswordChar = '*';
+            }
+            else
+            {
+                txbNewPass.PasswordChar = '\0';
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.CheckState == CheckState.Unchecked)
+            {
+
+                txbComfirmPass.PasswordChar = '*';
+            }
+            else
+            {
+                txbComfirmPass.PasswordChar = '\0';
+            }
+        }
+
+        private void checkBox1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.IsBalloon = true;
+            t.ToolTipIcon = ToolTipIcon.Info;
+            t.ShowAlways = true;
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                t.SetToolTip(checkBox1, "Ẩn mật khẩu");
+            }
+            else
+            {
+                t.SetToolTip(checkBox1, "Hiện mật khẩu");
+            }
+        }
+
+        private void checkBox2_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.IsBalloon = true;
+            t.ToolTipIcon = ToolTipIcon.Info;
+            t.ShowAlways = true;
+            if (checkBox2.CheckState == CheckState.Checked)
+            {
+                t.SetToolTip(checkBox2, "Ẩn mật khẩu");
+            }
+            else
+            {
+                t.SetToolTip(checkBox2, "Hiện mật khẩu");
             }
         }
     }

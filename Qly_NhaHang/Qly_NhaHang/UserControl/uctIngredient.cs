@@ -56,7 +56,6 @@ namespace Qly_NhaHang.UserControl
                 }
                 else
                 {
-                    // Load ảnh mặc định từ tài nguyên
                     imageIngredient.Image = Properties.Resources.Food0;
                 }
             }

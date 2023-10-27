@@ -225,12 +225,8 @@ namespace Qly_NhaHang
                 if (selectedNhanvien != null)
                 {
                     string nhanvienId = selectedNhanvien.id_NV;
-
-                    // Loại bỏ khoảng trắng thừa trước khi so sánh
                     string trimmedNhanvienId = nhanvienId.Trim();
                     string trimmedLoggedInIdNV = loggedInIdNV.Trim();
-
-                    // Kiểm tra nếu id_NV trùng với id_NV đã đăng nhập thành công
                     if (string.Equals(trimmedNhanvienId, trimmedLoggedInIdNV, StringComparison.OrdinalIgnoreCase))
                     {
                         XtraMessageBox.Show("Không thể xóa nhân viên này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -242,16 +238,9 @@ namespace Qly_NhaHang
                     if (nhanvienToDelete != null)
                     {
                         nhanvienToDelete.condition_NV = "Nghỉ việc";
-
-                        // Đánh dấu đối tượng là thay đổi
                         dbContext.Entry(nhanvienToDelete).State = EntityState.Modified;
-
                         dbContext.SaveChanges();
-
-                        // Load lại danh sách sau khi cập nhật
                         LoadFormNV();
-
-                        // Mờ trường dữ liệu tương ứng trên GridView
                         gvNV.SetRowCellValue(focusedRowHandle, gvNV.Columns["condition_NV"], "Nghỉ việc");
                         XtraMessageBox.Show("Nhân viên không còn làm việc !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -420,5 +409,33 @@ namespace Qly_NhaHang
             }
         }
 
+        private void btnResetPass_Click(object sender, EventArgs e)
+        {
+            DialogResult result = XtraMessageBox.Show("Bạn muốn đặt lại mật khẩu cho tài khoản này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                int focusedRowHandle = gvNV.FocusedRowHandle;
+                if (focusedRowHandle >= 0)
+                {
+                    NhanVienView selectedNhanvien = gvNV.GetRow(focusedRowHandle) as NhanVienView;
+                    if (selectedNhanvien != null)
+                    {
+                        string nhanvienId = selectedNhanvien.id_NV;
+                        NhanVien nhanvienToDelete = dbContext.NhanViens.FirstOrDefault(nv => nv.id_NV == nhanvienId);
+
+                        if (nhanvienToDelete != null)
+                        {
+                            nhanvienToDelete.pass_NV = "1";
+                            dbContext.Entry(nhanvienToDelete).State = EntityState.Modified;
+                            dbContext.SaveChanges();
+                            LoadFormNV();
+                            XtraMessageBox.Show("Đặt lại mật khẩu thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+
+            }    
+           
+        }
     }
 }

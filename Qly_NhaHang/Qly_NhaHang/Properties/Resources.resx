@@ -334,4 +334,13 @@
   <data name="3643769_building_home_house_main_menu_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643769_building_home_house_main_menu_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_41969_money_cash_atm_funds_bank_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\41969_money_cash_atm_funds_bank_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8673915_ic_fluent_star_three_quarter_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8673915_ic_fluent_star_three_quarter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6791534_business_management_office_sub_divisi_unit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6791534_business_management_office_sub divisi_unit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -72,7 +72,7 @@ namespace Qly_NhaHang
                 .Where(d => d.type_Discount == "Phụ thu" && d.condition_Discount == "Được áp dụng")
                 .ToList();
 
-            cbbSurcharge.Properties.Items.Clear(); // Xóa tất cả các mục cũ
+            cbbSurcharge.Properties.Items.Clear(); 
             foreach (var item in discount)
             {
                 cbbSurcharge.Properties.Items.Add(item.name_Discount);
@@ -85,7 +85,7 @@ namespace Qly_NhaHang
             var discount = dbContext.Discounts
                 .Where(d => d.type_Discount == "Giảm giá" && d.condition_Discount == "Được áp dụng")
                 .ToList();
-            cbbDiscount.Properties.Items.Clear(); // Xóa tất cả các mục cũ
+            cbbDiscount.Properties.Items.Clear(); 
             foreach (var item in discount)
             {
                 cbbDiscount.Properties.Items.Add(item.name_Discount);
@@ -108,7 +108,6 @@ namespace Qly_NhaHang
                     .ToList();
                 foreach (var billViewPay in billInfoData)
                 {
-                    // Lấy giá trị price_Food và tính toán money
                     var food = dbContext.Foods.FirstOrDefault(a => a.id_Food == billViewPay.id_Food);
                     if (food != null)
                     {
@@ -123,14 +122,14 @@ namespace Qly_NhaHang
         // Tính giá trị Phụ thu
         private void CalculateAndDisplaySurcharge()
         {
-            decimal totalSurchargePercent = 0;   // Tính tổng percent_Discount từ danh sách selectedSurchargeList
+            decimal totalSurchargePercent = 0;   
             foreach (var discount in selectedSurchargeList)
             {
                 totalSurchargePercent += discount.percent_Discount;
             }
-            decimal moneySurcharge = (totalSurchargePercent / 100) * (decimal)_total;   // Tính giá trị cho lblMoneySurcharge
-            moneySurcharge = Math.Round(moneySurcharge / 1000) * 1000; // Làm tròn đến hàng nghìn gần nhất
-            lblMoneySurcharge.Text = String.Format("{0:0,0 }", moneySurcharge);  // Hiển thị giá trị trên lblMoneySurcharge
+            decimal moneySurcharge = (totalSurchargePercent / 100) * (decimal)_total;   
+            moneySurcharge = Math.Round(moneySurcharge / 1000) * 1000;
+            lblMoneySurcharge.Text = String.Format("{0:0,0 }", moneySurcharge);  
         }
 
         // Kiểm tra trùng phụ thu
@@ -142,14 +141,14 @@ namespace Qly_NhaHang
         //Tính giá trị khuyến mãi
         private void CalculateAndDisplayDiscount()
         {
-            decimal totalDiscountPercent = 0;   // Tính tổng percent_Discount từ danh sách selectedSurchargeList
+            decimal totalDiscountPercent = 0;   
             foreach (var discount in selectedDiscountList)
             {
                 totalDiscountPercent += discount.percent_Discount;
             }
-            decimal moneyDiscount = (totalDiscountPercent / -100) * (decimal)_total;   // Tính giá trị cho lblMoneySurcharge
-            moneyDiscount = Math.Round(moneyDiscount / 1000) * 1000; // Làm tròn đến hàng nghìn gần nhất
-            lblMoneyDiscount.Text = String.Format("{0:0,0 }", moneyDiscount);  // Hiển thị giá trị trên lblMoneySurcharge
+            decimal moneyDiscount = (totalDiscountPercent / -100) * (decimal)_total;   
+            moneyDiscount = Math.Round(moneyDiscount / 1000) * 1000; 
+            lblMoneyDiscount.Text = String.Format("{0:0,0 }", moneyDiscount); 
         }
 
         //Kiểm tra giá tiền Cash và tiền Change
@@ -166,11 +165,10 @@ namespace Qly_NhaHang
                     if (string.IsNullOrWhiteSpace(txbMoneyCash.Text) || string.IsNullOrWhiteSpace(txbMoneyChange.Text))
                     {
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi xác nhận thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return; // Thoát khỏi hàm nếu thiếu thông tin
+                        return; 
                     }
-                    // Cập nhật các thông tin của Bill
                     bill.DateCheckOut = DateTime.Now;
-                    bill.status_Bill = 1; // Đặt status_Bill thành 1
+                    bill.status_Bill = 1; 
                     decimal totalPrice;
                     decimal moneyGuest;
                     decimal moneyChange;
@@ -186,7 +184,6 @@ namespace Qly_NhaHang
                     {
                         bill.money_Change = (double?)moneyChange;
                     }
-                    // Lưu thay đổi vào cơ sở dữ liệu
                     dbContext.SaveChanges();
                 }
             }
@@ -202,15 +199,11 @@ namespace Qly_NhaHang
 
                 if (bill != null)
                 {
-                    // Lấy thông tin về bàn từ Bill
                     var table = dbContext.Tablees.FirstOrDefault(t => t.id_Table == bill.id_Table);
 
                     if (table != null)
                     {
-                        // Cập nhật trạng thái của bàn thành "Đang trống"
                         table.status_Table = "Đang trống";
-
-                        // Lưu thay đổi vào cơ sở dữ liệu
                         dbContext.SaveChanges();
                     }
                 }
@@ -220,10 +213,7 @@ namespace Qly_NhaHang
         //Đóng form thanh toán
         private void CloseFormsAndOpenListTable()
         {
-            // Đóng form hiện tại (frmThanhToan)
             this.Close();
-
-            // Đóng frmOrder (nếu nó đã được mở)
             Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
             foreach (Form form in forms)
             {
@@ -263,7 +253,6 @@ namespace Qly_NhaHang
                                   }).ToList();
                 foreach (var hoaDonItem in hoaDonData)
                 {
-                    // Lấy giá trị price_Food và tính toán money
                     var food = dbContext.Foods.FirstOrDefault(a => a.id_Food == hoaDonItem.id_Food);
                     if (food != null)
                     {
@@ -348,13 +337,12 @@ namespace Qly_NhaHang
             if (string.IsNullOrWhiteSpace(txbMoneyChange.Text))
             {
                 XtraMessageBox.Show("Vui lòng nhập tiền của khách đưa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Không thực hiện gì cả nếu thiếu thông tin
+                return; 
             }
-
             if ( txbMoneyChange.Text == "CHƯA ĐỦ TIỀN")
             {
                 XtraMessageBox.Show("Khách đưa thiếu tiền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Không thực hiện gì cả nếu thiếu thông tin
+                return; 
             }
              UpdateBill();
              List<CombinedModel> hoaDonData = LoadHoaDon();
@@ -363,16 +351,14 @@ namespace Qly_NhaHang
              printBillForm.ShowDialog();
              UpdateTableStatus();
              CloseFormsAndOpenListTable();
-         
-           
         }
 
-        // Thoát
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //Giảm giá
+
         private void btnDiscount_Click(object sender, EventArgs e)
         {
             string selectedDiscountName = cbbDiscount.SelectedItem?.ToString();
@@ -406,15 +392,15 @@ namespace Qly_NhaHang
         //Xóa giảm giá
         private void btnDeleteDis_Click(object sender, EventArgs e)
         {
-            GridView gridView = gctDiscount.MainView as GridView;  // Lấy GridView hiện tại
-            if (gridView.SelectedRowsCount > 0)  // Kiểm tra xem có hàng nào được chọn trong GridView không
+            GridView gridView = gctDiscount.MainView as GridView; 
+            if (gridView.SelectedRowsCount > 0) 
             {
-                int selectedRowHandle = gridView.GetSelectedRows()[0];  // Lấy chỉ mục hàng đầu tiên được chọn
-                Discount selectedDiscount = gridView.GetRow(selectedRowHandle) as Discount;             // Lấy đối tượng Discount tương ứng với hàng được chọn
-                if (selectedDiscount != null)   // Kiểm tra xem đối tượng đã được lấy hay chưa
+                int selectedRowHandle = gridView.GetSelectedRows()[0]; 
+                Discount selectedDiscount = gridView.GetRow(selectedRowHandle) as Discount;             
+                if (selectedDiscount != null)   
                 {
-                    selectedDiscountList.Remove(selectedDiscount);  // Xóa đối tượng Discount khỏi danh sách
-                    gctDiscount.RefreshDataSource();    // Cập nhật lại dữ liệu trong gctSurcharge
+                    selectedDiscountList.Remove(selectedDiscount);  
+                    gctDiscount.RefreshDataSource();    
                 }
                 CalculateAndDisplayDiscount();
             }
@@ -433,30 +419,21 @@ namespace Qly_NhaHang
             decimal newTotal = currentTotal + moneySurcharge + moneyDiscount;
             txbTotalBill.Text = String.Format("{0:0,0 }", newTotal);
         }
-
-        // Reload lại tổng Bill
         private void btnReload_Click(object sender, EventArgs e)
         {
             txbTotalBill.Text = String.Format("{0:0,0}", _total);
         }
-
-        //Thay đổi tiền khách trả
-      
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             List<CombinedModel> hoaDonData = LoadHoaDon();
             frmPrintBill printBillForm = new frmPrintBill();
             printBillForm.SetReportData(hoaDonData);
             printBillForm.ShowDialog();
-            // Hiển thị form in hóa đơn
         }
 
 
 
         #endregion
-
-
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private void btnPayMomo_Click(object sender, EventArgs e)
@@ -466,12 +443,11 @@ namespace Qly_NhaHang
             if (!float.TryParse(txbTotalBill.Text, out amount) || amount <= 0)
             {
                 MessageBox.Show("Vui lòng không thanh toán bill 0đ.", "Thông báo");
-                return; // Không thực hiện thanh toán nếu số tiền không hợp lệ hoặc bằng 0
+                return; 
             }
-            //request params need to request to MoMo system
 
             string orderInfo = textOrderInfo.Text;
-            string redirectUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";//Link trang Web cua doanh nghiep
+            string redirectUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
             string ipnUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";//
             string requestType = "captureWallet";
 
@@ -481,7 +457,7 @@ namespace Qly_NhaHang
             string requestId = Guid.NewGuid().ToString();
             string extraData = "";
             ;
-            //Before sign HMAC SHA256 signature
+
             string rawHash = "accessKey=" + accessKey +
                 "&amount=" + amount +
                 "&extraData=" + extraData +
@@ -495,13 +471,9 @@ namespace Qly_NhaHang
                 ;
 
             log.Debug("rawHash = " + rawHash);
-
             MoMoSecurity crypto = new MoMoSecurity();
-            //sign signature SHA256
             string signature = crypto.signSHA256(rawHash, serectkey);
             log.Debug("Signature = " + signature);
-
-            //build body json request
             JObject message = new JObject();
             message.Add("partnerCode", partnerCode);
             message.Add("partnerName", "Test");
@@ -516,10 +488,8 @@ namespace Qly_NhaHang
             message.Add("extraData", extraData);
             message.Add("requestType", requestType);
             message.Add("signature", signature);
-
             log.Debug("Json request to MoMo: " + message.ToString());
             string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
-
             JObject jmessage = JObject.Parse(responseFromMomo);
             log.Debug("Return from MoMo: " + jmessage.ToString());
             DialogResult result = XtraMessageBox.Show("Xác nhận thanh toán qua Momo", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -531,7 +501,7 @@ namespace Qly_NhaHang
             {
 
             }
-            float tongtien = float.Parse(txbTotalBill.Text); // Tính giá tiền
+            float tongtien = float.Parse(txbTotalBill.Text);
         }
 
         private void txbMoneyCash_TextChange(object sender, EventArgs e)

@@ -36,12 +36,7 @@ namespace Qly_NhaHang.UserControl
             this.count = count;
             lblQuantity.Text = count.ToString();
             lblCountValue = count;
-
-
             this.ingredientCount = ingredientCount;
-           // nmrQuantityReal.Value = ingredientCount;
-
-
             using (var dbContext = new QLNHThaiEntities())
             {
                 var ingredient = dbContext.Ingredients.FirstOrDefault(i => i.name_Ingredient == nameIngredient);
@@ -54,12 +49,9 @@ namespace Qly_NhaHang.UserControl
                 }
                 else
                 {
-                    // Load ảnh mặc định từ tài nguyên
                     imageIngredient.Image = Properties.Resources.Food0;
                 }
-            }
-
-            
+            }            
         }
 
         private void nmrQuantityReal_ValueChanged(object sender, EventArgs e)
@@ -70,7 +62,6 @@ namespace Qly_NhaHang.UserControl
         private void UpdateTotalPrice()
         {
             double totalPrice = quantity - lblCountValue;
-
             lblCount.Text = totalPrice.ToString();
         }
         private int GetIngredientIdByName(string nameIngredient)
@@ -82,7 +73,7 @@ namespace Qly_NhaHang.UserControl
                 {
                     return ingredient.id_Ingredient;
                 }
-                return -1; // Trả về một giá trị không hợp lệ nếu không tìm thấy món ăn
+                return -1; 
             }
         }
 
@@ -94,10 +85,8 @@ namespace Qly_NhaHang.UserControl
                 double totalCount = quantity - lblCountValue;
                 ImportInfo existingImportInfo = dbContext.ImportInfoes
                     .FirstOrDefault(ip => ip.id_Import == idImport && ip.id_Ingredient == idIngredient);
-
                 if (existingImportInfo == null)
                 {
-
                     if (count == 0 && quantity == 0)
                     {
                         XtraMessageBox.Show("Vui lòng nhập số lượng món.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

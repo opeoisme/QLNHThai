@@ -33,8 +33,6 @@ namespace Qly_NhaHang
                
 
             };
-
-            // Thêm đối tượng mới vào cơ sở dữ liệu
             try
             {
                 dbContext.CatalogIngredients.Add(newCatalog);
@@ -44,7 +42,7 @@ namespace Qly_NhaHang
                 this.Close();
                 if (Application.OpenForms["frmCatalog"] is frmCatalog catalogForm)
                 {
-                    catalogForm.LoadFormCatalog(); // Giả sử tên phương thức là LoadFoodData()
+                    catalogForm.LoadFormCatalog(); 
                 }
             }
             catch (Exception ex)

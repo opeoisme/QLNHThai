@@ -29,7 +29,7 @@ namespace Qly_NhaHang
         private void frmChangeTable_Load(object sender, EventArgs e)
         {
             _ban = new BAN();
-            lblIDTable.Text = _idBan.ToString(); // Cập nhật lblID.Text bằng giá trị _idBan
+            lblIDTable.Text = _idBan.ToString(); 
             _bill = new Bill_DAO();
             lblIdBill.Text = _idBill.ToString();
             LoadTableData();
@@ -37,14 +37,10 @@ namespace Qly_NhaHang
 
         private void LoadTableData()
         {
-            // Lấy id_Table của bàn đang chọn hiện tại
             int selectedTableId = _idBan;
-
-            // Lọc danh sách bàn để loại bỏ bàn đang chọn
             var categories = dbContext.Tablees
                 .Where(table => table.status_Table != "Được đặt" && table.id_Table != selectedTableId && table.condition_Table == "Được sử dụng")
                 .ToList();
-            // Gán danh sách bàn đã lọc làm nguồn dữ liệu cho ComboBox
             cbbNewTable.DataSource = categories;
             cbbNewTable.DisplayMember = "id_Table";
             cbbNewTable.ValueMember = "id_Table";
@@ -75,7 +71,6 @@ namespace Qly_NhaHang
             {
                 if (newTable.status_Table == "Đang trống")
                 {
-                    // Xác nhận chuyển bàn
                     DialogResult result = XtraMessageBox.Show("Bạn muốn chuyển bàn chứ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
@@ -84,7 +79,6 @@ namespace Qly_NhaHang
                 }
                 else if (newTable.status_Table == "Đang có khách")
                 {
-                    // Xác nhận gộp bàn
                     DialogResult result = XtraMessageBox.Show("Hai bàn này đang có đơn. Bạn muốn gộp bàn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
@@ -99,15 +93,12 @@ namespace Qly_NhaHang
             var billToUpdate = dbContext.Bills.FirstOrDefault(bill => bill.id_Bill == _idBill);
             var oldTable = dbContext.Tablees.FirstOrDefault(table => table.id_Table == _idBan);
             var newTable = dbContext.Tablees.FirstOrDefault(table => table.id_Table == newTableId);
-
             if (billToUpdate != null && oldTable != null && newTable != null)
             {
                 billToUpdate.id_Table = newTableId;
                 oldTable.status_Table = "Đang trống";
-                newTable.status_Table = "Đang có khách"; // Cập nhật status_Table của bàn mới
-
+                newTable.status_Table = "Đang có khách"; 
                 dbContext.SaveChanges();
-
                 CloseFormAndRefreshListTable();
             }
         }
@@ -116,7 +107,6 @@ namespace Qly_NhaHang
         {
             var billA = dbContext.Bills.Include(b => b.Bill_Info).FirstOrDefault(bill => bill.id_Bill == _idBill);
             var billB = dbContext.Bills.Include(b => b.Bill_Info).FirstOrDefault(bill => bill.id_Table == newTableId && bill.status_Bill == 0);
-
             if (billA != null && billB != null)
             {
 
@@ -141,9 +131,7 @@ namespace Qly_NhaHang
                 {
                     tableA.status_Table = "Đang trống";
                 }
-
                 dbContext.SaveChanges();
-
                 CloseFormAndRefreshListTable();
             }
         }
