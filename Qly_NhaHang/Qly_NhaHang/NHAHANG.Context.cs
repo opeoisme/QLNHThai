@@ -38,9 +38,9 @@ namespace Qly_NhaHang
         public virtual DbSet<Ingredient> Ingredients { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Recipe> Recipes { get; set; }
-        public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Tablee> Tablees { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
+        public virtual DbSet<Reservation> Reservations { get; set; }
     
         [DbFunction("QLNHThaiEntities", "FN_DoanhThuTheoNgay")]
         public virtual IQueryable<FN_DoanhThuTheoNgay_Result> FN_DoanhThuTheoNgay(Nullable<System.DateTime> checkIn, Nullable<System.DateTime> checkOut)

@@ -156,17 +156,6 @@
     <NavigationProperty Name="Food" Relationship="Self.FK__Recipe__id_Food__6E01572D" FromRole="Recipe" ToRole="Food" />
     <NavigationProperty Name="Ingredient" Relationship="Self.FK__Recipe__id_Ingre__6EF57B66" FromRole="Recipe" ToRole="Ingredient" />
   </EntityType>
-  <EntityType Name="Reservation">
-    <Key>
-      <PropertyRef Name="id_Reservation" />
-    </Key>
-    <Property Name="id_Reservation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name_Guest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="date_Reservation" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="phone_Guest" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="id_Table" Type="Int32" />
-    <NavigationProperty Name="Tablee" Relationship="Self.FK__Reservati__id_Ta__440B1D61" FromRole="Reservation" ToRole="Tablee" />
-  </EntityType>
   <EntityType Name="Tablee">
     <Key>
       <PropertyRef Name="id_Table" />
@@ -177,7 +166,7 @@
     <Property Name="seats_Table" Type="Int32" />
     <Property Name="condition_Table" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__id_Table__571DF1D5" FromRole="Tablee" ToRole="Bill" />
-    <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__id_Ta__440B1D61" FromRole="Tablee" ToRole="Reservation" />
+    <NavigationProperty Name="Reservations" Relationship="QLNHThaiModel.FK__Reservati__id_Ta__440B1D61" FromRole="Tablee" ToRole="Reservation" />
   </EntityType>
   <Association Name="FK__Bill__id_NV__5812160E">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
@@ -311,18 +300,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reservati__id_Ta__440B1D61">
-    <End Role="Tablee" Type="Self.Tablee" Multiplicity="0..1" />
-    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tablee">
-        <PropertyRef Name="id_Table" />
-      </Principal>
-      <Dependent Role="Reservation">
-        <PropertyRef Name="id_Table" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="QLNHThaiEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bills" EntityType="Self.Bill" />
     <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" />
@@ -335,7 +312,6 @@
     <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
     <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
     <EntitySet Name="Recipes" EntityType="Self.Recipe" />
-    <EntitySet Name="Reservations" EntityType="Self.Reservation" />
     <EntitySet Name="Tablees" EntityType="Self.Tablee" />
     <AssociationSet Name="FK__Bill__id_NV__5812160E" Association="Self.FK__Bill__id_NV__5812160E">
       <End Role="NhanVien" EntitySet="NhanViens" />
@@ -381,10 +357,6 @@
       <End Role="Ingredient" EntitySet="Ingredients" />
       <End Role="Recipe" EntitySet="Recipes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reservati__id_Ta__440B1D61" Association="Self.FK__Reservati__id_Ta__440B1D61">
-      <End Role="Tablee" EntitySet="Tablees" />
-      <End Role="Reservation" EntitySet="Reservations" />
-    </AssociationSet>
     <FunctionImport Name="FN_DoanhThuTheoNgay" IsComposable="true" ReturnType="Collection(QLNHThaiModel.FN_DoanhThuTheoNgay_Result)">
       <Parameter Name="checkIn" Mode="In" Type="DateTime" />
       <Parameter Name="checkOut" Mode="In" Type="DateTime" />
@@ -405,6 +377,11 @@
       <Parameter Name="checkIn" Mode="In" Type="DateTime" />
       <Parameter Name="checkOut" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <EntitySet Name="Reservations" EntityType="QLNHThaiModel.Reservation" />
+    <AssociationSet Name="FK__Reservati__id_Ta__440B1D61" Association="QLNHThaiModel.FK__Reservati__id_Ta__440B1D61">
+      <End Role="Tablee" EntitySet="Tablees" />
+      <End Role="Reservation" EntitySet="Reservations" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="FN_ThuChiTheoNgay_Result">
     <Property Type="Int64" Name="IDDOANHTHU" Nullable="true" />
@@ -427,4 +404,28 @@
     <Property Type="String" Name="QUY" Nullable="true" MaxLength="5" />
     <Property Type="Double" Name="TONGDOANHTHU" Nullable="true" />
   </ComplexType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="id_Reservation" />
+    </Key>
+    <Property Name="id_Reservation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_Guest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date_Reservation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="phone_Guest" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="id_Table" Type="Int32" />
+    <Property Name="status_Reservatione" Type="Int32" />
+    <NavigationProperty Name="Tablee" Relationship="QLNHThaiModel.FK__Reservati__id_Ta__440B1D61" FromRole="Reservation" ToRole="Tablee" />
+  </EntityType>
+  <Association Name="FK__Reservati__id_Ta__440B1D61">
+    <End Type="QLNHThaiModel.Tablee" Role="Tablee" Multiplicity="0..1" />
+    <End Type="QLNHThaiModel.Reservation" Role="Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tablee">
+        <PropertyRef Name="id_Table" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="id_Table" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

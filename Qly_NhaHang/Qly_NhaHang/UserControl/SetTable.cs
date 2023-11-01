@@ -113,6 +113,13 @@ namespace Qly_NhaHang.UserControl
                     tableToUpdate.status_Table = "Đang có khách"; 
                     context.SaveChanges();
                 }
+                var reservationToUpdate = context.Reservations.FirstOrDefault(r => r.id_Table == _idTable && r.status_Reservatione == 0);
+                if (reservationToUpdate != null)
+                {
+                    reservationToUpdate.status_Reservatione = 1;
+                    context.SaveChanges();
+                }
+               
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

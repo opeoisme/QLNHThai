@@ -200,7 +200,7 @@ RETURN
 select *from Bill
 select* from Unit
 select* from ImportInfo
-select *from Food
+select *from Reservation
 select *from Reservation
 
 select *from Ingredient

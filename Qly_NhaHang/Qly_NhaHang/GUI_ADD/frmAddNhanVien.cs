@@ -71,6 +71,11 @@ namespace Qly_NhaHang
             }
         }
 
+        private bool IsNumeric(string value)
+        {
+            return int.TryParse(value, out _);
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txbIDNhanVien.Text) || string.IsNullOrWhiteSpace(txbFullName.Text) || cbbSex.SelectedItem == null || imageNhanVien.Image == null ||  string.IsNullOrWhiteSpace(txbPhone.Text) || string.IsNullOrWhiteSpace(txbAddressNV.Text) || string.IsNullOrWhiteSpace(txbCCCD.Text))
@@ -78,15 +83,23 @@ namespace Qly_NhaHang
                 XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // Kiểm tra xem id_NV đã tồn tại trong CSDL chưa
             if (dbContext.NhanViens.Any(nv => nv.id_NV == txbIDNhanVien.Text))
             {
                 XtraMessageBox.Show("Đổi lại mã nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // Tạo một đối tượng Food mới
+            string phoneNumber = txbPhone.Text;
+            if (phoneNumber.Length != 10 || !IsNumeric(phoneNumber))
+            {
+                XtraMessageBox.Show("Số điện thoại không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string cccd = txbCCCD.Text;
+            if (cccd.Length != 12 || !IsNumeric(cccd))
+            {
+                XtraMessageBox.Show("Căn cước công dân không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             NhanVien newNhanvien = new NhanVien
             {
                 id_NV = txbIDNhanVien.Text,
@@ -97,11 +110,9 @@ namespace Qly_NhaHang
                 sex_NV = cbbSex.Text,
                 image_NV = isImageChanged ? ConvertImageToByteArray(imageNhanVien.Image) : null,
                 condition_NV = "Làm việc",
-                pass_NV = "1", // Đặt giá trị mặc định cho pass_NV
-                type_NV = "Nhân viên" // Đặt giá trị mặc định cho type_NV
+                pass_NV = "1", 
+                type_NV = "Nhân viên" 
             };
-
-            // Thêm đối tượng mới vào cơ sở dữ liệu
             try
             {
                 dbContext.NhanViens.Add(newNhanvien);
@@ -116,7 +127,7 @@ namespace Qly_NhaHang
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Lỗi khi thêm nhân viên mới: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Lỗi thêm mới thông tin!!! ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

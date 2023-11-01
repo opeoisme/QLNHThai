@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="QLNHThaiModel.Ingredient" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNHThaiModel.NhanVien" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNHThaiModel.Recipe" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNHThaiModel.Reservation" Width="1.5" PointX="6" PointY="16.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNHThaiModel.Tablee" Width="1.5" PointX="3.75" PointY="16.625" IsExpanded="true" />
         <AssociationConnector Association="QLNHThaiModel.FK__Bill__id_NV__5812160E" ManuallyRouted="false" />
         <AssociationConnector Association="QLNHThaiModel.FK__Bill__id_Table__571DF1D5" ManuallyRouted="false" />
@@ -29,8 +28,9 @@
         <AssociationConnector Association="QLNHThaiModel.FK__ImportInf__id_Im__6A30C649" ManuallyRouted="false" />
         <AssociationConnector Association="QLNHThaiModel.FK__ImportInf__id_In__6B24EA82" ManuallyRouted="false" />
         <AssociationConnector Association="QLNHThaiModel.FK__Recipe__id_Ingre__6EF57B66" ManuallyRouted="false" />
-        <AssociationConnector Association="QLNHThaiModel.FK__Reservati__id_Ta__440B1D61" ManuallyRouted="false" />
         <EntityTypeShape EntityType="QLNHThaiModel.Unit" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="QLNHThaiModel.Reservation" Width="1.5" PointX="6" PointY="16.625" />
+        <AssociationConnector Association="QLNHThaiModel.FK__Reservati__id_Ta__440B1D61" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

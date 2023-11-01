@@ -44,7 +44,7 @@ namespace Qly_NhaHang
             {
                 using (var context = new QLNHThaiEntities())
                 {
-                    var reservation = context.Reservations.FirstOrDefault(r => r.id_Reservation == _idReservation);
+                    var reservation = context.Reservations.FirstOrDefault(r => r.id_Reservation == _idReservation );
                     if (reservation != null)
                     {
                         txbGuestName.Text = reservation.name_Guest;
@@ -95,7 +95,7 @@ namespace Qly_NhaHang
                     return; 
                 }
 
-                if (string.IsNullOrWhiteSpace(phoneGuest))
+                if (phoneGuest.Length != 10 || !int.TryParse(phoneGuest, out _))
                 {
                     XtraMessageBox.Show("Vui lòng nhập số điện thoại khách hàng.","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; 
@@ -112,7 +112,7 @@ namespace Qly_NhaHang
                 {
                     if (IsUpdateMode) 
                     {
-                        var reservationToUpdate = context.Reservations.FirstOrDefault(r => r.id_Reservation == _idReservation);
+                        var reservationToUpdate = context.Reservations.FirstOrDefault(r => r.id_Reservation == _idReservation );
                         if (reservationToUpdate != null)
                         {
                             reservationToUpdate.name_Guest = nameGuest;
@@ -127,7 +127,9 @@ namespace Qly_NhaHang
                             id_Table = idTable,
                             name_Guest = nameGuest,
                             date_Reservation = dateReservationLocal,
-                            phone_Guest = phoneGuest
+                            phone_Guest = phoneGuest,
+                            status_Reservatione = 0
+                            
                         };
 
                         context.Reservations.Add(newReservation);

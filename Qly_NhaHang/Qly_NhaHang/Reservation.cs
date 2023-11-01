@@ -19,6 +19,7 @@ namespace Qly_NhaHang
         public System.DateTime date_Reservation { get; set; }
         public string phone_Guest { get; set; }
         public Nullable<int> id_Table { get; set; }
+        public Nullable<int> status_Reservatione { get; set; }
     
         public virtual Tablee Tablee { get; set; }
     }

@@ -17,7 +17,7 @@ namespace Qly_NhaHang.DAO
 
          public int getIdReservationByIDBan(int idBan)
         {
-            return db.Reservations.Where(r => r.id_Table == idBan ).FirstOrDefault().id_Reservation;
+            return db.Reservations.Where(r => r.id_Table == idBan && r.status_Reservatione == 0 ).FirstOrDefault().id_Reservation;
         }
     }
 }

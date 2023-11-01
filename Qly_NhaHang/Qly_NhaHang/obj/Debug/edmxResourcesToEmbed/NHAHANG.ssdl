@@ -130,6 +130,7 @@
     <Property Name="date_Reservation" Type="datetime" Nullable="false" />
     <Property Name="phone_Guest" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="id_Table" Type="int" />
+    <Property Name="status_Reservatione" Type="int" />
   </EntityType>
   <EntityType Name="Tablee">
     <Key>

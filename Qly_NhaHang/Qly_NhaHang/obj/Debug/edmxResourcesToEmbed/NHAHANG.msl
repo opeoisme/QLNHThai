@@ -133,17 +133,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Reservations">
-      <EntityTypeMapping TypeName="QLNHThaiModel.Reservation">
-        <MappingFragment StoreEntitySet="Reservation">
-          <ScalarProperty Name="id_Reservation" ColumnName="id_Reservation" />
-          <ScalarProperty Name="name_Guest" ColumnName="name_Guest" />
-          <ScalarProperty Name="date_Reservation" ColumnName="date_Reservation" />
-          <ScalarProperty Name="phone_Guest" ColumnName="phone_Guest" />
-          <ScalarProperty Name="id_Table" ColumnName="id_Table" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tablees">
       <EntityTypeMapping TypeName="QLNHThaiModel.Tablee">
         <MappingFragment StoreEntitySet="Tablee">
@@ -215,5 +204,17 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="Reservations">
+      <EntityTypeMapping TypeName="QLNHThaiModel.Reservation">
+        <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="status_Reservatione" ColumnName="status_Reservatione" />
+          <ScalarProperty Name="id_Table" ColumnName="id_Table" />
+          <ScalarProperty Name="phone_Guest" ColumnName="phone_Guest" />
+          <ScalarProperty Name="date_Reservation" ColumnName="date_Reservation" />
+          <ScalarProperty Name="name_Guest" ColumnName="name_Guest" />
+          <ScalarProperty Name="id_Reservation" ColumnName="id_Reservation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
