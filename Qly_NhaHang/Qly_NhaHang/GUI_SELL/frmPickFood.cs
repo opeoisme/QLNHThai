@@ -116,5 +116,22 @@ namespace Qly_NhaHang
         {
             this.Close();
         }
+
+        private void frmPickFood_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                quantity = (int)nmrQuantity.Value;
+                btnSave_Click(sender, e);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void frmPickFood_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyDown += frmPickFood_KeyDown;
+        }
     }
 }
