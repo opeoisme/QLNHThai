@@ -32,7 +32,7 @@ namespace Qly_NhaHang
                 return;
             }
 
-            if (!int.TryParse(txbPercent.Text, out int percentValue))
+            if (!int.TryParse(txbPercent.Text, out int percentValue) || percentValue < 1 || percentValue > 100)
             {
                 XtraMessageBox.Show("Phần trăm giảm giá không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

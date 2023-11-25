@@ -106,13 +106,13 @@ namespace Qly_NhaHang
 
                     db.Entry(nv).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
-                    XtraMessageBox.Show("Dữ liệu đã được lưu thành công!");
+                    XtraMessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     isImageChanged = false;
                     LoadProfile();
                 }
                 else
                 {
-                    XtraMessageBox.Show("Không tìm thấy nhân viên có mã tương ứng trong CSDL.");
+                    XtraMessageBox.Show("Không tìm thấy nhân viên có mã tương ứng trong CSDL.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

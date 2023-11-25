@@ -164,22 +164,17 @@ namespace Qly_NhaHang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Lấy dữ liệu từ gctImport
             List<ImportInfoViewModel> importInfoData = gctImport.DataSource as List<ImportInfoViewModel>;
-
-            // Kiểm tra xem importInfoData có bị trống không
             if (importInfoData != null && importInfoData.Count > 0)
             {
                 using (var dbContext = new QLNHThaiEntities())
                 {
                     foreach (var importInfo in importInfoData)
                     {
-                        // Tìm nguyên liệu trong bảng Ingredients dựa vào tên (name_Ingredient)
                         var ingredient = dbContext.Ingredients.FirstOrDefault(i => i.name_Ingredient == importInfo.name_Ingredient);
 
                         if (ingredient != null)
                         {
-                            // Cộng thêm count_Ingredient từ importInfo vào count_Ingredient của nguyên liệu
                             ingredient.count_Ingredient += importInfo.count_Ingredient;
                         }
                     }

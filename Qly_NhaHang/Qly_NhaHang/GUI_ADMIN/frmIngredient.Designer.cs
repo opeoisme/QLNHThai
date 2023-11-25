@@ -582,7 +582,7 @@
             this.txbStatusIngre.PasswordChar = '\0';
             this.txbStatusIngre.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txbStatusIngre.PlaceholderText = "";
-            this.txbStatusIngre.ReadOnly = false;
+            this.txbStatusIngre.ReadOnly = true;
             this.txbStatusIngre.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbStatusIngre.SelectedText = "";
             this.txbStatusIngre.SelectionLength = 0;
@@ -730,7 +730,7 @@
             this.txbCountIngre.PasswordChar = '\0';
             this.txbCountIngre.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txbCountIngre.PlaceholderText = "";
-            this.txbCountIngre.ReadOnly = false;
+            this.txbCountIngre.ReadOnly = true;
             this.txbCountIngre.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbCountIngre.SelectedText = "";
             this.txbCountIngre.SelectionLength = 0;

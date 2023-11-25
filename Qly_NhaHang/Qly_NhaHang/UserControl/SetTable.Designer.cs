@@ -101,13 +101,13 @@
             this.btnProfileTable,
             this.btnCancle});
             this.ctmnSetTable.Name = "ctmnSetTable";
-            this.ctmnSetTable.Size = new System.Drawing.Size(249, 133);
+            this.ctmnSetTable.Size = new System.Drawing.Size(235, 100);
             // 
             // btnInsertBill
             // 
             this.btnInsertBill.Image = global::Qly_NhaHang.Properties.Resources._416404_bill_receipt_icon;
             this.btnInsertBill.Name = "btnInsertBill";
-            this.btnInsertBill.Size = new System.Drawing.Size(248, 32);
+            this.btnInsertBill.Size = new System.Drawing.Size(234, 32);
             this.btnInsertBill.Text = "Nhận bàn";
             this.btnInsertBill.Click += new System.EventHandler(this.btnInsertBill_Click);
             // 
@@ -115,7 +115,7 @@
             // 
             this.btnProfileTable.Image = global::Qly_NhaHang.Properties.Resources._1591871_booking_hotel_social_icon;
             this.btnProfileTable.Name = "btnProfileTable";
-            this.btnProfileTable.Size = new System.Drawing.Size(248, 32);
+            this.btnProfileTable.Size = new System.Drawing.Size(234, 32);
             this.btnProfileTable.Text = "Thông tin đặt bàn";
             this.btnProfileTable.Click += new System.EventHandler(this.btnProfileTable_Click);
             // 
@@ -123,7 +123,7 @@
             // 
             this.btnCancle.Image = global::Qly_NhaHang.Properties.Resources.cancle;
             this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(248, 32);
+            this.btnCancle.Size = new System.Drawing.Size(234, 32);
             this.btnCancle.Text = "Hủy bàn";
             this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
@@ -191,6 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "SetTable";

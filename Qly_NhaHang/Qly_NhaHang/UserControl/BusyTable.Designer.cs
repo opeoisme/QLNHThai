@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusyTable));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
             this.ctmntBusyTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChangeTable = new System.Windows.Forms.ToolStripMenuItem();
             this.lblStatusTable = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblseatsTable = new DevExpress.XtraEditors.LabelControl();
             this.lblnameTable = new DevExpress.XtraEditors.LabelControl();
-            this.btnPick = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.btnBill = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnChangeTable = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.ctmntBusyTable.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -56,6 +56,42 @@
             this.panel1.Size = new System.Drawing.Size(309, 59);
             this.panel1.TabIndex = 0;
             // 
+            // btnPick
+            // 
+            this.btnPick.ActiveImage = null;
+            this.btnPick.AllowAnimations = true;
+            this.btnPick.AllowBuffering = false;
+            this.btnPick.AllowToggling = false;
+            this.btnPick.AllowZooming = true;
+            this.btnPick.AllowZoomingOnFocus = false;
+            this.btnPick.BackColor = System.Drawing.Color.Transparent;
+            this.btnPick.ContextMenuStrip = this.ctmntBusyTable;
+            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
+            this.btnPick.FadeWhenInactive = false;
+            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources.icons8_option_64;
+            this.btnPick.ImageActive = null;
+            this.btnPick.ImageLocation = null;
+            this.btnPick.ImageMargin = 10;
+            this.btnPick.ImageSize = new System.Drawing.Size(45, 49);
+            this.btnPick.ImageZoomSize = new System.Drawing.Size(55, 59);
+            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
+            this.btnPick.Location = new System.Drawing.Point(254, 0);
+            this.btnPick.Name = "btnPick";
+            this.btnPick.Rotation = 0;
+            this.btnPick.ShowActiveImage = true;
+            this.btnPick.ShowCursorChanges = true;
+            this.btnPick.ShowImageBorders = true;
+            this.btnPick.ShowSizeMarkers = false;
+            this.btnPick.Size = new System.Drawing.Size(55, 59);
+            this.btnPick.TabIndex = 0;
+            this.btnPick.ToolTipText = "";
+            this.btnPick.WaitOnLoad = false;
+            this.btnPick.Zoom = 10;
+            this.btnPick.ZoomSpeed = 10;
+            // 
             // ctmntBusyTable
             // 
             this.ctmntBusyTable.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -63,7 +99,23 @@
             this.btnBill,
             this.btnChangeTable});
             this.ctmntBusyTable.Name = "ctmntBusyTable";
-            this.ctmntBusyTable.Size = new System.Drawing.Size(249, 101);
+            this.ctmntBusyTable.Size = new System.Drawing.Size(187, 68);
+            // 
+            // btnBill
+            // 
+            this.btnBill.Image = global::Qly_NhaHang.Properties.Resources._185102_receipt_shopping_icon;
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(186, 32);
+            this.btnBill.Text = "Hóa đơn";
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            // 
+            // btnChangeTable
+            // 
+            this.btnChangeTable.Image = global::Qly_NhaHang.Properties.Resources._11025579_transfer_arrow_direction_way_sign_icon;
+            this.btnChangeTable.Name = "btnChangeTable";
+            this.btnChangeTable.Size = new System.Drawing.Size(186, 32);
+            this.btnChangeTable.Text = "Chuyển bàn";
+            this.btnChangeTable.Click += new System.EventHandler(this.btnChangeTable_Click);
             // 
             // lblStatusTable
             // 
@@ -125,62 +177,11 @@
             this.lblnameTable.TabIndex = 8;
             this.lblnameTable.Text = "Tên bàn";
             // 
-            // btnPick
-            // 
-            this.btnPick.ActiveImage = null;
-            this.btnPick.AllowAnimations = true;
-            this.btnPick.AllowBuffering = false;
-            this.btnPick.AllowToggling = false;
-            this.btnPick.AllowZooming = true;
-            this.btnPick.AllowZoomingOnFocus = false;
-            this.btnPick.BackColor = System.Drawing.Color.Transparent;
-            this.btnPick.ContextMenuStrip = this.ctmntBusyTable;
-            this.btnPick.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPick.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPick.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPick.ErrorImage")));
-            this.btnPick.FadeWhenInactive = false;
-            this.btnPick.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnPick.Image = global::Qly_NhaHang.Properties.Resources.icons8_option_64;
-            this.btnPick.ImageActive = null;
-            this.btnPick.ImageLocation = null;
-            this.btnPick.ImageMargin = 10;
-            this.btnPick.ImageSize = new System.Drawing.Size(45, 49);
-            this.btnPick.ImageZoomSize = new System.Drawing.Size(55, 59);
-            this.btnPick.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPick.InitialImage")));
-            this.btnPick.Location = new System.Drawing.Point(254, 0);
-            this.btnPick.Name = "btnPick";
-            this.btnPick.Rotation = 0;
-            this.btnPick.ShowActiveImage = true;
-            this.btnPick.ShowCursorChanges = true;
-            this.btnPick.ShowImageBorders = true;
-            this.btnPick.ShowSizeMarkers = false;
-            this.btnPick.Size = new System.Drawing.Size(55, 59);
-            this.btnPick.TabIndex = 0;
-            this.btnPick.ToolTipText = "";
-            this.btnPick.WaitOnLoad = false;
-            this.btnPick.Zoom = 10;
-            this.btnPick.ZoomSpeed = 10;
-            // 
-            // btnBill
-            // 
-            this.btnBill.Image = global::Qly_NhaHang.Properties.Resources._185102_receipt_shopping_icon;
-            this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(248, 32);
-            this.btnBill.Text = "Hóa đơn";
-            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
-            // 
-            // btnChangeTable
-            // 
-            this.btnChangeTable.Image = global::Qly_NhaHang.Properties.Resources._11025579_transfer_arrow_direction_way_sign_icon;
-            this.btnChangeTable.Name = "btnChangeTable";
-            this.btnChangeTable.Size = new System.Drawing.Size(248, 32);
-            this.btnChangeTable.Text = "Chuyển bàn";
-            this.btnChangeTable.Click += new System.EventHandler(this.btnChangeTable_Click);
-            // 
             // BusyTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "BusyTable";

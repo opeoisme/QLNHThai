@@ -86,7 +86,7 @@ namespace Qly_NhaHang
         {
             discount.name_Discount = txbNameDiscount.Text;
             discount.type_Discount = cbbTypeDiscount.SelectedItem?.ToString();
-            if (int.TryParse(txbPercentDiscount.Text, out int percent))
+            if (int.TryParse(txbPercentDiscount.Text, out int percent) && percent >= 1 && percent <= 100)
             {
                 discount.percent_Discount = percent;
                 return true; // Trả về true nếu mọi thứ hợp lệ
