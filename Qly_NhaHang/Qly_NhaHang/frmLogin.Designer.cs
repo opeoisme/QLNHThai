@@ -185,7 +185,7 @@
             this.txbPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbPassword.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbPassword.DefaultText = "123";
+            this.txbPassword.DefaultText = "";
             this.txbPassword.FillColor = System.Drawing.Color.White;
             this.txbPassword.HideSelection = true;
             this.txbPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbPassword.IconLeft")));
@@ -193,8 +193,7 @@
             this.txbPassword.IconPadding = 10;
             this.txbPassword.IconRight = null;
             this.txbPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPassword.Lines = new string[] {
-        "123"};
+            this.txbPassword.Lines = new string[0];
             this.txbPassword.Location = new System.Drawing.Point(69, 345);
             this.txbPassword.MaxLength = 32767;
             this.txbPassword.MinimumSize = new System.Drawing.Size(1, 1);
@@ -229,7 +228,7 @@
             this.txbPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbPassword.SelectedText = "";
             this.txbPassword.SelectionLength = 0;
-            this.txbPassword.SelectionStart = 3;
+            this.txbPassword.SelectionStart = 0;
             this.txbPassword.ShortcutsEnabled = true;
             this.txbPassword.Size = new System.Drawing.Size(412, 62);
             this.txbPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -262,7 +261,7 @@
             this.txbMaNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbMaNV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbMaNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txbMaNV.DefaultText = "nv01";
+            this.txbMaNV.DefaultText = "";
             this.txbMaNV.FillColor = System.Drawing.Color.White;
             this.txbMaNV.HideSelection = true;
             this.txbMaNV.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbMaNV.IconLeft")));
@@ -270,8 +269,7 @@
             this.txbMaNV.IconPadding = 10;
             this.txbMaNV.IconRight = null;
             this.txbMaNV.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbMaNV.Lines = new string[] {
-        "nv01"};
+            this.txbMaNV.Lines = new string[0];
             this.txbMaNV.Location = new System.Drawing.Point(69, 256);
             this.txbMaNV.MaxLength = 32767;
             this.txbMaNV.MinimumSize = new System.Drawing.Size(1, 1);
@@ -306,7 +304,7 @@
             this.txbMaNV.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txbMaNV.SelectedText = "";
             this.txbMaNV.SelectionLength = 0;
-            this.txbMaNV.SelectionStart = 4;
+            this.txbMaNV.SelectionStart = 0;
             this.txbMaNV.ShortcutsEnabled = true;
             this.txbMaNV.Size = new System.Drawing.Size(412, 65);
             this.txbMaNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;

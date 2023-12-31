@@ -291,6 +291,12 @@
     <Compile Include="GUI_ADD\frmAddIngredient.Designer.cs">
       <DependentUpon>frmAddIngredient.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_ADD\frmAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADD\frmAddSupplier.Designer.cs">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_ADD\frmAddUnit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,12 @@
     <Compile Include="GUI_ADMIN\frmInventory.Designer.cs">
       <DependentUpon>frmInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_ADMIN\frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ADMIN\frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_ADMIN\frmThongKeFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +363,12 @@
     </Compile>
     <Compile Include="GUI_ADMIN\frmUnit.Designer.cs">
       <DependentUpon>frmUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmResstoreSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_RESTORE\frmResstoreSupplier.Designer.cs">
+      <DependentUpon>frmResstoreSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_RESTORE\frmRestoreUnit.cs">
       <SubType>Form</SubType>
@@ -558,6 +576,7 @@
     <Compile Include="Models\IngredientView.cs" />
     <Compile Include="Models\NhanVienView.cs" />
     <Compile Include="Models\RecipeModels.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
     <Compile Include="Models\TableView.cs" />
     <Compile Include="Models\ThuChiModel.cs" />
     <Compile Include="Models\ThuChiNgay.cs" />
@@ -650,6 +669,9 @@
     <Compile Include="Reservation.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>NHAHANG.tt</DependentUpon>
+    </Compile>
     <Compile Include="Tablee.cs">
       <DependentUpon>NHAHANG.tt</DependentUpon>
     </Compile>
@@ -716,6 +738,9 @@
     <EmbeddedResource Include="GUI_ADD\frmAddIngredient.resx">
       <DependentUpon>frmAddIngredient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADD\frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADD\frmAddUnit.resx">
       <DependentUpon>frmAddUnit.cs</DependentUpon>
     </EmbeddedResource>
@@ -737,6 +762,9 @@
     <EmbeddedResource Include="GUI_ADMIN\frmInventory.resx">
       <DependentUpon>frmInventory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ADMIN\frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADMIN\frmThongKeFood.resx">
       <DependentUpon>frmThongKeFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -745,6 +773,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_ADMIN\frmUnit.resx">
       <DependentUpon>frmUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_RESTORE\frmResstoreSupplier.resx">
+      <DependentUpon>frmResstoreSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_RESTORE\frmRestoreUnit.resx">
       <DependentUpon>frmRestoreUnit.cs</DependentUpon>
@@ -973,6 +1004,7 @@
     <None Include="Resources\1743801_analysis_analytics_chart_graph_report_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\9989492_rating_evaluation_grade_ranking_rate_icon.png" />
     <None Include="Resources\6791534_business_management_office_sub divisi_unit_icon.png" />
     <None Include="Resources\8673915_ic_fluent_star_three_quarter_icon.png" />
     <None Include="Resources\icons8-tick-250.png" />

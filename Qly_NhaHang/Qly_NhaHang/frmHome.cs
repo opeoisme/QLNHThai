@@ -172,17 +172,17 @@ namespace Qly_NhaHang
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show("Chức năng đang được cập nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            XtraMessageBox.Show("Chức năng đang được cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show("Chức năng đang được cập nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            XtraMessageBox.Show("Chức năng đang được cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show("Chức năng đang được cập nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            XtraMessageBox.Show("Chức năng đang được cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
 

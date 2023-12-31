@@ -14,6 +14,7 @@ namespace Qly_NhaHang.Models
         public int count_Ingredient { get; set; }
         public DateTime? date_Expiry { get; set; } 
         public String name_Ingredient { get; set; }
+        public string name_Supplier { get; set; }
         public int id_Ingredient
         {
             get { return _id_Ingredient; }

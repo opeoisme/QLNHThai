@@ -139,10 +139,10 @@ namespace Qly_NhaHang
                         count_Ingredient = f.count_Ingredient,
                         date_Expiry = f.date_Expiry,
                         id_Ingredient = f.id_Ingredient,
+                        name_Supplier = f.name_Supplier,
                     })
                     .ToList();
                 gctImport.DataSource = importInfoData;
-               
                 double total = CalculateTotalPrice();
                 lblTotalPrice.Text = String.Format("{0:0,0 vnđ}", total);
             }

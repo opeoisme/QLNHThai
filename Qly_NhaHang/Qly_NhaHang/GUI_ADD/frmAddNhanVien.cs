@@ -75,7 +75,10 @@ namespace Qly_NhaHang
         {
             return int.TryParse(value, out _);
         }
-
+        private bool IsAllDigits(string value)
+        {
+            return value.All(char.IsDigit);
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txbIDNhanVien.Text) || string.IsNullOrWhiteSpace(txbFullName.Text) || cbbSex.SelectedItem == null || imageNhanVien.Image == null ||  string.IsNullOrWhiteSpace(txbPhone.Text) || string.IsNullOrWhiteSpace(txbAddressNV.Text) || string.IsNullOrWhiteSpace(txbCCCD.Text))
@@ -94,8 +97,9 @@ namespace Qly_NhaHang
                 XtraMessageBox.Show("Số điện thoại không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             string cccd = txbCCCD.Text;
-            if (cccd.Length != 12 || !IsNumeric(cccd))
+            if (cccd.Length != 12 || !IsAllDigits(cccd))
             {
                 XtraMessageBox.Show("Căn cước công dân không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

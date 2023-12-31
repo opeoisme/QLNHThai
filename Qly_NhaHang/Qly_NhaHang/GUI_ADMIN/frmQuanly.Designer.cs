@@ -62,14 +62,20 @@
             this.btnCostPrice = new DevExpress.XtraBars.BarButtonItem();
             this.btnCostPriceMonth = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuarter = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUnit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRestoreUnit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSupplier = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSupp = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRestoreSupplier = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -78,6 +84,8 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -85,10 +93,6 @@
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.btnRestoreFood = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnUnit = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnRestoreUnit = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -133,10 +137,13 @@
             this.btnCostPriceMonth,
             this.btnQuarter,
             this.btnUnit,
-            this.btnRestoreUnit});
+            this.btnRestoreUnit,
+            this.btnSupplier,
+            this.btnSupp,
+            this.btnRestoreSupplier});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 39;
+            this.ribbon.MaxItemId = 43;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 403;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -172,7 +179,7 @@
             // 
             // btnAccount
             // 
-            this.btnAccount.Caption = "Danh sách tài khoản nhân viên";
+            this.btnAccount.Caption = "Danh sách nhân viên";
             this.btnAccount.Id = 6;
             this.btnAccount.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._1287507_user_account_avatar_human_people_icon;
             this.btnAccount.Name = "btnAccount";
@@ -439,6 +446,52 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnQuarter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuarter_ItemClick);
             // 
+            // btnUnit
+            // 
+            this.btnUnit.Caption = "Đơn vị tính";
+            this.btnUnit.Id = 37;
+            this.btnUnit.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._6791534_business_management_office_sub_divisi_unit_icon;
+            this.btnUnit.Name = "btnUnit";
+            this.btnUnit.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUnit_ItemClick);
+            // 
+            // btnRestoreUnit
+            // 
+            this.btnRestoreUnit.Caption = "Đơn vị tính không sử dụng";
+            this.btnRestoreUnit.Id = 38;
+            this.btnRestoreUnit.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._6791534_business_management_office_sub_divisi_unit_icon;
+            this.btnRestoreUnit.Name = "btnRestoreUnit";
+            this.btnRestoreUnit.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRestoreUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestoreUnit_ItemClick);
+            // 
+            // btnSupplier
+            // 
+            this.btnSupplier.Caption = "Nhà cung cấp";
+            this.btnSupplier.Id = 39;
+            this.btnSupplier.Name = "btnSupplier";
+            // 
+            // btnSupp
+            // 
+            this.btnSupp.Caption = "Nhà cung cấp";
+            this.btnSupp.Id = 40;
+            this.btnSupp.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._9989492_rating_evaluation_grade_ranking_rate_icon;
+            this.btnSupp.Name = "btnSupp";
+            this.btnSupp.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnSupp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSupp_ItemClick);
+            // 
+            // btnRestoreSupplier
+            // 
+            this.btnRestoreSupplier.Caption = "Nhà cung cấp";
+            this.btnRestoreSupplier.Id = 42;
+            this.btnRestoreSupplier.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._9989492_rating_evaluation_grade_ranking_rate_icon;
+            this.btnRestoreSupplier.Name = "btnRestoreSupplier";
+            this.btnRestoreSupplier.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRestoreSupplier.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestoreSupplier_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -482,6 +535,19 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Bàn";
             // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.btnUnit);
+            this.ribbonPageGroup16.ItemLinks.Add(this.btnSupp);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "ĐVT.";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnDiscount);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Phụ phí";
+            // 
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnImport);
@@ -495,20 +561,14 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Tài khoản";
             // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnDiscount);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Phụ phí";
-            // 
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRevenueDay);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnTopFood);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRevenueMonth);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnQuarter);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCostPrice);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCostPriceMonth);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnTopFood);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Doanh thu báo cáo";
             // 
@@ -525,7 +585,8 @@
             this.ribbonPageGroup8,
             this.ribbonPageGroup11,
             this.ribbonPageGroup12,
-            this.ribbonPageGroup17});
+            this.ribbonPageGroup17,
+            this.ribbonPageGroup18});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Sản phẩm bị hủy";
             // 
@@ -560,6 +621,18 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.btnDeleteDiscount);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Phụ phí";
+            // 
+            // ribbonPageGroup17
+            // 
+            this.ribbonPageGroup17.ItemLinks.Add(this.btnRestoreUnit);
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "Đơn vị tính";
+            // 
+            // ribbonPageGroup18
+            // 
+            this.ribbonPageGroup18.ItemLinks.Add(this.btnRestoreSupplier);
+            this.ribbonPageGroup18.Name = "ribbonPageGroup18";
+            this.ribbonPageGroup18.Text = "Nhà cung cấp";
             // 
             // ribbonStatusBar
             // 
@@ -601,38 +674,6 @@
             // barButtonItem4
             // 
             this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // ribbonPageGroup16
-            // 
-            this.ribbonPageGroup16.ItemLinks.Add(this.btnUnit);
-            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
-            this.ribbonPageGroup16.Text = "ĐVT.";
-            // 
-            // btnUnit
-            // 
-            this.btnUnit.Caption = "Đơn vị tính";
-            this.btnUnit.Id = 37;
-            this.btnUnit.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._6791534_business_management_office_sub_divisi_unit_icon;
-            this.btnUnit.Name = "btnUnit";
-            this.btnUnit.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUnit_ItemClick);
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.ItemLinks.Add(this.btnRestoreUnit);
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "Đơn vị tính";
-            // 
-            // btnRestoreUnit
-            // 
-            this.btnRestoreUnit.Caption = "Đơn vị tính không sử dụng";
-            this.btnRestoreUnit.Id = 38;
-            this.btnRestoreUnit.ImageOptions.Image = global::Qly_NhaHang.Properties.Resources._6791534_business_management_office_sub_divisi_unit_icon;
-            this.btnRestoreUnit.Name = "btnRestoreUnit";
-            this.btnRestoreUnit.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnRestoreUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestoreUnit_ItemClick);
             // 
             // frmQuanly
             // 
@@ -721,5 +762,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.BarButtonItem btnRestoreUnit;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem btnSupplier;
+        private DevExpress.XtraBars.BarButtonItem btnSupp;
+        private DevExpress.XtraBars.BarButtonItem btnRestoreSupplier;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
     }
 }

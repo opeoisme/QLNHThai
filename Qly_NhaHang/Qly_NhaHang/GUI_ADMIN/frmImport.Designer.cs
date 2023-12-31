@@ -53,6 +53,7 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flpnCatalog = new System.Windows.Forms.FlowLayoutPanel();
+            this.nameSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel1.SuspendLayout();
@@ -188,7 +189,8 @@
             this.gvImport.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.nameIngredient,
             this.contityIngredient,
-            this.dateExpiry});
+            this.dateExpiry,
+            this.nameSupplier});
             this.gvImport.GridControl = this.gctImport;
             this.gvImport.Name = "gvImport";
             // 
@@ -392,6 +394,16 @@
             this.flpnCatalog.Size = new System.Drawing.Size(361, 987);
             this.flpnCatalog.TabIndex = 0;
             // 
+            // nameSupplier
+            // 
+            this.nameSupplier.Caption = "Tên nhà cung cấp";
+            this.nameSupplier.FieldName = "name_Supplier";
+            this.nameSupplier.MinWidth = 30;
+            this.nameSupplier.Name = "nameSupplier";
+            this.nameSupplier.Visible = true;
+            this.nameSupplier.VisibleIndex = 3;
+            this.nameSupplier.Width = 112;
+            // 
             // frmImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -448,5 +460,6 @@
         private System.Windows.Forms.Panel panel8;
         private DevExpress.XtraEditors.LabelControl lblTotalPrice;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn nameSupplier;
     }
 }

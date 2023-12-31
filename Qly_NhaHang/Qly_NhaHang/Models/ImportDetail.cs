@@ -11,6 +11,7 @@ namespace Qly_NhaHang.Models
     {
         public int id_ImportInfo { get; set; }
         public int id_Import { get; set; }
+        public string name_Supplier { get; set; }
         public int _id_Ingredient;
         public string name_Ingredient { get; set; }
         public int id_Ingredient

@@ -42,6 +42,7 @@
             this.nameIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.countIngredient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateExpriry = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.nameSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panel2.SuspendLayout();
@@ -157,9 +158,10 @@
             this.gvImportInfo.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvImportInfo.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvImportInfo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.dateExpriry,
             this.nameIngredient,
             this.countIngredient,
-            this.dateExpriry});
+            this.nameSupplier});
             this.gvImportInfo.GridControl = this.gctImportInfo;
             this.gvImportInfo.Name = "gvImportInfo";
             this.gvImportInfo.RowHeight = 125;
@@ -172,7 +174,7 @@
             this.nameIngredient.Name = "nameIngredient";
             this.nameIngredient.Visible = true;
             this.nameIngredient.VisibleIndex = 0;
-            this.nameIngredient.Width = 379;
+            this.nameIngredient.Width = 126;
             // 
             // countIngredient
             // 
@@ -182,7 +184,7 @@
             this.countIngredient.Name = "countIngredient";
             this.countIngredient.Visible = true;
             this.countIngredient.VisibleIndex = 1;
-            this.countIngredient.Width = 747;
+            this.countIngredient.Width = 249;
             // 
             // dateExpriry
             // 
@@ -192,7 +194,17 @@
             this.dateExpriry.Name = "dateExpriry";
             this.dateExpriry.Visible = true;
             this.dateExpriry.VisibleIndex = 2;
-            this.dateExpriry.Width = 747;
+            this.dateExpriry.Width = 253;
+            // 
+            // nameSupplier
+            // 
+            this.nameSupplier.Caption = "Nhà cung cấp";
+            this.nameSupplier.FieldName = "name_Supplier";
+            this.nameSupplier.MinWidth = 30;
+            this.nameSupplier.Name = "nameSupplier";
+            this.nameSupplier.Visible = true;
+            this.nameSupplier.VisibleIndex = 3;
+            this.nameSupplier.Width = 128;
             // 
             // frmImportDetail
             // 
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ContextMenuStrip ctmsImportDetail;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;
+        private DevExpress.XtraGrid.Columns.GridColumn nameSupplier;
     }
 }

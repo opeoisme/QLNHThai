@@ -183,5 +183,15 @@ namespace Qly_NhaHang
         {
             openForm(typeof(frmRestoreUnit));
         }
+
+        private void btnSupp_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmSupplier));
+        }
+
+        private void btnRestoreSupplier_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmResstoreSupplier));
+        }
     }
 }

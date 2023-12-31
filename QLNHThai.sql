@@ -125,6 +125,13 @@ create table Recipe(
 	name_Unit nvarchar(max) not null,
 	condition_Unit nvarchar(50)
 )
+
+ create table Supplier (
+	id_Supplier int identity primary key,
+	name_Supplier nvarchar(max) not null,
+	condition_Supplier nvarchar(50),
+	note_Supplier nvarchar(max)
+)
  
 select *from Bill_Info
 select * from Ingredient

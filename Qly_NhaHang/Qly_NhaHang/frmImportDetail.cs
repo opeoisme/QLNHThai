@@ -41,6 +41,7 @@ namespace Qly_NhaHang
                     count_Ingredient = a.count_Ingredient,
                     date_Expiry = a.date_Expiry,
                     id_Ingredient = a.id_Ingredient,
+                    name_Supplier = a.name_Supplier,
                 })
                 .ToList();
             gctImportInfo.DataSource = importData;

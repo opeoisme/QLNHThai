@@ -493,6 +493,16 @@ namespace Qly_NhaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _9989492_rating_evaluation_grade_ranking_rate_icon {
+            get {
+                object obj = ResourceManager.GetObject("_9989492_rating_evaluation_grade_ranking_rate_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancle {
             get {
                 object obj = ResourceManager.GetObject("cancle", resourceCulture);

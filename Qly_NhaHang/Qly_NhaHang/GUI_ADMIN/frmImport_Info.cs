@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace Qly_NhaHang
         private int quantity;
         private double price;
         private int quantities;
+        private QLNHThaiEntities dbContext;
         public frmImport_Info(string nameFood, string ĐVT, string Unit, double countKid, double count, int idImport ,DateTime? HSD, double priceIngre)
         {
             InitializeComponent();
+            InitializeDbContext();
             nmrQuantity.ValueChanged += nmrQuantity_ValueChanged;
             lblID.Text = idImport.ToString();
             lblNameIngredient.Text = nameFood;
@@ -47,6 +50,10 @@ namespace Qly_NhaHang
             this.price = priceIngre;
             lblPrice.Text = lblPrice.Text = String.Format("{0:0,0 vnđ}", priceIngre);
             UpdateTotalPrice();
+        }
+        private void InitializeDbContext()
+        {
+            dbContext = new QLNHThaiEntities();
         }
 
         private void nmrQuantity_ValueChanged(object sender, EventArgs e)
@@ -90,6 +97,7 @@ namespace Qly_NhaHang
                 int idImportValue = int.Parse(idImportText);
                 double totalCount = (double)quantity / 10 * lblPriceValue; 
                 DateTime dateExpiry = dtpkHSD.Value;
+                string nameSupplier = cbbSupplier.Text;
 
                 //DateTime? HSD = dtpkHSD.Value;
                 if (dateExpiry <= DateTime.Now)
@@ -120,8 +128,7 @@ namespace Qly_NhaHang
                                 id_Ingredient = idIngredient,
                                 count_Ingredient = (int)totalCount,
                                 date_Expiry = dateExpiry,
-  
-
+                                name_Supplier = nameSupplier,
                             };
                             dbContext.ImportInfoes.Add(newImportInfo);
                             dbContext.SaveChanges();
@@ -167,6 +174,23 @@ namespace Qly_NhaHang
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LoadSupplierData()
+        {
+            var discount = dbContext.Suppliers
+                .Where(d => d.condition_Supplier == "Hợp tác")
+                .ToList();
+            cbbSupplier.Properties.Items.Clear();
+            foreach (var item in discount)
+            {
+                cbbSupplier.Properties.Items.Add(item.name_Supplier);
+            }
+        }
+
+        private void frmImport_Info_Load(object sender, EventArgs e)
+        {
+            LoadSupplierData();
         }
     }
 }

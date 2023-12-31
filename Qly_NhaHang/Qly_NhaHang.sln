@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ThaiFood Restaurant", "ThaiFood Restaurant\ThaiFood Restaurant.vdproj", "{1FBBC223-10B0-4AEA-B1F0-9DE7C8C796E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,8 @@ Global
 		{8F22E2AF-62CC-4B08-ADA5-9909D6F629CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F22E2AF-62CC-4B08-ADA5-9909D6F629CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F22E2AF-62CC-4B08-ADA5-9909D6F629CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FBBC223-10B0-4AEA-B1F0-9DE7C8C796E4}.Debug|Any CPU.ActiveCfg = Debug
+		{1FBBC223-10B0-4AEA-B1F0-9DE7C8C796E4}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
